@@ -1,0 +1,23 @@
+<mat-drawer-container class="container">
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="title">
+      <span>CSE416 Project</span>
+    </div>
+  </mat-toolbar>
+    <mat-drawer class="sidebar-container" #drawer mode="side">
+      <button class="option-buttons" mat-button>Option 1</button>
+      <button class="option-buttons" mat-button>Option 2</button>
+      <button class="option-buttons" mat-button>Option 3</button>
+      <button class="option-buttons" mat-button>Option 4</button>
+      <button class="option-buttons" mat-button>Option 5</button>
+      <button class="close-button" color="warn" mat-stroked-button (click)="drawer.toggle()">close</button>
+    </mat-drawer>
+    <app-main class="main"></app-main>
+
+
+  </mat-drawer-container>
+
+
