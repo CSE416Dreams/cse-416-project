@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import * as L from 'leaflet';
-import * as geojson from 'geojson';
-import * as $ from '../../../node_modules/jquery/dist/jquery.min.js'
+// Mapbox API import, jQuery for getJSON
+import mapboxgl from 'mapbox-gl';
+import * as $ from '../../../node_modules/jquery/dist/jquery.min.js';
 
-import * as worldMap from '../../../../State_GEOJSON/northAmerica.json';
+import * as object from '../../../../State_GEOJSON/MississippiStateDistricts.json'
 
 @Component({
   selector: 'app-main',
@@ -13,36 +13,59 @@ import * as worldMap from '../../../../State_GEOJSON/northAmerica.json';
 export class MainComponent implements AfterViewInit {
   
   private initMap(): void {
-    // const map = L.map('map').setView([0, 0], 1);
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2drc3duZHVkMTIiLCJhIjoiY2t6ZjF0YzJ4Mzg1NzJwbzA4cWdyd3RhNSJ9.VhqousDJ3yi7zD41jf9rlQ';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/light-v10',
+      center: [-100, 40],
+      zoom: 3.5
+    });
 
-    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //   minZoom: 3,
-    //   maxZoom: 18,
-    //   attribution: '<a href=”http://www.openstreetmap.org/copyright">OpenStreetMap</a> '
-    // }).addTo(map);
-    
-    var path = '../../../../State_GEOJSON/worldMap.json';
-    var myCustomStyle = {
-      stroke: false,
-      fill: true,
-      fillColor: '#fff',
-      fillOpacity: 1
-  }
-    $.getJSON(path, function(data) {
-      var map = L.map('map').setView([39.74, -105], 4);
+    // This only works for URL I guess? 
+    // $.getJSON("../../../../State_GEOJSON/MississippiStateDistricts.json", function(data) {
+    //   console.log("hellloooo ")
+    // });
 
-      L.geoJSON(data, {
-        style: myCustomStyle  
-      }).addTo(map);
+    // This json is NOT geoJson, rather topoJson -> either need additional topoJSON api or find different json (geojson)
+    const jsondata = require('../../../../State_GEOJSON/MississippiStateDistricts.json');
+    console.log(jsondata);
+
+
+    //
+    map.on('load', function () {
+
+      // map.addSource('mississippi', {
+      //   type: 'GeometryCollection',
+      //   data: jsondata.objects.cb_2015_mississippi_county_20m
+      // });
+
+      // map.addSource('mississippi', {
+      //   type: 'geojson',
+      //   data: jsondata
+      // });
+
+      // this needs to be called after addsource
+      // map.addLayer({
+      //   'id': 'mississippi',
+      //   'type': 'fill',
+      //   'source': 'mississippi',
+      //   'paint': {
+      //   'fill-color': '#888888',
+      //   'fill-opacity': 0.4
+      //   },
+      //   'filter': ['==', '$type', 'Polygon']
+      // });
     })
+
+
   }
 
-  constructor() { 
+  constructor() {
   }
-  
-  
+
+
   ngAfterViewInit(): void {
     this.initMap();
-    
+
   }
 }
