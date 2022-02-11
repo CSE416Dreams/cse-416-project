@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 // Mapbox API import, jQuery for getJSON
 import mapboxgl from 'mapbox-gl';
-import * as $ from '../../../node_modules/jquery/dist/jquery.min.js';
+import * as $ from '../../../node_modules/jquery/dist/jquery.min.js'; 
 
-import * as object from '../../../../State_GEOJSON/MississippiStateDistricts.json'
+import geojson from "./testing";
 
 @Component({
   selector: 'app-main',
@@ -28,39 +28,34 @@ export class MainComponent implements AfterViewInit {
     }), 'top-right');
 
     // This only works for URL I guess? 
-    // $.getJSON("../../../../State_GEOJSON/MississippiStateDistricts.json", function(data) {
-    //   console.log("hellloooo ")
+    // $.getJSON("../../../../State_GEOJSON/MississippiStateDistricts.geojson", function(data) {
+    //   console.log(data);  
     // });
 
     // This json is NOT geoJson, rather topoJson -> either need additional topoJSON api or find different json (geojson)
-    const jsondata = require('../../../../State_GEOJSON/MississippiStateDistricts.json');
-    console.log(jsondata);
 
-
+    
+    console.log(geojson)
     //
     map.on('load', function () {
 
-      // map.addSource('mississippi', {
-      //   type: 'GeometryCollection',
-      //   data: jsondata.objects.cb_2015_mississippi_county_20m
-      // });
 
-      // map.addSource('mississippi', {
-      //   type: 'geojson',
-      //   data: jsondata
-      // });
+      map.addSource('mississippi', {
+        type: 'geojson',
+        data: geojson 
+      });
 
       // this needs to be called after addsource
-      // map.addLayer({
-      //   'id': 'mississippi',
-      //   'type': 'fill',
-      //   'source': 'mississippi',
-      //   'paint': {
-      //   'fill-color': '#888888',
-      //   'fill-opacity': 0.4
-      //   },
-      //   'filter': ['==', '$type', 'Polygon']
-      // });
+      map.addLayer({
+        'id': 'mississippi',
+        'type': 'fill',
+        'source': 'mississippi',
+        'paint': {
+        'fill-color': '#888888',
+        'fill-opacity': 0.4
+        },
+        'filter': ['==', '$type', 'Polygon']
+      });
     })
 
 
