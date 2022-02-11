@@ -21,6 +21,12 @@ export class MainComponent implements AfterViewInit {
       zoom: 3.5
     });
 
+
+
+    map.addControl(new mapboxgl.NavigationControl({
+      showCompass: false
+    }), 'top-right');
+
     // This only works for URL I guess? 
     // $.getJSON("../../../../State_GEOJSON/MississippiStateDistricts.json", function(data) {
     //   console.log("hellloooo ")
