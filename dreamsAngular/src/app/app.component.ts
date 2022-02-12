@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
@@ -11,6 +11,10 @@ import { DialogueComponent } from './dialogue/dialogue.component';
 })
 export class AppComponent {
   title = 'dreamsAngular';
+  selectedStates = "Select a state";
+  noneSelected = "Select a state";
+  mississippi = "Mississippi";
+  georgia = "Georgia";
   constructor(public dialog : MatDialog, public bottomSheet : MatBottomSheet) {
 
   }
@@ -26,6 +30,11 @@ export class AppComponent {
   // open bottom sheet for option 2
   openBottomSheet() {
     this.bottomSheet.open(BottomSheetComponent);
+  }
+
+  //change States
+  changeState(string: string) {
+    this.selectedStates = string;
   }
 
 

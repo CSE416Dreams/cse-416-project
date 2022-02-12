@@ -1,6 +1,7 @@
 .title {
   text-align: center;
   width: 100%;
+  margin-left: 3rem;
   font-size: larger;
 }
 
@@ -38,4 +39,16 @@
 }
 .close-button {
   margin-left: 60%;
+}
+
+.state-menu {
+  width: 13%;
+}
+
+.state-button {
+  font-size: medium;
+}
+
+.state-buttons {
+  font-size: medium;
 }

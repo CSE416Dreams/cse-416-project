@@ -1,64 +1,32 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 // Mapbox API import, jQuery for getJSON
 import mapboxgl from 'mapbox-gl';
-import * as $ from '../../../node_modules/jquery/dist/jquery.min.js'; 
 
-import geojson from "./testing";
+import mississippi from "./mississippi_temp";
+import georgia from "./georgia_temp";
+
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements AfterViewInit {
-  
+export class MainComponent implements AfterViewInit, OnChanges {
+  @Input() selectedStates : string;
+  map;
+  currentLayer = [];
+
   private initMap(): void {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZ2drc3duZHVkMTIiLCJhIjoiY2t6ZjF0YzJ4Mzg1NzJwbzA4cWdyd3RhNSJ9.VhqousDJ3yi7zD41jf9rlQ';
-    const map = new mapboxgl.Map({
+    this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
       center: [-100, 40],
       zoom: 3.5
     });
-
-
-
-    map.addControl(new mapboxgl.NavigationControl({
+    this.map.addControl(new mapboxgl.NavigationControl({
       showCompass: false
     }), 'top-right');
-
-    // This only works for URL I guess? 
-    // $.getJSON("../../../../State_GEOJSON/MississippiStateDistricts.geojson", function(data) {
-    //   console.log(data);  
-    // });
-
-    // This json is NOT geoJson, rather topoJson -> either need additional topoJSON api or find different json (geojson)
-
-    
-    console.log(geojson)
-    //
-    map.on('load', function () {
-
-
-      map.addSource('mississippi', {
-        type: 'geojson',
-        data: geojson 
-      });
-
-      // this needs to be called after addsource
-      map.addLayer({
-        'id': 'mississippi',
-        'type': 'fill',
-        'source': 'mississippi',
-        'paint': {
-        'fill-color': '#888888',
-        'fill-opacity': 0.4
-        },
-        'filter': ['==', '$type', 'Polygon']
-      });
-    })
-
-
   }
 
   constructor() {
@@ -69,4 +37,67 @@ export class MainComponent implements AfterViewInit {
     this.initMap();
 
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      this.changeMap(changes['selectedStates'].currentValue);
+  }
+
+  changeMap(state: string): void {
+      switch(state) {
+        case 'Mississippi':
+          this.removeCurrentMap();
+          this.currentLayer.push(state);
+          
+          // This process has to be dynamic connected to a service
+          this.map.addSource('Mississippi', {
+              type: 'geojson',
+              data: mississippi 
+            });
+            this.map.addLayer({
+              'id': 'Mississippi',
+              'type': 'fill',
+              'source': 'Mississippi',
+              'paint': {
+              'fill-color': '#888888',
+              'fill-opacity': 0.4
+              },
+              'filter': ['==', '$type', 'Polygon']
+            });
+          break;
+        // Georgia state show datas
+        case 'Georgia':
+          this.removeCurrentMap();
+          this.currentLayer.push(state);
+
+          // This process has to be dynamic connected to a service
+          this.map.addSource('Georgia', {
+            type: 'geojson',
+            data: georgia
+          });
+          this.map.addLayer({
+            'id': 'Georgia',
+            'type': 'fill',
+            'source': 'Georgia',
+            'paint': {
+            'fill-color': '#888888',
+            'fill-opacity': 0.4
+            },
+            'filter': ['==', '$type', 'Polygon']
+          });
+          break;
+        // default case for removing any maps
+        default:
+          this.removeCurrentMap();
+          break;
+      }
+  }
+  removeCurrentMap() {
+    for(let i =0 ; i < this.currentLayer.length; i++) {
+      this.map.removeLayer(this.currentLayer[i]);
+      this.map.removeSource(this.currentLayer[i]);
+    }
+    this.currentLayer = [];
+  }
+
+  
 }

@@ -11,6 +11,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MainComponent } from './main/main.component';
 import { DialogueComponent } from './dialogue/dialogue.component';
@@ -33,7 +35,9 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
     MatSidenavModule,
     MatDialogModule,
     MatBottomSheetModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
