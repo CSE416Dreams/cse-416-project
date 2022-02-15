@@ -35,6 +35,7 @@ export class AppComponent {
   //change States
   changeState(string: string) {
     this.selectedStates = string;
+    
   }
 
 

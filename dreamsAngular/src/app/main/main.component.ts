@@ -18,12 +18,15 @@ export class MainComponent implements AfterViewInit, OnChanges {
 
   private initMap(): void {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZ2drc3duZHVkMTIiLCJhIjoiY2t6ZjF0YzJ4Mzg1NzJwbzA4cWdyd3RhNSJ9.VhqousDJ3yi7zD41jf9rlQ';
+    
     this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v10',
       center: [-100, 40],
-      zoom: 3.5
+      zoom: 3.5,
     });
+      
+
     this.map.addControl(new mapboxgl.NavigationControl({
       showCompass: false
     }), 'top-right');
@@ -43,10 +46,19 @@ export class MainComponent implements AfterViewInit, OnChanges {
   }
 
   changeMap(state: string): void {
+      //let isAtStart = false;
+
+      //const start = [-74.5, 40];
+      const endM = [-89, 32];
+      const endG = [-83, 32];
+      const endDefault = [-99, 32];
+      let target;
       switch(state) {
         case 'Mississippi':
           this.removeCurrentMap();
           this.currentLayer.push(state);
+          // and now we're at the opposite point
+          target = endM;
           
           // This process has to be dynamic connected to a service
           this.map.addSource('Mississippi', {
@@ -63,12 +75,32 @@ export class MainComponent implements AfterViewInit, OnChanges {
               },
               'filter': ['==', '$type', 'Polygon']
             });
+            this.map.flyTo({
+              // These options control the ending camera position: centered at
+              // the target, at zoom level 9, and north up.
+              center: target,
+              zoom: 5.8,
+              bearing: 0,
+               
+              // These options control the flight curve, making it move
+              // slowly and zoom out almost completely before starting
+              // to pan.
+              speed: 1.5, // make the flying slow
+              curve: 1, // change the speed at which it zooms out
+               
+              // This can be any easing function: it takes a number between
+              // 0 and 1 and returns another number between 0 and 1.
+              easing: (t) => t,
+               
+              // this animation is considered essential with respect to prefers-reduced-motion
+              essential: true
+              });
           break;
         // Georgia state show datas
         case 'Georgia':
           this.removeCurrentMap();
           this.currentLayer.push(state);
-
+          target = endG;
           // This process has to be dynamic connected to a service
           this.map.addSource('Georgia', {
             type: 'geojson',
@@ -79,15 +111,56 @@ export class MainComponent implements AfterViewInit, OnChanges {
             'type': 'fill',
             'source': 'Georgia',
             'paint': {
-            'fill-color': '#888888',
+            'fill-color': 'blue',
             'fill-opacity': 0.4
             },
             'filter': ['==', '$type', 'Polygon']
           });
+          this.map.flyTo({
+            // These options control the ending camera position: centered at
+            // the target, at zoom level 9, and north up.
+            center: target,
+            zoom: 5.8,
+            bearing: 0,
+             
+            // These options control the flight curve, making it move
+            // slowly and zoom out almost completely before starting
+            // to pan.
+            speed: 1.5, // make the flying slow
+            curve: 1, // change the speed at which it zooms out
+             
+            // This can be any easing function: it takes a number between
+            // 0 and 1 and returns another number between 0 and 1.
+            easing: (t) => t,
+             
+            // this animation is considered essential with respect to prefers-reduced-motion
+            essential: true
+            });
           break;
         // default case for removing any maps
         default:
+          target = endDefault;
           this.removeCurrentMap();
+          this.map.flyTo({
+            // These options control the ending camera position: centered at
+            // the target, at zoom level 9, and north up.
+            center: target,
+            zoom: 3,
+            bearing: 0,
+             
+            // These options control the flight curve, making it move
+            // slowly and zoom out almost completely before starting
+            // to pan.
+            speed: 1.5, // make the flying slow
+            curve: 1, // change the speed at which it zooms out
+             
+            // This can be any easing function: it takes a number between
+            // 0 and 1 and returns another number between 0 and 1.
+            easing: (t) => t,
+             
+            // this animation is considered essential with respect to prefers-reduced-motion
+            essential: true
+            });
           break;
       }
   }
