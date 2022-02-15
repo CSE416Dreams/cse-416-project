@@ -111,7 +111,7 @@ export class MainComponent implements AfterViewInit, OnChanges {
             'type': 'fill',
             'source': 'Georgia',
             'paint': {
-            'fill-color': 'blue',
+            'fill-color': '#888888',
             'fill-opacity': 0.4
             },
             'filter': ['==', '$type', 'Polygon']
