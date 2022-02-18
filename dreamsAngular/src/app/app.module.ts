@@ -13,17 +13,18 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { MainComponent } from './main/main.component';
 import { DialogueComponent } from './dialogue/dialogue.component';
-import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     DialogueComponent,
-    BottomSheetComponent
+    TabsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,8 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
     MatBottomSheetModule,
     MatListModule,
     MatCheckboxModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

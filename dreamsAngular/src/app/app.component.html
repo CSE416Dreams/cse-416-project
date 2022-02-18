@@ -1,8 +1,4 @@
-<mat-drawer-container class="container">
   <mat-toolbar color="primary" class="toolbar">
-    <button mat-icon-button (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
     <div class="title">
       <span>CSE416 Project</span>
     </div>
@@ -12,31 +8,36 @@
         {{ selectedStates }}
       </button>
       <mat-menu #states="matMenu">
-        <button mat-menu-item class="state-buttons" (click)="changeState(noneSelected)">None</button>
-        <button mat-menu-item class="state-buttons" (click)="changeState(mississippi)">Mississippi</button>
-        <button mat-menu-item class="state-buttons" (click)="changeState(georgia)">Georgia</button>
+        <button mat-menu-item class="state-buttons" (click)="changeState(noneSelected); drawer.close()">None</button>
+        <button mat-menu-item class="state-buttons" (click)="changeState(mississippi); drawer.open()">Mississippi</button>
+        <button mat-menu-item class="state-buttons" (click)="changeState(georgia); drawer.open()">Georgia</button>
       </mat-menu>
     </div>
   </mat-toolbar>
-  <mat-drawer class="sidebar-container" #drawer mode="side">
-    <div class="option-container">
-      <button class="option-buttons" mat-raised-button (click)="openDialog()">Open Dialogue</button>
-    </div>
-    
-    <div class="option-container">
-      <button class="option-buttons" mat-raised-button (click)="openBottomSheet()">Bottom Sheet</button>
-    </div>
+  <mat-drawer-container class="container">
+    <mat-drawer class="sidebar-container" #drawer mode="side" position="end">
 
-    <div class="close-container">
-      <button class="close-button" color="warn" mat-raised-button (click)="drawer.toggle()">close</button>
-    </div>
-  </mat-drawer>
-    
-  <p>
+      <!-- Component -->
+      <app-tabs>
+
+      </app-tabs>
+
+
+      <!-- <div class="option-container">
+        <button class="option-buttons" mat-raised-button (click)="openDialog()">Open Dialogue</button>
+      </div>
+      
+      <div class="option-container">
+        <button class="option-buttons" mat-raised-button (click)="openBottomSheet()">Bottom Sheet</button>
+      </div>
+  
+      <div class="close-container">
+        <button class="close-button" color="warn" mat-raised-button (click)="drawer.toggle()">close</button>
+      </div> -->
+    </mat-drawer>
+
     <app-main class="main" [selectedStates]=selectedStates></app-main>
-  </p>
 
-
-</mat-drawer-container>
+  </mat-drawer-container>
 
 

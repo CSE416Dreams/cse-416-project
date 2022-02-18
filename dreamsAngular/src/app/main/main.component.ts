@@ -4,6 +4,7 @@ import mapboxgl from 'mapbox-gl';
 
 import mississippi from "./mississippi_temp";
 import georgia from "./georgia_temp";
+import { map } from 'leaflet';
 
 
 @Component({
@@ -29,7 +30,11 @@ export class MainComponent implements AfterViewInit, OnChanges {
 
     this.map.addControl(new mapboxgl.NavigationControl({
       showCompass: false
-    }), 'top-right');
+    }), 'top-left');
+
+    this.map.on('load', function() {
+      this.map.resize();
+    })
   }
 
   constructor() {
@@ -144,8 +149,8 @@ export class MainComponent implements AfterViewInit, OnChanges {
           this.map.flyTo({
             // These options control the ending camera position: centered at
             // the target, at zoom level 9, and north up.
-            center: target,
-            zoom: 3,
+            center: [-100, 40],
+            zoom: 3.5,
             bearing: 0,
              
             // These options control the flight curve, making it move

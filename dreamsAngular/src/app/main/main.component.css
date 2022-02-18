@@ -1,5 +1,5 @@
 #map {
-    height: 643px;
+    height: 100%;
 }
 
 #fly {
@@ -15,4 +15,9 @@
     text-align: center;
     color: #fff;
     background: #ee8a65;
-    }
+}
+
+
+.container {
+    height:100%;
+}

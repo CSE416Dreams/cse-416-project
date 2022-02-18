@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
-import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { DialogueComponent } from './dialogue/dialogue.component';
 
 @Component({
@@ -15,7 +14,7 @@ export class AppComponent {
   noneSelected = "Select a state";
   mississippi = "Mississippi";
   georgia = "Georgia";
-  constructor(public dialog : MatDialog, public bottomSheet : MatBottomSheet) {
+  constructor(public dialog : MatDialog) {
 
   }
   // open dialogue for option 1
@@ -25,11 +24,6 @@ export class AppComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
-  }
-
-  // open bottom sheet for option 2
-  openBottomSheet() {
-    this.bottomSheet.open(BottomSheetComponent);
   }
 
   //change States
