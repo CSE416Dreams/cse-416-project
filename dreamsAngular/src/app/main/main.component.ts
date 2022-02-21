@@ -4,7 +4,6 @@ import mapboxgl from 'mapbox-gl';
 
 import mississippi from "./mississippi_temp";
 import georgia from "./georgia_temp";
-import { map } from 'leaflet';
 
 
 @Component({
@@ -13,8 +12,8 @@ import { map } from 'leaflet';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements AfterViewInit, OnChanges {
-  @Input() selectedStates : string;
-  map;
+  @Input() selectedState : string;
+  map: mapboxgl;
   currentLayer = [];
 
   private initMap(): void {
@@ -32,22 +31,18 @@ export class MainComponent implements AfterViewInit, OnChanges {
       showCompass: false
     }), 'top-left');
 
-    this.map.on('load', function() {
-      this.map.resize();
-    })
+    this.map.resize();
   }
 
   constructor() {
   }
 
-
   ngAfterViewInit(): void {
     this.initMap();
-
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      this.changeMap(changes['selectedStates'].currentValue);
+      this.changeMap(changes['selectedState'].currentValue);
   }
 
   changeMap(state: string): void {

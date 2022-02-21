@@ -1,43 +1,10 @@
-  <mat-toolbar color="primary" class="toolbar">
-    <div class="title">
-      <span>CSE416 Project</span>
-    </div>
+  <app-header [selectedState]="selectedState" [changeState]="changeState">
 
-    <div class="state-menu">
-      <button mat-button [matMenuTriggerFor]="states" class="state-button">
-        {{ selectedStates }}
-      </button>
-      <mat-menu #states="matMenu">
-        <button mat-menu-item class="state-buttons" (click)="changeState(noneSelected); drawer.close()">None</button>
-        <button mat-menu-item class="state-buttons" (click)="changeState(mississippi); drawer.open()">Mississippi</button>
-        <button mat-menu-item class="state-buttons" (click)="changeState(georgia); drawer.open()">Georgia</button>
-      </mat-menu>
-    </div>
-  </mat-toolbar>
-  <mat-drawer-container class="container">
-    <mat-drawer class="sidebar-container" #drawer mode="side" position="end">
+  </app-header>
 
-      <!-- Component -->
-      <app-tabs>
+  <app-main-content [selectedState]="selectedState">
 
-      </app-tabs>
+  </app-main-content>
 
-
-      <!-- <div class="option-container">
-        <button class="option-buttons" mat-raised-button (click)="openDialog()">Open Dialogue</button>
-      </div>
-      
-      <div class="option-container">
-        <button class="option-buttons" mat-raised-button (click)="openBottomSheet()">Bottom Sheet</button>
-      </div>
-  
-      <div class="close-container">
-        <button class="close-button" color="warn" mat-raised-button (click)="drawer.toggle()">close</button>
-      </div> -->
-    </mat-drawer>
-
-    <app-main class="main" [selectedStates]=selectedStates></app-main>
-
-  </mat-drawer-container>
 
 

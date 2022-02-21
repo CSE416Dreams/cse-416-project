@@ -16,15 +16,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { MainComponent } from './main/main.component';
-import { DialogueComponent } from './dialogue/dialogue.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { HeaderComponent } from './header/header.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    DialogueComponent,
-    TabsComponent
+    TabsComponent,
+    HeaderComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,

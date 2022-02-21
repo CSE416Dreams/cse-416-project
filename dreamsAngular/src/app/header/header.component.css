@@ -1,0 +1,14 @@
+.state-menu {
+    width: 13%;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+    margin-left: 3rem;
+    font-size: larger;
+}
+  
+.toolbar {
+    height: 5rem;
+}

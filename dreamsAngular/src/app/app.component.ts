@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogueComponent } from './dialogue/dialogue.component';
+import { MatSidenav } from '@angular/material/sidenav';
+import { MapServiceService } from './services/map-service.service';
+import { SidenavServiceService } from './services/sidenav-service.service';
 
 @Component({
   selector: 'app-root',
@@ -10,25 +12,16 @@ import { DialogueComponent } from './dialogue/dialogue.component';
 })
 export class AppComponent {
   title = 'dreamsAngular';
-  selectedStates = "Select a state";
-  noneSelected = "Select a state";
-  mississippi = "Mississippi";
-  georgia = "Georgia";
-  constructor(public dialog : MatDialog) {
+  selectedState = "Select a state";
+  @ViewChild('sidenav') public sidenav: MatSidenav;
+  constructor() {
 
   }
-  // open dialogue for option 1
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogueComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 
   //change States
-  changeState(string: string) {
-    this.selectedStates = string;
+  changeState = (string: string) => {
+    this.selectedState = string;
     
   }
 
