@@ -14,6 +14,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { MainComponent } from './main/main.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -29,7 +32,8 @@ import { OverviewComponent } from './tabs/overview/overview.component';
     TabsComponent,
     HeaderComponent,
     MainContentComponent,
-    OverviewComponent
+    OverviewComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,10 @@ import { OverviewComponent } from './tabs/overview/overview.component';
     MatListModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
   ],
   providers: [SidenavServiceService],
   bootstrap: [AppComponent]
