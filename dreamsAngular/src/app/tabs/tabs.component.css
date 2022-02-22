@@ -1,3 +1,4 @@
 ::ng-deep.mat-tab-label {
   min-width: 40px !important;
+  border-radius: 25px;
 }
