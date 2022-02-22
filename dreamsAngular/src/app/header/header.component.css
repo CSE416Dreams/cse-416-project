@@ -1,9 +1,10 @@
 .state-menu {
-  margin-right: 1rem;
+  width: 3rem !important;
+  min-width: 3rem !important;
+  margin-right: 4rem !important;
 }
 
 .title {
-    text-align: center;
     width: 100%;
     margin-left: 3rem;
     font-size: larger;
