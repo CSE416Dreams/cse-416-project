@@ -1,9 +1,10 @@
 <mat-drawer-container class="container">
-    <mat-drawer class="sidenav" #sidenav mode="side" position="end">
-      <app-tabs>
-      </app-tabs>
+    <mat-drawer #drawer class="drawer-content" mode="side" position="end">
+      <app-tabs [selectedState]=selectedState></app-tabs>
     </mat-drawer>
 
-    <app-main class="main" [selectedState]=selectedState></app-main>
+
+      <app-main class="main" [selectedState]=selectedState></app-main>
+
 
 </mat-drawer-container>

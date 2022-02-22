@@ -2,3 +2,7 @@
 .container {
     height: 90%;
 }
+
+.drawer-content {
+  width: 50%;
+}

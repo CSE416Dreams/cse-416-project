@@ -19,6 +19,8 @@ import { MainComponent } from './main/main.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { HeaderComponent } from './header/header.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { SidenavServiceService } from './services/sidenav-service.service';
+import { OverviewComponent } from './tabs/overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { MainContentComponent } from './main-content/main-content.component';
     MainComponent,
     TabsComponent,
     HeaderComponent,
-    MainContentComponent
+    MainContentComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ import { MainContentComponent } from './main-content/main-content.component';
     MatMenuModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [SidenavServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

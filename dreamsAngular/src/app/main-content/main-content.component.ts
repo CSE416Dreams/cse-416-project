@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatDrawer, MatSidenav } from '@angular/material/sidenav';
 import { SidenavServiceService } from '../services/sidenav-service.service';
-
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
@@ -9,14 +8,12 @@ import { SidenavServiceService } from '../services/sidenav-service.service';
 })
 export class MainContentComponent implements OnInit{
   @Input() selectedState;
-  @ViewChild(MatDrawer) public sidenav: MatDrawer;
+  @ViewChild('drawer', { static: true }) public sidenav: MatDrawer;
+
   constructor(public sidenavService: SidenavServiceService) { }
 
   ngOnInit(): void {
-    console.log("helloo")
-    this.sidenavService.setSidenav();
-    console.log(this.sidenav)
-    console.log('heladfs')
+    this.sidenavService.setSidenav(this.sidenav);
   }
 
 }

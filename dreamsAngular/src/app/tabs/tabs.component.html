@@ -1,5 +1,19 @@
 <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="Overview">Overview</mat-tab>
-    <mat-tab label="Graphs">Graphs</mat-tab>
-    <mat-tab label="Whatever">Whatever</mat-tab>
+    <mat-tab class="tab-group" label="Overview">
+      <!-- Some other component for content -->
+      <app-overview [selectedState]=selectedState></app-overview>
+
+    </mat-tab>
+
+    <mat-tab class="tab-group" label="Graphs">Graphs
+      <!-- Some other component for content -->
+    </mat-tab>
+
+    <mat-tab class="tab-group" label="Whatever">Whatever
+      <!-- Some other component for content -->
+    </mat-tab>
+
+    <mat-tab class="tab-group" label="Whatever">Whatever
+      <!-- Some other component for content -->
+    </mat-tab>
 </mat-tab-group>

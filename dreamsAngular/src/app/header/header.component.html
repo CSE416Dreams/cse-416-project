@@ -5,7 +5,7 @@
 
     <div class="state-menu">
       <button mat-button [matMenuTriggerFor]="states" class="state-button">
-        {{ selectedState }}
+        {{ selectedState == "none" ? default : selectedState }}
       </button>
       <mat-menu #states="matMenu">
         <button mat-menu-item class="state-buttons" (click)="changeState(noneSelected); closeSidenav()">None</button>

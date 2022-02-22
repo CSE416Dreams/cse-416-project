@@ -2,7 +2,6 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
-import { MapServiceService } from './services/map-service.service';
 import { SidenavServiceService } from './services/sidenav-service.service';
 
 @Component({
@@ -13,7 +12,7 @@ import { SidenavServiceService } from './services/sidenav-service.service';
 export class AppComponent {
   title = 'dreamsAngular';
   selectedState = "Select a state";
-  @ViewChild('sidenav') public sidenav: MatSidenav;
+
   constructor() {
 
   }
@@ -22,7 +21,6 @@ export class AppComponent {
   //change States
   changeState = (string: string) => {
     this.selectedState = string;
-    
   }
 
 
