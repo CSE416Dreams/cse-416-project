@@ -6,9 +6,9 @@
     <mat-divider></mat-divider>
     <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
-            <mat-list-item>Name of Plan: </mat-list-item>
+            <mat-list-item>Name of Plan: State Congressional District Plan</mat-list-item>
             <mat-divider vertical style="height: 40px;"></mat-divider>
-            <mat-list-item>Proposed by: </mat-list-item>
+            <mat-list-item>Proposed by: Republican Party</mat-list-item>
         </mat-grid-tile>
     </mat-grid-list>
     
@@ -50,7 +50,7 @@
 
         <mat-grid-tile>
             <mat-list-item>Polsby-Popper Value: 
-                <div class="status"> 10</div>
+                <div class="status"> {{ PolsbyPopperValue }}</div>
             </mat-list-item>
         </mat-grid-tile>
     </mat-grid-list>
@@ -72,7 +72,7 @@
     <mat-divider></mat-divider>
     <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
-            <mat-list-item>Summary for each district</mat-list-item>
+            <mat-list-item>Summary for Each District:</mat-list-item>
         </mat-grid-tile>
     </mat-grid-list>
 
@@ -87,12 +87,6 @@
                     {{ district }}
                 </button>
             </mat-menu>
-        </mat-grid-tile>
-    </mat-grid-list>
-    
-    <mat-grid-list cols="1" rowHeight="40px">
-        <mat-grid-tile>
-            <mat-list-item>Basic Information about {{ selectedDistrict }}:</mat-list-item>
         </mat-grid-tile>
     </mat-grid-list>
 
@@ -116,6 +110,68 @@
         <mat-grid-tile>
             <mat-list-item>Partisan Lean:
                 <div class="status">{{ districtPartisanLean }}</div>
+            </mat-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+
+    <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Racial Profile of {{ selectedDistrict }}:</mat-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="4" rowHeight = "60px">
+        <mat-grid-tile>
+            <mat-list-item>White:
+                <div class="status">{{ districtWhite }}%</div>
+            </mat-list-item>
+            <mat-divider vertical style="height: 40px;"></mat-divider>
+        </mat-grid-tile>
+        
+
+        <mat-grid-tile>
+            <mat-list-item>Black:
+                <div class="status">{{ districtBlack }}%</div>
+            </mat-list-item>
+            <mat-divider vertical style="height: 40px;"></mat-divider>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-list-item>Hispanic:
+                <div class="status">{{ districtHispanic }}%</div>
+            </mat-list-item>
+            <mat-divider vertical style="height: 40px;"></mat-divider>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-list-item>Asian:
+                <div class="status">{{ districtAsian }}%</div>
+            </mat-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+
+    <mat-grid-list cols="3" rowHeight = "60px">
+        <mat-grid-tile>
+            <mat-list-item>Native American:
+                <div class="status">{{ districtIndian }}%</div>
+            </mat-list-item>
+            <mat-divider vertical style="height: 40px;"></mat-divider>
+        </mat-grid-tile>
+        
+
+        <mat-grid-tile>
+            <mat-list-item>Native Hawaiian and Pacific Islander:
+                <div class="status">{{ districtNativeHawaiian }}%</div>
+            </mat-list-item>
+            <mat-divider vertical style="height: 40px;"></mat-divider>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-list-item>Other:
+                <div class="status">{{ districtOther }}%</div>
             </mat-list-item>
         </mat-grid-tile>
     </mat-grid-list>
