@@ -78,6 +78,9 @@ export class MainComponent implements AfterViewInit, OnChanges {
           type: 'fill',
           source: 'Mississippi',
           paint:{
+            'fill-color': '#888888',                  
+            'fill-opacity': 0.4,
+            /*paint:{
             'fill-color': ['match', ['get', 'Districting 1'], // get the property
                            '1', 'blue',             
                            '2', 'red',
@@ -87,6 +90,7 @@ export class MainComponent implements AfterViewInit, OnChanges {
             ,
             'fill-opacity': 0.4,
             'fill-outline-color': 'white'
+          },*/
           },
           filter: ['==', '$type', 'Polygon'],
         });
