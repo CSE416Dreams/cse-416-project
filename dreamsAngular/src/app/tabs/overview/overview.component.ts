@@ -58,10 +58,6 @@ export class OverviewComponent implements OnInit, OnChanges{
   }
 
 
-  numberWithCommas(x) {
-    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-  }
-
   //Connecting backend here in each tabs accordingly with the selectedState will help us to fetch only what we need and process data within these tabs
 
 }
