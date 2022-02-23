@@ -77,9 +77,16 @@ export class MainComponent implements AfterViewInit, OnChanges {
           id: 'Mississippi',
           type: 'fill',
           source: 'Mississippi',
-          paint: {
-            'fill-color': '#888888',
+          paint:{
+            'fill-color': ['match', ['get', 'Districting 1'], // get the property
+                           '1', 'blue',             
+                           '2', 'red',
+                           '3', 'green',
+                           '4', 'yellow',            
+                           'white']                     
+            ,
             'fill-opacity': 0.4,
+            'fill-outline-color': 'white'
           },
           filter: ['==', '$type', 'Polygon'],
         });
