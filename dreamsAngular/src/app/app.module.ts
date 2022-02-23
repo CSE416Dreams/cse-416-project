@@ -19,6 +19,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { MainComponent } from './main/main.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -55,7 +57,9 @@ import { OverviewComponent } from './tabs/overview/overview.component';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDividerModule,
+    MatGridListModule
   ],
   providers: [SidenavServiceService],
   bootstrap: [AppComponent]
