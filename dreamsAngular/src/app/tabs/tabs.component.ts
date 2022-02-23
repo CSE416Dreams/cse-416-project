@@ -6,7 +6,6 @@ import {MatAccordion} from '@angular/material/expansion';
   styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent implements OnInit {
-  @ViewChild(MatAccordion) accordion: MatAccordion;
   @Input() selectedState: string;
   constructor() { }
 
