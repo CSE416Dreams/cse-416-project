@@ -29,12 +29,70 @@
                 Date proposed:
                 <mat-divider></mat-divider>
             </mat-list-item>
-
         </mat-grid-tile>
     </mat-grid-list>
 
     <mat-divider></mat-divider>
-    
+    <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Num. of districts:
+                <div class="status">{{ numOfDistricts }}</div>
+            </mat-list-item>
+            <mat-divider vertical style="height: 40px;"></mat-divider>
+        </mat-grid-tile>
 
-    <button mat-raised-button (click)="toggleStatus()">Toggle status</button>
+        <mat-grid-tile>
+            <mat-list-item>Total Pop.: 
+                <div class="status"> {{ totalPopulation }}</div>
+            </mat-list-item>
+            <mat-divider vertical style="height: 40px;"></mat-divider>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-list-item>Polsby-Popper Value: 
+                <div class="status"> 10</div>
+            </mat-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Republican Democratic Split</mat-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="1" rowHeight="120px">
+        <mat-grid-tile>
+            <mat-list-item>Hellloo something graph? or picture</mat-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Summary for each district</mat-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <button mat-button [matMenuTriggerFor]="districtMenu"> 
+                {{ selectedDistrict == "none" ? "Select a district" : selectedDistrict }}
+            </button>
+            <mat-menu #districtMenu="matMenu">
+                <button mat-menu-item *ngFor="let district of districtList" (click)="changeDistrict(district)">
+                    {{ district }}
+                </button>
+            </mat-menu>
+        </mat-grid-tile>
+    </mat-grid-list>
+    
+    <mat-grid-list cols="1" rowHeight="220px">
+        <mat-grid-tile>
+            <mat-list-item>Summary content goes here for {{ selectedDistrict }}</mat-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <button mat-raised-button class="temp" (click)="toggleStatus()">Toggle status</button>
 </mat-list>

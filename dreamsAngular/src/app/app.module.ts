@@ -28,6 +28,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { SidenavServiceService } from './services/sidenav-service.service';
 import { OverviewComponent } from './tabs/overview/overview.component';
+import { GraphsComponent } from './tabs/graphs/graphs.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { OverviewComponent } from './tabs/overview/overview.component';
     HeaderComponent,
     MainContentComponent,
     OverviewComponent,
+    GraphsComponent,
     
   ],
   imports: [
