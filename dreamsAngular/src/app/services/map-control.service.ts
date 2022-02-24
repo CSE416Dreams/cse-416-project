@@ -4,7 +4,8 @@ import mapboxgl from 'mapbox-gl';
 // import mississippi2 from '../main/mississippi_temp';
 // import georgia2 from '../main/georgia_temp';
 import mississippi from '../main/mississippiDistrict';
-import georgia from '../main/georgiaDistrict';
+import georgia from '../main/georgiaMainDistricts';
+import georgiaDemo from '../main/georgiaDemoDistricts';
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +59,7 @@ export class MapControlService {
     
     this.removeCurrentMap();
     this.changeCurrentLayer(state);
-    this.addSource(state);
+    this.addSource(state, 0);
     this.addLayer(state, this.currentMap_id);
     this.flyTo(state);
   }
@@ -67,7 +68,7 @@ export class MapControlService {
     if(this.currentMap_id != id) {
       this.currentMap_id = id;
       this.removeCurrentMap();
-      this.addSource(this.currentLayer);
+      this.addSource(this.currentLayer, this.currentMap_id);
       this.addLayer(this.currentLayer, this.currentMap_id);
     }
     this.flyTo(this.currentLayer);
@@ -80,19 +81,35 @@ export class MapControlService {
   // This will have to change to,,,, 
   // 1. fetch necessary geojson accordingly 
   // 2. accept a state and a status and just call addSource to this.map
-  addSource(state: string) {
+  addSource(state: string, ID: number) {
     switch(state) {
       case "Mississippi":
-        this.map.addSource(state, {
-           type: 'geojson',
-           data: mississippi,
-        });
+        if(ID == 0) {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: mississippi,
+          });
+        }
+        else if(ID == 1) {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: mississippi,
+          });
+        }
         break;
       case "Georgia":
-        this.map.addSource(state, {
-          type: 'geojson',
-          data: georgia,
-      });
+        if(ID == 0) {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: georgia,
+          });
+        }
+        else if(ID == 1) {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: georgiaDemo,
+          });
+        }
         break;
       case "none":
       default:
