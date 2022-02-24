@@ -9,8 +9,10 @@ import {
 // Mapbox API import, jQuery for getJSON
 import mapboxgl from 'mapbox-gl';
 
-import mississippi from './mississippi_temp';
-import georgia from './georgia_temp';
+//import mississippi from './mississippi_temp';
+//import georgia from './georgia_temp';
+import mississippi from './mississippiDistrict';
+import georgia from './georgiaDistrict';
 
 @Component({
   selector: 'app-main',
@@ -78,11 +80,11 @@ export class MainComponent implements AfterViewInit, OnChanges {
           type: 'fill',
           source: 'Mississippi',
           paint:{
-            'fill-color': ['match', ['get', 'Districting 1'], // get the property
-                           '1', 'blue',             
-                           '2', 'red',
-                           '3', 'green',
-                           '4', 'yellow',            
+            'fill-color': ['match', ['get', 'District'], // get the property
+                           1 , 'blue',             
+                           2 , 'red',
+                           3 , 'green',
+                           4 , 'yellow',            
                            'white']                     
             ,
             'fill-opacity': 0.4,
@@ -126,8 +128,25 @@ export class MainComponent implements AfterViewInit, OnChanges {
           type: 'fill',
           source: 'Georgia',
           paint: {
-            'fill-color': '#888888',
+            'fill-color': ['match', ['get', 'District'], // get the property
+                           "001" , 'blue',             
+                           "002" , 'red',
+                           "003" , 'green',
+                           "004" , 'yellow',
+                           "005" , 'orange', 
+                           "006" , 'brown', 
+                           "007" , 'purple', 
+                           "008" , 'sky blue', 
+                           "009" , 'crimson', 
+                           "010" , 'wheat', 
+                           "011" , 'cyan', 
+                           "012" , 'lime', 
+                           "013" , 'salmon',
+                           "014" , 'teal',         
+                           'white']                     
+            ,
             'fill-opacity': 0.4,
+            'fill-outline-color': 'white'
           },
           filter: ['==', '$type', 'Polygon'],
         });
