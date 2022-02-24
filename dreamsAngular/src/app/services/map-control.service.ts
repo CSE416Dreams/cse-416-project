@@ -3,9 +3,12 @@ import mapboxgl from 'mapbox-gl';
 
 // import mississippi2 from '../main/mississippi_temp';
 // import georgia2 from '../main/georgia_temp';
-import mississippi from '../main/mississippiDistrict';
-import georgia from '../main/georgiaMainDistricts';
+import mississippiMain from '../main/mississippiMainDistrict';
+import mississippiCounty from '../main/mississippiCountyMap';
+import georgiaMain from '../main/georgiaMainDistricts';
 import georgiaDemo from '../main/georgiaDemoDistricts';
+import georgiaCounty from '../main/georgiaCountyMap';
+
 
 @Injectable({
   providedIn: 'root'
@@ -87,13 +90,19 @@ export class MapControlService {
         if(ID == 0) {
           this.map.addSource(state, {
             type: 'geojson',
-            data: mississippi,
+            data: mississippiMain,
           });
         }
         else if(ID == 1) {
           this.map.addSource(state, {
             type: 'geojson',
-            data: mississippi,
+            data: mississippiMain,
+          });
+        }
+        else {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: mississippiCounty,
           });
         }
         break;
@@ -101,13 +110,19 @@ export class MapControlService {
         if(ID == 0) {
           this.map.addSource(state, {
             type: 'geojson',
-            data: georgia,
+            data: georgiaMain,
           });
         }
         else if(ID == 1) {
           this.map.addSource(state, {
             type: 'geojson',
             data: georgiaDemo,
+          });
+        }
+        else {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: georgiaCounty,
           });
         }
         break;

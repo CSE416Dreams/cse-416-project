@@ -8,6 +8,9 @@ import { MatAccordion } from '@angular/material/expansion';
 })
 export class OverviewComponent implements OnInit, OnChanges{
   @Input() selectedState: string;
+  nameOfPlan: string = "none";
+  proposedBy: string = "none";
+  dateOfPlan: string = "none";
   status: number = 0; 
   statusString = ["Enacted", "In litigation", "Rejected"]
   // enacted, in litigation, rejected
@@ -43,19 +46,24 @@ export class OverviewComponent implements OnInit, OnChanges{
 
       switch(changes["selectedState"].currentValue) {
         case "Mississippi":
+          // fetch
           this.numOfDistricts = 4;
           this.totalPopulationInt = 2949965;
           this.PolsbyPopperValue = .156;
           this.totalPopulationString = this.totalPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          // fetch
+          this.nameOfPlan = "State Congressional Plan";
+          this.proposedBy = "Republican Party";
           this.districtList = ["District 1","District 2","District 3","District 4"];
           this.changeDistrict("District 1");
           break;
         case "Georgia":
+          // fetch
           this.numOfDistricts = 14;
           this.totalPopulationInt = 10711908;
           this.PolsbyPopperValue = .259;
           this.totalPopulationString = this.totalPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          this.nameOfPlan = "State Congressional Plan";
+          this.proposedBy = "Republican Party";
           this.districtList = ["District 1","District 2","District 3","District 4","District 5","District 6", "District 7", "District 8", "District 9", "District 10", "District 11", "District 12", "District 13", "District 14"];
           this.changeDistrict("District 1");
           break;
@@ -68,6 +76,7 @@ export class OverviewComponent implements OnInit, OnChanges{
       switch(this.selectedDistrict) {
         // All Race Data in mississippi are place holders
         case "District 1":
+          // fetch
           this.districtPopulationInt = 740319;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Trent Kelly";
@@ -81,6 +90,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.44;
           break;
         case "District 2":
+          // fetch
           this.districtPopulationInt = 740319;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Bennie G. Thompson";
@@ -94,6 +104,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.33;
           break;
         case "District 3":
+          // fetch
           this.districtPopulationInt = 740320;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Michael Guest";
@@ -107,6 +118,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.37;
           break;
         case "District 4":
+          // fetch
           this.districtPopulationInt = 740321;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Steven Palazzo";
@@ -124,6 +136,7 @@ export class OverviewComponent implements OnInit, OnChanges{
     else if(this.selectedState == "Georgia") {
       switch(this.selectedDistrict) {
         case "District 1":
+          // fetch
           this.districtPopulationInt = 755781;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Buddy Carter";
@@ -137,6 +150,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.44;
           break;
         case "District 2":
+          // fetch
           this.districtPopulationInt = 673028;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Sanford D. Bishop Jr.";
@@ -150,6 +164,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.33;
           break;
         case "District 3":
+          // fetch
           this.districtPopulationInt = 763075;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "A. Drew Ferguson";
@@ -163,6 +178,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.48;
           break;
         case "District 4":
+          // fetch
           this.districtPopulationInt = 773761;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Hank Johnson";
@@ -176,6 +192,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.66;
           break;
         case "District 5":
+          // fetch
           this.districtPopulationInt = 788126;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Nikema Williams";
@@ -189,6 +206,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.53;
           break;
         case "District 6":
+          // fetch
           this.districtPopulationInt = 765793;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "OPEN";
@@ -202,6 +220,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.78;
           break;
         case "District 7":
+          // fetch
           this.districtPopulationInt = 859440;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Carolyn Bourdeaux";
@@ -215,6 +234,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.64;
           break;
         case "District 8":
+          // fetch
           this.districtPopulationInt = 719919;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Austin Scott";
@@ -228,6 +248,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.32;
           break;
         case "District 9":
+          // fetch
           this.districtPopulationInt = 775367;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Andrew S. Clyde";
@@ -241,6 +262,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.33;
           break;
         case "District 10":
+          // fetch
           this.districtPopulationInt =  775012;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Jody Hice";
@@ -254,6 +276,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.51;
           break;
         case "District 11":
+          // fetch
           this.districtPopulationInt = 802515;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Barry Loudermilk";
@@ -267,6 +290,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.78;
           break;
         case "District 12":
+          // fetch
           this.districtPopulationInt = 738624;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Rick Allen";
@@ -280,6 +304,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.37;
           break;
         case "District 13":
+          // fetch
           this.districtPopulationInt =  792916;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "David Scott";
@@ -293,6 +318,7 @@ export class OverviewComponent implements OnInit, OnChanges{
           this.districtOther = 0.69;
           break;
         case "District 14":
+          // fetch
           this.districtPopulationInt = 728551;
           this.districtPopulationString = this.districtPopulationInt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           this.districtIncumbent = "Marjorie Taylor Greene";
