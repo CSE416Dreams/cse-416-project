@@ -64,10 +64,12 @@ export class MapControlService {
   }
 
   changePlan(id: number) {
-    this.currentMap_id = id;
-    this.removeCurrentMap();
-    this.addSource(this.currentLayer);
-    this.addLayer(this.currentLayer, this.currentMap_id);
+    if(this.currentMap_id != id) {
+      this.currentMap_id = id;
+      this.removeCurrentMap();
+      this.addSource(this.currentLayer);
+      this.addLayer(this.currentLayer, this.currentMap_id);
+    }
     this.flyTo(this.currentLayer);
   }
   /////////////////////////////////////////////////////////////////////////////////////////
