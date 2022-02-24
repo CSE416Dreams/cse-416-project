@@ -17,3 +17,42 @@
     background: #ee8a65;
 }
 
+
+
+
+button {
+    margin-top: 5px;
+    margin-left: 13px;
+    width: 100px;
+    opacity: 0.6;
+    border-radius: 25px;
+}
+
+.selected {
+    opacity: 1;
+}
+
+.republican-button {
+    background-color: rgb(236, 59, 59);
+}
+
+.democratic-button {
+    background-color: rgb(61, 61, 231);
+}
+
+.other-button {
+    background-color: white;
+}
+
+.return-button {
+    background-color: white;
+    opacity: 1;
+}
+.map-overlay-container {
+    position: absolute;
+    border-color: transparent;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}

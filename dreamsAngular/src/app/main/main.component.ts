@@ -6,13 +6,8 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-// Mapbox API import, jQuery for getJSON
-import mapboxgl from 'mapbox-gl';
 
-//import mississippi from './mississippi_temp';
-//import georgia from './georgia_temp';
-import mississippi from './mississippiDistrict';
-import georgia from './georgiaDistrict';
+import { MapControlService } from '../services/map-control.service';
 
 @Component({
   selector: 'app-main',
@@ -21,192 +16,61 @@ import georgia from './georgiaDistrict';
 })
 export class MainComponent implements AfterViewInit, OnChanges {
   @Input() selectedState: string;
-  map: mapboxgl;
-  currentLayer = [];
 
-  private initMap(): void {
-    mapboxgl.accessToken =
-      'pk.eyJ1IjoiZ2drc3duZHVkMTIiLCJhIjoiY2t6eGNyYzkyMDA4MDJucXYzMXl6ZWRndyJ9.kvBVb9k31YIndDvMmfIhYQ';
+  onCenter: boolean = true;
 
-    this.map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/light-v10',
-      center: [-100, 40],
-      zoom: 3.5,
-    });
+  current_id = 0;
 
-    this.map.addControl(
-      new mapboxgl.NavigationControl({
-        showCompass: false,
-      }),
-      'top-left'
-    );
-
-    this.map.resize();
-  }
-
-  constructor() {}
+  constructor(public mapControlService: MapControlService) {}
 
   ngAfterViewInit(): void {
-    this.initMap();
+    this.mapControlService.initMap();
+    this.mapControlService.getMap().on('mousedown', (e) => {
+      if(this.mapControlService.getCenter() != this.mapControlService.getCenterList()[this.selectedState]) {
+        this.onCenter = false;
+      }
+    });
+
+    // this.map.on('mousedown', (e) => {
+    //   if(this.map.center != this.centers[this.currentLayer]) {
+    //     this.onCenter = false;
+    //   }
+    //   else {
+    //     this.onCenter = true;
+    //   }
+    //   console.log(e);
+    //   // get current center and compare it with the currentLayer center and if not change the boolean
+    // })
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.changeMap(changes['selectedState'].currentValue);
-  }
-
-  changeMap(state: string): void {
-    //let isAtStart = false;
-
-    //const start = [-74.5, 40];
-    const endM = [-85, 32];
-    const endG = [-79, 32];
-    const endDefault = [-100, 40];
-    let target;
-    switch (state) {
-      case 'Mississippi':
-        this.removeCurrentMap();
-        this.currentLayer.push(state);
-        // and now we're at the opposite point
-        target = endM;
-
-        // This process has to be dynamic connected to a service
-        this.map.addSource('Mississippi', {
-          type: 'geojson',
-          data: mississippi,
-        });
-        this.map.addLayer({
-          id: 'Mississippi',
-          type: 'fill',
-          source: 'Mississippi',
-          paint:{
-            'fill-color': ['match', ['get', 'District'], // get the property
-                           1 , 'blue',             
-                           2 , 'red',
-                           3 , 'green',
-                           4 , 'yellow',            
-                           'white']                     
-            ,
-            'fill-opacity': 0.4,
-            'fill-outline-color': 'white'
-          },
-          filter: ['==', '$type', 'Polygon'],
-        });
-        this.map.flyTo({
-          // These options control the ending camera position: centered at
-          // the target, at zoom level 9, and north up.
-          center: target,
-          zoom: 5.8,
-          bearing: 0,
-
-          // These options control the flight curve, making it move
-          // slowly and zoom out almost completely before starting
-          // to pan.
-          speed: 3, // make the flying slow
-          curve: 1, // change the speed at which it zooms out
-
-          // This can be any easing function: it takes a number between
-          // 0 and 1 and returns another number between 0 and 1.
-          easing: (t) => t,
-
-          // this animation is considered essential with respect to prefers-reduced-motion
-          essential: true,
-        });
-        break;
-      // Georgia state show datas
-      case 'Georgia':
-        this.removeCurrentMap();
-        this.currentLayer.push(state);
-        target = endG;
-        // This process has to be dynamic connected to a service
-        this.map.addSource('Georgia', {
-          type: 'geojson',
-          data: georgia,
-        });
-        this.map.addLayer({
-          id: 'Georgia',
-          type: 'fill',
-          source: 'Georgia',
-          paint: {
-            'fill-color': ['match', ['get', 'District'], // get the property
-                           "001" , 'blue',             
-                           "002" , 'red',
-                           "003" , 'green',
-                           "004" , 'yellow',
-                           "005" , 'orange', 
-                           "006" , 'brown', 
-                           "007" , 'purple', 
-                           "008" , 'sky blue', 
-                           "009" , 'crimson', 
-                           "010" , 'wheat', 
-                           "011" , 'cyan', 
-                           "012" , 'lime', 
-                           "013" , 'salmon',
-                           "014" , 'teal',         
-                           'white']                     
-            ,
-            'fill-opacity': 0.4,
-            'fill-outline-color': 'white'
-          },
-          filter: ['==', '$type', 'Polygon'],
-        });
-        this.map.flyTo({
-          // These options control the ending camera position: centered at
-          // the target, at zoom level 9, and north up.
-          center: target,
-          zoom: 5.8,
-          bearing: 0,
-
-          // These options control the flight curve, making it move
-          // slowly and zoom out almost completely before starting
-          // to pan.
-          speed: 3, // make the flying slow
-          curve: 1, // change the speed at which it zooms out
-
-          // This can be any easing function: it takes a number between
-          // 0 and 1 and returns another number between 0 and 1.
-          easing: (t) => t,
-
-          // this animation is considered essential with respect to prefers-reduced-motion
-          essential: true,
-        });
-        break;
-      case 'none':
-        target = endDefault;
-        this.removeCurrentMap();
-
-        this.map.flyTo({
-          // These options control the ending camera position: centered at
-          // the target, at zoom level 9, and north up.
-          center: target,
-          zoom: 3.5,
-          bearing: 0,
-
-          // These options control the flight curve, making it move
-          // slowly and zoom out almost completely before starting
-          // to pan.
-          speed: 3, // make the flying slow
-          curve: 1, // change the speed at which it zooms out
-
-          // This can be any easing function: it takes a number between
-          // 0 and 1 and returns another number between 0 and 1.
-          easing: (t) => t,
-
-          // this animation is considered essential with respect to prefers-reduced-motion
-          essential: true,
-        });
-        break;
-      // default case for removing any maps
-      default:
-
-        break;
+    if(changes['selectedState'].currentValue) {
+      this.mapControlService.changeState(changes['selectedState'].currentValue);
+      this.onCenter = true;
+      this.current_id = 0;
     }
+    
   }
-  removeCurrentMap() {
-    for (let i = 0; i < this.currentLayer.length; i++) {
-      this.map.removeLayer(this.currentLayer[i]);
-      this.map.removeSource(this.currentLayer[i]);
-    }
-    this.currentLayer = [];
+
+  // This method is called when a different plans are selected
+  // id parameter is ::::
+  // 0 for Republican
+  // 1 for Democratic
+  // 2 for Others (I don't know what the 3rd one is)
+  changeMap_Plans(id: number) {
+    this.mapControlService.changePlan(id);
+    this.onCenter = true;
+    this.current_id = id;
   }
+
+  returnTo() {
+    this.onCenter = true;
+    this.mapControlService.returnTo();
+  }
+
+
+
+
+  
 }
+  

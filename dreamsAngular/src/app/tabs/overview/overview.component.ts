@@ -40,7 +40,7 @@ export class OverviewComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      this.selectedDistrict = "none"
+
       switch(changes["selectedState"].currentValue) {
         case "Mississippi":
           this.numOfDistricts = 4;
