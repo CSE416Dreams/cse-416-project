@@ -15,7 +15,7 @@
             </mat-list-item>
         </mat-grid-tile>
     </mat-grid-list>
-    
+
     <mat-divider></mat-divider>
     <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
@@ -23,12 +23,12 @@
                 <div class="status">{{ statusString[status] }}</div>
             </mat-list-item>
             <mat-divider vertical style="height: 40px;"></mat-divider>
-            
+
             <mat-list-item *ngIf="status == 0">
-                Date enacted: 
+                Date enacted:
                 <mat-divider></mat-divider>
             </mat-list-item>
-            
+
             <mat-list-item *ngIf="status != 0">
                 Date proposed:
                 <mat-divider></mat-divider>
@@ -46,14 +46,14 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <mat-list-item>Total Population: 
+            <mat-list-item>Total Population:
                 <div class="status"> {{ totalPopulationString }}</div>
             </mat-list-item>
             <mat-divider vertical style="height: 40px;"></mat-divider>
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <mat-list-item>Polsby-Popper Value: 
+            <mat-list-item>Polsby-Popper Value:
                 <div class="status"> {{ PolsbyPopperValue }}</div>
             </mat-list-item>
         </mat-grid-tile>
@@ -68,14 +68,14 @@
 
     <mat-divider></mat-divider>
     <mat-grid-list cols="4" rowHeight="2:1" *ngIf="selectedState == 'Mississippi'">
-        
+
         <mat-grid-tile style="background-color: red;"></mat-grid-tile>
         <mat-grid-tile style="background-color: red;"></mat-grid-tile>
         <mat-grid-tile style="background-color: red;"></mat-grid-tile>
         <mat-grid-tile style="background-color: blue;"></mat-grid-tile>
       </mat-grid-list>
       <mat-grid-list cols="14" rowHeight="2:1" *ngIf="selectedState == 'Georgia'">
-        
+
         <mat-grid-tile style="background-color: blue;"></mat-grid-tile>
         <mat-grid-tile style="background-color: blue;"></mat-grid-tile>
         <mat-grid-tile style="background-color: blue;"></mat-grid-tile>
@@ -100,10 +100,11 @@
     </mat-grid-list>
 
     <mat-divider></mat-divider>
-    <mat-grid-list cols="1" rowHeight="40px">
+    <mat-grid-list cols="4" rowHeight="40px">
         <mat-grid-tile>
-            <button mat-button [matMenuTriggerFor]="districtMenu"> 
+            <button mat-stroked-button class="district-select-button" mat-button [matMenuTriggerFor]="districtMenu">
                 {{ selectedDistrict == "none" ? "Select a district" : selectedDistrict }}
+                <mat-icon>arrow_drop_down</mat-icon>
             </button>
             <mat-menu #districtMenu="matMenu">
                 <button mat-menu-item *ngFor="let district of districtList" (click)="changeDistrict(district)">
@@ -121,7 +122,7 @@
             </mat-list-item>
             <mat-divider vertical style="height: 40px;"></mat-divider>
         </mat-grid-tile>
-        
+
 
         <mat-grid-tile>
             <mat-list-item>Incumbent:
@@ -152,7 +153,7 @@
             </mat-list-item>
             <mat-divider vertical style="height: 40px;"></mat-divider>
         </mat-grid-tile>
-        
+
 
         <mat-grid-tile>
             <mat-list-item>Black:
@@ -183,7 +184,7 @@
             </mat-list-item>
             <mat-divider vertical style="height: 40px;"></mat-divider>
         </mat-grid-tile>
-        
+
 
         <mat-grid-tile>
             <mat-list-item>Native Hawaiian and Pacific Islander:
