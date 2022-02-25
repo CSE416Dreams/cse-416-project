@@ -9,6 +9,8 @@ import {
 
 import { MapControlService } from '../services/map-control.service';
 
+import { OverviewComponent } from '../tabs/overview/overview.component';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',

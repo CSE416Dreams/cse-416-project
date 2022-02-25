@@ -3,10 +3,12 @@ import mapboxgl from 'mapbox-gl';
 
 // import mississippi2 from '../main/mississippi_temp';
 // import georgia2 from '../main/georgia_temp';
-import mississippi from '../main/mississippiDistrict';
-import georgia from '../main/georgiaDistrict';
-import mississippiCounties from '../main/mississippi_temp';
-import georgiaCounties from '../main/georgia_temp';
+
+import mississippiMain from '../main/mississippiMainDistrict';
+import mississippiCounty from '../main/mississippiCountyMap';
+import georgiaMain from '../main/georgiaMainDistricts';
+import georgiaDemo from '../main/georgiaDemoDistricts';
+import georgiaCounty from '../main/georgiaCountyMap';
 
 
 @Injectable({
@@ -63,16 +65,18 @@ export class MapControlService {
   changeState(state: string) {
     this.removeCurrentMap();
     this.changeCurrentLayer(state);
-    this.addSource(state);
+    this.addSource(state, 0);
     this.addLayer(state, this.currentMap_id);
     this.flyTo(state);
   }
 
   changePlan(id: number) {
-    this.currentMap_id = id;
-    this.removeCurrentMap();
-    this.addSource(this.currentLayer);
-    this.addLayer(this.currentLayer, this.currentMap_id);
+    if(this.currentMap_id != id) {
+      this.currentMap_id = id;
+      this.removeCurrentMap();
+      this.addSource(this.currentLayer, this.currentMap_id);
+      this.addLayer(this.currentLayer, this.currentMap_id);
+    }
     this.flyTo(this.currentLayer);
   }
   /////////////////////////////////////////////////////////////////////////////////////////
@@ -83,19 +87,47 @@ export class MapControlService {
   // This will have to change to,,,, 
   // 1. fetch necessary geojson accordingly 
   // 2. accept a state and a status and just call addSource to this.map
-  addSource(state: string) {
+  addSource(state: string, ID: number) {
     switch(state) {
       case "Mississippi":
-        this.map.addSource(state, {
-           type: 'geojson',
-           data: mississippi,
-        });
+        if(ID == 0) {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: mississippiMain,
+          });
+        }
+        else if(ID == 1) {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: mississippiMain,
+          });
+        }
+        else {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: mississippiCounty,
+          });
+        }
         break;
       case "Georgia":
-        this.map.addSource(state, {
-          type: 'geojson',
-          data: georgia,
-      });
+        if(ID == 0) {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: georgiaMain,
+          });
+        }
+        else if(ID == 1) {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: georgiaDemo,
+          });
+        }
+        else {
+          this.map.addSource(state, {
+            type: 'geojson',
+            data: georgiaCounty,
+          });
+        }
         break;
       case "none":
       default:
@@ -108,10 +140,10 @@ export class MapControlService {
       case "Mississippi":
         let countiesInMississippiDistricts = [];
 
-        countiesInMississippiDistricts[1] = mississippiCounties.features.filter(x => x.properties['Districting 1']==='1').map(x => x.properties.NAME);
-        countiesInMississippiDistricts[2] = mississippiCounties.features.filter(x => x.properties['Districting 1']==='2').map(x => x.properties.NAME);
-        countiesInMississippiDistricts[3] = mississippiCounties.features.filter(x => x.properties['Districting 1']==='3').map(x => x.properties.NAME);
-        countiesInMississippiDistricts[4] = mississippiCounties.features.filter(x => x.properties['Districting 1']==='4').map(x => x.properties.NAME);
+        countiesInMississippiDistricts[1] = mississippiCounty.features.filter(x => x.properties['Districting 1']==='1').map(x => x.properties.NAME);
+        countiesInMississippiDistricts[2] = mississippiCounty.features.filter(x => x.properties['Districting 1']==='2').map(x => x.properties.NAME);
+        countiesInMississippiDistricts[3] = mississippiCounty.features.filter(x => x.properties['Districting 1']==='3').map(x => x.properties.NAME);
+        countiesInMississippiDistricts[4] = mississippiCounty.features.filter(x => x.properties['Districting 1']==='4').map(x => x.properties.NAME);
     
         this.map.on('load', () => {
           this.map.addSource('places', {
