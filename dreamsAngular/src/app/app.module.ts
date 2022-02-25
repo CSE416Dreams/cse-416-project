@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -22,6 +21,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+  
 
 import { MainComponent } from './main/main.component';
 import { TabsComponent } from './tabs/tabs.component';
@@ -30,6 +34,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { SidenavServiceService } from './services/sidenav-service.service';
 import { OverviewComponent } from './tabs/overview/overview.component';
 import { GraphsComponent } from './tabs/graphs/graphs.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,8 @@ import { GraphsComponent } from './tabs/graphs/graphs.component';
     MainContentComponent,
     OverviewComponent,
     GraphsComponent,
-    
+    DialogComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,10 @@ import { GraphsComponent } from './tabs/graphs/graphs.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDividerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [SidenavServiceService],
   bootstrap: [AppComponent]

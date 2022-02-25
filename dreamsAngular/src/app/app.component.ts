@@ -1,6 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SidenavServiceService } from './services/sidenav-service.service';
 import {MatAccordion} from '@angular/material/expansion';
