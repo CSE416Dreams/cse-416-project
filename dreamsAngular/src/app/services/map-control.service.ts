@@ -5,6 +5,9 @@ import mapboxgl from 'mapbox-gl';
 // import georgia2 from '../main/georgia_temp';
 import mississippi from '../main/mississippiDistrict';
 import georgia from '../main/georgiaDistrict';
+import mississippiCounties from '../main/mississippi_temp';
+import georgiaCounties from '../main/georgia_temp';
+
 
 @Injectable({
   providedIn: 'root'
@@ -49,13 +52,15 @@ export class MapControlService {
       }),
       'bottom-left'
     );
+    
     this.map.resize();
+    this.addDistrictPoints('Mississippi');
+
   }
 
   // These two methods will be eventually called from each component 
   ////////////////////////////////////////////////////////////////////////////////////////
   changeState(state: string) {
-    
     this.removeCurrentMap();
     this.changeCurrentLayer(state);
     this.addSource(state);
@@ -98,10 +103,124 @@ export class MapControlService {
     }
   }
 
+  addDistrictPoints(state:string){
+    switch(state){
+      case "Mississippi":
+        let countiesInMississippiDistricts = [];
+
+        countiesInMississippiDistricts[1] = mississippiCounties.features.filter(x => x.properties['Districting 1']==='1').map(x => x.properties.NAME);
+        countiesInMississippiDistricts[2] = mississippiCounties.features.filter(x => x.properties['Districting 1']==='2').map(x => x.properties.NAME);
+        countiesInMississippiDistricts[3] = mississippiCounties.features.filter(x => x.properties['Districting 1']==='3').map(x => x.properties.NAME);
+        countiesInMississippiDistricts[4] = mississippiCounties.features.filter(x => x.properties['Districting 1']==='4').map(x => x.properties.NAME);
+    
+        this.map.on('load', () => {
+          this.map.addSource('places', {
+          'type': 'geojson',
+          'data': {
+          'type': 'FeatureCollection',
+          'features': [
+          {
+          'type': 'Feature',
+          'properties': {
+          'description':
+          '<strong>District 1</strong><p>'+countiesInMississippiDistricts[1].map(x => ' '+x).toString()+'</p>'
+          },
+          'geometry': {
+          'type': 'Point',
+          'coordinates': [-88.701373, 34.153863]
+          }
+          },
+          {
+          'type': 'Feature',
+          'properties': {
+          'description':
+          '<strong>District 2</strong><p>'+countiesInMississippiDistricts[2].map(x => ' '+x).toString()+'</p>'
+          },
+          'geometry': {
+          'type': 'Point',
+          'coordinates': [-90.454859, 32.864497]
+          }
+          },
+          {
+          'type': 'Feature',
+          'properties': {
+          'description':
+          '<strong>District 3</strong><p>'+countiesInMississippiDistricts[3].map(x => ' '+x).toString()+'</p>'
+          },
+          'geometry': {
+          'type': 'Point',
+          'coordinates': [-88.704086, 32.346999]
+          }
+          },
+          {
+          'type': 'Feature',
+          'properties': {
+          'description':
+          '<strong>District 4</strong><p>'+countiesInMississippiDistricts[4].map(x => ' '+x).toString()+'</p>'
+          },
+          'geometry': {
+          'type': 'Point',
+          'coordinates': [-88.799957, 30.744000]
+          }
+          },
+          ]
+          }
+          });
+          // Add a layer showing the places.
+          this.map.addLayer({
+          'id': 'places',
+          'type': 'circle',
+          'source': 'places',
+          'paint': {
+          'circle-color': '#4264fb',
+          'circle-radius': 6,
+          'circle-stroke-width': 2,
+          'circle-stroke-color': '#ffffff'
+          }
+          });
+           
+          // Create a popup, but don't add it to the map yet.
+          const popup = new mapboxgl.Popup({
+    
+          closeButton: true,
+          closeOnClick: true
+          }).addClassName('popup');
+           
+          this.map.on('mouseenter', 'places', (e) => {
+          // Change the cursor style as a UI indicator.
+          this.map.getCanvas().style.cursor = 'pointer';
+           
+          // Copy coordinates array.
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const description = e.features[0].properties.description;
+           
+          // Ensure that if the map is zoomed out such that multiple
+          // copies of the feature are visible, the popup appears
+          // over the copy being pointed to.
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+           
+          // Populate the popup and set its coordinates
+          // based on the feature found.
+          popup.setLngLat(coordinates).setHTML(description).addTo(this.map);
+          });
+           
+          this.map.on('mouseleave', 'places', () => {
+          this.map.getCanvas().style.cursor = '';
+          popup.remove();
+          });
+          });
+          break;
+      }
+
+  }
   //
   addLayer(state: string, id: number) {
+    
     switch(state) {
       case "Mississippi":
+        //for each district plan district number, make an array of counties in that district. if there are n districts, there will be an array of n arrays
         this.map.addLayer({
           id: state,
           type: 'fill',
@@ -119,6 +238,9 @@ export class MapControlService {
           },
           filter: ['==', '$type', 'Polygon'],
         });
+         // Create a popup, but don't add it to the map yet.
+     
+        console.log(this.map)
         break;
       case "Georgia":
         this.map.addLayer({
