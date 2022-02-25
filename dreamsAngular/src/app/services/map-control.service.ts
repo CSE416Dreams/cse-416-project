@@ -252,57 +252,84 @@ export class MapControlService {
     
     switch(state) {
       case "Mississippi":
-        //for each district plan district number, make an array of counties in that district. if there are n districts, there will be an array of n arrays
-        this.map.addLayer({
-          id: state,
-          type: 'fill',
-          source: state,
-          paint:{
-            'fill-color': ['match', ['get', 'District'], // get the property
-                           id == 0 ? 1 : 4 , 'blue',             
-                           id == 0 ? 2 : 1 , 'red',
-                           id == 0 ? 3 : 2 , 'green',
-                           id == 0 ? 4 : 3, 'yellow',            
-                           'white']                     
-            ,
-            'fill-opacity': 0.4,
-            'fill-outline-color': 'white'
-          },
-          filter: ['==', '$type', 'Polygon'],
-        });
-         // Create a popup, but don't add it to the map yet.
-     
-        console.log(this.map)
+        if(id == 0 || id == 1) {
+          //for each district plan district number, make an array of counties in that district. if there are n districts, there will be an array of n arrays
+          this.map.addLayer({
+            id: state,
+            type: 'fill',
+            source: state,
+            paint:{
+              'fill-color': ['match', ['get', 'District'], // get the property
+                            id == 0 ? 1 : 4 , 'blue',             
+                            id == 0 ? 2 : 1 , 'red',
+                            id == 0 ? 3 : 2 , 'green',
+                            id == 0 ? 4 : 3, 'yellow',            
+                            'white']                     
+              ,
+              'fill-opacity': 0.4,
+              'fill-outline-color': 'white'
+            },
+            filter: ['==', '$type', 'Polygon'],
+          });
+          // Create a popup, but don't add it to the map yet.
+          console.log(this.map)
+        }
+        else {
+          this.map.addLayer({
+            id: state,
+            type: 'fill',
+            source: state,
+            paint:{
+              'fill-opacity': 0.4,
+              'fill-outline-color': 'white'
+            },
+            filter: ['==', '$type', 'Polygon'],
+          });
+        }
         break;
       case "Georgia":
-        this.map.addLayer({
-                id: state,
-                type: 'fill',
-                source: state,
-                paint: {
-                  'fill-color': ['match', ['get', 'District'], // get the property
-                                 id == 0 ? "001" : "014", 'blue',             
-                                 id == 0 ? "002" : "013", 'red',
-                                 id == 0 ? "003" : "012", 'green',
-                                 id == 0 ? "004" : "011", 'yellow',
-                                 id == 0 ? "005" : "010", 'orange', 
-                                 id == 0 ? "006" : "009", 'brown', 
-                                 id == 0 ? "007" : "008", 'purple', 
-                                 id == 0 ? "008" : "007", 'sky blue', 
-                                 id == 0 ? "009" : "006", 'crimson', 
-                                 id == 0 ? "010" : "005", 'wheat', 
-                                 id == 0 ? "011" : "004", 'cyan', 
-                                 id == 0 ? "012" : "003", 'lime', 
-                                 id == 0 ? "013" : "002", 'salmon',
-                                 id == 0 ? "014" : "001", 'teal',         
-                                 'white']                     
-                  ,
-                  'fill-opacity': 0.4,
-                  'fill-outline-color': 'white'
-                },
-                filter: ['==', '$type', 'Polygon'],
-              });
-        break;
+        if(id == 0 || id == 1) {
+          this.map.addLayer({
+            id: state,
+            type: 'fill',
+            source: state,
+            paint: {
+              'fill-color': ['match', ['get', 'District'], // get the property
+                              id == 0 ? "001" : "014", 'blue',             
+                              id == 0 ? "002" : "013", 'red',
+                              id == 0 ? "003" : "012", 'green',
+                              id == 0 ? "004" : "011", 'yellow',
+                              id == 0 ? "005" : "010", 'orange', 
+                              id == 0 ? "006" : "009", 'brown', 
+                              id == 0 ? "007" : "008", 'purple', 
+                              id == 0 ? "008" : "007", 'sky blue', 
+                              id == 0 ? "009" : "006", 'crimson', 
+                              id == 0 ? "010" : "005", 'wheat', 
+                              id == 0 ? "011" : "004", 'cyan', 
+                              id == 0 ? "012" : "003", 'lime', 
+                              id == 0 ? "013" : "002", 'salmon',
+                              id == 0 ? "014" : "001", 'teal',         
+                              'white']                     
+              ,
+              'fill-opacity': 0.4,
+              'fill-outline-color': 'white'
+            },
+              filter: ['==', '$type', 'Polygon'],
+            });
+          }
+          else {
+            this.map.addLayer({
+              id: state,
+              type: 'fill',
+              source: state,
+              paint:{
+                'fill-opacity': 0.4,
+                'fill-outline-color': 'white'
+              },
+              filter: ['==', '$type', 'Polygon'],
+            });
+          }
+          break;
       case "none":
       default: break;
     }

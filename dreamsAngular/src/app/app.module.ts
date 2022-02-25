@@ -35,7 +35,7 @@ import { SidenavServiceService } from './services/sidenav-service.service';
 import { OverviewComponent } from './tabs/overview/overview.component';
 import { GraphsComponent } from './tabs/graphs/graphs.component';
 import { DialogComponent } from './dialog/dialog.component';
-
+import { AdditionalDistrictsComponent } from './tabs/additional-districts/additional-districts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,7 @@ import { DialogComponent } from './dialog/dialog.component';
     OverviewComponent,
     GraphsComponent,
     DialogComponent,
-
+    AdditionalDistrictsComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +73,7 @@ import { DialogComponent } from './dialog/dialog.component';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [SidenavServiceService],
   bootstrap: [AppComponent]
