@@ -13,8 +13,8 @@
 
 <div class="map-overlay-container" *ngIf="selectedState != 'none' && selectedState != 'Select a state'">
     <button mat-raised-button [ngClass]="current_id == 0 ? 'republican-button selected': 'republican-button'" (click)="changeMap_Plans(0)">Republican</button>
-    <button mat-raised-button [ngClass]="current_id == 1 ? 'democratic-button selected': 'democratic-button'" (click)="changeMap_Plans(1)">Democratic</button>
-    <button mat-raised-button [ngClass]="current_id == 2 ? 'other-button selected': 'other-button'" (click)="changeMap_Plans(2)">Other</button>
+    <button mat-raised-button [ngClass]="current_id == 1 ? 'democratic-button selected': 'democratic-button'" (click)="changeMap_Plans(1)">Democrat</button>
+    <button mat-raised-button [ngClass]="current_id == 2 ? 'other-button selected': 'other-button'" (click)="changeMap_Plans(2)">County</button>
 
     <button mat-raised-button class="return-button" *ngIf="!onCenter" (click)="returnTo()">Return</button>
 </div>

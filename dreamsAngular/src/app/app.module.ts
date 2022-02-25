@@ -30,6 +30,8 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { SidenavServiceService } from './services/sidenav-service.service';
 import { OverviewComponent } from './tabs/overview/overview.component';
 import { GraphsComponent } from './tabs/graphs/graphs.component';
+import {MatCardModule} from '@angular/material/card';
+import { AdditionalDistrictsComponent } from './tabs/additional-districts/additional-districts.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { GraphsComponent } from './tabs/graphs/graphs.component';
     MainContentComponent,
     OverviewComponent,
     GraphsComponent,
+    AdditionalDistrictsComponent,
     
   ],
   imports: [
@@ -63,7 +66,8 @@ import { GraphsComponent } from './tabs/graphs/graphs.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDividerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [SidenavServiceService],
   bootstrap: [AppComponent]
