@@ -13,7 +13,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $frontend_dreams-primary: mat.define-palette(mat.$grey-palette, 900);
-$frontend_dreams-accent: mat.define-palette(mat.$grey-palette, 700);
+$frontend_dreams-accent: mat.define-palette(mat.$red-palette, 700);
 
 // The warn palette is optional (defaults to red).
 $frontend_dreams-warn: mat.define-palette(mat.$red-palette);
