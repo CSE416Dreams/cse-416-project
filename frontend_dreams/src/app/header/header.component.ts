@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -15,6 +14,9 @@ export class HeaderComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ["None", "Mississippi", "Georgia"]
   filteredOptions: Observable<string[]>;
+
+  @Input() selectedState: string;
+  @Input() changeState: (args: any) => void;
 
 
   constructor(public stateService: StateService, private _snackBar: MatSnackBar) { }
@@ -32,6 +34,12 @@ export class HeaderComponent implements OnInit {
   }
 
 
+  reset() {
+    this.myControl.setValue('');
+    this.changeState("None");
+  }
+
+
   setState() {
     if(!this.options.includes(this.myControl.value)) {
       this._snackBar.open("Please select a valid state!", 'Dismiss', {
@@ -39,6 +47,8 @@ export class HeaderComponent implements OnInit {
       });
       return;
     }
-    this.stateService.setState(this.myControl.value);
+
+    if(this.myControl.value == "None") { this.reset(); return;}
+    this.changeState(this.myControl.value);
   }
 }

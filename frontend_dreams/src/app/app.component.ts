@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StateService } from './services/state.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  selectedState = "None";
   title = 'frontend_dreams';
+
+  constructor(public stateService: StateService) {
+
+  }
+
+  changeState = (string: string) => {
+    this.selectedState = string;
+    this.stateService.setState(string);
+  }
 }

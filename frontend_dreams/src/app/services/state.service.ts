@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input, Output } from '@angular/core';
 import { MapService } from './map.service';
 import { SidenavService } from './sidenav.service';
 
@@ -7,10 +7,15 @@ import { SidenavService } from './sidenav.service';
 })
 export class StateService {
   selectedState: string;
+
   constructor(
     public sidenavService: SidenavService,
     public mapService: MapService
   ) {}
+
+  getSelectedState() {
+    return this.selectedState;
+  }
 
   setState(state: string) {
     this.selectedState = state;
@@ -25,8 +30,8 @@ export class StateService {
 
   // resetting everything to None settings (home)
   reset() {
-    this.selectedState = 'None';
     this.sidenavService.closeMain();
+    this.mapService.selectNone();
     // add methods that will reset everything
     return;
   }
@@ -37,5 +42,6 @@ export class StateService {
 
   moveTo(state: string) {
     this.sidenavService.openMain();
+    this.mapService.moveTo(state, 0);
   }
 }

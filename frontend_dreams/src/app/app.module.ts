@@ -14,7 +14,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 // components and services imports
@@ -22,6 +26,9 @@ import { HeaderComponent } from './header/header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MapComponent } from './main-content/map/map.component';
 import { MainTabComponent } from './main-tab/main-tab.component';
+import { OverviewComponent } from './main-tab/overview/overview.component';
+import { DistrictPlansComponent } from './main-tab/district-plans/district-plans.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +36,9 @@ import { MainTabComponent } from './main-tab/main-tab.component';
     HeaderComponent,
     MainContentComponent,
     MapComponent,
-    MainTabComponent
+    MainTabComponent,
+    OverviewComponent,
+    DistrictPlansComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +54,11 @@ import { MainTabComponent } from './main-tab/main-tab.component';
     MatDialogModule,
     MatSidenavModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule,
+    MatListModule,
+    MatDividerModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

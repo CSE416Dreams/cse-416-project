@@ -1,10 +1,10 @@
 
 <mat-drawer-container class="container">
   <mat-drawer #drawer class="drawer-content" mode="side" position="end">
-    <app-main-tab></app-main-tab>
+    <app-main-tab [selectedState]="selectedState"></app-main-tab>
   </mat-drawer>
 
-  <app-map></app-map>
+  <app-map [selectedState]="selectedState"></app-map>
 
 
 </mat-drawer-container>

@@ -1,1 +1,12 @@
-<p>main-tab works!</p>
+<!-- <p>{{selectedState}}</p> -->
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Overview">
+    <!-- Some other component for content -->
+    <app-overview [selectedState]="selectedState"></app-overview>
+  </mat-tab>
+
+  <mat-tab label="District Plans">
+    <!-- Some other component for content -->
+    <app-district-plans [selectedState]="selectedState"></app-district-plans>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,11 @@
+.container {
+  height: 700px;
+}
+
+.drawer {
+  width: 20%;
+}
+
+.content {
+  width: 80%;
+}

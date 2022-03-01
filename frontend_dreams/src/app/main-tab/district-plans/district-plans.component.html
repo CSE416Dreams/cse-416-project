@@ -1,0 +1,17 @@
+
+<mat-drawer-container class="container" autosize>
+  <mat-drawer class="drawer" #drawer mode="side" opened>
+    <!-- compare and toggle button -->
+    <button mat-raised-button>Compare</button>
+    <!-- List compoment  -->
+  </mat-drawer>
+  <mat-drawer-content class="content">
+    <button mat-button (click)="drawer.toggle()">
+      <mat-icon *ngIf="drawer.opened">keyboard_arrow_left</mat-icon>
+      <mat-icon *ngIf="!drawer.opened">keyboard_arrow_right</mat-icon>
+    </button>
+
+    <!-- another tab component -->
+  </mat-drawer-content>
+</mat-drawer-container>
+

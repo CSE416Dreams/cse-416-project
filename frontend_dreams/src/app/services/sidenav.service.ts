@@ -6,6 +6,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 })
 export class SidenavService {
   private mainSidenav: MatDrawer;
+  private districtSidenav: MatDrawer;
 
   constructor() { }
 
@@ -24,4 +25,24 @@ export class SidenavService {
   public toggleMain() {
     return this.mainSidenav.toggle();
   }
+
+
+
+  //////////////////////////////////////////////////////////
+  public setDistrictSidenav(sidenav: MatDrawer) {
+    this.districtSidenav = sidenav;
+  }
+
+  public openDistrict() {
+    return this.districtSidenav.open();
+  }
+
+  public closeDistrict() {
+    return this.districtSidenav.close();
+  }
+
+  public toggleDistrict() {
+    return this.districtSidenav.toggle();
+  }
+
 }
