@@ -9,6 +9,8 @@ import { StateService } from '../services/state.service';
 })
 export class MainTabComponent implements OnInit, OnChanges {
   @Input() selectedState;
+  @Input() selectedId;
+  @Input() changeId: (args: any) => void;
   constructor() { }
 
   ngOnInit(): void {

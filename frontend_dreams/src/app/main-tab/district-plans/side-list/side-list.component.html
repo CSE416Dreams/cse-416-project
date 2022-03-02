@@ -1,0 +1,6 @@
+<mat-selection-list [multiple]="false">
+
+    <mat-list-option *ngFor="let option of options" [value]="option" (click)="changeId(option)">
+        {{ option }}
+    </mat-list-option>
+</mat-selection-list>

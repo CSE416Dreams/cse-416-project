@@ -12,8 +12,8 @@ export class MapService {
   mainMap: mapboxgl;
   centers = {
     None: [-100, 40],
-    Mississippi: [-82, 32],
-    Georgia: [-75, 32],
+    Mississippi: [-84.5, 32],
+    Georgia: [-78, 32],
   };
 
   //
@@ -144,6 +144,10 @@ export class MapService {
 
   getCenter() {
     return this.mainMap.center;
+  }
+
+  setId(value: number) {
+    this.currentId = value;
   }
 
   getMainMap() {

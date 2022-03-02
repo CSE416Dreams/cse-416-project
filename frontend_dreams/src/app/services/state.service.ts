@@ -7,6 +7,7 @@ import { SidenavService } from './sidenav.service';
 })
 export class StateService {
   selectedState: string;
+  selectedId: number;
 
   constructor(
     public sidenavService: SidenavService,
@@ -15,6 +16,11 @@ export class StateService {
 
   getSelectedState() {
     return this.selectedState;
+  }
+
+  setId(value: number) {
+    this.selectedId = value;
+    this.mapService.setId(value);
   }
 
   setState(state: string) {

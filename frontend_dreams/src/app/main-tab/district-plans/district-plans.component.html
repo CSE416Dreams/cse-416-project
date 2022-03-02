@@ -1,9 +1,13 @@
 
 <mat-drawer-container class="container" autosize>
   <mat-drawer class="drawer" #drawer mode="side" opened>
-    <!-- compare and toggle button -->
-    <button mat-raised-button>Compare</button>
+
+    <button mat-raised-button class="compare-button">Compare</button>
+    <mat-divider></mat-divider>
+
     <!-- List compoment  -->
+    <app-side-list [selectedState]="selectedState" [selectedId]="selectedId" [changeId]="changeId"></app-side-list>
+
   </mat-drawer>
   <mat-drawer-content class="content">
     <button mat-button (click)="drawer.toggle()">
@@ -11,6 +15,8 @@
       <mat-icon *ngIf="!drawer.opened">keyboard_arrow_right</mat-icon>
     </button>
 
+
+    <app-plans-content [selectedState]="selectedState" [selectedId]="selectedId"></app-plans-content>
     <!-- another tab component -->
   </mat-drawer-content>
 </mat-drawer-container>

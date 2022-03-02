@@ -9,6 +9,8 @@ import { SidenavService } from 'src/app/services/sidenav.service';
 })
 export class DistrictPlansComponent implements OnInit {
   @Input() selectedState: string;
+  @Input() selectedId: number;
+  @Input() changeId: (args: any) => void;
   @ViewChild('drawer', { static: true }) public sidenav: MatDrawer;
 
   constructor(public sidenavService: SidenavService) { }

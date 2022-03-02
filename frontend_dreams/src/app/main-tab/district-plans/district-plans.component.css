@@ -1,5 +1,5 @@
 .container {
-  height: 700px;
+  height: 500px;
 }
 
 .drawer {
@@ -9,3 +9,10 @@
 .content {
   width: 80%;
 }
+
+.compare-button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20%;
+}
+

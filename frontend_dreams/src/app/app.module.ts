@@ -28,6 +28,8 @@ import { MapComponent } from './main-content/map/map.component';
 import { MainTabComponent } from './main-tab/main-tab.component';
 import { OverviewComponent } from './main-tab/overview/overview.component';
 import { DistrictPlansComponent } from './main-tab/district-plans/district-plans.component';
+import { SideListComponent } from './main-tab/district-plans/side-list/side-list.component';
+import { PlansContentComponent } from './main-tab/district-plans/plans-content/plans-content.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { DistrictPlansComponent } from './main-tab/district-plans/district-plans
     MapComponent,
     MainTabComponent,
     OverviewComponent,
-    DistrictPlansComponent
+    DistrictPlansComponent,
+    SideListComponent,
+    PlansContentComponent
   ],
   imports: [
     BrowserModule,

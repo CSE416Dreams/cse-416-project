@@ -41,6 +41,8 @@ export class HeaderComponent implements OnInit {
 
 
   setState() {
+
+    // This is a bit buggy
     if(!this.options.includes(this.myControl.value)) {
       this._snackBar.open("Please select a valid state!", 'Dismiss', {
         duration: 3000
