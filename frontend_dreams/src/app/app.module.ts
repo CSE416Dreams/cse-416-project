@@ -30,6 +30,7 @@ import { OverviewComponent } from './main-tab/overview/overview.component';
 import { DistrictPlansComponent } from './main-tab/district-plans/district-plans.component';
 import { SideListComponent } from './main-tab/district-plans/side-list/side-list.component';
 import { PlansContentComponent } from './main-tab/district-plans/plans-content/plans-content.component';
+import { ListDialogComponent } from './main-tab/district-plans/list-dialog/list-dialog.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { PlansContentComponent } from './main-tab/district-plans/plans-content/p
     OverviewComponent,
     DistrictPlansComponent,
     SideListComponent,
-    PlansContentComponent
+    PlansContentComponent,
+    ListDialogComponent
   ],
   imports: [
     BrowserModule,

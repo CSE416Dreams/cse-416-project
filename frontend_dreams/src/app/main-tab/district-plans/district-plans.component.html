@@ -1,23 +1,28 @@
-
 <mat-drawer-container class="container" autosize>
   <mat-drawer class="drawer" #drawer mode="side" opened>
 
-    <button mat-raised-button class="compare-button">Compare</button>
+    <button mat-raised-button class="compare-button" (click)="openDialog()">Compare</button>
     <mat-divider></mat-divider>
 
     <!-- List compoment  -->
-    <app-side-list [selectedState]="selectedState" [selectedId]="selectedId" [changeId]="changeId"></app-side-list>
+    <app-side-list [selectedState]="selectedState" [selectedId]="selectedId" [changeId]="changeId" [options]="options"></app-side-list>
 
   </mat-drawer>
   <mat-drawer-content class="content">
-    <button mat-button (click)="drawer.toggle()">
-      <mat-icon *ngIf="drawer.opened">keyboard_arrow_left</mat-icon>
-      <mat-icon *ngIf="!drawer.opened">keyboard_arrow_right</mat-icon>
-    </button>
+    <div style="height: 3rem;">
+      <!-- <button mat-button class="toggle-button" (click)="drawer.toggle()"> {{ drawer.opened ? "Collapse" : "Expand"}}
+        
+      </button> -->
 
+      <div *ngIf="selectedId == 0">
+        <!-- render general info -->
+        <!-- Some component that can direct the users to choose OR show dominant party by default -->
+      </div>
+      <div *ngIf="selectedId != 0">
+        <app-plans-content [selectedState]="selectedState" [selectedId]="selectedId"></app-plans-content>
+      </div>
+    </div>
 
-    <app-plans-content [selectedState]="selectedState" [selectedId]="selectedId"></app-plans-content>
     <!-- another tab component -->
   </mat-drawer-content>
 </mat-drawer-container>
-

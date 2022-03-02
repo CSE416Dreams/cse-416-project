@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { MatSelectionList } from '@angular/material/list';
 import { StateService } from 'src/app/services/state.service';
 
 @Component({
@@ -10,9 +11,11 @@ export class SideListComponent implements OnInit, OnChanges {
   @Input() selectedState: string;
   @Input() selectedId: number;
   @Input() changeId: (args: any) => void;
-  // this will be fetched onChange of state variable
-  // 0 is not going to be one of the options as it is the county info (default which will be when "None" is selected)
-  options = [1, 2, 3, 4, 5, 6, 7, 8];
+  @Input() options;
+
+  @ViewChild('hello') optionList: MatSelectionList;
+
+  
   constructor(public stateService: StateService) { }
 
   ngOnInit(): void {
@@ -20,8 +23,12 @@ export class SideListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    if(changes['selectedState'] && changes['selectedId'] && this.optionList) {
+      this.optionList.deselectAll();
+    }
       // fetch arrodingly to the changes
   }
+
 
 
   

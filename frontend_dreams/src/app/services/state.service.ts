@@ -25,6 +25,7 @@ export class StateService {
 
   setState(state: string) {
     this.selectedState = state;
+    this.selectedId = 0;
     if (state == 'None') {
       // Dump all current data and go back to the US map with out anything
       this.reset();

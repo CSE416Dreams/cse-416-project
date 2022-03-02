@@ -3,16 +3,18 @@
 }
 
 .drawer {
-  width: 20%;
+  width: 15%;
 }
 
 .content {
-  width: 80%;
+  width: 85%;
+  border-color: black;
 }
 
 .compare-button {
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-left: 20%;
+  margin-left: 12.5%;
+  background-color: cadetblue;
 }
 
