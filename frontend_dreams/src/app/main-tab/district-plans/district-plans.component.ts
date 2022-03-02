@@ -33,6 +33,8 @@ export class DistrictPlansComponent implements OnInit {
       disableClose: true,
       data: {
         options: this.options,
+        selectedState: this.selectedState,
+        
       }
 
     });
