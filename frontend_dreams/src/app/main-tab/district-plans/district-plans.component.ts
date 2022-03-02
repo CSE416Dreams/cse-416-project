@@ -17,7 +17,7 @@ export class DistrictPlansComponent implements OnInit {
 
   // this will be fetched onChange of state variable
   // 0 is not going to be one of the options as it is the county info (default which will be when "None" is selected)
-  options = ["Republican", "Democratic", "District 1", "District 2", "District 3", "District 4", "District 5", "District 6"];
+  options = ["Republican", "Democratic", "Generated 1", "Generated 2", "Generated 3", "Generated 4", "Generated 5", "Generated 6", "Generated 7", "Generated 8", "Generated 9", "Generated 10"];
 
   constructor(public sidenavService: SidenavService, public dialog: MatDialog) { }
 
