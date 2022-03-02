@@ -34,7 +34,8 @@ export class DistrictPlansComponent implements OnInit {
       data: {
         options: this.options,
         selectedState: this.selectedState,
-        
+        dialog: this.dialog
+    
       }
 
     });

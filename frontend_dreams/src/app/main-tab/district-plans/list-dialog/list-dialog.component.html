@@ -1,10 +1,23 @@
+<div *ngIf="!compareMode">
+    <h1 mat-dialog-title>Select plans that you want to compare</h1>
+    <div mat-dialog-content class="dialog-content">
+        This is where checkboxes go in
+    </div>
 
-<h1 mat-dialog-title>Select plans that you want to compare</h1>
-<div mat-dialog-content>
-    This is where checkboxes go in
+    <div mat-dialog-actions align="end">
+        <button mat-button (click)="compare()">Compare</button>
+        <button mat-button mat-dialog-close (click)="close()">Close</button>
+    </div>
 </div>
 
-<div mat-dialog-actions>
-    <button mat-button>Compare</button>
-    <button mat-button mat-dialog-close>Close</button>
+
+<div *ngIf="compareMode">
+
+    <!-- Two map component -->
+
+    <div mat-dialog-actions align="end">
+        <button mat-button (click)="goBack()">Back</button>
+        <button mat-button mat-dialog-close (click)="close()">Close</button>
+    </div>
+
 </div>
