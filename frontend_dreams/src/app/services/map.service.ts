@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
+import { async } from 'rxjs';
 
 // Temporary Datas import
-import mississippiCounty from '../main-content/map/TempData/mississippiCountyMap';
 import georgiaCounty from '../main-content/map/TempData/georgiaCountyMap';
-
+import mississippiCountyMap from '../main-content/map/TempData/mississippiCountyMap';
 @Injectable({
   providedIn: 'root',
 })
@@ -17,14 +17,18 @@ export class MapService {
   };
 
   //
+  currentLayer: string;
   currentState: string;
   // 0 Basic County
   // 1 Dominant Party
   // 2 Non-Dominant Party
   // all other numbers from Our pool
   currentId: number = 0;
+  currentMap_id: number = 0;
 
   constructor() {}
+
+    
 
   initMainMap() {
     this.currentState = 'None';
@@ -57,19 +61,25 @@ export class MapService {
     this.currentState = 'None';
     this.currentId = 0;
     // Remove all the layers and add the default here
-
     this.flyTo(this.currentState)
   }
 
 
-  moveTo(state: string, id: number) {
-    this.currentState = state;
-    this.currentId = id;
-
+  async moveTo(state: string, id: number) {
     // addLayer - id checking
     // addSource - id checking
     // FlyTo
+    console.log("t1");
+    this.removeCurrentMap();
+    console.log("t2");
+    this.changeCurrentLayer(state);
+    console.log("t3");
+    await this.addSource(state, 0);
+    console.log("t4");
+    this.addLayer(state, this.currentMap_id);
+    console.log("t5");
     this.flyTo(state);
+    console.log("t6");
   }
 
 
@@ -78,39 +88,156 @@ export class MapService {
   }
 
 
-
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+changeCurrentLayer(state: string) {
+  this.currentLayer = state;
+}
   addLayer(state: string, id: number) {
-    switch (state) {
-      case 'Mississippi':
+    switch(state) {
+      case "Mississippi":
+        if(id == 0 || id == 1) {
+          console.log(state);
+          //for each district plan district number, make an array of counties in that district. if there are n districts, there will be an array of n arrays
+          console.log(this.mainMap);
+          this.mainMap.addLayer({
+            id: state,
+            type: 'fill',
+            source: state,
+            paint:{
+              'fill-color': ['match', ['get', 'District'], // get the property
+                            id == 0 ? 1 : 4 , 'blue',             
+                            id == 0 ? 2 : 1 , 'red',
+                            id == 0 ? 3 : 2 , 'green',
+                            id == 0 ? 4 : 3, 'yellow',            
+                            'green']                     
+              ,
+              'fill-opacity': 0.4,
+              'fill-outline-color': 'white'
+            },
+            filter: ['==', '$type', 'Polygon'],
+          });
+          // Create a popup, but don't add it to the map yet.
+          console.log(this.mainMap)
+        }
+        else {
+          this.mainMap.addLayer({
+            id: state,
+            type: 'fill',
+            source: state,
+            paint:{
+              'fill-opacity': 0.4,
+              'fill-outline-color': 'white'
+            },
+            filter: ['==', '$type', 'Polygon'],
+          });
+        }
         break;
-      case 'Georgia':
+      case "Georgia":
+        if(id == 0 || id == 1) {
+          this.mainMap.addLayer({
+            id: state,
+            type: 'fill',
+            source: state,
+            paint: {
+              'fill-color': ['match', ['get', 'District'], // get the property
+                              id == 0 ? "001" : "014", 'blue',             
+                              id == 0 ? "002" : "013", 'red',
+                              id == 0 ? "003" : "012", 'green',
+                              id == 0 ? "004" : "011", 'yellow',
+                              id == 0 ? "005" : "010", 'orange', 
+                              id == 0 ? "006" : "009", 'brown', 
+                              id == 0 ? "007" : "008", 'purple', 
+                              id == 0 ? "008" : "007", 'sky blue', 
+                              id == 0 ? "009" : "006", 'crimson', 
+                              id == 0 ? "010" : "005", 'wheat', 
+                              id == 0 ? "011" : "004", 'cyan', 
+                              id == 0 ? "012" : "003", 'lime', 
+                              id == 0 ? "013" : "002", 'salmon',
+                              id == 0 ? "014" : "001", 'teal',         
+                              'white']                     
+              ,
+              'fill-opacity': 0.4,
+              'fill-outline-color': 'white'
+            },
+              filter: ['==', '$type', 'Polygon'],
+            });
+          }
+          else {
+            this.mainMap.addLayer({
+              id: state,
+              type: 'fill',
+              source: state,
+              paint:{
+                'fill-opacity': 0.4,
+                'fill-outline-color': 'white'
+              },
+              filter: ['==', '$type', 'Polygon'],
+            });
+          }
+          break;
+      case "none":
+      default: break;
+    }
+  }
+  async addSource(state: string, ID: number) {
+    switch(state) {
+      case "Mississippi":
+              let mississippiCounty = await myFetch('Mississippi');
+              myFetch('Mississippi').then(json => {
+                  mississippiCounty = json;
+              })
+              .catch(e => console.log(e));
+
+              console.log(mississippiCounty.geoJSONMap);
+              if(ID == 0) {
+                this.mainMap.addSource(state, {
+                  type: 'geojson',
+                  data: mississippiCounty.geoJSONMap,
+                });
+                console.log("0");
+              }
+              else if(ID == 1) {
+                this.mainMap.addSource(state, {
+                  type: 'geojson',
+                  data: mississippiCounty.geoJSONMap,
+                });
+                console.log("1");
+              }
+              else {
+                this.mainMap.addSource(state, {
+                  type: 'geojson',
+                  data: mississippiCounty.geoJSONMap,
+                });
+                console.log("2");
+              }
+      
         break;
-      case 'None':
+      case "Georgia":
+        // if(ID == 0) {
+        //   this.mainMap.addSource(state, {
+        //     type: 'geojson',
+        //     data: georgiaMain,
+        //   });
+        // }
+        // else if(ID == 1) {
+        //   this.mainMap.addSource(state, {
+        //     type: 'geojson',
+        //     data: georgiaDemo,
+        //   });
+        // }
+        // else {
+        //   this.mainMap.addSource(state, {
+        //     type: 'geojson',
+        //     data: georgiaCounty,
+        //   });
+        // }
         break;
+      case "none":
       default:
         break;
     }
   }
-
-  addSource(state: string, id: number) {
-    switch (state) {
-      case 'Mississippi':
-        break;
-      case 'Georgia':
-        break;
-      case 'None':
-        break;
-      default:
-        break;
-    }
-  }
-
   flyTo(state: string) {
     if (state == 'None') {
       this.mainMap.flyTo({
@@ -122,7 +249,6 @@ export class MapService {
         easing: (t) => t,
         essential: true,
       });
-
       return;
     }
     this.mainMap.flyTo({
@@ -135,26 +261,47 @@ export class MapService {
       essential: true,
     });
   }
-
   removeCurrentMap() {
-    this.mainMap.removeLayer(this.currentState);
-    this.mainMap.removeSource(this.currentState);
+    if(this.currentLayer && this.currentLayer != "Select a state" && this.currentLayer != "none") {
+      this.mainMap.removeLayer(this.currentLayer);
+      this.mainMap.removeSource(this.currentLayer);
+    }
   }
-
-
   getCenter() {
     return this.mainMap.center;
   }
-
   setId(value: number) {
     this.currentId = value;
   }
-
   getMainMap() {
     return this.mainMap;
   }
-
   getCenterList() {
     return this.centers;
   }
+  async fetchText() {
+    let response = await fetch('http://localhost:8080/server/webapi/maps/Mississippi',  );
+    
+    console.log("f")
+    console.log(response.status); // 200
+    console.log(response.statusText); // OK
+
+    if (response.status === 200) {
+        let data = await response.text();
+        console.log(data)
+        return JSON.parse(data);
+        // handle data
+    }
+    
+  }
+  
 }
+
+async function myFetch(state) {
+  let response = await fetch('http://localhost:8080/server/webapi/maps/'+state);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.json();
+}
+
