@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";  
 
 // Angular material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -53,6 +54,7 @@ import { ListDialogComponent } from './main-tab/district-plans/list-dialog/list-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxSpinnerModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

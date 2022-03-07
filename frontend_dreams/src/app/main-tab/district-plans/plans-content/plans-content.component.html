@@ -5,9 +5,7 @@
 
 <p>Selected Id is {{ selectedId }}</p> -->
 
-
 <mat-tab-group mat-align-tabs="start" style="width: 100%;" selected="0">
-
     <mat-tab class="mat-tab" label="Plan Summary">
         <!-- Summary component -->
         <mat-list class="list-container">
@@ -125,9 +123,17 @@
                 </mat-grid-tile>
             </mat-grid-list>
 
-            
+            <mat-grid-list cols="1" rowHeight="200px">
+                <mat-grid-tile>
+                    <mat-list-item style="font-size:larger; overflow: scroll; height: 100%;">
+                        <div class="status">: {{ summary }}</div>
+                    </mat-list-item>
+                </mat-grid-tile>
+            </mat-grid-list>
         </mat-list>
+        
     </mat-tab>
+
 
     <mat-tab class="mat-tab" label="Voting Measure">
         <!-- change label and some component  -->
