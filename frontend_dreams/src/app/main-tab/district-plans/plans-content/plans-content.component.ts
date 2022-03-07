@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
-
+let districtPlan1 = "";
 @Component({
   selector: 'app-plans-content',
   templateUrl: './plans-content.component.html',
@@ -20,12 +20,14 @@ export class PlansContentComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
   ngOnChanges(changes: SimpleChanges): void {
+    this.loadPlan();
+    
     switch(changes["selectedId"].currentValue) {
       case 1:
-        this.nameOfPlan = "Republican Congressional District Plan"
-        this.proposedBy = "Republican Party"
+        this.nameOfPlan = JSON.parse(districtPlan1).planName
+        this.proposedBy = JSON.parse(districtPlan1).proposedParty
         this.status = 0;
-        this.date = "December 31, 2021"
+        this.date = JSON.parse(districtPlan1).dateEnacted
         break;
       case 2:
         this.nameOfPlan = "Democratic Congressional District Plan"
@@ -95,5 +97,24 @@ export class PlansContentComponent implements OnInit, OnChanges {
     }
   }
 
+ 
+async loadPlan(){
+  let districtPlan = await myFetch('plan1');
+      myFetch('Mississippi').then(json => {
+          districtPlan = json.toString();
+      })
+      .catch(e => console.log(e));
+      console.log(districtPlan);
+    districtPlan1 = districtPlan;
+    console.log(districtPlan);
+}
 
 }
+async function myFetch(plan) {
+  let response = await fetch('http://localhost:8080/server/webapi/plans/'+plan);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
+}
+

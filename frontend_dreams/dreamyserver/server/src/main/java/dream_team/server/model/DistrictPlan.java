@@ -12,13 +12,14 @@ public class DistrictPlan {
 		
 	}
 	public DistrictPlan(String planName, String proposedParty, String dateEnacted, String state, String summary) {
-		super();
 		this.planName = planName;
 		this.proposedParty = proposedParty;
 		this.dateEnacted = dateEnacted;
 		this.state = state;
 		this.summary = summary;
 	}
+	
+
 	public String getPlanName() {
 		return planName;
 	}
