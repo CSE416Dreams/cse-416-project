@@ -7,19 +7,27 @@ public class DistrictPlan {
 	private String dateEnacted;
 	private String state;
 	private String summary;
+	private String status;
 	//private PlanAnalysis planMeasures;
 	public DistrictPlan() {
 		
 	}
-	public DistrictPlan(String planName, String proposedParty, String dateEnacted, String state, String summary) {
+	public DistrictPlan(String planName, String proposedParty, String dateEnacted, String state, String summary, String status) {
 		this.planName = planName;
 		this.proposedParty = proposedParty;
 		this.dateEnacted = dateEnacted;
 		this.state = state;
 		this.summary = summary;
+		this.status = status;
 	}
 	
 
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public String getPlanName() {
 		return planName;
 	}
