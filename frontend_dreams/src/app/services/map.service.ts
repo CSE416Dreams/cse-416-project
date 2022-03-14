@@ -28,7 +28,7 @@ export class MapService {
 
   constructor() {}
 
-    
+
 
   initMainMap() {
     this.currentState = 'None';
@@ -69,23 +69,19 @@ export class MapService {
     // addLayer - id checking
     // addSource - id checking
     // FlyTo
-    console.log("t1");
-    this.removeCurrentMap();
-    console.log("t2");
-    this.changeCurrentLayer(state);
-    console.log("t3");
-    await this.addSource(state, 0);
-    console.log("t4");
-    this.addLayer(state, this.currentMap_id);
-    console.log("t5");
+    // console.log("t1");
+    // this.removeCurrentMap();
+    // console.log("t2");
+    // this.changeCurrentLayer(state);
+    // console.log("t3");
+    // await this.addSource(state, 0);
+    // console.log("t4");
+    // this.addLayer(state, this.currentMap_id);
+    // console.log("t5");
     this.flyTo(state);
-    console.log("t6");
+    // console.log("t6");
   }
 
-
-  returnTo() {
-    this.flyTo(this.currentState);
-  }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,11 +102,11 @@ changeCurrentLayer(state: string) {
             source: state,
             paint:{
               'fill-color': ['match', ['get', 'District'], // get the property
-                            id == 0 ? 1 : 4 , 'blue',             
+                            id == 0 ? 1 : 4 , 'blue',
                             id == 0 ? 2 : 1 , 'red',
                             id == 0 ? 3 : 2 , 'green',
-                            id == 0 ? 4 : 3, 'yellow',            
-                            'green']                     
+                            id == 0 ? 4 : 3, 'yellow',
+                            'green']
               ,
               'fill-opacity': 0.4,
               'fill-outline-color': 'white'
@@ -141,21 +137,21 @@ changeCurrentLayer(state: string) {
             source: state,
             paint: {
               'fill-color': ['match', ['get', 'District'], // get the property
-                              id == 0 ? "001" : "014", 'blue',             
+                              id == 0 ? "001" : "014", 'blue',
                               id == 0 ? "002" : "013", 'red',
                               id == 0 ? "003" : "012", 'green',
                               id == 0 ? "004" : "011", 'yellow',
-                              id == 0 ? "005" : "010", 'orange', 
-                              id == 0 ? "006" : "009", 'brown', 
-                              id == 0 ? "007" : "008", 'purple', 
-                              id == 0 ? "008" : "007", 'sky blue', 
-                              id == 0 ? "009" : "006", 'crimson', 
-                              id == 0 ? "010" : "005", 'wheat', 
-                              id == 0 ? "011" : "004", 'cyan', 
-                              id == 0 ? "012" : "003", 'lime', 
+                              id == 0 ? "005" : "010", 'orange',
+                              id == 0 ? "006" : "009", 'brown',
+                              id == 0 ? "007" : "008", 'purple',
+                              id == 0 ? "008" : "007", 'sky blue',
+                              id == 0 ? "009" : "006", 'crimson',
+                              id == 0 ? "010" : "005", 'wheat',
+                              id == 0 ? "011" : "004", 'cyan',
+                              id == 0 ? "012" : "003", 'lime',
                               id == 0 ? "013" : "002", 'salmon',
-                              id == 0 ? "014" : "001", 'teal',         
-                              'white']                     
+                              id == 0 ? "014" : "001", 'teal',
+                              'white']
               ,
               'fill-opacity': 0.4,
               'fill-outline-color': 'white'
@@ -211,7 +207,7 @@ changeCurrentLayer(state: string) {
                 });
                 console.log("2");
               }
-      
+
         break;
       case "Georgia":
         // if(ID == 0) {
@@ -238,6 +234,9 @@ changeCurrentLayer(state: string) {
         break;
     }
   }
+
+
+
   flyTo(state: string) {
     if (state == 'None') {
       this.mainMap.flyTo({
@@ -261,40 +260,38 @@ changeCurrentLayer(state: string) {
       essential: true,
     });
   }
-  removeCurrentMap() {
-    if(this.currentLayer && this.currentLayer != "Select a state" && this.currentLayer != "none") {
-      this.mainMap.removeLayer(this.currentLayer);
-      this.mainMap.removeSource(this.currentLayer);
-    }
-  }
-  getCenter() {
-    return this.mainMap.center;
-  }
+
   setId(value: number) {
     this.currentId = value;
   }
   getMainMap() {
     return this.mainMap;
   }
-  getCenterList() {
-    return this.centers;
-  }
-  async fetchText() {
-    let response = await fetch('http://localhost:8080/server/webapi/maps/Mississippi',  );
-    
-    console.log("f")
-    console.log(response.status); // 200
-    console.log(response.statusText); // OK
 
-    if (response.status === 200) {
-        let data = await response.text();
-        console.log(data)
-        return JSON.parse(data);
-        // handle data
+  validateCenter(state: string) {
+    if(this.mainMap.getCenter().lng != this.centers[state][0] || this.mainMap.getCenter().lat != this.centers[state][1]) {
+      return false;
     }
-    
+    else return true;
   }
-  
+
+
+  // async fetchText() {
+  //   let response = await fetch('http://localhost:8080/server/webapi/maps/Mississippi',  );
+
+  //   console.log("f")
+  //   console.log(response.status); // 200
+  //   console.log(response.statusText); // OK
+
+  //   if (response.status === 200) {
+  //       let data = await response.text();
+  //       console.log(data)
+  //       return JSON.parse(data);
+  //       // handle data
+  //   }
+
+  // }
+
 }
 
 async function myFetch(state) {

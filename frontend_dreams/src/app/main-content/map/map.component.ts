@@ -17,10 +17,8 @@ export class MapComponent implements AfterViewInit, OnChanges {
 
   ngAfterViewInit(): void {
       this.stateService.initMainMap();
-      this.mapService.getMainMap().on('mousedown', (e) => {
-        if(this.mapService.getCenter() != this.mapService.getCenterList()[this.selectedState]) {
-          this.onCenter = false;
-        }
+      this.mapService.getMainMap().on('mouseup', (e) => {
+        this.onCenter = this.mapService.validateCenter(this.selectedState);
       });
   }
 
@@ -31,7 +29,7 @@ export class MapComponent implements AfterViewInit, OnChanges {
 
   returnTo() {
     this.onCenter = true;
-    this.mapService.returnTo();
+    this.stateService.return();
   }
 
 }

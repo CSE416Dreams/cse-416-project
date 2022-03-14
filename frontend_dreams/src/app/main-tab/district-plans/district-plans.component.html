@@ -1,4 +1,4 @@
-<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "line-scale-pulse-out-rapid" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<!-- <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "line-scale-pulse-out-rapid" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner> -->
 
 <mat-drawer-container class="container" autosize>
   <mat-drawer class="drawer" #drawer mode="side" opened>
@@ -14,7 +14,7 @@
   <mat-drawer-content class="content">
     <div style="height: 3rem;">
       <!-- <button mat-button class="toggle-button" (click)="drawer.toggle()"> {{ drawer.opened ? "Collapse" : "Expand"}}
-        
+
       </button> -->
 
       <div *ngIf="selectedId == 0">
@@ -22,7 +22,7 @@
         <!-- Some component that can direct the users to choose OR show dominant party by default -->
       </div>
       <div *ngIf="selectedId != 0">
-        <app-plans-content [selectedState]="selectedState" [selectedId]="selectedId" [districtPlans]="districtPlans"></app-plans-content>
+        <app-plans-content [selectedState]="selectedState" [selectedId]="selectedId"></app-plans-content>
       </div>
     </div>
 

@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   @Input() changeState: (args: any) => void;
 
 
-  constructor(public stateService: StateService, private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.filteredOptions = this.myControl.valueChanges.pipe(

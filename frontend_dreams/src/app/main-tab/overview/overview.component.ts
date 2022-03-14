@@ -7,6 +7,8 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 })
 export class OverviewComponent implements OnInit, OnChanges {
   @Input() selectedState: string;
+
+  // NEED SOME WAY TO FETCH THESE based on state change
   statePopulation: number;
   statePopulationString: string = "none";
   changeTnPopulation: number;
@@ -35,6 +37,8 @@ export class OverviewComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     switch(changes["selectedState"].currentValue) {
+      // NEED TO REDUCE TO ONE METHOD CALLING WITH CHANGE VARIABLE AS PARAMETER
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
       case "Mississippi":
         this.numOfDistricts = 4;
         this.statePopulation = 2949965;
@@ -76,6 +80,7 @@ export class OverviewComponent implements OnInit, OnChanges {
         this.stateDiversityIndex = 64.1
         break;
     }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
   }
 
 }

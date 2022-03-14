@@ -6,17 +6,13 @@ import { SidenavService } from './sidenav.service';
   providedIn: 'root',
 })
 export class StateService {
-  selectedState: string;
-  selectedId: number;
+  selectedState: string = "None";
+  selectedId: number = 0;
 
   constructor(
     public sidenavService: SidenavService,
     public mapService: MapService
   ) {}
-
-  getSelectedState() {
-    return this.selectedState;
-  }
 
   setId(value: number) {
     this.selectedId = value;
@@ -50,5 +46,10 @@ export class StateService {
   moveTo(state: string) {
     this.sidenavService.openMain();
     this.mapService.moveTo(state, 0);
+  }
+
+
+  return() {
+    this.mapService.flyTo(this.selectedState);
   }
 }

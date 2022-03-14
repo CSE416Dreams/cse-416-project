@@ -25,14 +25,13 @@ export class MainContentComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
       if(changes['selectedState'].currentValue) {
         this.changeId(0);
-        this.stateService.setId(0);
-      } 
+      }
   }
 
   changeId = (value: number) => {
     this.selectedId = value;
     this.stateService.setId(value);
-    
+
     // change the service value as well
   }
 

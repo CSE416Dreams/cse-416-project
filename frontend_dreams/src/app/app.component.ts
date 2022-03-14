@@ -11,7 +11,7 @@ export class AppComponent {
   selectedState = "None";
   title = 'frontend_dreams';
 
-  constructor(public stateService: StateService, public mapService : MapService) {
+  constructor(public stateService: StateService) {
 
   }
 
