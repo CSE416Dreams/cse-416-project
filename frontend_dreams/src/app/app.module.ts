@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxSpinnerModule } from "ngx-spinner";  
+import { NgxSpinnerModule } from "ngx-spinner";
 
 // Angular material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -35,7 +35,10 @@ import { DistrictPlansComponent } from './main-tab/district-plans/district-plans
 import { SideListComponent } from './main-tab/district-plans/side-list/side-list.component';
 import { PlansContentComponent } from './main-tab/district-plans/plans-content/plans-content.component';
 import { ListDialogComponent } from './main-tab/district-plans/list-dialog/list-dialog.component';
-
+import { PlanSummaryComponent } from './main-tab/district-plans/plans-content/plan-summary/plan-summary.component';
+import { VotingMeasureComponent } from './main-tab/district-plans/plans-content/voting-measure/voting-measure.component';
+import { PoliticalFairnessComponent } from './main-tab/district-plans/plans-content/political-fairness/political-fairness.component';
+import { DemographicComponent } from './main-tab/district-plans/plans-content/demographic/demographic.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,11 @@ import { ListDialogComponent } from './main-tab/district-plans/list-dialog/list-
     DistrictPlansComponent,
     SideListComponent,
     PlansContentComponent,
-    ListDialogComponent
+    ListDialogComponent,
+    PlanSummaryComponent,
+    VotingMeasureComponent,
+    PoliticalFairnessComponent,
+    DemographicComponent
   ],
   imports: [
     BrowserModule,

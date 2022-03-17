@@ -13,10 +13,10 @@ export class StateService {
     public sidenavService: SidenavService,
     public mapService: MapService
   ) {}
-
+  ////////////////////////////////////////////////////////////////////////////////////////
   setId(value: number) {
     this.selectedId = value;
-    this.mapService.setId(value);
+    this.mapService.showMap(this.selectedState, this.selectedId);
   }
 
   setState(state: string) {
@@ -30,11 +30,13 @@ export class StateService {
     // This method will change to one big method that contains everything within this service
     this.moveTo(state);
   }
+  ////////////////////////////////////////////////////////////////////////////////////////
 
   // resetting everything to None settings (home)
   reset() {
     this.sidenavService.closeMain();
-    this.mapService.selectNone();
+    this.mapService.flyTo("None");
+    this.mapService.showMap('None', 0);
     // add methods that will reset everything
     return;
   }
@@ -43,13 +45,29 @@ export class StateService {
     this.mapService.initMainMap();
   }
 
-  moveTo(state: string) {
+  // Called upon setState (changing state)
+  async moveTo(state: string) {
     this.sidenavService.openMain();
-    this.mapService.moveTo(state, 0);
+    this.mapService.flyTo(state);
+    this.mapService.showMap(state, 0);
+    // let districtPlan1 = await myFetch('plan-r-mississippi');
+    //     myFetch('plan-r-mississippi').then(json => {
+    //         districtPlan1 = json.toString();
+    //     })
+    //     .catch(e => console.log(e));
+    //     console.log(districtPlan1);
   }
-
 
   return() {
     this.mapService.flyTo(this.selectedState);
   }
+}
+
+
+async function myFetch(plan) {
+  let response = await fetch('http://localhost:8080/server/webapi/plans/'+plan);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
 }

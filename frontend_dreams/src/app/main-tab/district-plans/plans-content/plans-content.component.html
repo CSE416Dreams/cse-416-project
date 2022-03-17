@@ -1,281 +1,35 @@
-<!-- 
+<!--
     These work!!!
-    
+
     <p>Selected State is {{ selectedState }}</p>
 
 <p>Selected Id is {{ selectedId }}</p> -->
-
-<mat-tab-group mat-align-tabs="start" style="width: 100%;" selected="0">
+<div style="overflow-x: auto; overflow-y: visible; height: 100%">
+<mat-tab-group mat-align-tabs="start" style="width: 100%; height: 100%" selected="0">
     <mat-tab class="mat-tab" label="Plan Summary">
         <!-- Summary component -->
-        <mat-list class="list-container">
-            <mat-divider></mat-divider>
-            <mat-grid-list cols="1" rowHeight="60px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:23px">Name of Plan
-                        <div class="status">: {{ nameOfPlan }}</div>
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-divider></mat-divider>
-    
-            <mat-grid-list cols="1" rowHeight="40px">
-                <mat-grid-tile>
-                    <mat-list-item>Proposed by
-                        <div class="status">: {{ proposedBy }}</div>
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-divider></mat-divider>
+       <app-plan-summary [selectedState]="selectedState" [selectedId]="selectedId"></app-plan-summary>
 
-            <mat-grid-list cols="1" rowHeight="40px">
-                <mat-grid-tile>
-                    <mat-list-item>Status
-                        <div class="status">: {{ statusString[status] }}</div>
-                    </mat-list-item>
-                    <mat-divider vertical style="height: 40px;"></mat-divider>
-        
-                    <mat-list-item *ngIf="status == 0">Date Enacted
-                        <div class="status">: {{ date }}</div>
-                        <mat-divider></mat-divider>
-                    </mat-list-item>
-        
-                    <mat-list-item *ngIf="status == 2">Date Proposed
-                        <div class="status">: {{ date }}</div>
-                        <mat-divider></mat-divider>
-                    </mat-list-item>
-
-                    <mat-list-item *ngIf="status == 3">Date Created
-                        <div class="status">: {{ date }}</div>
-                        <mat-divider></mat-divider>
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="20px"></mat-grid-list>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Republican Democratic District Split:</mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="4" rowHeight="2:1" *ngIf="selectedState == 'Mississippi'">
-                <mat-grid-tile style="background-color: rgba(0, 0, 255, .5);">
-                    <mat-list-item style="color: white;">D-2</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-1</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-3</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-4</mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-        
-            <mat-grid-list cols="14" rowHeight="2:1" *ngIf="selectedState == 'Georgia'">
-                <mat-grid-tile style="background-color: rgba(0, 0, 255, .5);">
-                    <mat-list-item style="color: white;">D-13</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(0, 0, 255, .5);">
-                    <mat-list-item style="color: white;">D-7</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(0, 0, 255, .5);">
-                    <mat-list-item style="color: white;">D-5</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(0, 0, 255, .5);">
-                    <mat-list-item style="color: white;">D-4</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(128, 128, 128, .5);">
-                    <mat-list-item style="color: white;">D-2</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-1</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-3</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-6</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-8</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-9</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-10</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-11</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-12</mat-list-item>
-                </mat-grid-tile>
-                <mat-grid-tile style="background-color: rgba(255, 0, 0, .5);">
-                    <mat-list-item style="color: white;">D-14</mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-
-            <mat-grid-list cols="1" rowHeight="200px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:larger; overflow: scroll; height: 100%;">
-                        <div class="status">: {{ summary }}</div>
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </mat-list>
-        
     </mat-tab>
-
 
     <mat-tab class="mat-tab" label="Voting Measure">
         <!-- change label and some component  -->
-        <mat-list class="list-container">
-            <mat-divider></mat-divider>
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Estimated Voting Results:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                <img mat-card-image src="https://fivethirtyeight.com/wp-content/uploads/2021/09/rakich-GENERAL-BALLOT-STORY-2.png">
-            </mat-card>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Reliable Wins:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Lopsided Outcomes:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Opportunity Districts:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-        </mat-list>
+        <app-voting-measure [selectedState]="selectedState" [selectedId]="selectedId"></app-voting-measure>
     </mat-tab>
-    
+
     <mat-tab class="mat-tab" label="Political Fairness">
         <!-- change label and some component  -->
-        <mat-list class="list-container">
-            <mat-divider></mat-divider>
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Seats to Votes Curve:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Mean-Median Difference:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Lopsided Wins Tests (T-test):
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Efficency Gap:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-        </mat-list>
+        <app-political-fairness [selectedState]="selectedState" [selectedId]="selectedId"></app-political-fairness>
     </mat-tab>
 
     <mat-tab class="mat-tab" label="Demographic">
         <!-- change label and some component  -->
-        <mat-list class="list-container">
-            <mat-divider></mat-divider>
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Split Demographs for District:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-
-            <mat-grid-list cols="1" rowHeight="50px">
-                <mat-grid-tile>
-                    <mat-list-item style="font-size:18px">Racial Fairness:
-                        <!---<div class="status">: {{ nameOfPlan }}</div>--->
-                    </mat-list-item>
-                </mat-grid-tile>
-            </mat-grid-list>
-            <mat-card>
-                
-            </mat-card>
-            <mat-divider></mat-divider>
-
-        </mat-list>
+        <app-demographic [selectedState]="selectedState" [selectedId]="selectedId"></app-demographic>
     </mat-tab>
-    
+
     <!---<mat-tab class="mat-tab" label="Etc">
-        
+
     </mat-tab>--->
-    
+
 </mat-tab-group>
+</div>

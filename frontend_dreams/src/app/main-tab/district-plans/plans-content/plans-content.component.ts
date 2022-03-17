@@ -11,7 +11,6 @@ let districtPlanss = "";
 export class PlansContentComponent implements OnInit, OnChanges {
   @Input() selectedState;
   @Input() selectedId;
-  @Input() districtPlans;
 
 
   nameOfPlan: string = "none";
@@ -24,11 +23,7 @@ export class PlansContentComponent implements OnInit, OnChanges {
 
 
   ngOnInit(): void {
-    districtPlanss = this.districtPlans;
   }
-  ngAfterViewInit(): void {
-
-   }
 
   ngOnChanges(changes: SimpleChanges): void {
 
