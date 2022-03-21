@@ -99,7 +99,10 @@ export class MapService {
         }
         if(this.searchPlan(state,id) == -1) {
           this.searchedPlan.push(plan);
+          console.log(typeof(plan.data));
+
           this.addSource(plan.state, plan.id);
+          this.addLayer(plan.state, plan.id);
         }
         // this.addLayer(plan.state, plan.id)
       })
@@ -108,9 +111,9 @@ export class MapService {
   }
 
   addSource(state: string, id: number) {
-    this.mainMap.addSource(state, {
+    this.mainMap.addSource(state+"-"+id, {
                       type: 'geojson',
-                      data: this.searchedPlan[this.searchPlan(state, id)].data,
+                      data: JSON.parse(this.searchedPlan[this.searchPlan(state, id)].data)
                     });
   }
 
@@ -120,23 +123,23 @@ export class MapService {
                   type: 'fill',
                   source: state+"-"+id,
                   paint: {
-                    'fill-color': ['match', ['get', 'District'], // get the property
-                                    id == 0 ? "001" : "014", 'blue',
-                                    id == 0 ? "002" : "013", 'red',
-                                    id == 0 ? "003" : "012", 'green',
-                                    id == 0 ? "004" : "011", 'yellow',
-                                    id == 0 ? "005" : "010", 'orange',
-                                    id == 0 ? "006" : "009", 'brown',
-                                    id == 0 ? "007" : "008", 'purple',
-                                    id == 0 ? "008" : "007", 'sky blue',
-                                    id == 0 ? "009" : "006", 'crimson',
-                                    id == 0 ? "010" : "005", 'wheat',
-                                    id == 0 ? "011" : "004", 'cyan',
-                                    id == 0 ? "012" : "003", 'lime',
-                                    id == 0 ? "013" : "002", 'salmon',
-                                    id == 0 ? "014" : "001", 'teal',
-                                    'white']
-                    ,
+                    // 'fill-color': ['match', ['get', 'District'], // get the property
+                    //                 id == 0 ? "001" : "014", 'blue',
+                    //                 id == 0 ? "002" : "013", 'red',
+                    //                 id == 0 ? "003" : "012", 'green',
+                    //                 id == 0 ? "004" : "011", 'yellow',
+                    //                 id == 0 ? "005" : "010", 'orange',
+                    //                 id == 0 ? "006" : "009", 'brown',
+                    //                 id == 0 ? "007" : "008", 'purple',
+                    //                 id == 0 ? "008" : "007", 'sky blue',
+                    //                 id == 0 ? "009" : "006", 'crimson',
+                    //                 id == 0 ? "010" : "005", 'wheat',
+                    //                 id == 0 ? "011" : "004", 'cyan',
+                    //                 id == 0 ? "012" : "003", 'lime',
+                    //                 id == 0 ? "013" : "002", 'salmon',
+                    //                 id == 0 ? "014" : "001", 'teal',
+                    //                 'white']
+                    // ,
                     'fill-opacity': 0.4,
                     'fill-outline-color': 'white'
                   },
