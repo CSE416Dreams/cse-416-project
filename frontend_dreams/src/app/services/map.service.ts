@@ -99,7 +99,6 @@ export class MapService {
         }
         if(this.searchPlan(state,id) == -1) {
           this.searchedPlan.push(plan);
-          console.log(typeof(plan.data));
 
           this.addSource(plan.state, plan.id);
           this.addLayer(plan.state, plan.id);
