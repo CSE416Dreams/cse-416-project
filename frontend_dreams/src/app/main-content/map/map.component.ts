@@ -17,13 +17,15 @@ export class MapComponent implements AfterViewInit, OnChanges {
 
   ngAfterViewInit(): void {
       this.stateService.initMainMap();
-      this.mapService.getMainMap().on('mouseup', (e) => {
+      this.mapService.getMainMap().on('move', (e) => {
         this.onCenter = this.mapService.validateCenter(this.selectedState);
       });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-
+    if(changes['selectedState'].currentValue) {
+      this.onCenter = true;
+    }
   }
 
 

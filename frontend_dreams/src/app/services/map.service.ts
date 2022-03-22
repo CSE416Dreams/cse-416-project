@@ -80,29 +80,30 @@ export class MapService {
 
   async showMap(state: string, id: number) {
     // This is properly called
-
-    // remove Current layer here if any
+    
+    // remove Current layer here if any   (this is required for some reason idk why :(  )
     if(this.mapOn) {
       this.removeMap();
     }
 
 
-    if(localStorage.getItem(state+"-"+id)) {
-      this.addSource(state, id);
-      this.addLayer(state, id);
+    if(!localStorage.getItem(state+"-"+id)) {
+      // this.addSource(state, id);
+      // this.addLayer(state, id);
       // let data = JSON.parse(localStorage.getItem(state+"-"+id));
       // console.log(data);
-    }
-    else {
       await myFetch(state, id).then(json => {
         let plan = JSON.parse(json.geoJSONMap);
         localStorage.setItem(state+"-"+id, JSON.stringify(plan));
-        this.addSource(state, id);
-        this.addLayer(state, id);
+        // this.addSource(state, id);
+        // this.addLayer(state, id);
       })
       .catch(e => console.log(e));
     }
+    this.addSource(state, id);
+    this.addLayer(state, id);
     this.currentMap = state+"-"+id;
+    this.mapOn = true;
   }
 
   addSource(state: string, id: number) {
@@ -113,7 +114,6 @@ export class MapService {
   }
 
   addLayer(state: string, id: number) {
-    this.mapOn = true;
     this.mainMap.addLayer({
                   id: state+"-"+id,
                   type: 'fill',
