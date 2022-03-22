@@ -46,9 +46,10 @@ export class StateService {
   }
 
   // Called upon setState (changing state)
-  async moveTo(state: string) {
+  moveTo(state: string) {
     this.sidenavService.openMain();
     this.mapService.flyTo(state);
+    // console.log("MoveTo called!")  only called once
     this.mapService.showMap(state, 0);
     // let districtPlan1 = await myFetch('plan-r-mississippi');
     //     myFetch('plan-r-mississippi').then(json => {

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
-import { async } from 'rxjs';
 
 // Temporary Datas import
 import georgiaCounty from '../main-content/map/TempData/georgiaCountyMap';
@@ -16,8 +15,8 @@ export class MapService {
     Mississippi: [-84.5, 32],
     Georgia: [-78, 32],
   };
-
-  searchedPlan = [];
+  mapOn = false;
+  currentMap: string;
 
   constructor() {}
 
@@ -81,42 +80,40 @@ export class MapService {
 
   async showMap(state: string, id: number) {
     // This is properly called
-    let index = this.searchPlan(state, id);
 
-    if(index != -1) {
-      // already in searched
-
-      return;
+    // remove Current layer here if any
+    if(this.mapOn) {
+      this.removeMap();
     }
-    // If none is selected, two geojson combined (for miss and georgia )
-    // Fetch proper GEOJSON OR ALL DATA for the map here and put it in the data section below
+
+
+    if(localStorage.getItem(state+"-"+id)) {
+      this.addSource(state, id);
+      this.addLayer(state, id);
+      // let data = JSON.parse(localStorage.getItem(state+"-"+id));
+      // console.log(data);
+    }
     else {
       await myFetch(state, id).then(json => {
-        let plan = {
-          state: state,
-          id: id,
-          data: json.geoJSONMap
-        }
-        if(this.searchPlan(state,id) == -1) {
-          this.searchedPlan.push(plan);
-
-          this.addSource(plan.state, plan.id);
-          this.addLayer(plan.state, plan.id);
-        }
-        // this.addLayer(plan.state, plan.id)
+        let plan = JSON.parse(json.geoJSONMap);
+        localStorage.setItem(state+"-"+id, JSON.stringify(plan));
+        this.addSource(state, id);
+        this.addLayer(state, id);
       })
       .catch(e => console.log(e));
     }
+    this.currentMap = state+"-"+id;
   }
 
   addSource(state: string, id: number) {
     this.mainMap.addSource(state+"-"+id, {
                       type: 'geojson',
-                      data: JSON.parse(this.searchedPlan[this.searchPlan(state, id)].data)
+                      data: JSON.parse(localStorage.getItem(state+"-"+id))
                     });
   }
 
   addLayer(state: string, id: number) {
+    this.mapOn = true;
     this.mainMap.addLayer({
                   id: state+"-"+id,
                   type: 'fill',
@@ -146,19 +143,11 @@ export class MapService {
                   });
   }
 
-  removeMap(state: string, id: number) {
-
-  }
-
-
-  searchPlan(state: string, id: number) {
-    for(let i = 0; i < this.searchedPlan.length; i++) {
-      if(this.searchedPlan[i].state == state && this.searchedPlan[i].id == id) {
-        return i;
-      }
-    }
-    return -1;
-  }
+  removeMap() {
+    this.mapOn = false;
+    this.mainMap.removeLayer(this.currentMap);
+    this.mainMap.removeSource(this.currentMap);
+  } 
 }
 
 
@@ -170,6 +159,11 @@ async function myFetch(state, id) {
   }
   return await response.json();
 }
+
+function clearStorage() {
+  localStorage.clear();
+}
+window.addEventListener('load', clearStorage);
 
 
 
