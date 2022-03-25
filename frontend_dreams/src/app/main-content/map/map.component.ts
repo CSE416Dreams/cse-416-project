@@ -17,7 +17,7 @@ export class MapComponent implements AfterViewInit, OnChanges {
 
   ngAfterViewInit(): void {
       this.stateService.initMainMap();
-      this.mapService.getMainMap().on('move', (e) => {
+      this.mapService.getMainMap().on('moveend', (e) => {
         this.onCenter = this.mapService.validateCenter(this.selectedState);
       });
   }
