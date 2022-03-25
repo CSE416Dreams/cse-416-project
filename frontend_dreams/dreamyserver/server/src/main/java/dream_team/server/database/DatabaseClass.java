@@ -8,6 +8,8 @@ import dream_team.server.model.StateMap;
 import dream_team.server.model.DistrictPlan;
 import dream_team.server.model.Message;
 import dream_team.server.model.Profile;
+import dream_team.server.model.State;
+
 import org.json.JSONObject;
 import java.util.Map;
 
@@ -17,6 +19,7 @@ public class DatabaseClass {
 	private static Map<String, Profile> profiles = new HashMap<>();
 	private static Map<String, StateMap> stateMaps = new HashMap<>();
 	private static Map<String, DistrictPlan> districtPlans = new HashMap<>();
+	private static Map<String, State> states = new HashMap<>();
 
 	
 	public static Map<Long, Message> getMessages(){
@@ -30,5 +33,8 @@ public class DatabaseClass {
 	}
 	public static Map<String, DistrictPlan> getPlans(){
 		return districtPlans;
+	}
+	public static Map<String, State> getStates(){
+		return states;
 	}
 }
