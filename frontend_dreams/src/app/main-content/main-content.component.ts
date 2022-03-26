@@ -19,7 +19,7 @@ export class MainContentComponent implements OnInit, OnChanges {
   constructor(public sidenavService: SidenavService, public stateService: StateService) { }
 
   ngOnInit(): void {
-    this.sidenavService.setMainSidenav(this.sidenav);
+    this.sidenavService.setMainSidenav("mississippi",this.sidenav);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

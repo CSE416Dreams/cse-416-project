@@ -9,7 +9,21 @@ export class SidenavService {
 
   constructor() { }
 
-  public setMainSidenav(sidenav: MatDrawer) {
+  async setMainSidenav(state: string, sidenav: MatDrawer) {
+    if(!localStorage.getItem(state)) {
+      // this.addSource(state, id);
+      // this.addLayer(state, id);
+      // let data = JSON.parse(localStorage.getItem(state+"-"+id));
+      // console.log(data);
+      await myFetch(state).then(json => {
+        let state = (json);
+        localStorage.setItem(state, JSON.stringify(state));
+        console.log(state);
+        // this.addSource(state, id);
+        // this.addLayer(state, id);
+      })
+      .catch(e => console.log(e));
+    }
     this.mainSidenav = sidenav;
   }
 
@@ -31,3 +45,15 @@ export class SidenavService {
   //////////////////////////////////////////////////////////
 
 }
+async function myFetch(state) {
+  let response = await fetch('http://localhost:8080/server/webapi/states/mississippi');
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.json();
+}
+
+function clearStorage() {
+  localStorage.clear();
+}
+window.addEventListener('load', clearStorage);
