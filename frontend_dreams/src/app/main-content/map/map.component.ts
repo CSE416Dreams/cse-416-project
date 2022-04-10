@@ -7,7 +7,7 @@ import { StateService } from 'src/app/services/state.service';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements AfterViewInit, OnChanges {
+export class MapComponent implements AfterViewInit {
   @Input() selectedState;
   @Input() selectedId;
 
@@ -21,13 +21,6 @@ export class MapComponent implements AfterViewInit, OnChanges {
         this.onCenter = this.mapService.validateCenter(this.selectedState);
       });
   }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if(changes['selectedState'].currentValue) {
-      this.onCenter = true;
-    }
-  }
-
 
   returnTo() {
     this.onCenter = true;

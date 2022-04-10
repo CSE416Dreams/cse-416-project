@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 
-// Temporary Datas import
-import georgiaCounty from '../main-content/map/TempData/georgiaCountyMap';
-import mississippiCountyMap from '../main-content/map/TempData/mississippiCountyMap';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -80,7 +76,7 @@ export class MapService {
 
   async showMap(state: string, id: number) {
     // This is properly called
-    
+
     // remove Current layer here if any   (this is required for some reason idk why :(  )
     if(this.mapOn) {
       this.removeMap();
@@ -147,7 +143,7 @@ export class MapService {
     this.mapOn = false;
     this.mainMap.removeLayer(this.currentMap);
     this.mainMap.removeSource(this.currentMap);
-  } 
+  }
 }
 
 

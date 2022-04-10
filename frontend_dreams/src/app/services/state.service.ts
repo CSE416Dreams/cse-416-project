@@ -13,6 +13,10 @@ export class StateService {
     public sidenavService: SidenavService,
     public mapService: MapService
   ) {}
+
+  getState() {
+    return this.selectedState;
+  }
   ////////////////////////////////////////////////////////////////////////////////////////
   setId(value: number) {
     this.selectedId = value;
@@ -65,10 +69,10 @@ export class StateService {
 }
 
 
-async function myFetch(plan) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/'+plan);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  return await response.text();
-}
+// async function myFetch(plan) {
+//   let response = await fetch('http://localhost:8080/server/webapi/plans/'+plan);
+//   if (!response.ok) {
+//     throw new Error(`HTTP error! status: ${response.status}`);
+//   }
+//   return await response.text();
+// }

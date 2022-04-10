@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-overview',
@@ -29,6 +30,7 @@ export class OverviewComponent implements OnInit, OnChanges {
   stateHispanic: number;
   stateHispanicChange: number;
   stateDiversityIndex: number;
+  stateService: StateService;
   constructor() { }
 
   ngOnInit(): void {
