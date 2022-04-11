@@ -17,4 +17,9 @@ export class TabsComponent implements OnInit {
     this.componentController.setTabs(this.tabs);
   }
 
+
+  openDialog() {
+    console.log("Compare button clicked!")
+  }
+
 }

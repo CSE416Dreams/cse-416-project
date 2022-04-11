@@ -1,3 +1,12 @@
+<mat-toolbar class="header">
+  <h2>State: {{ this.controller.getSelectedState() }}</h2>
+  <p class="p"></p>
+  <h2>Plan: {{ this.controller.getPlanList()[this.controller.getSelectedPlan() ]}}</h2>
+
+  <span class="spacer"></span>
+  <button mat-raised-button class="compare-button" (click)="openDialog()">Compare Plans</button>
+</mat-toolbar>
+
 <mat-tab-group mat-align-tabs="start" [selectedIndex]="0" #tabs>
   <mat-tab label="Summary of the current plan">
     <!-- Summay of the current selected plan -->
