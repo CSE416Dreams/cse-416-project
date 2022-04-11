@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { SidenavService } from '../services/sidenav.service';
+import { ComponentControllerService } from '../services/component-controller.service';
 
 @Component({
   selector: 'app-main-content',
@@ -10,10 +10,10 @@ import { SidenavService } from '../services/sidenav.service';
 export class MainContentComponent implements OnInit {
   @ViewChild('drawer', { static: true }) public sidenav: MatDrawer;
 
-  constructor(public sidenavService: SidenavService) { }
+  constructor(public componentController: ComponentControllerService) { }
 
   ngOnInit(): void {
-    this.sidenavService.setSidenav(this.sidenav);
+    this.componentController.setSidenav(this.sidenav);
   }
 
 }

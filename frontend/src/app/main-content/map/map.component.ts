@@ -14,15 +14,18 @@ export class MapComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.mapService.initMainMap();
-      this.mapService.getMainMap().on('moveend', (e) => {
-        this.onCenter = this.mapService.validateCenter(this.controller.getSelectedState());
-      });
+    this.mapService.getMainMap().on('moveend', (e) => {
+      this.onCenter = this.mapService.validateCenter(this.controller.getSelectedState());
+    });
   }
 
   returnTo() {
     this.onCenter = true;
     this.controller.return();
-    // this.stateService.return();
+  }
+
+  changeSelectedPlan(index: number) {
+    this.controller.changeSelectedPlan(index);
   }
 
 }

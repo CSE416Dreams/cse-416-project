@@ -21,6 +21,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+
+
+
 import { HeaderComponent } from './header/header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MapComponent } from './main-content/map/map.component';
@@ -54,7 +58,8 @@ import { TabsComponent } from './main-content/tabs/tabs.component';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

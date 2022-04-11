@@ -55,6 +55,10 @@ export class HeaderComponent implements OnInit {
       });
       return;
     }
+    if(this.myControl.value == "None") {
+      this.reset();
+      return;
+    }
     this.controller.changeState(this.myControl.value);
   }
 }

@@ -1,5 +1,13 @@
 <div id="main-map"></div>
 
 <div class="map-overlay-container">
-  <button mat-raised-button class="return-button" *ngIf="!onCenter" (click)="returnTo()">Return</button>
+  <button mat-raised-button [matMenuTriggerFor]="menu" *ngIf="controller.getSelectedState() != 'None'" class="menu-button">
+    {{ controller.getPlanList()[controller.getSelectedPlan()] }}
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let item of this.controller.getPlanList(); index as i" (click)="changeSelectedPlan(i)">
+      {{ item }}
+    </button>
+  </mat-menu>
+  <button mat-raised-button *ngIf="!onCenter" (click)="returnTo()" class="return-button">Return</button>
 </div>
