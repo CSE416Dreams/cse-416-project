@@ -9,7 +9,7 @@
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="changeSelectedPlan(0)">
-      Default
+      Summary
     </button>
     <button mat-menu-item *ngFor="let item of this.controller.getPlanList(); index as i" (click)="changeSelectedPlan(i+1)">
       {{ item }}

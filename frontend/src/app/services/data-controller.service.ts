@@ -35,7 +35,7 @@ export class DataControllerService {
 
   getSelectedPlanName() {
     if(this.selectedPlan == 0) {
-      return "Default";
+      return "Choose a plan";
     }
     return this.planList[this.selectedPlan-1];
   }
