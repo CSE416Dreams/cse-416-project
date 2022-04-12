@@ -23,9 +23,4 @@ export class MapComponent implements AfterViewInit {
     this.onCenter = true;
     this.controller.return();
   }
-
-  changeSelectedPlan(index: number) {
-    this.controller.changeSelectedPlan(index);
-  }
-
 }

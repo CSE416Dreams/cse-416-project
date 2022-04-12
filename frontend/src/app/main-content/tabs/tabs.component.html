@@ -1,13 +1,31 @@
 <mat-toolbar class="header">
   <h2>State: {{ this.controller.getSelectedState() }}</h2>
   <p class="p"></p>
-  <h2>Plan: {{ this.controller.getPlanList()[this.controller.getSelectedPlan() ]}}</h2>
+  <h2 *ngIf="this.controller.getSelectedPlan() != 0">Plan: {{ this.controller.getSelectedPlanName() }}</h2>
 
   <span class="spacer"></span>
+  <button mat-raised-button [matMenuTriggerFor]="menu" class="menu-button">
+    {{ controller.getSelectedPlanName() }}
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="changeSelectedPlan(0)">
+      Default
+    </button>
+    <button mat-menu-item *ngFor="let item of this.controller.getPlanList(); index as i" (click)="changeSelectedPlan(i+1)">
+      {{ item }}
+    </button>
+  </mat-menu>
   <button mat-raised-button class="compare-button" (click)="openDialog()">Compare Plans</button>
 </mat-toolbar>
 
-<mat-tab-group mat-align-tabs="start" [selectedIndex]="0" #tabs>
+<mat-tab-group *ngIf="controller.getSelectedPlan() == 0" mat-align-tabs="start" [selectedIndex]="0" #tabs>
+  <mat-tab label="Summary of all plans">
+
+  </mat-tab>
+</mat-tab-group>
+
+
+<mat-tab-group *ngIf="controller.getSelectedPlan() != 0" mat-align-tabs="start" [selectedIndex]="0" #tabs>
   <mat-tab label="Summary of the current plan">
     <!-- Summay of the current selected plan -->
     <p>{{ this.controller.getSelectedState() }}</p>

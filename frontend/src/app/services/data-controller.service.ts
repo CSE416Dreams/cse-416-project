@@ -7,7 +7,7 @@ import { MapControllerService } from './map-controller.service';
 })
 export class DataControllerService {
   selectedState: string = "None";
-  selectedPlan: number = 0;
+  selectedPlan: number = 0;  // 0 is default (summary of all plans)
   planList = ["PlanName1", "PlanName2", "PlanName3"]; // This will be fetched as a string array (e.g. ["Rep.", "Dem.", "planName1"])   ////// selectedPlan will be the index of this list
   // PlanList has to be updated according to the selectedState
   //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,6 +31,13 @@ export class DataControllerService {
 
   getPlanList() {
     return this.planList;
+  }
+
+  getSelectedPlanName() {
+    if(this.selectedPlan == 0) {
+      return "Default";
+    }
+    return this.planList[this.selectedPlan-1];
   }
 
   // changing state which controls everything
