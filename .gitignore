@@ -2,3 +2,6 @@
 /node_modules
 /frontend_dreams/dreamyserver/Servers
 /.DS_Store
+/Servers
+/dreamyserver/target
+/dreamyserver/apache-tomcat-10.0.13
