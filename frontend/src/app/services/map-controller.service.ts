@@ -9,9 +9,9 @@ export class MapControllerService {
   // comparing maps will be locked hopefully
 
   centers = {
-    None: [-100, 40],
-    Mississippi: [-84.5, 32],
-    Georgia: [-78, 32],
+    none: [-100, 40],
+    mississippi: [-84.5, 32],
+    georgia: [-78, 32],
   };
 
   constructor() { }
@@ -27,7 +27,7 @@ export class MapControllerService {
     this.mainMap = new mapboxgl.Map({
       container: 'main-map',
       style: 'mapbox://styles/mapbox/light-v10',
-      center: this.centers.None,
+      center: this.centers.none,
       zoom: 4,
     });
 
@@ -51,7 +51,7 @@ export class MapControllerService {
   flyTo(state: string) {
     if (state == 'None') {
       this.mainMap.flyTo({
-        center: this.centers.None,
+        center: this.centers.none,
         zoom: 4,
         bearing: 0,
         speed: 3,

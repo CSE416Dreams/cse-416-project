@@ -20,7 +20,15 @@ export class TabsComponent implements OnInit {
   changeSelectedPlan(number: number) {
     this.controller.changeSelectedPlan(number);
   }
-
+  // may go away
+  //////////////////////////////////////////////////////////////////////////
+  tabClick(tab) {
+    if(tab.tab.textLabel == "Measure1") {
+      this.controller.measure1();
+    }
+    return;
+  }
+  //////////////////////////////////////////////////////////////////////////
 
   openDialog() {
     console.log("Compare button clicked!")
