@@ -47,7 +47,7 @@ PopulationMeasureService pms = new PopulationMeasureService();
 //	}
 	
 	@GET
-	@Path("/cmeasure/{cmeasure-id}")
+	@Path("/cmeasures/{cmeasure-id}")
 	public Response getCompactnessMeasure(@PathParam("cmeasure-id") String cmeasureid) {
 		return Response
 	            .status(200)
@@ -62,7 +62,7 @@ PopulationMeasureService pms = new PopulationMeasureService();
 	}
 	
 	@GET
-	@Path("/dmeasure/{dmeasure-id}")
+	@Path("/dmeasures/{dmeasure-id}")
 	public Response getDemographicsMeasure(@PathParam("dmeasure-id") String dmeasureid) {
 		return Response
 	            .status(200)
