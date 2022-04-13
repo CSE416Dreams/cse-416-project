@@ -29,6 +29,13 @@ import { HeaderComponent } from './header/header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MapComponent } from './main-content/map/map.component';
 import { TabsComponent } from './main-content/tabs/tabs.component';
+import { CompactnessComponent } from './main-content/tabs/compactness/compactness.component';
+import { DemographicsComponent } from './main-content/tabs/demographics/demographics.component';
+import { GeographicsComponent } from './main-content/tabs/geographics/geographics.component';
+import { PopulationMeasureComponent } from './main-content/tabs/population-measure/population-measure.component';
+import { VotingMeasureComponent } from './main-content/tabs/voting-measure/voting-measure.component';
+import { PlanSummaryComponent } from './main-content/tabs/plan-summary/plan-summary.component';
+import { StateSummaryComponent } from './main-content/tabs/state-summary/state-summary.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,14 @@ import { TabsComponent } from './main-content/tabs/tabs.component';
     HeaderComponent,
     MainContentComponent,
     MapComponent,
-    TabsComponent
+    TabsComponent,
+    CompactnessComponent,
+    DemographicsComponent,
+    GeographicsComponent,
+    PopulationMeasureComponent,
+    VotingMeasureComponent,
+    PlanSummaryComponent,
+    StateSummaryComponent
   ],
   imports: [
     BrowserModule,

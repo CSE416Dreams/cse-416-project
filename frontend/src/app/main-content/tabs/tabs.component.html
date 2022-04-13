@@ -23,38 +23,33 @@
   </button>
 </mat-toolbar>
 
-<!-- We have two options
-1. have (selectedTabChange) = "tabClickFunction($event)"
-   in here to call fetch functions to update the variables in the dataController
-
-
-  Haven't decided yet
--->
 <mat-tab-group mat-align-tabs="start" [selectedIndex]="0" #tabs (selectedTabChange)="tabClick($event)">
   <div *ngIf="controller.getSelectedPlanIndex() == 0">
-    <mat-tab label="Summary of all plans"> </mat-tab>
+    <mat-tab label="Summary of all plans">
+      <app-state-summary></app-state-summary>
+    </mat-tab>
   </div>
   <div *ngIf="controller.getSelectedPlanIndex() != 0">
-    <mat-tab label="Summary of the current plan">
-      <!-- Summay of the current selected plan -->
+    <mat-tab label="Summary of the plan">
       <p>{{ this.controller.getSelectedState() }}</p>
       <br />
       <p>{{ this.controller.getSelectedPlan() }}</p>
+      <app-plan-summary></app-plan-summary>
     </mat-tab>
     <mat-tab label="Compactness">
-      <!-- Measure detail 1 -->
+      <app-compactness></app-compactness>
     </mat-tab>
     <mat-tab label="Demographics">
-      <!-- Measure detail 2 -->
+      <app-demographics></app-demographics>
     </mat-tab>
     <mat-tab label="Geographics">
-      <!-- Measure detail 3 -->
+      <app-geographics></app-geographics>
     </mat-tab>
     <mat-tab label="Population Measure">
-      <!-- Measure detail 3 -->
+      <app-population-measure></app-population-measure>
     </mat-tab>
     <mat-tab label="Voting Measure">
-      <!-- Measure detail 3 -->
+      <app-voting-measure></app-voting-measure>
     </mat-tab>
   </div>
 </mat-tab-group>

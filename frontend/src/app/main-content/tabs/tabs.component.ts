@@ -24,6 +24,9 @@ export class TabsComponent implements OnInit {
   //////////////////////////////////////////////////////////////////////////
   tabClick(tab) {
     switch(tab.tab.textLabel) {
+      // case "Summary of the plan":
+      //   this.controller.getPlanSummary();
+      //   break;
       case "Compactness":
         this.controller.getCompactnessMeasure();
         break;

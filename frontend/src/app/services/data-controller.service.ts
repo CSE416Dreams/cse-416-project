@@ -48,8 +48,8 @@ export class DataControllerService {
 
   changeSelectedPlan(index: number) {
      this.selectedPlan = this.planList[index];
-
      this.componentController.openFirstTab(); // I dont know if this is wanted or not  (probably not?);
+     this.getPlanSummary();
 
 
 
@@ -60,9 +60,18 @@ export class DataControllerService {
     this.mapController.flyTo(this.selectedState);
   }
 
-  async getState() {
+  ////////////////////////// will check localStorage if there is data, using its key first in each of the get methods ***
+  async getStateSummary() {
     await fetchState(this.selectedState).then(json => {
       console.log(json);
+    })
+    .catch(e => console.log(e));
+  }
+
+  async getPlanSummary() {
+    await fetchDistrictPlanSummary(this.selectedState, this.getSelectedPlanIndex()).then(json => {
+      console.log(json);
+      // assign varaibles here!
     })
     .catch(e => console.log(e));
   }
@@ -118,11 +127,15 @@ async function fetchState(selectedState: string) {
 }
 
 async function fetchDistrictPlanSummary(selectedState: string, selectedPlanIndex: number) {
-
+  let response = await fetch('http://localhost:8080/server/webapi/plans/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);  /// URL has to be updated!!! I dont know which are available at the moment
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
 }
 
 async function fetchCompactnessMeasure(selectedState: string, selectedPlanIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/cmeasures/compactness-'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
+  let response = await fetch('http://localhost:8080/server/webapi/plans/cmeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -130,7 +143,7 @@ async function fetchCompactnessMeasure(selectedState: string, selectedPlanIndex:
 }
 
 async function fetchDemographicsMeasure(selectedState: string, selectedPlanIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/dmeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-demo');
+  let response = await fetch('http://localhost:8080/server/webapi/plans/dmeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -138,7 +151,7 @@ async function fetchDemographicsMeasure(selectedState: string, selectedPlanIndex
 }
 
 async function fetchGeographicsMeasure(selectedState: string, selectedPlanIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/geomeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-geo');
+  let response = await fetch('http://localhost:8080/server/webapi/plans/geomeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -146,7 +159,7 @@ async function fetchGeographicsMeasure(selectedState: string, selectedPlanIndex:
 }
 
 async function fetchPopulationMeasure(selectedState: string, selectedPlanIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/popmeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-pop');
+  let response = await fetch('http://localhost:8080/server/webapi/plans/popmeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -154,7 +167,7 @@ async function fetchPopulationMeasure(selectedState: string, selectedPlanIndex: 
 }
 
 async function fetchVoteMeasure(selectedState: string, selectedPlanIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/votemeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-vote');
+  let response = await fetch('http://localhost:8080/server/webapi/plans/votemeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
