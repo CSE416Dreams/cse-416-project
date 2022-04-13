@@ -21,7 +21,6 @@ public class DistrictPlanSummaryService {
 				1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/mississippi-2")));
 		plans.put("mississippi-plan2", new DistrictPlanSummary(SelectedState.MISSISSIPPI, "democratic", "4/11/2021",  Status.IN_LITIGATION,
 				1,  0.5,  0.53, new int[]{32, 25}, Paths.get("/maps/mississippi-2")));
-		
 		plans.put("georgia-plan1", new DistrictPlanSummary(SelectedState.GEORGIA, "republican", "2/5/2021",  Status.PROPOSED,
 				1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/mississippi-2")));
 		plans.put("georgia-plan2", new DistrictPlanSummary(SelectedState.GEORGIA, "democratic", "4/11/2021",  Status.IN_LITIGATION,

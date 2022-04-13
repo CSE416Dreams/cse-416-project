@@ -15,7 +15,6 @@ public class CompactnessMeasureService {
 		cmeasures.put("compactness-mississippi-plan1", new CompactnessMeasure(null, 0.2, 0.3));
 		cmeasures.put("compactness-mississippi-plan2", new CompactnessMeasure(null, 0.4, 0.3));
 		cmeasures.put("compactness-georgia-plan1", new CompactnessMeasure(null, 0.3, 0.3));
-
 	}
 
 	public CompactnessMeasure getcmeasure(String cmeasureName) {

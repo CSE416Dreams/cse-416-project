@@ -5,11 +5,11 @@ public class State {
 	private String id;
 	private long population;
 	private DistrictPlanSummary[] dps; //dps will hold the four district plan summaries
-	public State(String name, String id, long population, double[] demographics) {
+	public State(String name, String id, long population, DistrictPlanSummary[] dps) {
 		this.name = name;
 		this.id = id;
 		this.population = population;
-		this.dps = new DistrictPlanSummary[4];
+		this.dps = dps;
 	}
 	/**
 	 * @return the name

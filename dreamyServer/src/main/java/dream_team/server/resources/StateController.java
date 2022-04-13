@@ -18,7 +18,7 @@ import jakarta.ws.rs.core.Response;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 
-public class StateResource {
+public class StateController {
 	StateService stateService = new StateService();
 	@GET
 	@Path("/{stateName}")
