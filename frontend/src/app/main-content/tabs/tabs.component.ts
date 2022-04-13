@@ -23,8 +23,22 @@ export class TabsComponent implements OnInit {
   // may go away
   //////////////////////////////////////////////////////////////////////////
   tabClick(tab) {
-    if(tab.tab.textLabel == "Measure1") {
-      this.controller.measure1();
+    switch(tab.tab.textLabel) {
+      case "Compactness":
+        this.controller.getCompactnessMeasure();
+        break;
+      case "Demographics":
+        this.controller.getDemographicsMeasure();
+        break;
+      case "Geographics":
+        this.controller.getGeographicsMeasure();
+        break;
+      case "Population Measure":
+        this.controller.getPopulationMeasure();
+        break;
+      case "Voting Measure":
+        this.controller.getVoteMeasure();
+        break;
     }
     return;
   }

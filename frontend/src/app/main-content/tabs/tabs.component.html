@@ -1,20 +1,19 @@
 <mat-toolbar class="header">
   <h2>State: {{ this.controller.getSelectedState() }}</h2>
   <p class="p"></p>
-  <h2 *ngIf="this.controller.getSelectedPlan() != 0">
-    Plan: {{ this.controller.getSelectedPlanName() }}
+  <h2 *ngIf="this.controller.getSelectedPlanIndex() != 0">
+    Plan: {{ this.controller.getSelectedPlan() }}
   </h2>
 
   <span class="spacer"></span>
   <button mat-raised-button [matMenuTriggerFor]="menu" class="menu-button">
-    {{ controller.getSelectedPlanName() }}
+    {{ controller.getSelectedPlanIndex() == 0 ? "Choose a plan" : controller.getSelectedPlan() }}
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="changeSelectedPlan(0)">Summary</button>
     <button
       mat-menu-item
       *ngFor="let item of this.controller.getPlanList(); index as i"
-      (click)="changeSelectedPlan(i + 1)"
+      (click)="changeSelectedPlan(i)"
     >
       {{ item }}
     </button>
@@ -27,28 +26,34 @@
 <!-- We have two options
 1. have (selectedTabChange) = "tabClickFunction($event)"
    in here to call fetch functions to update the variables in the dataController
-2. have OnInit have fetch functions directly from the data controller
+
 
   Haven't decided yet
 -->
 <mat-tab-group mat-align-tabs="start" [selectedIndex]="0" #tabs (selectedTabChange)="tabClick($event)">
-  <div *ngIf="controller.getSelectedPlan() == 0">
+  <div *ngIf="controller.getSelectedPlanIndex() == 0">
     <mat-tab label="Summary of all plans"> </mat-tab>
   </div>
-  <div *ngIf="controller.getSelectedPlan() != 0">
+  <div *ngIf="controller.getSelectedPlanIndex() != 0">
     <mat-tab label="Summary of the current plan">
       <!-- Summay of the current selected plan -->
       <p>{{ this.controller.getSelectedState() }}</p>
       <br />
       <p>{{ this.controller.getSelectedPlan() }}</p>
     </mat-tab>
-    <mat-tab label="Measure1">
+    <mat-tab label="Compactness">
       <!-- Measure detail 1 -->
     </mat-tab>
-    <mat-tab label="Measure2">
+    <mat-tab label="Demographics">
       <!-- Measure detail 2 -->
     </mat-tab>
-    <mat-tab label="Measure3">
+    <mat-tab label="Geographics">
+      <!-- Measure detail 3 -->
+    </mat-tab>
+    <mat-tab label="Population Measure">
+      <!-- Measure detail 3 -->
+    </mat-tab>
+    <mat-tab label="Voting Measure">
       <!-- Measure detail 3 -->
     </mat-tab>
   </div>

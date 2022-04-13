@@ -13,7 +13,7 @@ import { DataControllerService } from '../services/data-controller.service';
 })
 export class HeaderComponent implements OnInit {
   myControl = new FormControl();
-  options: string[] = ["None", "Mississippi", "Georgia"]
+  options: string[] = ["None", "Florida", "Georgia", "Mississippi"]
   filteredOptions: Observable<string[]>;
 
   @ViewChild(MatAutocompleteTrigger, {read: MatAutocompleteTrigger}) inputAutoComplete: MatAutocompleteTrigger;

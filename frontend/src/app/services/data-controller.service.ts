@@ -7,16 +7,11 @@ import { MapControllerService } from './map-controller.service';
 })
 export class DataControllerService {
   selectedState: string = "None";
-  selectedPlan: number = 0;  // 0 is default (summary of all plans)
-  planList = ["PlanName1", "PlanName2", "PlanName3"]; // This will be fetched as a string array (e.g. ["Rep.", "Dem.", "planName1"])   ////// selectedPlan will be the index of this list
-  // PlanList has to be updated according to the selectedState
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-  // This controller basically controls EVERYTHING INCLUDING THE MAP
-  // This will include DATA fetching
-  // Inside map-controller will have MAP fetching
+  selectedPlan: string = "Summary";
+  planList = ["Summary", "PlanName1", "PlanName2", "PlanName3"]; // (e.g. ["Summary", "Rep.", "Dem.", "planName1"])
 
   constructor(
-    public mapService: MapControllerService,
+    public mapController: MapControllerService,
     public componentController: ComponentControllerService
   ) { }
 
@@ -33,19 +28,16 @@ export class DataControllerService {
     return this.planList;
   }
 
-  getSelectedPlanName() {
-    if(this.selectedPlan == 0) {
-      return "Choose a plan";
-    }
-    return this.planList[this.selectedPlan-1];
+  getSelectedPlanIndex() {
+    return this.planList.indexOf(this.selectedPlan);
   }
 
-  // changing state which controls everything
+
   changeState(string: string) {
-    this.selectedState = string.toLowerCase();
-    this.selectedPlan = 0;
-    this.mapService.flyTo(this.selectedState);
-    if(string == "none") {
+    this.selectedState = string;
+    this.selectedPlan = "Summary";
+    this.mapController.flyTo(this.selectedState);
+    if(string == "None") {
       this.componentController.closeSidenav();
       return;
     }
@@ -53,85 +45,117 @@ export class DataControllerService {
     this.componentController.openFirstTab();
   }
 
-  // change the plan index
-  changeSelectedPlan(index: number) {
-     this.selectedPlan = index;
 
-     this.componentController.openFirstTab(); // I dont know if this is wanted or not  (probably not?)
+  changeSelectedPlan(index: number) {
+     this.selectedPlan = this.planList[index];
+
+     this.componentController.openFirstTab(); // I dont know if this is wanted or not  (probably not?);
 
 
 
      return;
   }
 
-  async measure1() {
-    await fetchVoteMeasure(this.selectedState, this.selectedPlan).then(json => {
+  return() {
+    this.mapController.flyTo(this.selectedState);
+  }
+
+  async getState() {
+    await fetchState(this.selectedState).then(json => {
+      console.log(json);
+    })
+    .catch(e => console.log(e));
+  }
+
+  async getCompactnessMeasure() {
+    await fetchCompactnessMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
       console.log(json);
       // assign variables here!!
     })
     .catch(e => console.log(e));
   }
 
-  // Returning map to current selected state
-  return() {
-    this.mapService.flyTo(this.selectedState);
+  async getDemographicsMeasure() {
+    await fetchDemographicsMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
+      console.log(json);
+      // assign variables here!!
+    })
+    .catch(e => console.log(e));
+  }
+
+  async getGeographicsMeasure() {
+    await fetchGeographicsMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
+      console.log(json);
+      // assign variables here!!
+    })
+    .catch(e => console.log(e));
+  }
+
+  async getPopulationMeasure() {
+    await fetchPopulationMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
+      console.log(json);
+      // assign variables here!!
+    })
+    .catch(e => console.log(e));
+  }
+
+  async getVoteMeasure() {
+    await fetchVoteMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
+      console.log(json);
+      // assign variables here!!
+    })
+    .catch(e => console.log(e));
   }
 }
 
 
 async function fetchState(selectedState: string) {
-  let response = await fetch('http://localhost:8080/server/webapi/');  /// URL has to be updated!!! I dont know which are available at the moment
+  let response = await fetch('http://localhost:8080/server/webapi/states/'+selectedState.toLowerCase());  /// URL has to be updated!!! I dont know which are available at the moment
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   return await response.text();
 }
 
-async function fetchVoteMeasure(selectedState: string, selectedPlan: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/votemeasures/'+selectedState+'-plan'+selectedPlan+'-vote');
+async function fetchCompactnessMeasure(selectedState: string, selectedPlanIndex: number) {
+  let response = await fetch('http://localhost:8080/server/webapi/plans/cmeasure/compactness-'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   return await response.text();
 }
-// Something like this for each measure object we want to fetch,,,,
-// ADD according variables to this file
 
-// For now the categories are -------------------------------------------------------------------
-/*
-  - State (first click on state) - summary of all plans
-  - Voting measure
-  - Demographic measure
-  - Population measure
-  - Geographics measure
+async function fetchDemographicsMeasure(selectedState: string, selectedPlanIndex: number) {
+  let response = await fetch('http://localhost:8080/server/webapi/plans/dmeasure/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-demo');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
+}
 
-  - Rep/Dem splits
-  - Box & Whisker
-  - Seats to Votes
-  - Radar Plots
-*/
+async function fetchGeographicsMeasure(selectedState: string, selectedPlanIndex: number) {
+  let response = await fetch('http://localhost:8080/server/webapi/plans/geomeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-geo');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
+}
 
-// async function fetchDemographicMeasure(selectedState: string, selectedPlan: number) {
-//   let response = await fetch('http://localhost:8080/server/webapi/plans/votemeasures/'+selectedState+'-plan'+selectedPlan+'-vote');
-//   if(!response.ok) {
-//     throw new Error(`HTTP error! status: ${response.status}`);
-//   }
-//   return await response.text();
-// }
+async function fetchPopulationMeasure(selectedState: string, selectedPlanIndex: number) {
+  let response = await fetch('http://localhost:8080/server/webapi/plans/popmeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-pop');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
+}
 
-// async function fetchPopulationMeasure(selectedState: string, selectedPlan: number) {
-//   let response = await fetch('http://localhost:8080/server/webapi/plans/votemeasures/'+selectedState+'-plan'+selectedPlan+'-vote');
-//   if(!response.ok) {
-//     throw new Error(`HTTP error! status: ${response.status}`);
-//   }
-//   return await response.text();
-// }
-
-/*
-
-*/
-
-
+async function fetchVoteMeasure(selectedState: string, selectedPlanIndex: number) {
+  let response = await fetch('http://localhost:8080/server/webapi/plans/votemeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-vote');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
+}
 
 
 
@@ -142,8 +166,6 @@ async function fetchVoteMeasure(selectedState: string, selectedPlan: number) {
 - showing the current plan when clicked on a state - GeoJson of the plans required, coloring required
 
 - Each component in tabs to show some data - graphing tool, and other data points required accordingly
-
-- Center change for florida (scales on different laptops are different so idk)
 
 
 */
