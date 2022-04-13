@@ -117,8 +117,12 @@ async function fetchState(selectedState: string) {
   return await response.text();
 }
 
+async function fetchDistrictPlanSummary(selectedState: string, selectedPlanIndex: number) {
+
+}
+
 async function fetchCompactnessMeasure(selectedState: string, selectedPlanIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/cmeasure/compactness-'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
+  let response = await fetch('http://localhost:8080/server/webapi/plans/cmeasures/compactness-'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -126,7 +130,7 @@ async function fetchCompactnessMeasure(selectedState: string, selectedPlanIndex:
 }
 
 async function fetchDemographicsMeasure(selectedState: string, selectedPlanIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/dmeasure/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-demo');
+  let response = await fetch('http://localhost:8080/server/webapi/plans/dmeasures/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex+'-demo');
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
