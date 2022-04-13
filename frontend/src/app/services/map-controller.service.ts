@@ -49,6 +49,29 @@ export class MapControllerService {
     else return true;
   }
 
+  initialMap() {
+    // This will be when hover enabled in the US map to be able to click each states!
+
+    /*
+    1. remove current layers, if any
+    2. add the source for state outlines for all 3 states
+    3. add layer for all 3 states
+    4. make hover / click functions
+    */
+  }
+
+  showDistrictPlan(state: string, planIndex: number) {
+    // if index is 0, it will use the
+  // This will be when a state or district plan is selected
+
+    /*
+    1. remove current layers, if any (for that state)  * leave the other states outline map
+    2. add the source for the selected plan
+    3. add layer for that state
+    4. make hover for each district / county
+    */
+  }
+
   flyTo(state: string) {
     if (state == 'None') {
       this.mainMap.flyTo({
@@ -72,4 +95,13 @@ export class MapControllerService {
       essential: true,
     });
   }
+}
+
+
+async function fetchMap(state: string, planIndex:number) {
+  let response = await fetch("");  // Need to fill this out
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
 }

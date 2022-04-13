@@ -39,10 +39,12 @@ export class DataControllerService {
     this.mapController.flyTo(this.selectedState);
     if(string == "None") {
       this.componentController.closeSidenav();
+      this.mapController.initialMap();
       return;
     }
     this.componentController.openSidenav();
     this.componentController.openFirstTab();
+    // this.mapController.showDistrictPlan(this.selectedState, this.getSelectedPlanIndex());
   }
 
 
@@ -173,16 +175,3 @@ async function fetchVoteMeasure(selectedState: string, selectedPlanIndex: number
   }
   return await response.text();
 }
-
-
-
-/* TODO by Tuesday
-
-- Hover | click on a state from None state - GeoJson of states required
-
-- showing the current plan when clicked on a state - GeoJson of the plans required, coloring required
-
-- Each component in tabs to show some data - graphing tool, and other data points required accordingly
-
-
-*/
