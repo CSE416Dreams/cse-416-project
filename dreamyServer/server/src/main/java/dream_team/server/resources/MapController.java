@@ -2,6 +2,7 @@ package dream_team.server.resources;
 
 import dream_team.server.model.StateMap;
 import dream_team.server.service.MapService;
+import dream_team.server.service.StateGeoJSONService;
 import jakarta.ws.rs.Consumes;
 //import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
@@ -20,6 +21,7 @@ import jakarta.ws.rs.core.Response;
 
 public class MapController {
 MapService mapService = new MapService();
+StateGeoJSONService stateGeoService = new StateGeoJSONService();
 	
 	@GET
 	@Path("/{mapName}")
@@ -31,7 +33,7 @@ MapService mapService = new MapService();
 	            .header("Access-Control-Allow-Credentials", "true")
 	            .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
 	            .header("Access-Control-Max-Age", "1209600")
-	            .entity(mapService.getMap(mapName))
+	            .entity(stateGeoService.getgeoJSONMap(mapName))
 	            .build();
 		
 	}

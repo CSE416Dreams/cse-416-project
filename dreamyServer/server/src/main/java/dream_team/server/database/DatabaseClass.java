@@ -28,7 +28,7 @@ public class DatabaseClass {
 	private static Map<String, GeographicsMeasure> geomeasures = new HashMap<>();
 	private static Map<String, PopulationMeasure> popmeasures = new HashMap<>();
 	private static Map<String, VotingMeasure> vmeasures = new HashMap<>();
-	
+	private static Map<String, JSONObject> geojsons = new HashMap<>();
 
 
 	public static Map<String, StateMap> getMaps(){
@@ -57,4 +57,10 @@ public class DatabaseClass {
 	public static Map<String, VotingMeasure> getVmeasures() {
 		return vmeasures;
 	}
+	public static Map<String, JSONObject> getGeojsons() {
+		return geojsons;
+	}
+
+	
+	
 }

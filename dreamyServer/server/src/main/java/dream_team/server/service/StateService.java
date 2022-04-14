@@ -20,25 +20,25 @@ public class StateService {
 		states.put("mississippi", new State("Mississippi","28",2976000,  //using fips code 28
 				new DistrictPlanSummary[] {
 						new DistrictPlanSummary(SelectedState.MISSISSIPPI, "republican", "2/5/2021",  Status.PROPOSED,
-								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/mississippi-1"))}, new String[] {"Plan 1"}));
+								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//mississippi-1"))}, new String[] {"Plan 1"}));
 		states.put("georgia", new State("Georgia","13",10600000, 		//using fips code 13
 				new DistrictPlanSummary[] {
 						new DistrictPlanSummary(SelectedState.GEORGIA, "republican", "2/5/2021",  Status.PROPOSED,
-								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/georgia-1")),
+								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//georgia-1")),
 						new DistrictPlanSummary(SelectedState.GEORGIA, "republican", "2/5/2021",  Status.PROPOSED,
-								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/georgia-2"))}, new String[] {"Plan 1", "Plan 2"}));
+								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//georgia-2"))}, new String[] {"Plan 1", "Plan 2"}));
 	//insert georgia here
 	//insert florida here
 		states.put("florida", new State("Florida","12",21480000, 		//using fips code 12
 				new DistrictPlanSummary[] {
 						new DistrictPlanSummary(SelectedState.FLORIDA, "republican", "2/5/2021",  Status.PROPOSED,
-								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/florida-1")),
+								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//florida-1")),
 						new DistrictPlanSummary(SelectedState.FLORIDA, "republican", "2/5/2021",  Status.PROPOSED,
-								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/florida-2")),
+								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//florida-2")),
 						new DistrictPlanSummary(SelectedState.FLORIDA, "democratic", "2/5/2021",  Status.PROPOSED,
-								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/florida-3")),
+								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//florida-3")),
 						new DistrictPlanSummary(SelectedState.FLORIDA, "republican", "2/5/2021",  Status.PROPOSED,
-								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("/maps/florida-4"))}, 
+								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//florida-4"))}, 
 				new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4"}));
 	}
 	public State getState(String state) {
