@@ -13,11 +13,11 @@ export class DataControllerService {
   planList = ["Summary"]; // (e.g. ["Summary", "Rep.", "Dem.", "planName1"])
   districtPlansInfo = [];
 
-  compactnessMeasure;
-  populationMeasure;
-  demographicsMeasure;
-  geographicsMeasure;
-  votingMeasure;
+  compactnessMeasure : any;
+  populationMeasure : any;
+  demographicsMeasure : any;
+  geographicsMeasure : any;
+  votingMeasure : any;
 
   constructor(
     public mapController: MapControllerService,

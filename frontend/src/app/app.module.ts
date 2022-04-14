@@ -22,6 +22,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -73,7 +74,8 @@ import { StateSummaryComponent } from './main-content/tabs/state-summary/state-s
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

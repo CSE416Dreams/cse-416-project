@@ -10,6 +10,11 @@ import { DataControllerService } from 'src/app/services/data-controller.service'
 })
 export class TabsComponent implements OnInit {
   @ViewChild("tabs", {static: true}) public tabs: MatTabGroup;
+  compactnessMeasure: any;
+  demographicsMeasure: any;
+  geographicsMeasure: any;
+  populationMeasure: any;
+  votingMeasure: any;
 
   constructor(public controller: DataControllerService, public componentController: ComponentControllerService) { }
 
@@ -22,25 +27,30 @@ export class TabsComponent implements OnInit {
   }
   // may go away
   //////////////////////////////////////////////////////////////////////////
-  tabClick(tab) {
+  async tabClick(tab) {
     switch(tab.tab.textLabel) {
       // case "Summary of the plan":
       //   this.controller.getPlanSummary();
       //   break;
       case "Compactness":
-        this.controller.getCompactnessMeasure();
+        await this.controller.getCompactnessMeasure();
+        this.compactnessMeasure = this.controller.getCompactnessMeasureJSON();
         break;
       case "Demographics":
-        this.controller.getDemographicsMeasure();
+        await this.controller.getDemographicsMeasure();
+        this.demographicsMeasure = this.controller.getDemographicsMeasureJSON();
         break;
       case "Geographics":
-        this.controller.getGeographicsMeasure();
+        await this.controller.getGeographicsMeasure();
+        this.geographicsMeasure = this.controller.getGeographicsMeasureJSON();
         break;
       case "Population Measure":
-        this.controller.getPopulationMeasure();
+        await this.controller.getPopulationMeasure();
+        this.populationMeasure = this.controller.getPopulationMeasureJSON();
         break;
       case "Voting Measure":
-        this.controller.getVoteMeasure();
+        await this.controller.getVoteMeasure();
+        this.votingMeasure = this.controller.getVotingMeasureJSON();
         break;
     }
     return;

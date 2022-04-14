@@ -1,1 +1,10 @@
-<p>compactness works!</p>
+
+
+<div *ngIf="this.compactnessMeasure == undefined">
+  <mat-spinner class="spinner" style="margin: 0 auto;" mode="indeterminate"></mat-spinner>
+</div>
+
+<div *ngIf="this.compactnessMeasure != undefined">
+  <div>{{this.compactnessMeasure.polsbyPopperValue}}</div>
+  <!-- LIKE THISSSSS -->
+</div>

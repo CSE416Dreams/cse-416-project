@@ -37,19 +37,19 @@
       <app-plan-summary></app-plan-summary>
     </mat-tab>
     <mat-tab label="Compactness">
-      <app-compactness></app-compactness>
+      <app-compactness [compactnessMeasure]="compactnessMeasure"></app-compactness>
     </mat-tab>
     <mat-tab label="Demographics">
-      <app-demographics></app-demographics>
+      <app-demographics [demographicsMeasure]="demographicsMeasure"></app-demographics>
     </mat-tab>
     <mat-tab label="Geographics">
-      <app-geographics></app-geographics>
+      <app-geographics [geographicsMeasure]="geographicsMeasure"></app-geographics>
     </mat-tab>
     <mat-tab label="Population Measure">
-      <app-population-measure></app-population-measure>
+      <app-population-measure [populationMeasure]="populationMeasure"></app-population-measure>
     </mat-tab>
     <mat-tab label="Voting Measure">
-      <app-voting-measure></app-voting-measure>
+      <app-voting-measure [votingMeasure]="votingMeasure"></app-voting-measure>
     </mat-tab>
   </div>
 </mat-tab-group>

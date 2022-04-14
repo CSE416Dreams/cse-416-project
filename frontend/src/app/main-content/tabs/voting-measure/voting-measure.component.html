@@ -1,1 +1,10 @@
-<p>voting-measure works!</p>
+
+
+<div *ngIf="this.votingMeasure == undefined">
+  <mat-spinner class="spinner" style="margin: 0 auto;" mode="indeterminate"></mat-spinner>
+</div>
+
+<div *ngIf="this.votingMeasure != undefined">
+  <div>{{this.votingMeasure }}</div>
+  <!-- LIKE THISSSSS -->
+</div>

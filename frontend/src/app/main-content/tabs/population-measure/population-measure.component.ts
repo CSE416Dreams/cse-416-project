@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-population-measure',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./population-measure.component.css']
 })
 export class PopulationMeasureComponent implements OnInit {
-
+  @Input() populationMeasure: any;
   constructor() { }
 
   ngOnInit(): void {

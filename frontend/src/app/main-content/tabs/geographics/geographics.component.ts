@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-geographics',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./geographics.component.css']
 })
 export class GeographicsComponent implements OnInit {
-
+  @Input() geographicsMeasure: any;
   constructor() { }
 
   ngOnInit(): void {

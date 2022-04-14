@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-voting-measure',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./voting-measure.component.css']
 })
 export class VotingMeasureComponent implements OnInit {
-
+  @Input() votingMeasure: any;
   constructor() { }
 
   ngOnInit(): void {
