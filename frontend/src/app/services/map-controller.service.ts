@@ -72,12 +72,10 @@ export class MapControllerService {
   async addSource(state: string, planIndex: number) {
     await fetchMap(state, 1).then(json => { // This should be planIndex instead
       let jsonObj = JSON.parse(json);
-      console.log(jsonObj)
       this.mainMap.addSource(state, {
         type: 'geojson',
         data: jsonObj,
       });
-      // assign variables here!!
     })
     .catch(e => console.log(e));
     // This data is to changed to index
@@ -91,18 +89,29 @@ export class MapControllerService {
       filter: ['==', '$type', 'Polygon'],
       layout: {},
       paint: {
-        'fill-color': '#0000FF',
+        'fill-color': '#6488a1',
         'fill-opacity': 0.8,
       },
     });
+
+    // this.mainMap.addLayer({
+    //   id: state+"Line",
+    //   type: 'line',
+    //   source: state,
+    //   paint: {
+    //     'line-width': 1,
+    //     'line-color': "#080808",
+    //     'line-opacity': 0.8
+    //   }
+    // });
+    // console.log(this.mainMap.getStyle().layers)
   }
 
-  showDistrictPlan(state: string, planIndex: number) {
-    this.disableHover(state);
+  async showDistrictPlan(state: string, planIndex: number, fromNone: boolean) {
     this.removeMap(state);
     ///////////////////////////////////////////////////////////// has to be uncommented
-    // this.addSource(state, planIndex);
-    // this.addLayer(state);
+    await this.addSource(state, planIndex);
+    this.addLayer(state);
     /////////////////////////////////////////////////////////////
   }
 
@@ -130,9 +139,11 @@ export class MapControllerService {
     });
   }
 
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // ONLY BASIC STATES FUNCTIONS
   resetToInitial(state: string) {
     ///////////////////////////////////////////////////////////// has to be uncommented
-    // this.removeMap(state);
+    this.removeMap(state);
     /////////////////////////////////////////////////////////////
     switch(state) {
       case "mississippi":
