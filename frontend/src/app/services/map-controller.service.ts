@@ -70,12 +70,12 @@ export class MapControllerService {
   }
 
   async addSource(state: string, planIndex: number) {
-    await fetchMap(state, 1).then(json => {
+    await fetchMap(state, 1).then(json => { // This should be planIndex instead
       let jsonObj = JSON.parse(json);
       console.log(jsonObj)
       this.mainMap.addSource(state, {
         type: 'geojson',
-        data: jsonObj, // this should be fetched later on.
+        data: jsonObj,
       });
       // assign variables here!!
     })

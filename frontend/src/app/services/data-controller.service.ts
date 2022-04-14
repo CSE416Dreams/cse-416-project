@@ -88,7 +88,7 @@ export class DataControllerService {
   async getPlanSummary() {
     await fetchDistrictPlanSummary(this.selectedState, this.getSelectedPlanIndex()).then(json => {
 
-      // let jsonObj = JSON.parse(json);
+      // let jsonObj = JSON.parse(json);  // This is a bit buggy
       // assign varaibles here!
     })
     .catch(e => console.log(e));
