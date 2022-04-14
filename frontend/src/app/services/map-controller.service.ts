@@ -89,6 +89,11 @@ export class MapControllerService {
       type: 'fill',
       source: state,
       filter: ['==', '$type', 'Polygon'],
+      layout: {},
+      paint: {
+        'fill-color': '#0000FF',
+        'fill-opacity': 0.8,
+      },
     });
   }
 
