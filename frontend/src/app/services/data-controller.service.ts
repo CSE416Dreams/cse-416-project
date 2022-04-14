@@ -85,9 +85,12 @@ export class DataControllerService {
     this.getStateSummary();
     if(oldState != "None") {
       this.mapController.resetToInitial(oldState.toLowerCase());
+      this.mapController.showDistrictPlan(this.selectedState.toLowerCase(), 1, false); // always turn on the first map
     }
-    // this.disableClick(this.selectedState.toLowerCase())
-    this.mapController.showDistrictPlan(this.selectedState.toLowerCase(), 1); // always turn on the first map
+    else {
+      this.mapController.showDistrictPlan(this.selectedState.toLowerCase(), 1, true); // always turn on the first map
+    }
+
     this.componentController.openSidenav();
     this.componentController.openFirstTab();
   }
