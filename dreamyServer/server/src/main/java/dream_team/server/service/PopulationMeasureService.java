@@ -17,7 +17,10 @@ public class PopulationMeasureService {
 		popmeasures.put("mississippi-plan1", new PopulationMeasure("mississippi-plan1-pop", 0.5));
 		popmeasures.put("mississippi-plan2",  new PopulationMeasure("mississippi-plan2-pop", 0.3));
 		popmeasures.put("georgia-plan1",  new PopulationMeasure("georgia-plan1-pop", 0.4));
-
+		popmeasures.put("georgia-plan2",  new PopulationMeasure("georgia-plan2-pop", 0.1));
+		popmeasures.put("florida-plan1",  new PopulationMeasure("florida-plan1-pop", 0.1));
+		popmeasures.put("florida-plan2",  new PopulationMeasure("florida-plan2-pop", 0.2));
+		popmeasures.put("florida-plan3",  new PopulationMeasure("florida-plan3-pop", 0.3));
 	}
 
 	public PopulationMeasure getpopmeasure(String popmeasureName) {

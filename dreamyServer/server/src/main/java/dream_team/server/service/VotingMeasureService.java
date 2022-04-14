@@ -19,7 +19,10 @@ public class VotingMeasureService {
 		votemeasures.put("mississippi-plan1", new VotingMeasure("mississippi-plan1-vote", 0.5, new int[] {8,7,6,2}, 0.5, 0.4, 3));
 		votemeasures.put("mississippi-plan2",  new VotingMeasure("mississippi-plan2-vote", 0.5, new int[] {8,7,6,2}, 0.5, 0.4, 3));
 		votemeasures.put("georgia-plan1",  new VotingMeasure("georgia-plan1-vote", 0.5, new int[] {8,7,6,2}, 0.5, 0.4, 3));
-
+		votemeasures.put("georgia-plan2",  new VotingMeasure("georgia-plan2-vote", 0.5, new int[] {8,7,6,2}, 0.5, 0.4, 3));
+		votemeasures.put("florida-plan1",  new VotingMeasure("florida-plan1-vote", 0.5, new int[] {8,7,6,2}, 0.5, 0.4, 3));
+		votemeasures.put("florida-plan2",  new VotingMeasure("florida-plan2-vote", 0.5, new int[] {8,7,6,2}, 0.5, 0.4, 3));
+		votemeasures.put("florida-plan3",  new VotingMeasure("florida-plan3-vote", 0.5, new int[] {8,7,6,2}, 0.5, 0.4, 3));
 	}
 
 	public VotingMeasure getvotemeasure(String votemeasureName) {

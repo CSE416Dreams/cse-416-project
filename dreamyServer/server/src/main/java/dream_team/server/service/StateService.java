@@ -31,15 +31,13 @@ public class StateService {
 	//insert florida here
 		states.put("florida", new State("Florida","12",21480000, 		//using fips code 12
 				new DistrictPlanSummary[] {
-						new DistrictPlanSummary(SelectedState.FLORIDA, "republican", "2/5/2021",  Status.PROPOSED,
+						new DistrictPlanSummary(SelectedState.FLORIDA, "H000C8019", "2/5/2021",  Status.PROPOSED,
 								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//florida-1")),
-						new DistrictPlanSummary(SelectedState.FLORIDA, "republican", "2/5/2021",  Status.PROPOSED,
+						new DistrictPlanSummary(SelectedState.FLORIDA, "P000C0094", "2/5/2021",  Status.PROPOSED,
 								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//florida-2")),
-						new DistrictPlanSummary(SelectedState.FLORIDA, "democratic", "2/5/2021",  Status.PROPOSED,
+						new DistrictPlanSummary(SelectedState.FLORIDA, "S019C8052", "2/5/2021",  Status.PROPOSED,
 								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//florida-3")),
-						new DistrictPlanSummary(SelectedState.FLORIDA, "republican", "2/5/2021",  Status.PROPOSED,
-								1,  0.5,  0.53, new int[]{32, 25},  Paths.get("//maps//florida-4"))}, 
-				new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4"}));
+				new String[] {"Plan 1", "Plan 2", "Plan 3"}));
 	}
 	public State getState(String state) {
 		return states.get(state);
