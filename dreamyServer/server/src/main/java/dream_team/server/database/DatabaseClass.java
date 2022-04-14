@@ -14,7 +14,7 @@ import dream_team.server.model.GeographicsMeasure;
 import dream_team.server.model.PopulationMeasure;
 import dream_team.server.model.State;
 
-import org.json.JSONObject;
+//import org.json.JSONObject;
 import java.util.Map;
 
 public class DatabaseClass {
@@ -28,7 +28,7 @@ public class DatabaseClass {
 	private static Map<String, GeographicsMeasure> geomeasures = new HashMap<>();
 	private static Map<String, PopulationMeasure> popmeasures = new HashMap<>();
 	private static Map<String, VotingMeasure> vmeasures = new HashMap<>();
-	private static Map<String, JSONObject> geojsons = new HashMap<>();
+	private static Map<String, String> geojsons = new HashMap<>();
 
 
 	public static Map<String, StateMap> getMaps(){
@@ -57,7 +57,7 @@ public class DatabaseClass {
 	public static Map<String, VotingMeasure> getVmeasures() {
 		return vmeasures;
 	}
-	public static Map<String, JSONObject> getGeojsons() {
+	public static Map<String, String> getGeojsons() {
 		return geojsons;
 	}
 
