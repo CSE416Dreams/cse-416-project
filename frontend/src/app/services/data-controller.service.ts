@@ -57,6 +57,14 @@ export class DataControllerService {
     return this.geographicsMeasure;
   }
 
+  clearMeasures() {
+    this.compactnessMeasure = undefined;
+    this.demographicsMeasure = undefined;
+    this.geographicsMeasure = undefined;
+    this.populationMeasure = undefined;
+    this.votingMeasure = undefined;
+  }
+
 
   changeState(string: string) {
 

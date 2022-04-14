@@ -28,6 +28,7 @@ export class TabsComponent implements OnInit {
   // may go away
   //////////////////////////////////////////////////////////////////////////
   async tabClick(tab) {
+    this.controller.clearMeasures();
     switch(tab.tab.textLabel) {
       // case "Summary of the plan":
       //   this.controller.getPlanSummary();
