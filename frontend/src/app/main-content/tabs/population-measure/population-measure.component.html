@@ -5,6 +5,13 @@
 </div>
 
 <div *ngIf="this.populationMeasure != undefined">
-  <div>{{this.populationMeasure }}</div>
-  <!-- LIKE THISSSSS -->
+  <div>
+    <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-hmyn"><span style="font-weight:bold">Equal Population Measure</span></th>
+        <th class="tg-ukpc">{{this.populationMeasure.equalPopulation}}</th>
+      </tr>
+    </thead>
+    </table></div>
 </div>

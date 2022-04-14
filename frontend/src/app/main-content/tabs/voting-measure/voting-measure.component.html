@@ -5,6 +5,38 @@
 </div>
 
 <div *ngIf="this.votingMeasure != undefined">
-  <div>{{this.votingMeasure }}</div>
-  <!-- LIKE THISSSSS -->
+  <div>
+    <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-hmyn"><span style="font-weight:bold">Efficiency Gap</span></th>
+        <th class="tg-ukpc">{{this.votingMeasure.efficiencyGap}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-ukpc">Estimated Voting Results</td>
+        <td class="tg-ukpc">{{this.votingMeasure.estimatedVotingResults}}</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td class="tg-ukpc">Mean-Median Difference</td>
+        <td class="tg-ukpc">{{this.votingMeasure.meanMedianDifference}}</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td class="tg-ukpc">Lopsided T</td>
+        <td class="tg-ukpc">{{this.votingMeasure.lopsidedT}}</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td class="tg-ukpc">Opportunity Districts</td>
+        <td class="tg-ukpc">{{this.votingMeasure.opportunityDistrict}}</td>
+      </tr>
+    </tbody>
+    
+    </table></div>
 </div>

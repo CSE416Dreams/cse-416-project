@@ -5,6 +5,19 @@
 </div>
 
 <div *ngIf="this.geographicsMeasure != undefined">
-  <div>{{this.geographicsMeasure }}</div>
-  <!-- LIKE THISSSSS -->
+  <div>
+    <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-hmyn"><span style="font-weight:bold">Compactness Measure</span></th>
+        <th class="tg-ukpc">{{this.geographicsMeasure.cm}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-ukpc">Split Counties</td>
+        <td class="tg-ukpc">{{this.geographicsMeasure.splitCounties}}</td>
+      </tr>
+    </tbody>
+    </table></div>
 </div>
