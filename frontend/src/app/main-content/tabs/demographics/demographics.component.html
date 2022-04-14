@@ -5,20 +5,73 @@
 </div>
 
 <div *ngIf="this.demographicsMeasure != undefined">
-  <div>
-    <table class="tg">
-    <thead>
-      <tr>
-        <th class="tg-hmyn"><span style="font-weight:bold">Split Demographics</span></th>
-        <th class="tg-ukpc">{{this.demographicsMeasure.splitDemographics}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="tg-ukpc">Racial Fairness</td>
-        <td class="tg-ukpc">{{this.demographicsMeasure.racialFairness}}</td>
-      </tr>
-    </tbody>
-    </table></div>
-  <!-- LIKE THISSSSS -->
+  <mat-list class="list-container">
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="60px">
+      <mat-grid-tile>
+          <mat-list-item style="font-size:35px">Demographic Information:</mat-list-item>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:20px">District Demographics:</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>Average Demographics in Districts: </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>White Percentage:
+              {{this.demographicsMeasure.splitDemographics[0]}}
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Black Percentage:
+              {{this.demographicsMeasure.splitDemographics[1]}}
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Asian Percentage:
+              {{this.demographicsMeasure.splitDemographics[2]}}
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Other Percentage:
+              {{this.demographicsMeasure.splitDemographics[3]}}
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:20px">Majority Minority Districts:</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>A Majority-Minority District is a district in which a racial minority group or groups comprise a majority of the district’s total population</mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Number of Majority Minority Districts: 
+              {{this.demographicsMeasure.racialFairness}}
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+  </mat-list>
 </div>

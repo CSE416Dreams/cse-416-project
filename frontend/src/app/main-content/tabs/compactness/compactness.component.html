@@ -5,7 +5,16 @@
 </div>
 
 <div *ngIf="this.compactnessMeasure != undefined">
-    <table class="tg">
+  <mat-list class="list-container">
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="60px">
+      <mat-grid-tile>
+          <mat-list-item style="font-size:23px">Compactness Information:</mat-list-item>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+  </mat-list>  
+  <table class="tg">
     <thead>
       <tr>
         <th class="tg-hmyn"><span style="font-weight:bold">Polsby Popper value</span></th>
@@ -18,5 +27,5 @@
         <td class="tg-ukpc">{{this.compactnessMeasure.schwartzValue}}</td>
       </tr>
     </tbody>
-    </table>
+  </table>
 </div>

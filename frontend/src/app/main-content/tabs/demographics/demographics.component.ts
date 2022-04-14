@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DemographicsComponent implements OnInit {
   @Input() demographicsMeasure: any;
-
+  panelOpenState = false;
   constructor() { }
 
   ngOnInit(): void {

@@ -23,7 +23,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 import { HeaderComponent } from './header/header.component';
@@ -37,6 +37,7 @@ import { PopulationMeasureComponent } from './main-content/tabs/population-measu
 import { VotingMeasureComponent } from './main-content/tabs/voting-measure/voting-measure.component';
 import { PlanSummaryComponent } from './main-content/tabs/plan-summary/plan-summary.component';
 import { StateSummaryComponent } from './main-content/tabs/state-summary/state-summary.component';
+
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { StateSummaryComponent } from './main-content/tabs/state-summary/state-s
     ReactiveFormsModule,
     MatSelectModule,
     MatMenuModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,4 +1,6 @@
-
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
 .spinner {
   display: block;
   position: fixed;

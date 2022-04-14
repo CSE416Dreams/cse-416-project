@@ -5,6 +5,15 @@
 </div>
 
 <div *ngIf="this.votingMeasure != undefined">
+  <mat-list class="list-container">
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="60px">
+      <mat-grid-tile>
+          <mat-list-item style="font-size:23px">Voting Information:</mat-list-item>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+  </mat-list>
   <div>
     <table class="tg">
     <thead>
