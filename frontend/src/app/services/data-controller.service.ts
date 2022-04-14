@@ -13,6 +13,12 @@ export class DataControllerService {
   planList = ["Summary"]; // (e.g. ["Summary", "Rep.", "Dem.", "planName1"])
   districtPlansInfo = [];
 
+  compactnessMeasure;
+  populationMeasure;
+  demographicsMeasure;
+  geographicsMeasure;
+  votingMeasure;
+
   constructor(
     public mapController: MapControllerService,
     public componentController: ComponentControllerService
@@ -33,6 +39,22 @@ export class DataControllerService {
 
   getSelectedPlanIndex() {
     return this.planList.indexOf(this.selectedPlan);
+  }
+
+  getCompactnessMeasureJSON() {
+    return this.compactnessMeasure;
+  }
+  getVotingMeasureJSON() {
+    return this.votingMeasure;
+  }
+  getPopulationMeasureJSON() {
+    return this.populationMeasure;
+  }
+  getDemographicsMeasureJSON() {
+    return this.demographicsMeasure;
+  }
+  getGeographicsMeasureJSON() {
+    return this.geographicsMeasure;
   }
 
 
@@ -119,7 +141,7 @@ export class DataControllerService {
   async getCompactnessMeasure() {
     await fetchCompactnessMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
       let jsonObj = JSON.parse(json);
-      // assign variables here!!
+      this.compactnessMeasure = jsonObj;
     })
     .catch(e => console.log(e));
   }
@@ -127,7 +149,7 @@ export class DataControllerService {
   async getDemographicsMeasure() {
     await fetchDemographicsMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
       let jsonObj = JSON.parse(json);
-      // assign variables here!!
+      this.demographicsMeasure = jsonObj;
     })
     .catch(e => console.log(e));
   }
@@ -135,7 +157,7 @@ export class DataControllerService {
   async getGeographicsMeasure() {
     await fetchGeographicsMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
       let jsonObj = JSON.parse(json);
-      // assign variables here!!
+      this.geographicsMeasure = jsonObj;
     })
     .catch(e => console.log(e));
   }
@@ -143,7 +165,7 @@ export class DataControllerService {
   async getPopulationMeasure() {
     await fetchPopulationMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
       let jsonObj = JSON.parse(json);
-      // assign variables here!!
+      this.populationMeasure = jsonObj;
     })
     .catch(e => console.log(e));
   }
@@ -151,7 +173,7 @@ export class DataControllerService {
   async getVoteMeasure() {
     await fetchVoteMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
       let jsonObj = JSON.parse(json);
-      // assign variables here!!
+      this.votingMeasure = jsonObj;
     })
     .catch(e => console.log(e));
   }
