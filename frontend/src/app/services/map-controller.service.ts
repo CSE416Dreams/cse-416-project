@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 
+import FloridaState from '../../../../State_GEOJSON/Florida/FloridaState';
+import MississippiState from '../../../../State_GEOJSON/Mississippi/MississippiState';
+import GeorgiaState from '../../../../State_GEOJSON/Georgia/GeorgiaState';
+
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MapControllerService {
   mainMap: mapboxgl;
-  // comparing maps will be locked hopefully
+  hoveredState = null;
 
   centers = {
     None: [-100, 40],
     Mississippi: [-84.5, 32],
     Georgia: [-78, 32],
-    Florida: [-77.5, 27]
+    Florida: [-77.5, 27],
   };
 
-  constructor() { }
+  constructor() {}
 
   getMainMap() {
     return this.mainMap;
@@ -40,36 +45,59 @@ export class MapControllerService {
     );
 
     this.mainMap.resize();
+    this.mainMap.on('load', () => {
+      this.initialMap();
+    });
+  }
+
+  async getStates() {
+    return this.getStates();
   }
 
   validateCenter(state: string) {
-    if(this.mainMap.getCenter().lng != this.centers[state][0] || this.mainMap.getCenter().lat != this.centers[state][1]) {
+    if (
+      this.mainMap.getCenter().lng != this.centers[state][0] ||
+      this.mainMap.getCenter().lat != this.centers[state][1]
+    ) {
       return false;
-    }
-    else return true;
+    } else return true;
   }
 
-  initialMap() {
-    // This will be when hover enabled in the US map to be able to click each states!
 
-    /*
-    1. remove current layers, if any
-    2. add the source for state outlines for all 3 states
-    3. add layer for all 3 states
-    4. make hover / click functions
-    */
+  removeMap(state: string) {
+    this.mainMap.removeLayer(state);
+    this.mainMap.removeSource(state);
+  }
+
+  async addSource(state: string, planIndex: number) {
+    await fetchMap(state, 1).then(json => {
+      let jsonObj = JSON.parse(json);
+      console.log(jsonObj)
+      this.mainMap.addSource(state, {
+        type: 'geojson',
+        data: jsonObj, // this should be fetched later on.
+      });
+      // assign variables here!!
+    })
+    .catch(e => console.log(e));
+    // This data is to changed to index
+  }
+
+  addLayer(state: string) {
+    this.mainMap.addLayer({
+      id: state,
+      type: 'fill',
+      source: state,
+      filter: ['==', '$type', 'Polygon'],
+    });
   }
 
   showDistrictPlan(state: string, planIndex: number) {
-    // if index is 0, it will use the
-  // This will be when a state or district plan is selected
-
-    /*
-    1. remove current layers, if any (for that state)  * leave the other states outline map
-    2. add the source for the selected plan
-    3. add layer for that state
-    4. make hover for each district / county
-    */
+    this.removeMap(state);
+    ///////////////////////////////////////////////////////////// has to be uncommented
+    // this.addSource(state, planIndex);
+    // this.addLayer(state);
+    /////////////////////////////////////////////////////////////
   }
 
   flyTo(state: string) {
@@ -95,12 +123,128 @@ export class MapControllerService {
       essential: true,
     });
   }
+
+  resetToInitial(state: string) {
+    ///////////////////////////////////////////////////////////// has to be uncommented
+    // this.removeMap(state);
+    /////////////////////////////////////////////////////////////
+    switch(state) {
+      case "Mississippi":
+        this.initialMississippi();
+        break;
+      case "Georgia":
+        this.initialGeorgia();
+        break;
+      case "Florida":
+        this.initialFlorida();
+        break;
+    }
+    // this.enableHoverAndClick(state); This is not needed for some reason
+  }
+
+  initialMap() {
+    this.initialFlorida();
+    this.enableHoverAndClick("Florida");
+    this.initialGeorgia();
+    this.enableHoverAndClick("Georgia");
+    this.initialMississippi();
+    this.enableHoverAndClick("Mississippi");
+  }
+
+  initialFlorida() {
+    this.mainMap.addSource('Florida', {
+      type: 'geojson',
+      data: FloridaState,
+    });
+    this.mainMap.addLayer({
+      id: 'Florida',
+      type: 'fill',
+      source: 'Florida',
+      layout: {},
+      paint: {
+        'fill-color': '#808080',
+        'fill-opacity': [
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          1,
+          0.5
+          ],
+      },
+    });
+  }
+
+  initialMississippi() {
+    this.mainMap.addSource('Mississippi', {
+      type: 'geojson',
+      data: MississippiState,
+    });
+    this.mainMap.addLayer({
+      id: 'Mississippi',
+      type: 'fill',
+      source: 'Mississippi',
+      layout: {},
+      paint: {
+        'fill-color': '#808080',
+        'fill-opacity': [
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          1,
+          0.5
+          ],
+      },
+    });
+  }
+
+  initialGeorgia() {
+    this.mainMap.addSource('Georgia', {
+      type: 'geojson',
+      data: GeorgiaState,
+    });
+    this.mainMap.addLayer({
+      id: 'Georgia',
+      type: 'fill',
+      source: 'Georgia',
+      layout: {},
+      paint: {
+        'fill-color': '#808080',
+        'fill-opacity': [
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          1,
+          0.5
+          ],
+      },
+    });
+  }
+
+  enableHoverAndClick(state : string) {
+    this.mainMap.on('mouseenter', state, () => {
+      this.mainMap.getCanvas().style.cursor = 'pointer'
+    });
+    // this.mainMap.on('mousemove', state, (e) => {
+    //   if(e.features.length > 0) {
+    //     this.mainMap.setFeatureState(
+    //       { source: state, id: state },
+    //       { hover: true }
+    //     )
+    //   }
+    // })
+    this.mainMap.on('mouseleave', state, () => {
+      this.mainMap.getCanvas().style.cursor = '';
+      // this.mainMap.setFeatureState(
+      //   { source: state, id: state },
+      //   { hover: false }
+      // )
+    })
+    this.mainMap.on('click', state, (e) => {
+      console.log(state);
+    })
+  }
 }
 
-
-async function fetchMap(state: string, planIndex:number) {
-  let response = await fetch("");  // Need to fill this out
-  if(!response.ok) {
+async function fetchMap(state: string, planIndex: number) {
+  let response = await fetch('http://localhost:8080/server/webapi/maps/'+state+'-'+planIndex); // Need to fill this out
+  if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   return await response.text();

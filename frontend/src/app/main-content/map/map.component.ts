@@ -21,6 +21,6 @@ export class MapComponent implements AfterViewInit {
 
   returnTo() {
     this.onCenter = true;
-    this.controller.return();
+    this.controller.returnTo();
   }
 }

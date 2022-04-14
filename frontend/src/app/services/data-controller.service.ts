@@ -8,7 +8,8 @@ import { MapControllerService } from './map-controller.service';
 export class DataControllerService {
   selectedState: string = "None";
   selectedPlan: string = "Summary";
-  planList = ["Summary", "PlanName1", "PlanName2", "PlanName3"]; // (e.g. ["Summary", "Rep.", "Dem.", "planName1"])
+  planList = ["Summary"]; // (e.g. ["Summary", "Rep.", "Dem.", "planName1"])
+  districtPlansInfo = [];
 
   constructor(
     public mapController: MapControllerService,
@@ -34,17 +35,24 @@ export class DataControllerService {
 
 
   changeState(string: string) {
+    let oldState = this.selectedState;
     this.selectedState = string;
     this.selectedPlan = "Summary";
     this.mapController.flyTo(this.selectedState);
-    if(string == "None") {
+    this.planList = ["Summary"];
+    if(string == "None" && oldState != "None") {
+      this.districtPlansInfo = [];
+      this.mapController.resetToInitial(oldState);
       this.componentController.closeSidenav();
-      this.mapController.initialMap();
       return;
     }
+    if(string == "None" && oldState == "None") {
+      return;
+    }
+    this.getStateSummary();
+    this.mapController.showDistrictPlan(this.selectedState, 1); // always turn on the first map
     this.componentController.openSidenav();
     this.componentController.openFirstTab();
-    // this.mapController.showDistrictPlan(this.selectedState, this.getSelectedPlanIndex());
   }
 
 
@@ -58,21 +66,29 @@ export class DataControllerService {
      return;
   }
 
-  return() {
+  returnTo() {
     this.mapController.flyTo(this.selectedState);
   }
 
   ////////////////////////// will check localStorage if there is data, using its key first in each of the get methods ***
   async getStateSummary() {
     await fetchState(this.selectedState).then(json => {
-      console.log(json);
+      let jsonObj = JSON.parse(json);
+
+      for(let i = 0; i < jsonObj.planNames.length; i++) {
+        this.planList.push(jsonObj.planNames[i]);
+      }
+      for(let i = 0; i < jsonObj.dps.length; i++) {
+        this.districtPlansInfo.push(jsonObj.dps[i]);
+      }
     })
     .catch(e => console.log(e));
   }
 
   async getPlanSummary() {
     await fetchDistrictPlanSummary(this.selectedState, this.getSelectedPlanIndex()).then(json => {
-      console.log(json);
+
+      // let jsonObj = JSON.parse(json);
       // assign varaibles here!
     })
     .catch(e => console.log(e));
@@ -80,7 +96,7 @@ export class DataControllerService {
 
   async getCompactnessMeasure() {
     await fetchCompactnessMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
-      console.log(json);
+      let jsonObj = JSON.parse(json);
       // assign variables here!!
     })
     .catch(e => console.log(e));
@@ -88,7 +104,7 @@ export class DataControllerService {
 
   async getDemographicsMeasure() {
     await fetchDemographicsMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
-      console.log(json);
+      let jsonObj = JSON.parse(json);
       // assign variables here!!
     })
     .catch(e => console.log(e));
@@ -96,7 +112,7 @@ export class DataControllerService {
 
   async getGeographicsMeasure() {
     await fetchGeographicsMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
-      console.log(json);
+      let jsonObj = JSON.parse(json);
       // assign variables here!!
     })
     .catch(e => console.log(e));
@@ -104,7 +120,7 @@ export class DataControllerService {
 
   async getPopulationMeasure() {
     await fetchPopulationMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
-      console.log(json);
+      let jsonObj = JSON.parse(json);
       // assign variables here!!
     })
     .catch(e => console.log(e));
@@ -112,7 +128,7 @@ export class DataControllerService {
 
   async getVoteMeasure() {
     await fetchVoteMeasure(this.selectedState, this.getSelectedPlanIndex()).then(json => {
-      console.log(json);
+      let jsonObj = JSON.parse(json);
       // assign variables here!!
     })
     .catch(e => console.log(e));
