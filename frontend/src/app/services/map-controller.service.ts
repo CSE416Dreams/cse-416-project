@@ -93,6 +93,7 @@ export class MapControllerService {
   }
 
   showDistrictPlan(state: string, planIndex: number) {
+    this.disableHover(state);
     this.removeMap(state);
     ///////////////////////////////////////////////////////////// has to be uncommented
     // this.addSource(state, planIndex);
@@ -129,115 +130,97 @@ export class MapControllerService {
     // this.removeMap(state);
     /////////////////////////////////////////////////////////////
     switch(state) {
-      case "Mississippi":
+      case "mississippi":
         this.initialMississippi();
         break;
-      case "Georgia":
+      case "georgia":
         this.initialGeorgia();
         break;
-      case "Florida":
+      case "florida":
         this.initialFlorida();
         break;
     }
-    // this.enableHoverAndClick(state); This is not needed for some reason
   }
 
   initialMap() {
     this.initialFlorida();
-    this.enableHoverAndClick("Florida");
     this.initialGeorgia();
-    this.enableHoverAndClick("Georgia");
     this.initialMississippi();
-    this.enableHoverAndClick("Mississippi");
   }
 
   initialFlorida() {
-    this.mainMap.addSource('Florida', {
+    this.mainMap.addSource('florida', {
       type: 'geojson',
       data: FloridaState,
     });
     this.mainMap.addLayer({
-      id: 'Florida',
+      id: 'florida',
       type: 'fill',
-      source: 'Florida',
+      source: 'florida',
       layout: {},
       paint: {
         'fill-color': '#808080',
-        'fill-opacity': [
-          'case',
-          ['boolean', ['feature-state', 'hover'], false],
-          1,
-          0.5
-          ],
+        'fill-opacity': 0.5,
       },
     });
+    this.enableHover("florida");
   }
 
   initialMississippi() {
-    this.mainMap.addSource('Mississippi', {
+    this.mainMap.addSource('mississippi', {
       type: 'geojson',
       data: MississippiState,
     });
     this.mainMap.addLayer({
-      id: 'Mississippi',
+      id: 'mississippi',
       type: 'fill',
-      source: 'Mississippi',
+      source: 'mississippi',
       layout: {},
       paint: {
         'fill-color': '#808080',
-        'fill-opacity': [
-          'case',
-          ['boolean', ['feature-state', 'hover'], false],
-          1,
-          0.5
-          ],
+        'fill-opacity': 0.5,
       },
     });
+    this.enableHover("mississippi");
   }
 
   initialGeorgia() {
-    this.mainMap.addSource('Georgia', {
+    this.mainMap.addSource('georgia', {
       type: 'geojson',
       data: GeorgiaState,
     });
     this.mainMap.addLayer({
-      id: 'Georgia',
+      id: 'georgia',
       type: 'fill',
-      source: 'Georgia',
+      source: 'georgia',
       layout: {},
       paint: {
         'fill-color': '#808080',
-        'fill-opacity': [
-          'case',
-          ['boolean', ['feature-state', 'hover'], false],
-          1,
-          0.5
-          ],
+        'fill-opacity': 0.5,
       },
     });
+    this.enableHover("georgia");
   }
 
-  enableHoverAndClick(state : string) {
+  enableHover(state : string) {
     this.mainMap.on('mouseenter', state, () => {
-      this.mainMap.getCanvas().style.cursor = 'pointer'
+      this.mainMap.getCanvas().style.cursor = 'pointer';
+      this.mainMap.setPaintProperty(state, 'fill-opacity', 0.8)
     });
-    // this.mainMap.on('mousemove', state, (e) => {
-    //   if(e.features.length > 0) {
-    //     this.mainMap.setFeatureState(
-    //       { source: state, id: state },
-    //       { hover: true }
-    //     )
-    //   }
-    // })
     this.mainMap.on('mouseleave', state, () => {
       this.mainMap.getCanvas().style.cursor = '';
-      // this.mainMap.setFeatureState(
-      //   { source: state, id: state },
-      //   { hover: false }
-      // )
+      this.mainMap.setPaintProperty(state, 'fill-opacity', 0.5)
     })
-    this.mainMap.on('click', state, (e) => {
-      console.log(state);
+  }
+
+  disableHover(state : string) {
+    this.mainMap.off('mouseenter', state, () => {
+      this.mainMap.getCanvas().style.cursor = 'pointer';
+      this.mainMap.setPaintProperty(state, 'fill-opacity', 0.8)
+    });
+    this.mainMap.off('mouseleave', state, () => {
+      this.mainMap.getCanvas().style.cursor = '';
+      this.mainMap.setPaintProperty(state, 'fill-opacity', 0.5)
     })
   }
 }

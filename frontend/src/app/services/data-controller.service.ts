@@ -6,6 +6,8 @@ import { MapControllerService } from './map-controller.service';
   providedIn: 'root'
 })
 export class DataControllerService {
+  stateOptions = ['Mississippi', 'Georgia', 'Florida'];
+
   selectedState: string = "None";
   selectedPlan: string = "Summary";
   planList = ["Summary"]; // (e.g. ["Summary", "Rep.", "Dem.", "planName1"])
@@ -35,22 +37,27 @@ export class DataControllerService {
 
 
   changeState(string: string) {
+
     let oldState = this.selectedState;
+    if(string == oldState) {
+      return;
+    }
     this.selectedState = string;
     this.selectedPlan = "Summary";
     this.mapController.flyTo(this.selectedState);
     this.planList = ["Summary"];
     if(string == "None" && oldState != "None") {
       this.districtPlansInfo = [];
-      this.mapController.resetToInitial(oldState);
+      this.mapController.resetToInitial(oldState.toLowerCase());
       this.componentController.closeSidenav();
       return;
     }
-    if(string == "None" && oldState == "None") {
-      return;
-    }
     this.getStateSummary();
-    this.mapController.showDistrictPlan(this.selectedState, 1); // always turn on the first map
+    if(oldState != "None") {
+      this.mapController.resetToInitial(oldState.toLowerCase());
+    }
+    // this.disableClick(this.selectedState.toLowerCase())
+    this.mapController.showDistrictPlan(this.selectedState.toLowerCase(), 1); // always turn on the first map
     this.componentController.openSidenav();
     this.componentController.openFirstTab();
   }
@@ -69,6 +76,21 @@ export class DataControllerService {
   returnTo() {
     this.mapController.flyTo(this.selectedState);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   ////////////////////////// will check localStorage if there is data, using its key first in each of the get methods ***
   async getStateSummary() {
