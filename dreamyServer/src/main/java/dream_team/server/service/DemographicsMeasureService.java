@@ -15,6 +15,10 @@ public class DemographicsMeasureService {
 		dmeasures.put("mississippi-plan1-demo", new DemographicsMeasure("mississippi-plan1-demo", new double[] {0.2,0.4}, 0.3));
 		dmeasures.put("mississippi-plan2-demo", new DemographicsMeasure("mississippi-plan2-demo", new double[] {0.2,0.4}, 0.3));
 		dmeasures.put("georgia-plan1-demo", new DemographicsMeasure("georgia-plan1-demo",new double[] {0.2,0.4}, 0.3));
+		dmeasures.put("georgia-plan2-demo", new DemographicsMeasure("georgia-plan2-demo",new double[] {0.2,0.4}, 0.3));
+		dmeasures.put("florida-plan1-demo", new DemographicsMeasure("florida-plan1-demo",new double[] {0.2,0.4}, 0.3));
+		dmeasures.put("florida-plan2-demo", new DemographicsMeasure("florida-plan2-demo",new double[] {0.2,0.4}, 0.3));
+		dmeasures.put("florida-plan3-demo", new DemographicsMeasure("florida-plan3-demo",new double[] {0.2,0.4}, 0.3));
 
 	}
 

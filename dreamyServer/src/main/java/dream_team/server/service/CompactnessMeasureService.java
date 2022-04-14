@@ -15,6 +15,10 @@ public class CompactnessMeasureService {
 		cmeasures.put("compactness-mississippi-plan1", new CompactnessMeasure(null, 0.2, 0.3));
 		cmeasures.put("compactness-mississippi-plan2", new CompactnessMeasure(null, 0.4, 0.3));
 		cmeasures.put("compactness-georgia-plan1", new CompactnessMeasure(null, 0.3, 0.3));
+		cmeasures.put("compactness-georgia-plan2", new CompactnessMeasure(null, 0.3, 0.4));
+		cmeasures.put("compactness-florida-plan1", new CompactnessMeasure(null, 0.3, 0.5));
+		cmeasures.put("compactness-florida-plan2", new CompactnessMeasure(null, 0.2, 0.3));
+		cmeasures.put("compactness-florida-plan3", new CompactnessMeasure(null, 0.3, 0.4));
 	}
 
 	public CompactnessMeasure getcmeasure(String cmeasureName) {
