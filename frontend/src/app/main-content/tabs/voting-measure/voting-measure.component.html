@@ -9,43 +9,184 @@
     <mat-divider></mat-divider>
     <mat-grid-list cols="1" rowHeight="60px">
       <mat-grid-tile>
-          <mat-list-item style="font-size:23px">Voting Information:</mat-list-item>
+          <mat-list-item style="font-size:20px">Voting Information:</mat-list-item>
       </mat-grid-tile>
     </mat-grid-list>
     <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:18px">Efficiency Gap: {{this.votingMeasure.efficiencyGap}}</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>Party’s total inefficient votes in an election</mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>
+
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:18px">Estimated Voting Results:</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>Estimated voting results of a district</mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                          (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item style="font-size:18px">District 1:</mat-list-item>
+          </mat-panel-title>
+          <mat-panel-description>Estimated voting results of District 1:</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-tile>
+              <mat-list-item> 
+
+              </mat-list-item>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+      </mat-expansion-panel>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                          (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item style="font-size:18px">District 2:</mat-list-item>
+          </mat-panel-title>
+          <mat-panel-description>Estimated voting results of District 2:</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-tile>
+              <mat-list-item> 
+
+              </mat-list-item>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+      </mat-expansion-panel>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                          (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item style="font-size:18px">District 3:</mat-list-item>
+          </mat-panel-title>
+          <mat-panel-description>Estimated voting results of District 3:</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-tile>
+              <mat-list-item> 
+
+              </mat-list-item>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+      </mat-expansion-panel>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                          (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-list-item style="font-size:18px">District 4:</mat-list-item>
+          </mat-panel-title>
+          <mat-panel-description>Estimated voting results of District 4:</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-tile>
+              <mat-list-item> 
+
+              </mat-list-item>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+      </mat-expansion-panel>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:18px">Mean-Median Difference: {{this.votingMeasure.meanMedianDifference}}</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>A party’s median vote share minus its mean vote share, across all of a plan’s districts</mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Number of Majority Minority Districts: 
+
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:18px">Lopsided T: {{this.votingMeasure.lopsidedT}}</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>Determine how similar the winning vote shares are for the districts won by Democrats to those for districts won by Republicans</mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Number of Majority Minority Districts: 
+
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:18px">Opportunity Districts: {{this.votingMeasure.opportunityDistrict}}</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>Opportunity districts are when the voting splits are within 5 % of each other</mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Number of Majority Minority Districts: 
+
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+    <mat-divider></mat-divider>
   </mat-list>
-  <div>
-    <table class="tg">
-    <thead>
-      <tr>
-        <th class="tg-hmyn"><span style="font-weight:bold">Efficiency Gap</span></th>
-        <th class="tg-ukpc">{{this.votingMeasure.efficiencyGap}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="tg-ukpc">Estimated Voting Results</td>
-        <td class="tg-ukpc">{{this.votingMeasure.estimatedVotingResults}}</td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr>
-        <td class="tg-ukpc">Mean-Median Difference</td>
-        <td class="tg-ukpc">{{this.votingMeasure.meanMedianDifference}}</td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr>
-        <td class="tg-ukpc">Lopsided T</td>
-        <td class="tg-ukpc">{{this.votingMeasure.lopsidedT}}</td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr>
-        <td class="tg-ukpc">Opportunity Districts</td>
-        <td class="tg-ukpc">{{this.votingMeasure.opportunityDistrict}}</td>
-      </tr>
-    </tbody>
-    
-    </table></div>
 </div>

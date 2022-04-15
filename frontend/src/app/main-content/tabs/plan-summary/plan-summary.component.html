@@ -1,24 +1,63 @@
-<!-- 
+<mat-list class="list-container">
+  <mat-divider></mat-divider>
+  <mat-grid-list cols="1" rowHeight="60px">
+      <mat-grid-tile>
+          <mat-list-item style="font-size:23px">Plan Name:
+              
+          </mat-list-item>
+      </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
 
-<div *ngIf="this.geographicsMeasure == undefined">
-    <mat-spinner class="spinner" style="margin: 0 auto;" mode="indeterminate"></mat-spinner>
-  </div>
-  
-  <div *ngIf="this.geographicsMeasure != undefined">
-    <div>
-      <table class="tg">
-      <thead>
-        <tr>
-          <th class="tg-hmyn"><span style="font-weight:bold">Compactness Measure</span></th>
-          <th class="tg-ukpc">{{this.geographicsMeasure.cm}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="tg-ukpc">Split Counties</td>
-          <td class="tg-ukpc">{{this.geographicsMeasure.splitCounties}}</td>
-        </tr>
-      </tbody>
-      </table></div>
-  </div>
-   -->
+  <mat-grid-list cols="1" rowHeight="40px">
+      <mat-grid-tile>
+          <mat-list-item>Political Party in Control
+              
+          </mat-list-item>
+      </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+
+  <mat-grid-list cols="1" rowHeight="40px">
+      <mat-grid-tile>
+          <mat-list-item>Total Population
+              
+          </mat-list-item>
+
+          <mat-divider vertical style="height: 40px;"></mat-divider>
+
+          <mat-list-item>Change in Population(2010-2020)
+             
+          </mat-list-item>
+      </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+
+  <mat-grid-list cols="1" rowHeight="40px">
+      <mat-grid-tile>
+          <mat-list-item>Number of Allocated Congressional Districts
+              
+          </mat-list-item>
+
+          <mat-divider vertical style="height: 40px;"></mat-divider>
+
+          <mat-list-item>Change in Allocated Districts(2010-2020)
+              
+          </mat-list-item>
+      </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+
+  <mat-grid-list cols="1" rowHeight="20px">
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+
+  <mat-grid-list cols="1" rowHeight="50px">
+      <mat-grid-tile>
+          <mat-list-item style="font-size:18px">
+              
+          </mat-list-item>
+      </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+</mat-list>

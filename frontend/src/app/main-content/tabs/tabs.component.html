@@ -31,14 +31,14 @@
   </div>
   <div *ngIf="controller.getSelectedPlanIndex() != 0">
     <mat-tab label="Summary of the plan">
-      <p>{{ this.controller.getSelectedState() }}</p>
+      <!--<p>{{ this.controller.getSelectedState() }}</p>
       <br />
-      <p>{{ this.controller.getSelectedPlan() }}</p>
+      <p>{{ this.controller.getSelectedPlan() }}</p>-->
       <app-plan-summary></app-plan-summary>
     </mat-tab>
-    <mat-tab label="Compactness">
+    <!-- <mat-tab label="Compactness">
       <app-compactness [compactnessMeasure]="compactnessMeasure"></app-compactness>
-    </mat-tab>
+    </mat-tab> -->
     <mat-tab label="Demographics">
       <app-demographics [demographicsMeasure]="demographicsMeasure"></app-demographics>
     </mat-tab>

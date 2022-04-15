@@ -5,29 +5,62 @@
 </div>
 
 <div *ngIf="this.geographicsMeasure != undefined">
-  <div>
-    <mat-list class="list-container">
+  <mat-list class="list-container">
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="60px">
+      <mat-grid-tile>
+          <mat-list-item style="font-size:20px">Geographic Information:</mat-list-item>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:18px">Compactness Measurements:</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>Calculates to show irregular shapes of districts</mat-panel-description>
+      </mat-expansion-panel-header>
       <mat-divider></mat-divider>
-      <mat-grid-list cols="1" rowHeight="60px">
+      <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
-            <mat-list-item style="font-size:23px">Geographic Information:</mat-list-item>
+            <mat-list-item>Polsby Popper Value:
+              {{this.geographicsMeasure.cm.polsbyPopperValue}}
+            </mat-list-item>
         </mat-grid-tile>
       </mat-grid-list>
       <mat-divider></mat-divider>
-    </mat-list>
-    <table class="tg">
-    <thead>
-      <tr>
-        <th class="tg-hmyn"><span style="font-weight:bold">Compactness Measure</span></th>
-        <th class="tg-ukpc">{{this.geographicsMeasure.cm}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="tg-ukpc">Split Counties</td>
-        <td class="tg-ukpc">{{this.geographicsMeasure.splitCounties}}</td>
-      </tr>
-    </tbody>
-    </table>
-  </div>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Schwartzberg Value:
+              {{this.geographicsMeasure.cm.schwartzValue}}
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-list-item style="font-size:18px">Split Counties:</mat-list-item>
+        </mat-panel-title>
+        <mat-panel-description>Counties that contain multiple districts</mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <mat-list-item>Number of Split Counties: 
+              {{this.geographicsMeasure.splitCounties}}
+            </mat-list-item>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-expansion-panel>
+    <mat-divider></mat-divider>
+  </mat-list>
 </div>

@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GeographicsComponent implements OnInit {
   @Input() geographicsMeasure: any;
+  panelOpenState = false;
   constructor() { }
 
   ngOnInit(): void {

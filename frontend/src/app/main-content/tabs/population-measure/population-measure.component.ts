@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PopulationMeasureComponent implements OnInit {
   @Input() populationMeasure: any;
+  panelOpenState = false;
   constructor() { }
 
   ngOnInit(): void {

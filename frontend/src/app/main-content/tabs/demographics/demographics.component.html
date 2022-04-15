@@ -9,18 +9,22 @@
     <mat-divider></mat-divider>
     <mat-grid-list cols="1" rowHeight="60px">
       <mat-grid-tile>
-          <mat-list-item style="font-size:35px">Demographic Information:</mat-list-item>
+          <mat-list-item style="font-size:20px">Demographic Information:</mat-list-item>
       </mat-grid-tile>
     </mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
     <mat-divider></mat-divider>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-list-item style="font-size:20px">District Demographics:</mat-list-item>
+          <mat-list-item style="font-size:18px">District Demographics:</mat-list-item>
         </mat-panel-title>
         <mat-panel-description>Average Demographics in Districts: </mat-panel-description>
       </mat-expansion-panel-header>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
       <mat-divider></mat-divider>
       <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
@@ -30,6 +34,8 @@
         </mat-grid-tile>
       </mat-grid-list>
       <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+      <mat-divider></mat-divider>
       <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
             <mat-list-item>Black Percentage:
@@ -38,6 +44,8 @@
         </mat-grid-tile>
       </mat-grid-list>
       <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+      <mat-divider></mat-divider>
       <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
             <mat-list-item>Asian Percentage:
@@ -45,6 +53,8 @@
             </mat-list-item>
         </mat-grid-tile>
       </mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
       <mat-divider></mat-divider>
       <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
@@ -55,13 +65,15 @@
       </mat-grid-list>
       <mat-divider></mat-divider>
     </mat-expansion-panel>
+    <mat-grid-list cols="1" rowHeight="10px"></mat-grid-list>
+    <mat-divider></mat-divider>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-list-item style="font-size:20px">Majority Minority Districts:</mat-list-item>
+          <mat-list-item style="font-size:18px">Majority Minority Districts:</mat-list-item>
         </mat-panel-title>
-        <mat-panel-description>A Majority-Minority District is a district in which a racial minority group or groups comprise a majority of the district’s total population</mat-panel-description>
+        <mat-panel-description>District in which a racial minority group or groups comprise a majority</mat-panel-description>
       </mat-expansion-panel-header>
       <mat-divider></mat-divider>
       <mat-grid-list cols="1" rowHeight="40px">
@@ -73,5 +85,6 @@
       </mat-grid-list>
       <mat-divider></mat-divider>
     </mat-expansion-panel>
+    <mat-divider></mat-divider>
   </mat-list>
 </div>
