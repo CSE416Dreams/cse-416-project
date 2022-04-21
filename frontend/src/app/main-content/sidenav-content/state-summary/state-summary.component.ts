@@ -7,9 +7,14 @@ import { DataControllerService } from 'src/app/services/data-controller.service'
   styleUrls: ['./state-summary.component.css']
 })
 export class StateSummaryComponent implements OnInit {
+
   constructor(public controller: DataControllerService) { }
 
   ngOnInit(): void {
+  }
+
+  changeToPlan(index: number) {
+    this.controller.changeSelectedPlan(index);
   }
 
 }

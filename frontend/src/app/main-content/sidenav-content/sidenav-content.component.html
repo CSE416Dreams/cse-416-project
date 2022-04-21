@@ -1,5 +1,6 @@
 <!-- <p>{{this.controller.getSelectedState()}}</p>
 <p>{{this.controller.getSelectedPlan()}}</p> -->
+
 <mat-toolbar class="header">
   <h2>State: {{ this.controller.getSelectedState() }}</h2>
   <p class="p"></p>
@@ -25,10 +26,10 @@
   </button>
 </mat-toolbar>
 <mat-divider></mat-divider>
-<div *ngIf="this.controller.getSelectedPlanIndex() != 0">
-  <app-district-plan-content></app-district-plan-content>
+<div *ngIf="this.controller.getSelectedPlanIndex() != 0" class="container-content">
+    <app-district-plan-content></app-district-plan-content>
 </div>
 
-<div *ngIf="this.controller.getSelectedPlanIndex() == 0">
+<div *ngIf="this.controller.getSelectedPlanIndex() == 0" class="container-content">
   <app-state-summary></app-state-summary>
 </div>

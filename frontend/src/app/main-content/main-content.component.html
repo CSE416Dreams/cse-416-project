@@ -1,6 +1,8 @@
 <mat-drawer-container class="container">
   <mat-drawer #drawer class="drawer-content" mode="side" position="end" [disableClose]="true">
-    <app-sidenav-content></app-sidenav-content>
+    <div class="container-content">
+      <app-sidenav-content></app-sidenav-content>
+    </div>
   </mat-drawer>
 
   <app-map ></app-map>

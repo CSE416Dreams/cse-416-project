@@ -11,7 +11,11 @@ export class DataControllerService {
   selectedState: string = "None";
   selectedPlan: string = "Summary";
   planList = ["Summary", "Plan 1", "Plan 2"];  // This will be fetched accordingly
-  data = undefined;
+  // data = undefined;
+  data = {
+
+  };
+  // This will be fetched accordingly
 
   constructor(
     public mapController: MapControllerService,
@@ -53,7 +57,7 @@ export class DataControllerService {
       return;
     }
     else if(string == "None" && oldState != "None") {
-      this.clearData();
+      // this.clearData();
       // this.selectedPlan = "Summary"
       // this.planList = ["Summary"];
       // this.mapController.removeMap(oldState, index);
@@ -64,7 +68,7 @@ export class DataControllerService {
 
     // Valid (state to state, None to state)
     this.selectedPlan = "Summary";
-    // update planList, data accordingly here
+    // this.getDataForState(this.selectedState);
     this.mapController.removeStateMap(this.selectedState);
     if(oldState != "None") {
       // this.mapController.removeMap(oldState, index);
@@ -89,6 +93,11 @@ export class DataControllerService {
     }
   }
 
+  async getStateData(state: string) {
+    // check localStorage if theres any data and update
+    // if not fetch
+  }
+
   enableClick(state: string) {
     this.mapController.getMainMap().on("click", state.toLowerCase(), () => {
       this.changeState(state);
@@ -110,31 +119,24 @@ export class DataControllerService {
 
 /*
 1. state
-  - This will fetch the SUMMARY of all district plans in a state (preferably everything calculated in the backend)
+  - This will fetch EVERYTHING of all district plans in a state (preferably everything calculated in the backend)
+  - we will select
 
-2. District plan
-  - This will be upon choosing SPECIFIC district plan (everything calculated in the backend)
 
 *MAY BE ADDED MORE
 */
 
 
   ////////////////////////// will check localStorage if there is data, using its key first in each of the get methods ***
-  async getStateSummary() {
+  async getState() {
     await fetchState(this.selectedState).then(json => {
       let jsonObj = JSON.parse(json);
+      // update PlanList
+      // update data
     })
     .catch(e => console.log(e));
   }
 
-  async getPlanSummary() {
-    await fetchDistrictPlanSummary(this.selectedState, this.getSelectedPlanIndex()).then(json => {
-
-      // let jsonObj = JSON.parse(json);  // This is a bit buggy
-      // assign varaibles here!
-    })
-    .catch(e => console.log(e));
-  }
 }
 
 
@@ -145,12 +147,3 @@ async function fetchState(selectedState: string) {
   }
   return await response.text();
 }
-
-async function fetchDistrictPlanSummary(selectedState: string, selectedPlanIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/plans/'+selectedState.toLowerCase()+'-plan'+selectedPlanIndex);  /// URL has to be updated!!! I dont know which are available at the moment
-  if(!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  return await response.text();
-}
-
