@@ -4,18 +4,18 @@ import sys
 from math import radians, sqrt, cos, sin, asin
 
 def calculateArea():
-    with open(sys.argv[1]) as js:
-        gj = json.load(js)
+    with open(sys.argv[1]) as js: # open GEOJSON
+        gj = json.load(js) # Load into json
     for feature in gj["features"]:
         districtArea = area(feature["geometry"])
-        districtArea = 0.0000003861022 * districtArea
+        districtArea = 0.0000003861022 * districtArea # convert square meter to square mile
         print(districtArea)
 
 def distance(lon1, lon2, lat1, lat2):
-    lat1 = lat1 * 69
-    lat2 = lat2 * 69
-    lon1 = lon1 * 54.6
-    lon2 = lon2 * 54.6
+    lat1 = lat1 * 69 # Degree to mile
+    lat2 = lat2 * 69 # Degree to mile
+    lon1 = lon1 * 54.6 # Degree to mile
+    lon2 = lon2 * 54.6 # Degree to mile
     return sqrt((lat1-lat2)*(lat1-lat2)+(lon1-lon2)*(lon1-lon2))
     
 
