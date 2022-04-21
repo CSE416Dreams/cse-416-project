@@ -39,5 +39,5 @@ def calculatePerimeter():
         print(perimeter)
 
 if __name__ == '__main__':
-    #calculateArea()
+    calculateArea()
     calculatePerimeter()
