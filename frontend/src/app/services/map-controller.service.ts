@@ -50,10 +50,6 @@ export class MapControllerService {
     });
   }
 
-  async getStates() {
-    return this.getStates();
-  }
-
   validateCenter(state: string) {
     if (
       this.mainMap.getCenter().lng != this.centers[state][0] ||
@@ -65,34 +61,32 @@ export class MapControllerService {
 
 
   removeMap(state: string) {
-    this.mainMap.removeLayer(state);
-    this.mainMap.removeSource(state);
   }
 
   async addSource(state: string, planIndex: number) {
-    await fetchMap(state, 1).then(json => { // This should be planIndex instead
-      let jsonObj = JSON.parse(json);
-      this.mainMap.addSource(state, {
-        type: 'geojson',
-        data: jsonObj,
-      });
-    })
-    .catch(e => console.log(e));
+    // await fetchMap(state, 1).then(json => { // This should be planIndex instead
+    //   let jsonObj = JSON.parse(json);
+    //   this.mainMap.addSource(state, {
+    //     type: 'geojson',
+    //     data: jsonObj,
+    //   });
+    // })
+    // .catch(e => console.log(e));
     // This data is to changed to index
   }
 
   addLayer(state: string) {
-    this.mainMap.addLayer({
-      id: state,
-      type: 'fill',
-      source: state,
-      filter: ['==', '$type', 'Polygon'],
-      layout: {},
-      paint: {
-        'fill-color': '#6488a1',
-        'fill-opacity': 0.8,
-      },
-    });
+    // this.mainMap.addLayer({
+    //   id: state,
+    //   type: 'fill',
+    //   source: state,
+    //   filter: ['==', '$type', 'Polygon'],
+    //   layout: {},
+    //   paint: {
+    //     'fill-color': '#6488a1',
+    //     'fill-opacity': 0.8,
+    //   },
+    // });
 
     // this.mainMap.addLayer({
     //   id: state+"Line",
@@ -105,14 +99,6 @@ export class MapControllerService {
     //   }
     // });
     // console.log(this.mainMap.getStyle().layers)
-  }
-
-  async showDistrictPlan(state: string, planIndex: number, fromNone: boolean) {
-    this.removeMap(state);
-    ///////////////////////////////////////////////////////////// has to be uncommented
-    await this.addSource(state, planIndex);
-    this.addLayer(state);
-    /////////////////////////////////////////////////////////////
   }
 
   flyTo(state: string) {
@@ -140,22 +126,15 @@ export class MapControllerService {
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////
-  // ONLY BASIC STATES FUNCTIONS
+  // BASIC STATES FUNCTIONS
   resetToInitial(state: string) {
-    ///////////////////////////////////////////////////////////// has to be uncommented
-    this.removeMap(state);
-    /////////////////////////////////////////////////////////////
-    switch(state) {
-      case "mississippi":
-        this.initialMississippi();
-        break;
-      case "georgia":
-        this.initialGeorgia();
-        break;
-      case "florida":
-        this.initialFlorida();
-        break;
-    }
+    this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'visible')
+
+  }
+
+  removeStateMap(state: string) {
+    state = state.toLowerCase();
+    this.mainMap.setLayoutProperty(state, 'visibility', 'none')
   }
 
   initialMap() {
@@ -228,18 +207,9 @@ export class MapControllerService {
       this.mainMap.setPaintProperty(state, 'fill-opacity', 0.5)
     })
   }
-
-  disableHover(state : string) {
-    this.mainMap.off('mouseenter', state, () => {
-      this.mainMap.getCanvas().style.cursor = 'pointer';
-      this.mainMap.setPaintProperty(state, 'fill-opacity', 0.8)
-    });
-    this.mainMap.off('mouseleave', state, () => {
-      this.mainMap.getCanvas().style.cursor = '';
-      this.mainMap.setPaintProperty(state, 'fill-opacity', 0.5)
-    })
-  }
 }
+
+// This service will only have a map fetch -> getting the geojsons (preprocessed)
 
 async function fetchMap(state: string, planIndex: number) {
   let response = await fetch('http://localhost:8080/server/webapi/maps/'+state+'-'+planIndex); // Need to fill this out

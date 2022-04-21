@@ -1,0 +1,10 @@
+<!-- <p>state-summary works!</p> -->
+<div *ngIf="this.controller.getData() == undefined">
+  <mat-spinner class="spinner"></mat-spinner>
+</div>
+
+
+<div *ngIf="this.controller.getData() != undefined">
+  hello
+
+</div>

@@ -1,0 +1,34 @@
+<!-- <p>{{this.controller.getSelectedState()}}</p>
+<p>{{this.controller.getSelectedPlan()}}</p> -->
+<mat-toolbar class="header">
+  <h2>State: {{ this.controller.getSelectedState() }}</h2>
+  <p class="p"></p>
+  <h2 *ngIf="this.controller.getSelectedPlanIndex() != 0">
+    Plan: {{ this.controller.getSelectedPlan() }}
+  </h2>
+
+  <span class="spacer"></span>
+  <button mat-raised-button [matMenuTriggerFor]="menu" class="menu-button">
+    {{ controller.getSelectedPlanIndex() == 0 ? "Choose a plan" : controller.getSelectedPlan() }}
+  </button>
+  <mat-menu #menu="matMenu">
+    <button
+      mat-menu-item
+      *ngFor="let item of this.controller.getPlanList(); index as i"
+      (click)="changeSelectedPlan(i)"
+    >
+      {{ item }}
+    </button>
+  </mat-menu>
+  <button mat-raised-button class="compare-button" (click)="openDialog()">
+    Compare Plans
+  </button>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<div *ngIf="this.controller.getSelectedPlanIndex() != 0">
+  <app-district-plan-content></app-district-plan-content>
+</div>
+
+<div *ngIf="this.controller.getSelectedPlanIndex() == 0">
+  <app-state-summary></app-state-summary>
+</div>

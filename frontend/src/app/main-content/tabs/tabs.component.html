@@ -23,7 +23,15 @@
   </button>
 </mat-toolbar>
 
-<mat-tab-group mat-align-tabs="start" [selectedIndex]="0" #tabs (selectedTabChange)="tabClick($event)">
+<div *ngIf="controller.getSelectedPlanIndex() == 0">
+  summary selected
+</div>
+<div *ngIf="controller.getSelectedPlanIndex() != 0">
+  plan
+</div>
+
+
+<!-- <mat-tab-group mat-align-tabs="start" [selectedIndex]="0" #tabs (selectedTabChange)="tabClick($event)">
   <div *ngIf="controller.getSelectedPlanIndex() == 0">
     <mat-tab label="Summary of all plans">
       <app-state-summary></app-state-summary>
@@ -31,14 +39,9 @@
   </div>
   <div *ngIf="controller.getSelectedPlanIndex() != 0">
     <mat-tab label="Summary of the plan">
-      <!--<p>{{ this.controller.getSelectedState() }}</p>
-      <br />
-      <p>{{ this.controller.getSelectedPlan() }}</p>-->
       <app-plan-summary></app-plan-summary>
     </mat-tab>
-    <!-- <mat-tab label="Compactness">
-      <app-compactness [compactnessMeasure]="compactnessMeasure"></app-compactness>
-    </mat-tab> -->
+
     <mat-tab label="Demographics">
       <app-demographics [demographicsMeasure]="demographicsMeasure"></app-demographics>
     </mat-tab>
@@ -52,4 +55,4 @@
       <app-voting-measure [votingMeasure]="votingMeasure"></app-voting-measure>
     </mat-tab>
   </div>
-</mat-tab-group>
+</mat-tab-group> -->

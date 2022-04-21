@@ -13,7 +13,7 @@ export class MapComponent implements AfterViewInit {
   constructor(public mapService: MapControllerService, public controller: DataControllerService) { }
 
   ngAfterViewInit(): void {
-    this.mapService.initMainMap();
+    this.controller.initMainMap();
     this.mapService.getMainMap().on('moveend', (e) => {
       this.onCenter = this.mapService.validateCenter(this.controller.getSelectedState());
     });
