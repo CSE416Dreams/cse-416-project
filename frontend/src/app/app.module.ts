@@ -29,16 +29,17 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { HeaderComponent } from './header/header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MapComponent } from './main-content/map/map.component';
-import { TabsComponent } from './main-content/tabs/tabs.component';
-import { CompactnessComponent } from './main-content/tabs/compactness/compactness.component';
-import { DemographicsComponent } from './main-content/tabs/demographics/demographics.component';
-import { GeographicsComponent } from './main-content/tabs/geographics/geographics.component';
-import { PopulationMeasureComponent } from './main-content/tabs/population-measure/population-measure.component';
-import { VotingMeasureComponent } from './main-content/tabs/voting-measure/voting-measure.component';
-import { PlanSummaryComponent } from './main-content/tabs/plan-summary/plan-summary.component';
-import { StateSummaryComponent } from './main-content/tabs/state-summary/state-summary.component';
+// import { TabsComponent } from './main-content/tabs/tabs.component';
+// import { CompactnessComponent } from './main-content/tabs/compactness/compactness.component';
+// import { DemographicsComponent } from './main-content/tabs/demographics/demographics.component';
+// import { GeographicsComponent } from './main-content/tabs/geographics/geographics.component';
+// import { PopulationMeasureComponent } from './main-content/tabs/population-measure/population-measure.component';
+// import { VotingMeasureComponent } from './main-content/tabs/voting-measure/voting-measure.component';
+// import { PlanSummaryComponent } from './main-content/tabs/plan-summary/plan-summary.component';
+// import { StateSummaryComponent } from './main-content/tabs/state-summary/state-summary.component';
 import { SidenavContentComponent } from './main-content/sidenav-content/sidenav-content.component';
 import { DistrictPlanContentComponent } from './main-content/sidenav-content/district-plan-content/district-plan-content.component';
+import { StateSummaryComponent } from './main-content/sidenav-content/state-summary/state-summary.component';
 
 
 @NgModule({
@@ -47,16 +48,17 @@ import { DistrictPlanContentComponent } from './main-content/sidenav-content/dis
     HeaderComponent,
     MainContentComponent,
     MapComponent,
-    TabsComponent,
-    CompactnessComponent,
-    DemographicsComponent,
-    GeographicsComponent,
-    PopulationMeasureComponent,
-    VotingMeasureComponent,
-    PlanSummaryComponent,
-    StateSummaryComponent,
+    // TabsComponent,
+    // CompactnessComponent,
+    // DemographicsComponent,
+    // GeographicsComponent,
+    // PopulationMeasureComponent,
+    // VotingMeasureComponent,
+    // PlanSummaryComponent,
+    // StateSummaryComponent,
     SidenavContentComponent,
-    DistrictPlanContentComponent
+    DistrictPlanContentComponent,
+    StateSummaryComponent
   ],
   imports: [
     BrowserModule,

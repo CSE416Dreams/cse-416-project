@@ -11,7 +11,7 @@ export class DataControllerService {
   selectedState: string = "None";
   selectedPlan: string = "Summary";
   planList = ["Summary", "Plan 1", "Plan 2"];  // This will be fetched accordingly
-
+  data = undefined;
 
   constructor(
     public mapController: MapControllerService,
@@ -34,29 +34,41 @@ export class DataControllerService {
     return this.planList;
   }
 
+  getData() {
+    return this.data;
+  }
+
+  clearData() {
+    this.data = undefined;
+    return;
+  }
+
 
   changeState(string: string) {
     let oldState = this.selectedState;
     this.selectedState = string;
-    this.selectedPlan = "Summary";
-    // this.planList = ["Summary"];
     this.mapController.flyTo(this.selectedState);
 
     if(string == oldState) {
       return;
     }
     else if(string == "None" && oldState != "None") {
+      this.clearData();
+      // this.selectedPlan = "Summary"
+      // this.planList = ["Summary"];
       // this.mapController.removeMap(oldState, index);
-      this.mapController.resetToInitial(oldState, 1);
+      this.mapController.resetToInitial(oldState);
       this.componentController.closeSidenav();
       return;
     }
 
     // Valid (state to state, None to state)
+    this.selectedPlan = "Summary";
+    // update planList, data accordingly here
     this.mapController.removeStateMap(this.selectedState);
     if(oldState != "None") {
       // this.mapController.removeMap(oldState, index);
-      this.mapController.resetToInitial(oldState, 1);
+      this.mapController.resetToInitial(oldState);
     }
     // this.mapController.showDistrictPlan()
     this.componentController.openSidenav();

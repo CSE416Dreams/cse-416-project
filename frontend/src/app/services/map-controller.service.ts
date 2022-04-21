@@ -127,9 +127,7 @@ export class MapControllerService {
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////
   // BASIC STATES FUNCTIONS
-  resetToInitial(state: string, selectedPlanIndex: number) {
-    // remove the current map
-    // this.removeMap(string, selectedPlanIndex);
+  resetToInitial(state: string) {
     this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'visible')
 
   }

@@ -24,12 +24,11 @@
     Compare Plans
   </button>
 </mat-toolbar>
-
-
+<mat-divider></mat-divider>
 <div *ngIf="this.controller.getSelectedPlanIndex() != 0">
   <app-district-plan-content></app-district-plan-content>
 </div>
 
 <div *ngIf="this.controller.getSelectedPlanIndex() == 0">
-  0
+  <app-state-summary></app-state-summary>
 </div>
