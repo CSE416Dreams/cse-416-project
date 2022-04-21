@@ -8,12 +8,9 @@ import { MatTabGroup } from '@angular/material/tabs';
 export class ComponentControllerService {
 
   private sidenav: MatDrawer;
-  private mainTab: MatTabGroup;
 
   constructor() { }
 
-  ///////////////////////////////////////////////////////////////////////////////////////////
-  // Sidenav functions
   public setSidenav(sidenav: MatDrawer) {
     this.sidenav = sidenav;
   }
@@ -29,17 +26,5 @@ export class ComponentControllerService {
   public sidenavOpened() {
     return this.sidenav.opened;
   }
-  ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ///////////////////////////////////////////////////////////////////////////////////////////
-  // Tab functions
-  public setTabs(tab: MatTabGroup) {
-    this.mainTab = tab;
-  }
-
-  public openFirstTab() {
-    this.mainTab.selectedIndex = 0;
-  }
-
-  ///////////////////////////////////////////////////////////////////////////////////////////
 }

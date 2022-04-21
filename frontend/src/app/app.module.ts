@@ -37,6 +37,8 @@ import { PopulationMeasureComponent } from './main-content/tabs/population-measu
 import { VotingMeasureComponent } from './main-content/tabs/voting-measure/voting-measure.component';
 import { PlanSummaryComponent } from './main-content/tabs/plan-summary/plan-summary.component';
 import { StateSummaryComponent } from './main-content/tabs/state-summary/state-summary.component';
+import { SidenavContentComponent } from './main-content/sidenav-content/sidenav-content.component';
+import { DistrictPlanContentComponent } from './main-content/sidenav-content/district-plan-content/district-plan-content.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { StateSummaryComponent } from './main-content/tabs/state-summary/state-s
     PopulationMeasureComponent,
     VotingMeasureComponent,
     PlanSummaryComponent,
-    StateSummaryComponent
+    StateSummaryComponent,
+    SidenavContentComponent,
+    DistrictPlanContentComponent
   ],
   imports: [
     BrowserModule,
