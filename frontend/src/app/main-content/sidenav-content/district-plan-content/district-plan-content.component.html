@@ -5,6 +5,53 @@
 
 
 <div *ngIf="this.controller.getData() != undefined">
+  <button mat-raised-button (click)="backToSummary()" class="back-button">Back to Summary</button>
+  <br>
+  <!-- num of districts, summary of each district in the districting (population, population by demographic group, rep/dem split,
+    election from which voting preference is used, num of majroity-minority districts, efficiency gap)
+    compactness measures for every district (highlight any anomalous districts)
+    Seat share / vote share plot (curve) = values for symmetry, bias at 50%, responsiveness
 
+    split counties
+
+    map side: hover, or click -> district number, estimated vote split, compactness etc
+
+
+  -->
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>
+        Basic Information
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+          <div>
+            Measure
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+          <div>
+            Control of Senate :
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+          <div>
+            Control of House of Representative :
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+  </mat-card>
 
 </div>

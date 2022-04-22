@@ -13,4 +13,8 @@ export class DistrictPlanContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  backToSummary() {
+    this.controller.changeSelectedPlan(0);
+  }
+
 }

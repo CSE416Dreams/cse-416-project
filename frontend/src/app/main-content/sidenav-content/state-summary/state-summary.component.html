@@ -5,6 +5,8 @@
 
 
 <div *ngIf="this.controller.getData() != undefined">
+  <button mat-raised-button class="box-whisker-button">Display Box & Whisker Plot</button>
+  <br>
   <mat-card class="district-plan-card-no-hover">
     <mat-card-header>
       <mat-card-title>
@@ -100,7 +102,7 @@
           </mat-grid-list>
           <mat-divider></mat-divider>
 
-          <mat-grid-list cols="1" rowHeight="80px">
+          <mat-grid-list cols="1" rowHeight="40px">
             <mat-grid-tile>
               <div>
                 Republican / Democratic Split :
