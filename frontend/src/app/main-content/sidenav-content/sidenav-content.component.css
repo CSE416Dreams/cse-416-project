@@ -14,8 +14,20 @@
   flex: 1 1 auto;
 }
 
+.mat-divider {
+  border-top-color: black;
+}
+
 .compare-button {
   background-color: cadetblue;
+}
+
+.compare-button:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.8);
+}
+
+.menu-button:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.8);
 }
 
 .menu-button {

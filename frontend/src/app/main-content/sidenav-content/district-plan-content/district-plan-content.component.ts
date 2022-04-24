@@ -14,6 +14,7 @@ export class DistrictPlanContentComponent implements OnInit {
   }
 
   backToSummary() {
+    this.controller.resetShows();
     this.controller.changeSelectedPlan(0);
   }
 

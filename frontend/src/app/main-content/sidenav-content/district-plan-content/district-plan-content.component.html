@@ -21,21 +21,48 @@
   <mat-card class="card">
     <mat-card-header>
       <mat-card-title>
-        Basic Information
+        Plan Information
       </mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
 
     <mat-card-content>
-      <mat-grid-list cols="1" rowHeight="40px">
+      <mat-grid-list cols="2" rowHeight="40px">
         <mat-grid-tile>
           <div>
-            Measure
+            Plan Name :
+          </div>
+          <mat-divider vertical style="height: 45px"></mat-divider>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            Plan Status :
           </div>
         </mat-grid-tile>
       </mat-grid-list>
       <mat-divider></mat-divider>
-      <mat-grid-list cols="1" rowHeight="40px">
+
+      <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile>
+          <div>
+            Proposed By :
+          </div>
+          <mat-divider vertical style="height: 45px"></mat-divider>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            # of Districts :
+          </div>
+          <mat-divider vertical style="height: 45px"></mat-divider>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div>
+            Measure :
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+      <!-- <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
           <div>
             Control of Senate :
@@ -50,8 +77,31 @@
           </div>
         </mat-grid-tile>
       </mat-grid-list>
-      <mat-divider></mat-divider>
+      <mat-divider></mat-divider> -->
     </mat-card-content>
+  </mat-card>
+
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>
+        Summary of Each Districts
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+
+
+    <!-- <div *ngFor="let district of this.controller.getDistricts">
+      <mat-expansion-panel></mat-expansion-panel>
+    </div> -->
+  </mat-card>
+
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>
+        Seat Share / Vote Share Plot
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
   </mat-card>
 
 </div>

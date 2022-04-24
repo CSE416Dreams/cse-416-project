@@ -20,9 +20,14 @@
 
 .select-button {
   padding: 0;
+  transition: all .4s ease;
   text-align: center;
   background-color: rgb(173, 173, 173);
   color: black;
+}
+
+.select-button:hover {
+  background-color: #fff;
 }
 
 .spacer {

@@ -10,6 +10,8 @@ export class DataControllerService {
 
   selectedState: string = "None";
   selectedPlan: string = "Summary";
+  showBoxAndWhisker: boolean = false;
+  showSeawulfEnsemble: boolean = false;
   planList = ["Summary", "Plan 1", "Plan 2"];  // This will be fetched accordingly
   // data = undefined;
   data = {
@@ -42,16 +44,39 @@ export class DataControllerService {
     return this.data;
   }
 
+  getShowBoxAndWhisker() {
+    return this.showBoxAndWhisker;
+  }
+
+  getShowSeawulfEnsemble() {
+    return this.showSeawulfEnsemble;
+  }
+
   clearData() {
     this.data = undefined;
     return;
   }
 
+  toggleBoxAndWhisker() {
+    this.showBoxAndWhisker = !this.showBoxAndWhisker;
+    return;
+  }
+
+  toggleSeawulfEnsemble() {
+    this.showSeawulfEnsemble = !this.showSeawulfEnsemble;
+    return;
+  }
+
+  resetShows() {
+    this.showBoxAndWhisker = false;
+    this.showSeawulfEnsemble = false;
+  }
 
   changeState(string: string) {
     let oldState = this.selectedState;
     this.selectedState = string;
     this.mapController.flyTo(this.selectedState);
+    this.resetShows();
 
     if(string == oldState) {
       return;

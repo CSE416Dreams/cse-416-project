@@ -24,8 +24,9 @@
   <button mat-raised-button class="compare-button" (click)="openDialog()">
     Compare Plans
   </button>
+
 </mat-toolbar>
-<mat-divider></mat-divider>
+<mat-divider class="divider"></mat-divider>
 <div *ngIf="this.controller.getSelectedPlanIndex() != 0" class="container-content">
     <app-district-plan-content></app-district-plan-content>
 </div>
