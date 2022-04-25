@@ -1,10 +1,132 @@
 <!-- <p>state-summary works!</p> -->
-<div *ngIf="this.controller.getData() == undefined">
+<div *ngIf="!this.controller.isReady()">
   <mat-spinner class="spinner"></mat-spinner>
 </div>
 
+<div *ngIf="this.controller.isReady()">
 
-<div *ngIf="this.controller.getData() != undefined">
-  hello
 
+  <div *ngIf="this.controller.getShowBoxAndWhisker()">
+    <app-box-and-whisker></app-box-and-whisker>
+  </div>
+
+  <div *ngIf="this.controller.getShowSeawulfEnsemble()">
+    <app-seawulf-ensemble-summary></app-seawulf-ensemble-summary>
+  </div>
+
+  <div *ngIf="!this.controller.getShowBoxAndWhisker() && !this.controller.getShowSeawulfEnsemble()">
+    <button
+      mat-raised-button
+      class="display-button"
+      (click)="this.controller.toggleBoxAndWhisker()"
+    >
+      Display Box & Whisker Plot
+    </button>
+
+    <button
+      mat-raised-button
+      class="display-button"
+      (click)="this.controller.toggleSeawulfEnsemble()"
+    >
+      Display Seawulf Ensemble Summary
+    </button>
+    <br />
+    <mat-card class="district-plan-card-no-hover">
+      <mat-card-header>
+        <mat-card-title> Basic Information </mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+
+      <mat-card-content>
+        <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-tile>
+            <div>Governor :</div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-tile>
+            <div>Control of Senate :</div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-tile>
+            <div>Control of House of Representative :</div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="plans-div">Plans :</div>
+
+    <div *ngFor="let planName of this.controller.getPlanList(); index as i">
+      <div *ngIf="planName != 'Summary'">
+        <mat-card class="district-plan-card" (click)="changeToPlan(i)">
+          <mat-card-header>
+            <mat-card-title> Plan Name : {{ planName }} </mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+
+          <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="40px">
+              <mat-grid-tile>
+                <div>Plan Status :</div>
+                <mat-divider vertical style="height: 45px"></mat-divider>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <div>Proposed By :</div>
+                <!-- <div *ngIf="this.controller.getCertainPlanData(planName).status == ">
+                    it will be of this format to change
+              </div> -->
+              </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-divider></mat-divider>
+            <mat-grid-list cols="1" rowHeight="40px">
+              <mat-grid-tile>
+                <div>Political Party in Control :</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-divider></mat-divider>
+            <mat-grid-list cols="1" rowHeight="40px">
+              <mat-grid-tile>
+                <div>Average Polsby-Popper Value :</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-divider></mat-divider>
+
+            <mat-grid-list cols="1" rowHeight="40px">
+              <mat-grid-tile>
+                <div>Total # of Majority-Minority districts :</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-divider></mat-divider>
+
+            <mat-grid-list cols="1" rowHeight="40px">
+              <mat-grid-tile>
+                <div>Equal Population Measure :</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-divider></mat-divider>
+
+            <mat-grid-list cols="1" rowHeight="60px">
+              <mat-grid-tile>
+                <div>Republican / Democratic Split :</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-divider></mat-divider>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>
+<br />
+<br />

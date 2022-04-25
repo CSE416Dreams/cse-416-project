@@ -19,6 +19,10 @@ export class MapComponent implements AfterViewInit {
     });
   }
 
+  selectMap(string: string) {
+    console.log(string);
+  }
+
   returnTo() {
     this.onCenter = true;
     this.controller.returnTo();

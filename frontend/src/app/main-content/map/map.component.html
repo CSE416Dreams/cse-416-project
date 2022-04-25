@@ -1,5 +1,16 @@
 <div id="main-map"></div>
 
 <div class="map-overlay-container">
+  <button mat-raised-button [matMenuTriggerFor]="menu" class="return-button" *ngIf="this.controller.getSelectedState() != 'None'">Map View Filter</button>
+  <mat-menu #menu>
+
+    <!-- <button
+      mat-menu-item
+      *ngFor="let item of this.controller.getPlanList(); index as i"
+      (click)="selectMap(item)"
+    >
+      Map shown: {{ item }}
+    </button> -->
+  </mat-menu>
   <button mat-raised-button *ngIf="!onCenter" (click)="returnTo()" class="return-button">Return</button>
 </div>

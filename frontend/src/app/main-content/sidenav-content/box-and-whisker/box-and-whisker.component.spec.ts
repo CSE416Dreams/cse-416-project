@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompactnessComponent } from './compactness.component';
+import { BoxAndWhiskerComponent } from './box-and-whisker.component';
 
-describe('CompactnessComponent', () => {
-  let component: CompactnessComponent;
-  let fixture: ComponentFixture<CompactnessComponent>;
+describe('BoxAndWhiskerComponent', () => {
+  let component: BoxAndWhiskerComponent;
+  let fixture: ComponentFixture<BoxAndWhiskerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CompactnessComponent ]
+      declarations: [ BoxAndWhiskerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CompactnessComponent);
+    fixture = TestBed.createComponent(BoxAndWhiskerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
