@@ -12,17 +12,24 @@ export class DataControllerService {
   selectedPlan: string = "Summary";
   showBoxAndWhisker: boolean = false;
   showSeawulfEnsemble: boolean = false;
-  planList = ["Summary", "Plan 1", "Plan 2"];  // This will be fetched accordingly
-  // data = undefined;
-  data = {
 
-  };
-  // This will be fetched accordingly
+  planList = ["Summary", "Plan 1", "Plan 2"];  // This will be fetched accordingly
+  stateData = {};
+  districtPlanData = {};
+  boxAndWhiskerData = undefined;
+  seawulfEnsembleData = undefined;
 
   constructor(
     public mapController: MapControllerService,
     public componentController: ComponentControllerService
   ) { }
+
+  isReady() {
+    if(this.stateData == undefined || this.districtPlanData == undefined) {
+      return false;
+    }
+    return true;
+  }
 
   getSelectedState() {
     return this.selectedState;
@@ -40,9 +47,6 @@ export class DataControllerService {
     return this.planList;
   }
 
-  getData() {
-    return this.data;
-  }
 
   getShowBoxAndWhisker() {
     return this.showBoxAndWhisker;
@@ -53,7 +57,10 @@ export class DataControllerService {
   }
 
   clearData() {
-    this.data = undefined;
+    this.stateData = undefined;
+    this.districtPlanData = undefined;
+    this.boxAndWhiskerData = undefined;
+    this.seawulfEnsembleData = undefined;
     return;
   }
 

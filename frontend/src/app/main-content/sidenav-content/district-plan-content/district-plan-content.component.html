@@ -1,10 +1,10 @@
 <!-- <p>state-summary works!</p> -->
-<div *ngIf="this.controller.getData() == undefined">
+<div *ngIf="!this.controller.isReady()">
   <mat-spinner class="spinner"></mat-spinner>
 </div>
 
 
-<div *ngIf="this.controller.getData() != undefined">
+<div *ngIf="this.controller.isReady()">
   <button mat-raised-button (click)="backToSummary()" class="back-button">Back to Summary</button>
   <br>
   <!-- num of districts, summary of each district in the districting (population, population by demographic group, rep/dem split,
