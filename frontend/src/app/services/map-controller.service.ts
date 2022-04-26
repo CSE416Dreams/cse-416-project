@@ -59,46 +59,37 @@ export class MapControllerService {
     } else return true;
   }
 
-
-  removeMap(state: string) {
+  hideCurrentMap(state: string, planIndex: number) {
+    this.mainMap.setLayoutProperty(state+"-"+planIndex, 'visibility', 'none');
   }
 
-  async addSource(state: string, planIndex: number) {
-    // await fetchMap(state, 1).then(json => { // This should be planIndex instead
-    //   let jsonObj = JSON.parse(json);
-    //   this.mainMap.addSource(state, {
-    //     type: 'geojson',
-    //     data: jsonObj,
-    //   });
-    // })
-    // .catch(e => console.log(e));
-    // This data is to changed to index
+  showMap(state:string, planIndex: number) {
+    this.mainMap.setLayoutProperty(state+"-"+planIndex, 'visibility', 'visible');
   }
 
-  addLayer(state: string) {
-    // this.mainMap.addLayer({
-    //   id: state,
-    //   type: 'fill',
-    //   source: state,
-    //   filter: ['==', '$type', 'Polygon'],
-    //   layout: {},
-    //   paint: {
-    //     'fill-color': '#6488a1',
-    //     'fill-opacity': 0.8,
-    //   },
-    // });
+  showDefaultMap(state: string) {
+    if(this.mainMap.getSource(state+"-1") !== undefined) {
+      this.showMap(state, 1);
+      return;
+    }
 
-    // this.mainMap.addLayer({
-    //   id: state+"Line",
-    //   type: 'line',
-    //   source: state,
-    //   paint: {
-    //     'line-width': 1,
-    //     'line-color': "#080808",
-    //     'line-opacity': 0.8
-    //   }
-    // });
-    // console.log(this.mainMap.getStyle().layers)
+
+    // At this step, we will have to addSource , addLayer properly (with the popups, hover etc)
+    this.mainMap.addSource(state+"-1", {
+      type: 'geojson',
+      data: 'https://hitboxes.github.io/'+state.toLowerCase()+'-1.geojson'
+    })
+    this.mainMap.addLayer({
+      id: state+"-1",
+      type: 'fill',
+      source: state+'-1',
+      filter: ['==', '$type', 'Polygon'],
+      layout: {},
+      paint: {
+        'fill-color': '#6488a1',
+        'fill-opacity': 0.8,
+      }
+    })
   }
 
   flyTo(state: string) {
@@ -125,8 +116,8 @@ export class MapControllerService {
     });
   }
 
-  ////////////////////////////////////////////////////////////////////////////////////////////////////////
   // BASIC STATES FUNCTIONS
+  // These functions are responsible for showing the state outlines so that the user can click on the map to choose a state.
   resetToInitial(state: string) {
     this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'visible')
 
@@ -134,7 +125,7 @@ export class MapControllerService {
 
   removeStateMap(state: string) {
     state = state.toLowerCase();
-    this.mainMap.setLayoutProperty(state, 'visibility', 'none')
+    this.mainMap.setLayoutProperty(state, 'visibility', 'none');
   }
 
   initialMap() {

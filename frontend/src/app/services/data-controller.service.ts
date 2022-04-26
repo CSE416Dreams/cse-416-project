@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { ComponentControllerService } from './component-controller.service';
 import { MapControllerService } from './map-controller.service';
 
@@ -10,6 +11,7 @@ export class DataControllerService {
 
   selectedState: string = "None";
   selectedPlan: string = "Summary";
+  currentMapIndex: number = 0;
   showSeawulfEnsemble: boolean = false;
 
   planList = ["Summary", "Plan 1", "Plan 2"];  // This will be fetched accordingly
@@ -78,8 +80,10 @@ export class DataControllerService {
       // this.clearData();
       // this.selectedPlan = "Summary"
       // this.planList = ["Summary"];
-      // this.mapController.removeMap(oldState, index);
+      // remove the current showing map
+      this.mapController.hideCurrentMap(oldState, this.currentMapIndex)
       this.mapController.resetToInitial(oldState);
+      this.currentMapIndex = 1;
       this.componentController.closeSidenav();
       return;
     }
@@ -89,10 +93,12 @@ export class DataControllerService {
     // this.getDataForState(this.selectedState);
     this.mapController.removeStateMap(this.selectedState);
     if(oldState != "None") {
-      // this.mapController.removeMap(oldState, index);
+      // remove the current showing map
+      this.mapController.hideCurrentMap(oldState, this.currentMapIndex);
       this.mapController.resetToInitial(oldState);
     }
-    // this.mapController.showDistrictPlan()
+    this.currentMapIndex = 1;
+    this.mapController.showDefaultMap(this.selectedState);
     this.componentController.openSidenav();
   }
 
@@ -100,6 +106,8 @@ export class DataControllerService {
   changeSelectedPlan(index: number) {
      this.selectedPlan = this.planList[index];
      // will change map accordingly
+
+    // this.mapController.showDistrictPlan(this.selectedState, this.currentMapIndex);
      return;
   }
 
