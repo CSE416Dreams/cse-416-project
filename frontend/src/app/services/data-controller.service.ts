@@ -98,16 +98,29 @@ export class DataControllerService {
       this.mapController.resetToInitial(oldState);
     }
     this.currentMapIndex = 1;
-    this.mapController.showDefaultMap(this.selectedState);
+    this.mapController.showDistrictMap(this.selectedState, this.currentMapIndex);
     this.componentController.openSidenav();
   }
 
 
   changeSelectedPlan(index: number) {
-     this.selectedPlan = this.planList[index];
-     // will change map accordingly
+    this.selectedPlan = this.planList[index];
+    if(index == 0) {
+      if(this.currentMapIndex == 1) {
+        return;
+      }
+      this.mapController.hideCurrentMap(this.selectedState, this.currentMapIndex);
+      this.mapController.showDistrictMap(this.selectedState, 1);
+      this.currentMapIndex = 1;
+      return;
+    }
 
-    // this.mapController.showDistrictPlan(this.selectedState, this.currentMapIndex);
+    if(this.currentMapIndex == index) {
+      return;
+    }
+    this.mapController.hideCurrentMap(this.selectedState, this.currentMapIndex);
+    this.mapController.showDistrictMap(this.selectedState, index);
+    this.currentMapIndex = index;
      return;
   }
 

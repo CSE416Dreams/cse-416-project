@@ -11,7 +11,6 @@ import GeorgiaState from '../../../../State_GEOJSON/Georgia/GeorgiaState';
 })
 export class MapControllerService {
   mainMap: mapboxgl;
-  hoveredState = null;
 
   centers = {
     None: [-90, 30],
@@ -60,36 +59,49 @@ export class MapControllerService {
   }
 
   hideCurrentMap(state: string, planIndex: number) {
-    this.mainMap.setLayoutProperty(state+"-"+planIndex, 'visibility', 'none');
+    let layerArray = this.mainMap.getStyle().layers.filter(element => {
+      return element.id.includes(state.toLowerCase()+'-'+planIndex)
+    })
+    layerArray.forEach(element => {
+      this.mainMap.setLayoutProperty(element.id, 'visibility', 'none');
+    });
   }
 
   showMap(state:string, planIndex: number) {
-    this.mainMap.setLayoutProperty(state+"-"+planIndex, 'visibility', 'visible');
+    let layerArray = this.mainMap.getStyle().layers.filter(element => {
+      return element.id.includes(state.toLowerCase()+'-'+planIndex)
+    })
+    layerArray.forEach(element => {
+      this.mainMap.setLayoutProperty(element.id, 'visibility', 'visible');
+    });
   }
 
-  showDefaultMap(state: string) {
-    if(this.mainMap.getSource(state+"-1") !== undefined) {
-      this.showMap(state, 1);
+  showDistrictMap(state: string, planIndex: number) {
+    if(this.mainMap.getSource(state.toLowerCase()+"-"+planIndex) !== undefined) {
+      this.showMap(state.toLowerCase(), planIndex);
       return;
     }
-
-
     // At this step, we will have to addSource , addLayer properly (with the popups, hover etc)
-    this.mainMap.addSource(state+"-1", {
+    this.mainMap.addSource(state.toLowerCase()+"-"+planIndex, {
       type: 'geojson',
-      data: 'https://hitboxes.github.io/'+state.toLowerCase()+'-1.geojson'
+      data: 'https://hitboxes.github.io/'+state.toLowerCase()+'-'+planIndex+'.geojson'
     })
-    this.mainMap.addLayer({
-      id: state+"-1",
-      type: 'fill',
-      source: state+'-1',
-      filter: ['==', '$type', 'Polygon'],
-      layout: {},
-      paint: {
-        'fill-color': '#6488a1',
-        'fill-opacity': 0.8,
-      }
-    })
+
+    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-'+planIndex+'.geojson').then(result => result.json()).then(data => {
+      data.features.forEach(feature => {
+
+        this.mainMap.addLayer({
+          id: state.toLowerCase()+"-"+planIndex+"-"+feature.properties.District,
+          type: 'fill',
+          source: state.toLowerCase()+'-'+planIndex,
+          paint: {
+            'fill-color': ['match', ['get', 'District'], feature.properties.District, this.randomColor(), '#fff'],
+            'fill-opacity': ['match', ['get', 'District'], feature.properties.District, 0.5, 0]
+          }
+        })
+      });
+    }
+    ).catch(e => console.log(e));
   }
 
   flyTo(state: string) {
@@ -114,6 +126,15 @@ export class MapControllerService {
       easing: (t) => t,
       essential: true,
     });
+  }
+
+  randomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 
   // BASIC STATES FUNCTIONS
