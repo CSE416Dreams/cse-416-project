@@ -10,13 +10,11 @@ export class DataControllerService {
 
   selectedState: string = "None";
   selectedPlan: string = "Summary";
-  showBoxAndWhisker: boolean = false;
   showSeawulfEnsemble: boolean = false;
 
   planList = ["Summary", "Plan 1", "Plan 2"];  // This will be fetched accordingly
   stateData = {};
   districtPlanData = {};
-  boxAndWhiskerData = undefined;
   seawulfEnsembleData = undefined;
 
   constructor(
@@ -47,11 +45,6 @@ export class DataControllerService {
     return this.planList;
   }
 
-
-  getShowBoxAndWhisker() {
-    return this.showBoxAndWhisker;
-  }
-
   getShowSeawulfEnsemble() {
     return this.showSeawulfEnsemble;
   }
@@ -59,13 +52,7 @@ export class DataControllerService {
   clearData() {
     this.stateData = undefined;
     this.districtPlanData = undefined;
-    this.boxAndWhiskerData = undefined;
     this.seawulfEnsembleData = undefined;
-    return;
-  }
-
-  toggleBoxAndWhisker() {
-    this.showBoxAndWhisker = !this.showBoxAndWhisker;
     return;
   }
 
@@ -75,7 +62,6 @@ export class DataControllerService {
   }
 
   resetShows() {
-    this.showBoxAndWhisker = false;
     this.showSeawulfEnsemble = false;
   }
 
@@ -113,6 +99,7 @@ export class DataControllerService {
 
   changeSelectedPlan(index: number) {
      this.selectedPlan = this.planList[index];
+     // will change map accordingly
      return;
   }
 
@@ -130,33 +117,9 @@ export class DataControllerService {
     // if not fetch
   }
 
-  enableClick(state: string) {
-    this.mapController.getMainMap().on("click", state.toLowerCase(), () => {
-      this.changeState(state);
-    })
-  }
-
   returnTo() {
     this.mapController.flyTo(this.selectedState);
   }
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Types of fetch we need
-
-/*
-1. state
-  - This will fetch EVERYTHING of all district plans in a state (preferably everything calculated in the backend)
-  - we will select
-
-
-*MAY BE ADDED MORE
-*/
 
 
   ////////////////////////// will check localStorage if there is data, using its key first in each of the get methods ***

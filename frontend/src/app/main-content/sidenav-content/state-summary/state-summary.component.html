@@ -5,24 +5,11 @@
 
 <div *ngIf="this.controller.isReady()">
 
-
-  <div *ngIf="this.controller.getShowBoxAndWhisker()">
-    <app-box-and-whisker></app-box-and-whisker>
-  </div>
-
   <div *ngIf="this.controller.getShowSeawulfEnsemble()">
     <app-seawulf-ensemble-summary></app-seawulf-ensemble-summary>
   </div>
 
-  <div *ngIf="!this.controller.getShowBoxAndWhisker() && !this.controller.getShowSeawulfEnsemble()">
-    <button
-      mat-raised-button
-      class="display-button"
-      (click)="this.controller.toggleBoxAndWhisker()"
-    >
-      Display Box & Whisker Plot
-    </button>
-
+  <div *ngIf=" !this.controller.getShowSeawulfEnsemble()">
     <button
       mat-raised-button
       class="display-button"
@@ -31,7 +18,8 @@
       Display Seawulf Ensemble Summary
     </button>
     <br />
-    <mat-card class="district-plan-card-no-hover">
+    <!-- I dont know if I need to have this or not -->
+    <!-- <mat-card class="district-plan-card-no-hover">
       <mat-card-header>
         <mat-card-title> Basic Information </mat-card-title>
       </mat-card-header>
@@ -57,7 +45,7 @@
         </mat-grid-list>
         <mat-divider></mat-divider>
       </mat-card-content>
-    </mat-card>
+    </mat-card> -->
 
     <div class="plans-div">Plans :</div>
 

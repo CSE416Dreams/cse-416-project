@@ -32,7 +32,6 @@ import { MapComponent } from './main-content/map/map.component';
 import { SidenavContentComponent } from './main-content/sidenav-content/sidenav-content.component';
 import { DistrictPlanContentComponent } from './main-content/sidenav-content/district-plan-content/district-plan-content.component';
 import { StateSummaryComponent } from './main-content/sidenav-content/state-summary/state-summary.component';
-import { BoxAndWhiskerComponent } from './main-content/sidenav-content/box-and-whisker/box-and-whisker.component';
 import { SeawulfEnsembleSummaryComponent } from './main-content/sidenav-content/seawulf-ensemble-summary/seawulf-ensemble-summary.component';
 import { CompareDialogComponent } from './main-content/sidenav-content/compare-dialog/compare-dialog.component';
 
@@ -46,7 +45,6 @@ import { CompareDialogComponent } from './main-content/sidenav-content/compare-d
     SidenavContentComponent,
     DistrictPlanContentComponent,
     StateSummaryComponent,
-    BoxAndWhiskerComponent,
     SeawulfEnsembleSummaryComponent,
     CompareDialogComponent
   ],
