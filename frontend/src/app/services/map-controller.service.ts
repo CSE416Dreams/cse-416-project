@@ -14,10 +14,10 @@ export class MapControllerService {
   hoveredState = null;
 
   centers = {
-    None: [-100, 40],
-    Mississippi: [-84.5, 32],
-    Georgia: [-78, 32],
-    Florida: [-77.5, 27],
+    None: [-90, 30],
+    Mississippi: [-83, 32],
+    Georgia: [-77, 32],
+    Florida: [-77, 28]
   };
 
   constructor() {}
@@ -34,7 +34,7 @@ export class MapControllerService {
       container: 'main-map',
       style: 'mapbox://styles/mapbox/light-v10',
       center: this.centers.None,
-      zoom: 4,
+      zoom: 4.5,
     });
 
     this.mainMap.addControl(
@@ -52,8 +52,8 @@ export class MapControllerService {
 
   validateCenter(state: string) {
     if (
-      this.mainMap.getCenter().lng != this.centers[state][0] ||
-      this.mainMap.getCenter().lat != this.centers[state][1]
+      Math.round(this.mainMap.getCenter().lng) != this.centers[state][0] ||
+      Math.round(this.mainMap.getCenter().lat) != this.centers[state][1]
     ) {
       return false;
     } else return true;
@@ -105,7 +105,7 @@ export class MapControllerService {
     if (state == 'None') {
       this.mainMap.flyTo({
         center: this.centers.None,
-        zoom: 4,
+        zoom: 4.5,
         bearing: 0,
         speed: 3,
         curve: 1,
@@ -116,7 +116,7 @@ export class MapControllerService {
     }
     this.mainMap.flyTo({
       center: this.centers[state],
-      zoom: 5.8,
+      zoom: 5.5,
       bearing: 0,
       speed: 3,
       curve: 1,
