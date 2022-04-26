@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { ComponentControllerService } from './component-controller.service';
 import { MapControllerService } from './map-controller.service';
 
@@ -55,6 +54,8 @@ export class DataControllerService {
     this.stateData = undefined;
     this.districtPlanData = undefined;
     this.seawulfEnsembleData = undefined;
+    // this.selectedPlan = "Summary"
+    // this.planList = ["Summary"];
     return;
   }
 
@@ -76,11 +77,9 @@ export class DataControllerService {
     if(string == oldState) {
       return;
     }
-    else if(string == "None" && oldState != "None") {
+    // Case : Going back to None
+    if(string == "None" && oldState != "None") {
       // this.clearData();
-      // this.selectedPlan = "Summary"
-      // this.planList = ["Summary"];
-      // remove the current showing map
       this.mapController.hideCurrentMap(oldState, this.currentMapIndex)
       this.mapController.resetToInitial(oldState);
       this.currentMapIndex = 1;
@@ -88,40 +87,44 @@ export class DataControllerService {
       return;
     }
 
-    // Valid (state to state, None to state)
-    this.selectedPlan = "Summary";
+    // Case : State to State, None to State
+    this.selectedPlan = "Summary"; // This will be changed to this.clearData();
     // this.getDataForState(this.selectedState);
     this.mapController.removeStateMap(this.selectedState);
     if(oldState != "None") {
-      // remove the current showing map
       this.mapController.hideCurrentMap(oldState, this.currentMapIndex);
       this.mapController.resetToInitial(oldState);
     }
     this.currentMapIndex = 1;
     this.mapController.showDistrictMap(this.selectedState, this.currentMapIndex);
     this.componentController.openSidenav();
+    return;
   }
 
 
   changeSelectedPlan(index: number) {
     this.selectedPlan = this.planList[index];
-    if(index == 0) {
-      if(this.currentMapIndex == 1) {
-        return;
-      }
-      this.mapController.hideCurrentMap(this.selectedState, this.currentMapIndex);
-      this.mapController.showDistrictMap(this.selectedState, 1);
-      this.currentMapIndex = 1;
-      return;
-    }
 
     if(this.currentMapIndex == index) {
       return;
     }
+
+    if(index == 0) {
+      if(this.currentMapIndex == 1) {
+        return;
+      }
+      else {
+        this.mapController.hideCurrentMap(this.selectedState, this.currentMapIndex);
+        this.mapController.showDistrictMap(this.selectedState, 1);
+        this.currentMapIndex = 1;
+        return;
+      }
+    }
+
     this.mapController.hideCurrentMap(this.selectedState, this.currentMapIndex);
     this.mapController.showDistrictMap(this.selectedState, index);
     this.currentMapIndex = index;
-     return;
+    return;
   }
 
   initMainMap() {
@@ -131,11 +134,6 @@ export class DataControllerService {
         this.changeState(this.stateOptions[i]);
       })
     }
-  }
-
-  async getStateData(state: string) {
-    // check localStorage if theres any data and update
-    // if not fetch
   }
 
   returnTo() {

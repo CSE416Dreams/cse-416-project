@@ -4,6 +4,7 @@ import mapboxgl from 'mapbox-gl';
 import FloridaState from '../../../../State_GEOJSON/Florida/FloridaState';
 import MississippiState from '../../../../State_GEOJSON/Mississippi/MississippiState';
 import GeorgiaState from '../../../../State_GEOJSON/Georgia/GeorgiaState';
+import { map } from 'jquery';
 
 
 @Injectable({
@@ -59,56 +60,30 @@ export class MapControllerService {
   }
 
   hideCurrentMap(state: string, planIndex: number) {
-    let layerArray = this.mainMap.getStyle().layers.filter(element => {
-      return element.id.includes(state.toLowerCase()+'-'+planIndex)
-    })
-    layerArray.forEach(element => {
-      this.mainMap.setLayoutProperty(element.id, 'visibility', 'none');
-    });
+    this.mainMap.setLayoutProperty(state.toLowerCase()+'-'+planIndex, 'visibility', 'none');
   }
 
-  showMap(state:string, planIndex: number) {
-    let layerArray = this.mainMap.getStyle().layers.filter(element => {
-      return element.id.includes(state.toLowerCase()+'-'+planIndex)
-    })
-    layerArray.forEach(element => {
-      this.mainMap.setLayoutProperty(element.id, 'visibility', 'visible');
-    });
+  mapExists(state: string, planIndex: number) {
+    if(this.mainMap.getStyle().layers.filter(element => 
+      {return element.id.includes(state.toLowerCase()+'-'+planIndex)}).length != 0) {
+        return true;
+    }
+    return false;
+  }
+
+  showExistingMap(state:string, planIndex: number) {
+    this.mainMap.setLayoutProperty(state.toLowerCase()+'-'+planIndex, 'visibility', 'visible');
   }
 
   showDistrictMap(state: string, planIndex: number) {
-    // let layerArray = this.mainMap.getStyle().layers.filter(element => {
-    //   return element.id.includes(state.toLowerCase()+'-'+planIndex)
-    // })
-    // if(layerArray.length != 0) {
-    //   this.showMap(state, planIndex);
-    //   return;
-    // }
-    // console.log(layerArray);
-    // if(this.mainMap.getSource(state.toLowerCase()+"-"+planIndex) !== undefined) {
-    //   this.showMap(state.toLowerCase(), planIndex);
-    //   return;
-    // }
-    // At this step, we will have to addSource , addLayer properly (with the popups, hover etc)
-    // this.mainMap.addSource(state.toLowerCase()+"-"+planIndex, {
-    //   type: 'geojson',
-    //   data: 'https://hitboxes.github.io/'+state.toLowerCase()+'-'+planIndex+'.geojson'
-    // });
-    // console.log(this.mainMap.getSource(state.toLowerCase()+"-"+planIndex));
-
-    // let fillColor = ['match', ['get', 'District']]
-    // fillColor.push()
-    // this.mainMap.addLayer({
-    //   id: state.toLowerCase()+"-"+planIndex,
-    //   type: 'fill',
-    //   source: state.toLowerCase()+'-'+planIndex,
-    //   paint: {
-    //     'fill-color': ['match', ['get', 'District'], [1, 'red', 2, 'blue'], 'transparent'],
-    //     'fill-opacity': 0.5
-    //   }
-    // });
-
-    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-'+planIndex+'.geojson').then(result => result.json()).then(data => {
+    if(this.mapExists(state, planIndex)) {
+      this.showExistingMap(state, planIndex);
+      return;
+    }
+    
+    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-'+planIndex+'.geojson')
+    .then(result => result.json())
+    .then(data => {
       this.mainMap.addSource(state.toLowerCase()+'-'+planIndex, {
         type: "geojson",
         data: data
@@ -119,23 +94,7 @@ export class MapControllerService {
       data.features.forEach(feature => {
         fillArray.push(feature.properties.District);
         fillArray.push(this.randomColor());
-        // this.mainMap.addLayer({
-        //   id: state.toLowerCase()+"-"+planIndex+"-"+feature.properties.District,
-        //   type: 'fill',
-        //   source: state.toLowerCase()+'-'+planIndex+'-'+feature.properties.District,
-        //   paint: {
-        //     'fill-color': ['match', ['get', 'District'], feature.properties.District, this.randomColor(), 'transparent'],
-        //     'fill-opacity': ['match', ['get', 'District'], feature.properties.District, 0.5, 0]
-        //   }
-        // });
-        // this.mainMap.on('mouseenter', state.toLowerCase()+"-"+planIndex+"-"+feature.properties.District, () => {
-        //   this.mainMap.getCanvas().style.cursor = 'pointer';
-        //   this.mainMap.setPaintProperty(state.toLowerCase()+"-"+planIndex+"-"+feature.properties.District, 'fill-opacity', 0.8)
-        // });
-        // this.mainMap.on('mouseleave', state.toLowerCase()+"-"+planIndex+"-"+feature.properties.District, () => {
-        //   this.mainMap.getCanvas().style.cursor = '';
-        //   this.mainMap.setPaintProperty(state.toLowerCase()+"-"+planIndex+"-"+feature.properties.District, 'fill-opacity', 0.5)
-        // })
+        console.log(feature);
       });
       fillArray.push("transparent");
       this.mainMap.addLayer({
@@ -144,11 +103,24 @@ export class MapControllerService {
           source: state.toLowerCase()+'-'+planIndex,
           paint: {
             'fill-color': fillArray,
-            'fill-opacity': 0.5
+            'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false],
+              0.8,
+              0.5
+              ]
           }
-        });
-    }
-    ).catch(e => console.log(e));
+      });
+
+      // create hover and opacity here
+      this.mainMap.on('mousemove', state.toLowerCase()+'-'+planIndex, (e) => {
+        console.log(e.features[0].properties.District);
+        console.log(e.features[0])
+        this.mainMap.setFeatureState(
+          { source:  state.toLowerCase()+'-'+planIndex, id: e.features[0].properties.District},
+          { hover: true }
+        )
+      })      
+    })
+    .catch(e => console.log(e));
   }
 
   flyTo(state: string) {
@@ -188,7 +160,6 @@ export class MapControllerService {
   // These functions are responsible for showing the state outlines so that the user can click on the map to choose a state.
   resetToInitial(state: string) {
     this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'visible')
-
   }
 
   removeStateMap(state: string) {
@@ -266,14 +237,4 @@ export class MapControllerService {
       this.mainMap.setPaintProperty(state, 'fill-opacity', 0.5)
     })
   }
-}
-
-// This service will only have a map fetch -> getting the geojsons (preprocessed)
-
-async function fetchMap(state: string, planIndex: number) {
-  let response = await fetch('http://localhost:8080/server/webapi/maps/'+state+'-'+planIndex); // Need to fill this out
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  return await response.text();
 }
