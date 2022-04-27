@@ -4,7 +4,6 @@ import mapboxgl from 'mapbox-gl';
 import FloridaState from '../../../../State_GEOJSON/Florida/FloridaState';
 import MississippiState from '../../../../State_GEOJSON/Mississippi/MississippiState';
 import GeorgiaState from '../../../../State_GEOJSON/Georgia/GeorgiaState';
-import { map } from 'jquery';
 
 
 @Injectable({

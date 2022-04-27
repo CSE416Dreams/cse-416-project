@@ -13,9 +13,8 @@ export class DataControllerService {
   currentMapIndex: number = 0;
   showSeawulfEnsemble: boolean = false;
 
-  planList = ["Summary", "Plan 1", "Plan 2"];  // This will be fetched accordingly
-  stateData = {};
-  districtPlanData = {};
+  planList = ["Summary"];
+  stateData = undefined;
   seawulfEnsembleData = undefined;
 
   constructor(
@@ -24,7 +23,7 @@ export class DataControllerService {
   ) { }
 
   isReady() {
-    if(this.stateData == undefined || this.districtPlanData == undefined) {
+    if(this.stateData == undefined) {
       return false;
     }
     return true;
@@ -52,10 +51,9 @@ export class DataControllerService {
 
   clearData() {
     this.stateData = undefined;
-    this.districtPlanData = undefined;
     this.seawulfEnsembleData = undefined;
-    // this.selectedPlan = "Summary"
-    // this.planList = ["Summary"];
+    this.selectedPlan = "Summary"
+    this.planList = ["Summary"];
     return;
   }
 
@@ -79,7 +77,7 @@ export class DataControllerService {
     }
     // Case : Going back to None
     if(string == "None" && oldState != "None") {
-      // this.clearData();
+      this.clearData();
       this.mapController.hideCurrentMap(oldState, this.currentMapIndex)
       this.mapController.resetToInitial(oldState);
       this.currentMapIndex = 1;
@@ -88,8 +86,8 @@ export class DataControllerService {
     }
 
     // Case : State to State, None to State
-    this.selectedPlan = "Summary"; // This will be changed to this.clearData();
-    // this.getDataForState(this.selectedState);
+    this.clearData();
+    this.getState();
     this.mapController.hideStateMap(this.selectedState);
     if(oldState != "None") {
       this.mapController.hideCurrentMap(oldState, this.currentMapIndex);
@@ -143,10 +141,13 @@ export class DataControllerService {
 
   ////////////////////////// will check localStorage if there is data, using its key first in each of the get methods ***
   async getState() {
-    await fetchState(this.selectedState).then(json => {
-      let jsonObj = JSON.parse(json);
-      // update PlanList
-      // update data
+    await fetchState(this.selectedState)
+    .then(result => {
+      let jsonObj = JSON.parse(result);
+      for(let i = 0; i < jsonObj.dps.length; i++) {
+        this.planList.push(jsonObj.dps[i].planName);
+      }
+      this.stateData = jsonObj;
     })
     .catch(e => console.log(e));
   }
@@ -155,7 +156,19 @@ export class DataControllerService {
 
 
 async function fetchState(selectedState: string) {
-  let response = await fetch('http://localhost:8080/server/webapi/states/'+selectedState.toLowerCase());  /// URL has to be updated!!! I dont know which are available at the moment
+  let key = 0;
+  switch(selectedState) {
+    case "Mississippi":
+      key = 1;
+      break;
+    case "Georgia":
+      key = 2;
+      break;
+    case "Florida":
+      key = 3;
+      break;
+  }
+  let response = await fetch('http://localhost:8080/server/webapi/states/'+key);
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
