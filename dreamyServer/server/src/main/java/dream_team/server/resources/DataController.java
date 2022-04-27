@@ -1,11 +1,21 @@
 package dream_team.server.resources;
 
-import dream_team.server.service.DistrictPlanSummaryService;
-import dream_team.server.service.GeographicsMeasureService;
-import dream_team.server.service.PopulationMeasureService;
-import dream_team.server.service.VotingMeasureService;
-import dream_team.server.service.CompactnessMeasureService;
-import dream_team.server.service.DemographicsMeasureService;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import dream_team.server.model.DistrictPlan;
+import dream_team.server.oldservice.CompactnessMeasureService;
+import dream_team.server.oldservice.DemographicsMeasureService;
+import dream_team.server.oldservice.DistrictPlanSummaryService;
+import dream_team.server.oldservice.GeographicsMeasureService;
+import dream_team.server.oldservice.PopulationMeasureService;
+import dream_team.server.oldservice.VotingMeasureService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -28,7 +38,17 @@ PopulationMeasureService pms = new PopulationMeasureService();
 	
 	@GET
 	@Path("/{planName}")
-	public Response getPlan(@PathParam("planName") String planName) {
+	public Response getPlan(
+			/* HttpServletRequest request, HttpServletResponse response, */ @PathParam("planName") String planName) {
+	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("state_unit");  
+	    EntityManager em = emf.createEntityManager();  
+	    
+		/*
+		 * HttpSession session = request.getSession(); DistrictPlan dp = (DistrictPlan)
+		 * session.getAttribute(planName); if(dp == null) { //query the db }
+		 */
+	    List<String> results = em.createQuery("SELECT * from DistrictPlans where StateID = value").setParameter("value", 1).getResultList();
+	    
 		return Response
 	            .status(200)
 	            .header("Access-Control-Allow-Origin", "*")
@@ -41,15 +61,14 @@ PopulationMeasureService pms = new PopulationMeasureService();
 		
 	}
 	
-//	@POST
-//	public StateMap addMap(StateMap map) {
-//		return mapService.addMap(map);
-//	}
+
 	
 	@GET
 	@Path("/cmeasures/{cmeasure-id}")
 	public Response getCompactnessMeasure(@PathParam("cmeasure-id") String cmeasureid) {
 		return Response
+				//get current district plan from session
+				//use the current district plan geometrics to calculate compactness
 	            .status(200)
 	            .header("Access-Control-Allow-Origin", "*")
 	            .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")

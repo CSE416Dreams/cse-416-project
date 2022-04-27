@@ -100,6 +100,30 @@
 		      <version>8.0</version>
 		      <scope>provided</scope>
 		    </dependency>
+		    <dependency>
+			    <groupId>org.hibernate</groupId>
+			    <artifactId>hibernate-core</artifactId>
+			    <version>5.4.0.Final</version>
+			</dependency>
+			<dependency>
+			    <groupId>mysql</groupId>
+			    <artifactId>mysql-connector-java</artifactId>
+			    <version>8.0.13</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+<!-- -->	     	<dependency>
+			    <groupId>jakarta.servlet</groupId>
+			    <artifactId>jakarta.servlet-api</artifactId>
+			    <version>5.0.0</version>
+			    <scope>provided</scope>
+			</dependency>
+			<dependency>
+			    <groupId>org.ini4j</groupId>
+			    <artifactId>ini4j</artifactId>
+			    <version>0.5.4</version>
+			</dependency>
+
+
     </dependencies>
     <properties>
         <jersey.version>3.0.4</jersey.version>

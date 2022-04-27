@@ -1,75 +1,68 @@
 package dream_team.server.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import dream_team.server.oldmodel.DistrictPlanSummary;
+
+@Entity
+@Table (name = "States")
 public class State {
-	private String name;
+	@Id
+	@Column (name = "stateID")
 	private String id;
-	private long population;
-	private DistrictPlanSummary[] dps; //dps will hold the four district plan summaries
+	@Column (name = "stateName")
+	private String name;
+    @OneToMany(mappedBy = "state", 
+    		   cascade = CascadeType.PERSIST)
+	private List<DistrictPlan> dps; 
+
+	
+	@Transient
 	private String[] planNames;
-	public State(String name, String id, long population, DistrictPlanSummary[] dps, String[] planNames) {
+	public State(String name, String id, long population, List<DistrictPlan>dps, String[] planNames) {
 		this.name = name;
 		this.id = id;
-		this.population = population;
 		this.dps = dps;
 		this.planNames = planNames;
 	}
-	/**
-	 * @return the name
-	 */
+	public State() {}
 	public String getName() {
 		return name;
 	}
-	/**
-	 * @param name the name to set
-	 */
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	/**
-	 * @return the id
-	 */
+
 	public String getId() {
 		return id;
 	}
-	/**
-	 * @param id the id to set
-	 */
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	/**
-	 * @return the population
-	 */
-	public long getPopulation() {
-		return population;
-	}
-	/**
-	 * @param population the population to set
-	 */
-	public void setPopulation(long population) {
-		this.population = population;
-	}
-	/**
-	 * @return the dps
-	 */
-	public DistrictPlanSummary[] getDps() {
+
+	public List<DistrictPlan> getDps() {
 		return dps;
 	}
-	/**
-	 * @param dps the dps to set
-	 */
-	public void setDps(DistrictPlanSummary[] dps) {
+
+	public void setDps(List<DistrictPlan> dps) {
 		this.dps = dps;
 	}
-	/**
-	 * @return the planNames
-	 */
+
 	public String[] getPlanNames() {
 		return planNames;
 	}
-	/**
-	 * @param planNames the planNames to set
-	 */
+
 	public void setPlanNames(String[] planNames) {
 		this.planNames = planNames;
 	}

@@ -6,12 +6,12 @@ import java.util.HashMap;
 //hibernate class style
 //not thread safe - only for learning purposes (NOT A REAL DB!)
 import dream_team.server.model.StateMap;
-import dream_team.server.model.VotingMeasure;
-import dream_team.server.model.CompactnessMeasure;
-import dream_team.server.model.DemographicsMeasure;
-import dream_team.server.model.DistrictPlanSummary;
-import dream_team.server.model.GeographicsMeasure;
-import dream_team.server.model.PopulationMeasure;
+import dream_team.server.oldmodel.CompactnessMeasure;
+import dream_team.server.oldmodel.DemographicsMeasure;
+import dream_team.server.oldmodel.DistrictPlanSummary;
+import dream_team.server.oldmodel.GeographicsMeasure;
+import dream_team.server.oldmodel.PopulationMeasure;
+import dream_team.server.oldmodel.VotingMeasure;
 import dream_team.server.model.State;
 
 //import org.json.JSONObject;
