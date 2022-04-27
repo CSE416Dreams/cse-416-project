@@ -86,7 +86,8 @@ export class MapControllerService {
     .then(data => {
       this.mainMap.addSource(state.toLowerCase()+'-'+planIndex, {
         type: "geojson",
-        data: data
+        data: data,
+        generateId: true
       });
 
       let fillArray = ['match', ['get', 'District']];
@@ -94,7 +95,7 @@ export class MapControllerService {
       data.features.forEach(feature => {
         fillArray.push(feature.properties.District);
         fillArray.push(this.randomColor());
-        console.log(feature);
+        // console.log(feature);
       });
       fillArray.push("transparent");
       this.mainMap.addLayer({
@@ -109,16 +110,32 @@ export class MapControllerService {
               ]
           }
       });
-
-      // create hover and opacity here
-      this.mainMap.on('mousemove', state.toLowerCase()+'-'+planIndex, (e) => {
-        console.log(e.features[0].properties.District);
-        console.log(e.features[0])
-        this.mainMap.setFeatureState(
-          { source:  state.toLowerCase()+'-'+planIndex, id: e.features[0].properties.District},
-          { hover: true }
+      this.mainMap.once('sourcedata', () => {
+        // create hover and opacity here
+        var hoveredDistrictID = null;
+        this.mainMap.on('mousemove', state.toLowerCase()+'-'+planIndex, (e) => {
+          // console.log(e.features[0].properties.District);
+          // console.log(e.features[0])
+          if(hoveredDistrictID !== null) {
+            this.mainMap.setFeatureState(
+              { source : state.toLowerCase()+'-'+planIndex, id: hoveredDistrictID },
+              { hover : false }
+            )
+          }
+          this.mainMap.setFeatureState(
+            { source:  state.toLowerCase()+'-'+planIndex, id: e.features[0].id},
+            { hover: true }
+          )
+          hoveredDistrictID = e.features[0].id
+        }
         )
-      })      
+        this.mainMap.on('mouseleave', state.toLowerCase()+'-'+planIndex, () => {
+          this.mainMap.setFeatureState(
+            { source: state.toLowerCase()+'-'+planIndex, id: hoveredDistrictID },
+            { hover: false }
+          )
+        })  
+      })     
     })
     .catch(e => console.log(e));
   }
