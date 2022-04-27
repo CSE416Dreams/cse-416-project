@@ -113,22 +113,22 @@ public class DistrictPlan {
 	    }
 	 public Boolean isMajorityMinorityDistrict(int totalPopulation, int white) {
 	        int minorities = totalPopulation - white;
-	        if(minorities > totalPopulation) {
+	        if(minorities > white) {
 	            return true;
 	        }
 	        return false;
 	    }
 	 public Double calculateEqualPopulationMeasure() {
-		 	double totalSum = 0;
-	        for(District temp : districts) {
-	            numOfMajorityMinorityDistricts += temp.getDemographics().getTotalPopulation();
-	        }
-	        double mean = totalSum/(double)districts.size();
-	        double sqDiff = 0.0;
-	        for(District temp : districts) {
-	            sqDiff += Math.pow((temp.getDemographics().getTotalPopulation() - mean),2);
-	        }
-	        return sqDiff/(double)districts.size();
+		 double totalSum = 0;
+         for(District temp : districts) {
+             totalSum += temp.getPopulation();
+         }
+         double mean = totalSum/(double)districts.size();
+         double sqDiff = 0.0;
+         for(District temp : districts) {
+             sqDiff += Math.pow((temp.getPopulation() - mean),2);
+         }
+         return sqDiff/(double)districts.size();
 		 //return 1.1;
 	    }
 	 public Double calculateEfficiencyGap() {

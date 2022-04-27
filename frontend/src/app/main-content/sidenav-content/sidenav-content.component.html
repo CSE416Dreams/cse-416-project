@@ -9,7 +9,7 @@
   </h2>
 
   <span class="spacer"></span>
-  <button mat-raised-button [matMenuTriggerFor]="menu" class="menu-button">
+  <button mat-raised-button [matMenuTriggerFor]="menu" class="menu-button" style="overflow: hidden">
     {{ controller.getSelectedPlanIndex() == 0 ? "Choose a plan" : controller.getSelectedPlan() }}
   </button>
   <mat-menu #menu="matMenu">

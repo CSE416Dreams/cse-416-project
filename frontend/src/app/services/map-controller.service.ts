@@ -79,7 +79,7 @@ export class MapControllerService {
       this.showExistingMap(state, planIndex);
       return;
     }
-    
+    // Clean up
     fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-'+planIndex+'.geojson')
     .then(result => result.json())
     .then(data => {
@@ -94,7 +94,6 @@ export class MapControllerService {
       data.features.forEach(feature => {
         fillArray.push(feature.properties.District);
         fillArray.push(this.randomColor());
-        // console.log(feature);
       });
       fillArray.push("transparent");
       this.mainMap.addLayer({
@@ -171,7 +170,6 @@ export class MapControllerService {
   }
 
   // BASIC STATES FUNCTIONS
-  // These functions are responsible for showing the state outlines so that the user can click on the map to choose a state.
   resetToInitial(state: string) {
     this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'visible');
   }

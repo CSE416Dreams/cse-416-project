@@ -16,35 +16,7 @@
     >
       Display Seawulf Ensemble Summary
     </button>
-    <br />
-    <!-- I dont know if I need to have this or not -->
-    <!-- <mat-card class="district-plan-card-no-hover">
-      <mat-card-header>
-        <mat-card-title> Basic Information </mat-card-title>
-      </mat-card-header>
-      <mat-divider></mat-divider>
-
-      <mat-card-content>
-        <mat-grid-list cols="1" rowHeight="40px">
-          <mat-grid-tile>
-            <div>Governor :</div>
-          </mat-grid-tile>
-        </mat-grid-list>
-        <mat-divider></mat-divider>
-        <mat-grid-list cols="1" rowHeight="40px">
-          <mat-grid-tile>
-            <div>Control of Senate :</div>
-          </mat-grid-tile>
-        </mat-grid-list>
-        <mat-divider></mat-divider>
-        <mat-grid-list cols="1" rowHeight="40px">
-          <mat-grid-tile>
-            <div>Control of House of Representative :</div>
-          </mat-grid-tile>
-        </mat-grid-list>
-        <mat-divider></mat-divider>
-      </mat-card-content>
-    </mat-card> -->
+    <br/>
 
     <div class="plans-div">Plans :</div>
 
@@ -81,7 +53,7 @@
 
             <mat-grid-list cols="1" rowHeight="40px">
               <mat-grid-tile>
-                <div>Total # of Majority-Minority districts :</div>
+                <div>Total # of Majority-Minority districts : {{this.controller.getStateData().dps[i-1].numOfMajorityMinorityDistricts }}</div>
               </mat-grid-tile>
             </mat-grid-list>
 

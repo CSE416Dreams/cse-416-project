@@ -45,6 +45,10 @@ export class DataControllerService {
     return this.planList;
   }
 
+  getStateData() {
+    return this.stateData;
+  }
+
   getShowSeawulfEnsemble() {
     return this.showSeawulfEnsemble;
   }
@@ -137,9 +141,7 @@ export class DataControllerService {
   returnTo() {
     this.mapController.flyTo(this.selectedState);
   }
-
-
-  ////////////////////////// will check localStorage if there is data, using its key first in each of the get methods ***
+  
   async getState() {
     await fetchState(this.selectedState)
     .then(result => {
@@ -148,6 +150,8 @@ export class DataControllerService {
         this.planList.push(jsonObj.dps[i].planName);
       }
       this.stateData = jsonObj;
+
+      console.log(this.stateData);
     })
     .catch(e => console.log(e));
   }
@@ -156,6 +160,7 @@ export class DataControllerService {
 
 
 async function fetchState(selectedState: string) {
+  // TODO: this should be fixed in the server-side
   let key = 0;
   switch(selectedState) {
     case "Mississippi":
