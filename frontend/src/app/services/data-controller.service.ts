@@ -90,7 +90,7 @@ export class DataControllerService {
     // Case : State to State, None to State
     this.selectedPlan = "Summary"; // This will be changed to this.clearData();
     // this.getDataForState(this.selectedState);
-    this.mapController.removeStateMap(this.selectedState);
+    this.mapController.hideStateMap(this.selectedState);
     if(oldState != "None") {
       this.mapController.hideCurrentMap(oldState, this.currentMapIndex);
       this.mapController.resetToInitial(oldState);

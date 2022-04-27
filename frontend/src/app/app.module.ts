@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgxEchartsModule } from 'ngx-echarts';
 // Angular material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
@@ -71,7 +73,9 @@ import { CompareDialogComponent } from './main-content/sidenav-content/compare-d
     MatSelectModule,
     MatMenuModule,
     MatProgressSpinnerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    NgxChartsModule,
+    NgxEchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

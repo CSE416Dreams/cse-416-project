@@ -43,24 +43,28 @@
       <mat-divider></mat-divider>
 
       <mat-grid-list cols="3" rowHeight="40px">
-        <mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
           <div>
             Proposed By :
           </div>
           <mat-divider vertical style="height: 45px"></mat-divider>
         </mat-grid-tile>
+        
         <mat-grid-tile>
           <div>
             # of Districts :
           </div>
-          <mat-divider vertical style="height: 45px"></mat-divider>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <div>
-            Measure :
-          </div>
         </mat-grid-tile>
       </mat-grid-list>
+      <mat-divider></mat-divider>
+
+      <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+          <div>
+            # of Majority-Minority Districts :
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>         
       <mat-divider></mat-divider>
       <!-- <mat-grid-list cols="1" rowHeight="40px">
         <mat-grid-tile>
@@ -101,7 +105,29 @@
         Seat Share / Vote Share Plot
       </mat-card-title>
     </mat-card-header>
+
+    <mat-card-content>
+     
+      <ngx-charts-bar-vertical
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="single"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-bar-vertical>
+    
+    </mat-card-content>
     <mat-divider></mat-divider>
   </mat-card>
+
+  <br>
+  <br>
 
 </div>

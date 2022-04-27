@@ -105,17 +105,15 @@ export class MapControllerService {
           paint: {
             'fill-color': fillArray,
             'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false],
-              0.8,
-              0.5
+              0.85,
+              0.3
               ]
           }
       });
       this.mainMap.once('sourcedata', () => {
-        // create hover and opacity here
         var hoveredDistrictID = null;
         this.mainMap.on('mousemove', state.toLowerCase()+'-'+planIndex, (e) => {
-          // console.log(e.features[0].properties.District);
-          // console.log(e.features[0])
+          
           if(hoveredDistrictID !== null) {
             this.mainMap.setFeatureState(
               { source : state.toLowerCase()+'-'+planIndex, id: hoveredDistrictID },
@@ -176,12 +174,11 @@ export class MapControllerService {
   // BASIC STATES FUNCTIONS
   // These functions are responsible for showing the state outlines so that the user can click on the map to choose a state.
   resetToInitial(state: string) {
-    this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'visible')
+    this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'visible');
   }
 
-  removeStateMap(state: string) {
-    state = state.toLowerCase();
-    this.mainMap.setLayoutProperty(state, 'visibility', 'none');
+  hideStateMap(state: string) {
+    this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'none');
   }
 
   initialMap() {
