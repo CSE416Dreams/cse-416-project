@@ -79,9 +79,6 @@ public class DistrictPlan {
 	public String getProposedBy() {
 		return proposedBy;
 	}
-	public Integer getNumSplitCounties() {
-		return numSplitCounties;
-	}
 	public String getSplitID() {
 		return splitID;
 	}
