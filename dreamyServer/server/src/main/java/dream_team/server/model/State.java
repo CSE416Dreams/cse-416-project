@@ -6,12 +6,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import dream_team.server.oldmodel.DistrictPlanSummary;
 
 @Entity
 @Table (name = "States")
@@ -24,7 +22,7 @@ public class State {
     @OneToMany(mappedBy = "state", 
     		   cascade = CascadeType.PERSIST)
 	private List<DistrictPlan> dps; 
-
+    //need to add stateSeawulf here
 	
 	@Transient
 	private String[] planNames;
@@ -66,7 +64,5 @@ public class State {
 	public void setPlanNames(String[] planNames) {
 		this.planNames = planNames;
 	}
-
-	
 	
 }

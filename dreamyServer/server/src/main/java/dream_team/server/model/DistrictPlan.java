@@ -31,8 +31,14 @@ public class DistrictPlan {
 			cascade = CascadeType.ALL)
 	@JoinColumn(name = "StateID")
 	private State state;
-	@Column(name = "GEOJSONID")
-	private String geoJSON_id;
+	@Column(name = "Status")
+	private String planStatus;
+	@Column(name = "Proposed")
+	private String proposedBy;
+	@Column(name = "SplitCountyNum")
+	private Integer numSplitCounties;
+	@Column(name = "SplitID")
+	private String splitID;
 
 	@OneToMany(mappedBy = "planName", 
  		   cascade = CascadeType.PERSIST) 
@@ -53,6 +59,8 @@ public class DistrictPlan {
 	private JSONObject seatsToVoteCurve;
 	@Transient
     private int numOfMajorityMinorityDistricts;
+	@Transient
+	private double avgPolsbyPopperValue;
 	
 
 	public DistrictPlan() {
@@ -61,10 +69,20 @@ public class DistrictPlan {
 	public String getPlanName() {
 		return planName;
 	}
-	public String getGeoJSON_id() {
-		return geoJSON_id;
+	public String getStatus() {
+		return planStatus;
 	}
-    public List<District> getDistricts() {
+
+	public String getPlanStatus() {
+		return planStatus;
+	}
+	public String getProposedBy() {
+		return proposedBy;
+	}
+	public String getSplitID() {
+		return splitID;
+	}
+	public List<District> getDistricts() {
 		return districts;
 	}
 	public void setDistricts(List<District> districts) {
@@ -98,18 +116,20 @@ public class DistrictPlan {
 	public void setSeatsToVoteCurve(JSONObject seatsToVoteCurve) {
 		this.seatsToVoteCurve = seatsToVoteCurve;
 	}
-
+	public double getAvgPolsbyPopperValue() {
+		this.avgPolsbyPopperValue = calculateAvgPolsbyPopperValue();
+		return avgPolsbyPopperValue;
+	}
 	
 	public Integer calculateTotalMajorityMinorityDistricts() {
 			int numOfMMDs = 0;
 	        for(District temp : districts) {
-	            if(isMajorityMinorityDistrict(temp.getDemographics().getTotalPopulation(), 
+	            if(isMajorityMinorityDistrict(temp.getPopulation(), 
 	            		temp.getDemographics().getWhitePopulation()) == true) {
 	            	numOfMMDs++;
 	            }
 	        }
 	        return numOfMMDs;
-		//return 1;
 	    }
 	 public Boolean isMajorityMinorityDistrict(int totalPopulation, int white) {
 	        int minorities = totalPopulation - white;
@@ -119,18 +139,24 @@ public class DistrictPlan {
 	        return false;
 	    }
 	 public Double calculateEqualPopulationMeasure() {
-		 double totalSum = 0;
-         for(District temp : districts) {
-             totalSum += temp.getPopulation();
-         }
-         double mean = totalSum/(double)districts.size();
-         double sqDiff = 0.0;
-         for(District temp : districts) {
-             sqDiff += Math.pow((temp.getPopulation() - mean),2);
-         }
-         return sqDiff/(double)districts.size();
-		 //return 1.1;
+		 	double totalSum = 0;
+	        for(District temp : districts) {
+	            totalSum += temp.getPopulation();
+	        }
+	        double mean = totalSum/(double)districts.size();
+	        double sqDiff = 0.0;
+	        for(District temp : districts) {
+	            sqDiff += Math.pow((temp.getPopulation() - mean),2);
+	        }
+	        return sqDiff/(double)districts.size();
 	    }
+	 public Double calculateAvgPolsbyPopperValue() {
+		 double sum = 0.0;
+		 for(District temp: districts) {
+			 sum += temp.getPolsbyPopperValue();
+		 }
+		 return sum/districts.size();
+	 }
 	 public Double calculateEfficiencyGap() {
 //	        int wasted = 0;
 //	        int total = 0;

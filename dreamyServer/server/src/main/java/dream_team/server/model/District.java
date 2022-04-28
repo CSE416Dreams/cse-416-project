@@ -23,6 +23,8 @@ public class District {
 	@Id
 	@Column(name = "DistrictKey")
 	private String districtID;
+	@Column(name = "DistrictNum")
+	private Integer districtNum;
 	@ManyToOne(targetEntity = DistrictPlan.class,fetch = FetchType.LAZY, 
 			cascade = CascadeType.ALL)
 	@JoinColumn(name = "PlanName")
@@ -34,7 +36,7 @@ public class District {
 	@Column(name = "Incrumbent")
 	private String incumbent;
 	@Column(name = "Population")
-	private Long population;
+	private Integer population;
 	@Column(name = "VoteRep")
 	private Integer voteRep;
 	@Column(name = "VoteDem")
@@ -51,13 +53,17 @@ public class District {
 	private double schwartzbergValue;
 	
 	@Transient
-	private List<County> counties; //should be split counties?
+	private List<County> counties;
 	@Transient
 	private int[] voteSplit;
 	
 	public District() {
 	}
 	
+	public Integer getDistrictNum() {
+		return districtNum;
+	}
+
 	public String getDistrictID() {
 		return districtID;
 	}
@@ -65,14 +71,6 @@ public class District {
 	public void setDistrictID(String districtID) {
 		this.districtID = districtID;
 	}
-
-//	public DistrictPlan getPlanName() {
-//		return planName;
-//	}
-//
-//	public void setPlanName(DistrictPlan planName) {
-//		this.planName = planName;
-//	}
 
 	public Long getArea() {
 		return area;
@@ -98,11 +96,11 @@ public class District {
 		this.incumbent = incumbent;
 	}
 
-	public Long getPopulation() {
+	public Integer getPopulation() {
 		return population;
 	}
 
-	public void setPopulation(Long population) {
+	public void setPopulation(Integer population) {
 		this.population = population;
 	}
 

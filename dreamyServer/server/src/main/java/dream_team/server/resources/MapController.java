@@ -1,5 +1,9 @@
 package dream_team.server.resources;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import dream_team.server.model.StateMap;
 import dream_team.server.service.MapService;
 import dream_team.server.service.StateGeoJSONService;
@@ -20,8 +24,10 @@ import jakarta.ws.rs.core.Response;
 @Produces(MediaType.APPLICATION_JSON)
 
 public class MapController {
-MapService mapService = new MapService();
-StateGeoJSONService stateGeoService = new StateGeoJSONService();
+	MapService mapService = new MapService();
+	StateGeoJSONService stateGeoService = new StateGeoJSONService();
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("seawulf_unit");
+	EntityManager em = emf.createEntityManager();
 	
 	@GET
 	@Path("/{mapName}")

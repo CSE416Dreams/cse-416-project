@@ -25,4 +25,14 @@
     <servlet-name>Servlet</servlet-name>
     <url-pattern>/Servlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DreamsServlet</display-name>
+    <servlet-name>DreamsServlet</servlet-name>
+    <servlet-class>dream_team.server.resources.DreamsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DreamsServlet</servlet-name>
+    <url-pattern>/DreamsServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

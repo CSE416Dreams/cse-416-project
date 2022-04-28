@@ -1,5 +1,5 @@
 package dream_team.server.resources;
-  
+
 
 import dream_team.server.model.District;
 import dream_team.server.model.DistrictPlan;
@@ -25,7 +25,7 @@ public class StateController {
 	public Response getState(@PathParam("stateName") String stateName) {
 	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("state_unit");  
 	    EntityManager em = emf.createEntityManager();  
-	    
+
 	    State selectedState = (State)em.find(State.class, stateName);
 		return Response
 	            .status(200)
@@ -36,7 +36,7 @@ public class StateController {
 	            .header("Access-Control-Max-Age", "1209600")
 	            .entity(selectedState)
 	            .build();
-		
+
 	}
-	
+
 }  

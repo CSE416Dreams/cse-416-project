@@ -42,4 +42,17 @@
       <property name="hibernate.max_fetch_depth" value="3"/>
     </properties>
   </persistence-unit>
+    <persistence-unit name="seawulf_unit" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>dream_team.server.seawulf.SeaWulf</class>
+    <properties>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
+      <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.connection.username" value="joshmathew"/>
+      <property name="hibernate.connection.password" value="112627773"/>
+      <property name="hibernate.connection.url" value="jdbc:mysql://mysql3.cs.stonybrook.edu:3306/dreams"/>
+      <property name="hibernate.max_fetch_depth" value="3"/>
+    </properties>
+  </persistence-unit>
 </persistence>
