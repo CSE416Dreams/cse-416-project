@@ -26,34 +26,31 @@
           <mat-card-header>
             <mat-card-title> Plan Name : {{ planName }} </mat-card-title>
           </mat-card-header>
-          <mat-divider></mat-divider>
+          <mat-divider class="divider"></mat-divider>
 
           <mat-card-content>
             <mat-grid-list cols="2" rowHeight="40px">
               <mat-grid-tile>
-                <div>Plan Status :</div>
+                <div>Plan Status : {{ this.controller.getPlanData(i).planStatus }}</div>
                 <mat-divider vertical style="height: 45px"></mat-divider>
               </mat-grid-tile>
               <mat-grid-tile>
-                <div>Proposed By :</div>
-                <!-- <div *ngIf="this.controller.getCertainPlanData(planName).status == ">
-                    it will be of this format to change
-              </div> -->
+                <div>Proposed By : {{ this.controller.getPlanData(i).proposedBy }}</div>
               </mat-grid-tile>
             </mat-grid-list>
-
-            <mat-divider></mat-divider>
-            <mat-grid-list cols="1" rowHeight="40px">
-              <mat-grid-tile>
-                <div>Average Polsby-Popper Value :</div>
-              </mat-grid-tile>
-            </mat-grid-list>
-
             <mat-divider></mat-divider>
 
             <mat-grid-list cols="1" rowHeight="40px">
               <mat-grid-tile>
-                <div>Total # of Majority-Minority districts : {{this.controller.getStateData().dps[i-1].numOfMajorityMinorityDistricts }}</div>
+                <div *ngIf="this.controller.getPlanData(i).planStatus == 'Approved'">
+                  Date Approved : {{ this.controller.getPlanData(i).date }}
+                </div>
+                <div *ngIf="this.controller.getPlanData(i).planStatus == 'Rejected'">
+                  Date Rejected : {{ this.controller.getPlanData(i).date }}
+                </div>
+                <div *ngIf="this.controller.getPlanData(i).planStatus == 'Proposed'">
+                  Date Proposed : {{ this.controller.getPlanData(i).date }}
+                </div>
               </mat-grid-tile>
             </mat-grid-list>
 
@@ -61,7 +58,23 @@
 
             <mat-grid-list cols="1" rowHeight="40px">
               <mat-grid-tile>
-                <div>Equal Population Measure :</div>
+                <div>Average Polsby-Popper Value : {{ this.controller.getPlanData(i).avgPolsbyPopperValue.toFixed(4) }}</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-divider></mat-divider>
+
+            <mat-grid-list cols="1" rowHeight="40px">
+              <mat-grid-tile>
+                <div>Total # of Majority-Minority districts : {{this.controller.getPlanData(i).numOfMajorityMinorityDistricts }}</div>
+              </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-divider></mat-divider>
+
+            <mat-grid-list cols="1" rowHeight="40px">
+              <mat-grid-tile>
+                <div>Equal Population Measure : {{ this.controller.getPlanData(i).eqPopMeasure.toFixed(4) }}</div>
               </mat-grid-tile>
             </mat-grid-list>
 

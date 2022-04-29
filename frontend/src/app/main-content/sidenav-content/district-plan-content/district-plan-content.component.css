@@ -29,3 +29,34 @@ mat-grid-tile div {
   text-align: left;
   padding-left: 5px;
 }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.district-select-div {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.district-select {
+  font-size: small;
+  margin-bottom: 10px; 
+  align-items: center;
+  display: inline-flex;
+
+}
+
+.district-title {
+  margin-top: 10px;
+}
+/* 
+.divider {
+  border-top-color: black;
+} */
+
+.sub-title {
+  font-size: large;
+  font-weight: 550;
+  margin-bottom: 5px;
+}
