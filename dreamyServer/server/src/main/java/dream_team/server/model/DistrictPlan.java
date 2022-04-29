@@ -33,6 +33,8 @@ public class DistrictPlan {
 	private State state;
 	@Column(name = "Status")
 	private String planStatus;
+	@Column(name = "Date")
+	private String planDate;
 	@Column(name = "Proposed")
 	private String proposedBy;
 	@Column(name = "SplitCountyNum")
@@ -72,12 +74,17 @@ public class DistrictPlan {
 	public String getStatus() {
 		return planStatus;
 	}
-
 	public String getPlanStatus() {
 		return planStatus;
 	}
+	public String getPlanDate() {
+		return planDate;
+	}
 	public String getProposedBy() {
 		return proposedBy;
+	}
+	public Integer getNumSplitCounties() {
+		return numSplitCounties;
 	}
 	public String getSplitID() {
 		return splitID;
