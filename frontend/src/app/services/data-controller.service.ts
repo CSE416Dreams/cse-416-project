@@ -10,11 +10,13 @@ export class DataControllerService {
 
   selectedState: string = "None";
   selectedPlan: string = "Summary";
+  selectedDistrict: number = 1;
   currentMapIndex: number = 0;
   showSeawulfEnsemble: boolean = false;
 
   planList = ["Summary"];
   stateData = undefined;
+  plansData = [];
   seawulfEnsembleData = undefined;
 
   constructor(
@@ -53,8 +55,29 @@ export class DataControllerService {
     return this.showSeawulfEnsemble;
   }
 
+  getPlanData(index: number) {
+    return this.plansData[index-1];
+  }
+
+  getCurrentPlanData() {
+    if(this.selectedPlan == "Summary") {
+      return;
+    }
+    return this.plansData[this.getSelectedPlanIndex()-1];
+  }
+
+  getSelectedDistrict() {
+    return this.selectedDistrict;
+  }
+
+  getCurrentDistrictData() {
+    return this.getCurrentPlanData().districts[this.selectedDistrict-1];
+  }
+
   clearData() {
     this.stateData = undefined;
+    this.plansData = [];
+    this.selectedDistrict = 1;
     this.seawulfEnsembleData = undefined;
     this.selectedPlan = "Summary"
     this.planList = ["Summary"];
@@ -68,6 +91,10 @@ export class DataControllerService {
 
   resetShows() {
     this.showSeawulfEnsemble = false;
+  }
+
+  changeDistrict(number: number) {
+    this.selectedDistrict = number;
   }
 
   changeState(string: string) {
@@ -110,6 +137,7 @@ export class DataControllerService {
     if(this.currentMapIndex == index) {
       return;
     }
+    this.selectedDistrict = 1;
 
     if(index == 0) {
       if(this.currentMapIndex == 1) {
@@ -147,11 +175,19 @@ export class DataControllerService {
     .then(result => {
       let jsonObj = JSON.parse(result);
       for(let i = 0; i < jsonObj.dps.length; i++) {
-        this.planList.push(jsonObj.dps[i].planName);
+        if(jsonObj.dps[i].planStatus == "Approved") {
+          this.planList.splice(1, 0, jsonObj.dps[i].planName);
+          this.plansData.splice(0, 0, jsonObj.dps[i])
+        }
+        else {
+          this.planList.push(jsonObj.dps[i].planName);
+          this.plansData.push(jsonObj.dps[i]);
+        }
       }
       this.stateData = jsonObj;
 
       console.log(this.stateData);
+      console.log(this.plansData);
     })
     .catch(e => console.log(e));
   }
@@ -161,16 +197,16 @@ export class DataControllerService {
 
 async function fetchState(selectedState: string) {
   // TODO: this should be fixed in the server-side
-  let key = 0;
+  let key = "";
   switch(selectedState) {
     case "Mississippi":
-      key = 1;
+      key = "MS";
       break;
     case "Georgia":
-      key = 2;
+      key = "GA";
       break;
     case "Florida":
-      key = 3;
+      key = "FL";
       break;
   }
   let response = await fetch('http://localhost:8080/server/webapi/states/'+key);

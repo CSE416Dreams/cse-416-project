@@ -8,6 +8,8 @@ import { Color, ScaleType } from '@swimlane/ngx-charts';
   styleUrls: ['./district-plan-content.component.css']
 })
 export class DistrictPlanContentComponent implements OnInit {
+
+  selectedDistrict = 1;
   single = [
     {
       "name": "Germany",
@@ -42,7 +44,6 @@ export class DistrictPlanContentComponent implements OnInit {
 
 
   constructor(public controller: DataControllerService) {
-    
    }
 
   ngOnInit(): void {
@@ -55,6 +56,10 @@ export class DistrictPlanContentComponent implements OnInit {
 
   onSelect(data): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
+
+  changeDistrict(number: number) {
+    this.selectedDistrict = number;
   }
 
 }
