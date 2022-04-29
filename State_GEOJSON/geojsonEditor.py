@@ -2,7 +2,7 @@ import pygeoj
 
 
 
-file = pygeoj.load('./Mississippi/MississippiRepublicanDistrictingPlan.geojson')
+file = pygeoj.load('florida-3.geojson')
 
 
 for i in range(len(file)):
@@ -10,4 +10,4 @@ for i in range(len(file)):
     file[i].properties = {"District": i+1, "id": i+1}
 
 
-file.save('./processedGeojson/mississppi-1.geojson')
+file.save('florida-3.geojson')
