@@ -55,7 +55,11 @@ export class MapControllerService {
   }
 
   hideCurrentMap(state: string, planName: string) {
-    this.mainMap.setLayoutProperty(state.toLowerCase()+'-'+planName, 'visibility', 'none');
+    let layers = this.mainMap.getStyle().layers.filter(element => { return element.id.includes(state.toLowerCase()+'-'+planName)});
+    for(let i = 0; i < layers.length; i++) {
+      this.mainMap.setLayoutProperty(layers[i].id, 'visibility', 'none');
+    }
+    return;
   }
 
   mapExists(state: string, planName: string) {
@@ -67,7 +71,10 @@ export class MapControllerService {
   }
 
   showExistingMap(state:string, planName: string) {
-    this.mainMap.setLayoutProperty(state.toLowerCase()+'-'+planName, 'visibility', 'visible');
+    let layers = this.mainMap.getStyle().layers.filter(element => { return element.id.includes(state.toLowerCase()+'-'+planName)});
+    for(let i = 0; i < layers.length; i++) {
+      this.mainMap.setLayoutProperty(layers[i].id, 'visibility', 'visible');
+    }
     return;
   }
 
@@ -76,68 +83,16 @@ export class MapControllerService {
       this.showExistingMap(state, planName);
       return;
     }
-    // Clean up
     if(planName == "Counties") {
-
+      this.fetchCounties(state);
     }
     else if(planName == "Precincts") {
-
+      this.fetchPrecincts(state);
     }
     else {
-
+      this.fetchDistrictMap(state, planName);
     }
-    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-'+planName+'.geojson')
-    .then(result => result.json())
-    .then(data => {
-      this.mainMap.addSource(state.toLowerCase()+'-'+planName, {
-        type: "geojson",
-        data: data,
-        generateId: true
-      });
-
-      let fillArray = ['match', ['get', 'District']];
-
-      data.features.forEach(feature => {
-        fillArray.push(feature.properties.District);
-        fillArray.push(this.randomColor());
-      });
-      fillArray.push("transparent");
-      this.mainMap.addLayer({
-          id: state.toLowerCase()+"-"+planName,
-          type: 'fill',
-          source: state.toLowerCase()+'-'+planName,
-          paint: {
-            'fill-color': fillArray,
-            'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false],
-              0.85,
-              0.3
-              ]
-          }
-      });
-      this.mainMap.once('sourcedata', () => {
-        var hoveredDistrictID = null;
-        this.mainMap.on('mousemove', state.toLowerCase()+'-'+planName, (e) => {
-          if(hoveredDistrictID !== null) {
-            this.mainMap.setFeatureState(
-              { source : state.toLowerCase()+'-'+planName, id: hoveredDistrictID },
-              { hover : false }
-            )
-          }
-          this.mainMap.setFeatureState(
-            { source:  state.toLowerCase()+'-'+planName, id: e.features[0].id},
-            { hover: true }
-          )
-          hoveredDistrictID = e.features[0].id
-        })
-        this.mainMap.on('mouseleave', state.toLowerCase()+'-'+planName, () => {
-          this.mainMap.setFeatureState(
-            { source: state.toLowerCase()+'-'+planName, id: hoveredDistrictID },
-            { hover: false }
-          )
-        })
-      })
-    })
-    .catch(e => console.log(e));
+    return;
   }
 
   flyTo(state: string) {
@@ -163,6 +118,213 @@ export class MapControllerService {
       essential: true,
     });
     return;
+  }
+
+  fetchCounties(state: string) {
+    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-Counties.geojson')
+    .then(result => result.json())
+    .then(data => {
+      this.mainMap.addSource(state.toLowerCase()+'-Counties', {
+        type: "geojson",
+        data: data,
+        generateId: true
+      });
+      this.mainMap.addLayer({
+          id: state.toLowerCase()+'-Counties',
+          type: 'fill',
+          source: state.toLowerCase()+'-Counties',
+          paint: {
+            'fill-color': "black",
+            'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false],
+              0.85,
+              0.3
+              ]
+          }
+      });
+      this.mainMap.addLayer({
+        id: state.toLowerCase()+"-Counties-borders",
+        type: 'line',
+        source: state.toLowerCase()+'-Counties',
+        paint: {
+          'line-color': "gray",
+          'line-width' : 1
+        }
+      })
+      this.mainMap.once('sourcedata', () => {
+        var hoveredDistrictID = null;
+        var popup = new mapboxgl.Popup({
+          closeButton: false,
+          closeOnClick: false
+        })
+        this.mainMap.on('mousemove', state.toLowerCase()+'-Counties', (e) => {
+          if(hoveredDistrictID !== null) {
+            this.mainMap.setFeatureState(
+              { source : state.toLowerCase()+'-Counties', id: hoveredDistrictID },
+              { hover : false }
+            )
+            ////////////////
+            var description = e.features[0].properties.NAME;
+            var coordinate = e.lngLat;
+            coordinate.lat = coordinate.lat + 0.15;
+            popup.setLngLat(coordinate).setHTML(description).addTo(this.mainMap);
+            ////////////////
+          }
+          this.mainMap.setFeatureState(
+            { source:  state.toLowerCase()+'-Counties', id: e.features[0].id},
+            { hover: true }
+          )
+          hoveredDistrictID = e.features[0].id
+        })
+        this.mainMap.on('mouseleave', state.toLowerCase()+'-Counties', () => {
+          this.mainMap.setFeatureState(
+            { source: state.toLowerCase()+'-Counties', id: hoveredDistrictID },
+            { hover: false }
+          )
+          popup.remove();
+        })
+      })
+    })
+    .catch(e => console.log(e));
+  }
+
+  fetchPrecincts(state: string) {
+    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-Precincts.geojson')
+    .then(result => result.json())
+    .then(data => {
+      this.mainMap.addSource(state.toLowerCase()+'-Precincts', {
+        type: "geojson",
+        data: data,
+        generateId: true
+      });
+
+      let fillArray = ['match', ['get', 'GEOID']];
+
+      data.features.forEach(feature => {
+        fillArray.push(feature.properties.GEOID);
+        fillArray.push(this.randomColor());
+      });
+      fillArray.push("transparent");
+
+      this.mainMap.addLayer({
+          id: state.toLowerCase()+'-Precincts',
+          type: 'fill',
+          source: state.toLowerCase()+'-Precincts',
+          paint: {
+            'fill-color': fillArray,
+            'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false],
+              0.85,
+              0.3
+              ]
+          }
+      });
+      this.mainMap.addLayer({
+        id: state.toLowerCase()+"-Precincts-borders",
+        type: 'line',
+        source: state.toLowerCase()+'-Precincts',
+        paint: {
+          'line-color': "gray",
+          'line-width' : 1
+        }
+      })
+      this.mainMap.once('sourcedata', () => {
+        var hoveredDistrictID = null;
+        var popup = new mapboxgl.Popup({
+          closeButton: false,
+          closeOnClick: false
+        })
+        this.mainMap.on('mousemove', state.toLowerCase()+'-Precincts', (e) => {
+          if(hoveredDistrictID !== null) {
+            this.mainMap.setFeatureState(
+              { source : state.toLowerCase()+'-Precincts', id: hoveredDistrictID },
+              { hover : false }
+            )
+            ////////////////
+            var description = e.features[0].properties.GEOID;
+            var coordinate = e.lngLat;
+            coordinate.lat = coordinate.lat + 0.15;
+            popup.setLngLat(coordinate).setHTML(description).addTo(this.mainMap);
+            ////////////////
+          }
+          this.mainMap.setFeatureState(
+            { source:  state.toLowerCase()+'-Precincts', id: e.features[0].id},
+            { hover: true }
+          )
+          hoveredDistrictID = e.features[0].id
+        })
+        this.mainMap.on('mouseleave', state.toLowerCase()+'-Precincts', () => {
+          this.mainMap.setFeatureState(
+            { source: state.toLowerCase()+'-Precincts', id: hoveredDistrictID },
+            { hover: false }
+          )
+          popup.remove();
+        })
+      })
+    })
+    .catch(e => console.log(e));
+  }
+
+  fetchDistrictMap(state: string, planName: string) {
+    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-'+planName+'.geojson')
+    .then(result => result.json())
+    .then(data => {
+      this.mainMap.addSource(state.toLowerCase()+'-'+planName, {
+        type: "geojson",
+        data: data,
+        generateId: true
+      });
+
+      let fillArray = ['match', ['get', 'District']];
+
+      data.features.forEach(feature => {
+        fillArray.push(feature.properties.District);
+        fillArray.push(this.randomColor());
+      });
+      fillArray.push("transparent");
+      this.mainMap.addLayer({
+          id: state.toLowerCase()+"-"+planName,
+          type: 'fill',
+          source: state.toLowerCase()+'-'+planName,
+          paint: {
+            'fill-color': fillArray,
+            'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false],
+              0.95,
+              0.2
+              ]
+          }
+      });
+      this.mainMap.addLayer({
+        id: state.toLowerCase()+"-"+planName+"-borders",
+        type: 'line',
+        source: state.toLowerCase()+'-'+planName,
+        paint: {
+          'line-color': "gray",
+          'line-width' : 1
+        }
+      })
+      this.mainMap.once('sourcedata', () => {
+        var hoveredDistrictID = null;
+        this.mainMap.on('mousemove', state.toLowerCase()+'-'+planName, (e) => {
+          if(hoveredDistrictID !== null) {
+            this.mainMap.setFeatureState(
+              { source : state.toLowerCase()+'-'+planName, id: hoveredDistrictID },
+              { hover : false }
+            )
+          }
+          this.mainMap.setFeatureState(
+            { source:  state.toLowerCase()+'-'+planName, id: e.features[0].id},
+            { hover: true }
+          )
+          hoveredDistrictID = e.features[0].id
+        })
+        this.mainMap.on('mouseleave', state.toLowerCase()+'-'+planName, () => {
+          this.mainMap.setFeatureState(
+            { source: state.toLowerCase()+'-'+planName, id: hoveredDistrictID },
+            { hover: false }
+          )
+        })
+      })
+    })
+    .catch(e => console.log(e));
   }
 
   randomColor() {

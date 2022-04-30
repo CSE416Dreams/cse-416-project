@@ -119,7 +119,6 @@ export class DataControllerService {
     await this.getState();
     this.currentMap = this.plansData[0].planName;
     this.mapController.showDistrictMap(this.selectedState, this.currentMap);
-    console.log(this.plansData) // delete
     return;
   }
 
@@ -153,11 +152,10 @@ export class DataControllerService {
   }
 
   changeMap(string: string) {
-    console.log(string);
     this.mapController.hideCurrentMap(this.selectedState, this.currentMap);
     this.currentMap = string;
     this.mapController.showDistrictMap(this.selectedState, this.currentMap);
-
+    return;
   }
 
   initMainMap() {
