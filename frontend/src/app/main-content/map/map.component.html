@@ -1,16 +1,30 @@
 <div id="main-map"></div>
 
 <div class="map-overlay-container">
-  <button mat-raised-button [matMenuTriggerFor]="menu" class="return-button" *ngIf="this.controller.getSelectedState() != 'None'">Map View Filter</button>
+  <button mat-raised-button [matMenuTriggerFor]="menu" class="return-button" *ngIf="this.controller.getSelectedState() != 'None'">
+    Displaying : {{ this.controller.getCurrentMap() }}
+  </button>
   <mat-menu #menu>
 
-    <!-- <button
+    <button
       mat-menu-item
-      *ngFor="let item of this.controller.getPlanList(); index as i"
-      (click)="selectMap(item)"
+      *ngFor="let plan of this.controller.getPlansData(); index as i"
+      (click)="selectMap(plan.planName)"
     >
-      Map shown: {{ item }}
-    </button> -->
+      {{ plan.planName }}
+    </button>
+    <button
+      mat-menu-item
+      (click)="selectMap('Counties')"
+    >
+      Counties
+    </button>
+    <button
+      mat-menu-item
+      (click)="selectMap('Precincts')"
+    >
+      Precincts
+    </button>
   </mat-menu>
   <button mat-raised-button *ngIf="!onCenter" (click)="returnTo()" class="return-button">Return</button>
 </div>

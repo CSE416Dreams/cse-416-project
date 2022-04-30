@@ -13,8 +13,4 @@ export class StateSummaryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeToPlan(index: number) {
-    this.controller.changeSelectedPlan(index);
-  }
-
 }

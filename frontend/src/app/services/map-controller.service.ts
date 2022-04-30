@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 
-import FloridaState from '../../../../State_GEOJSON/Florida/FloridaState';
-import MississippiState from '../../../../State_GEOJSON/Mississippi/MississippiState';
-import GeorgiaState from '../../../../State_GEOJSON/Georgia/GeorgiaState';
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -47,6 +42,7 @@ export class MapControllerService {
     this.mainMap.on('load', () => {
       this.initialMap();
     });
+    return;
   }
 
   validateCenter(state: string) {
@@ -58,32 +54,42 @@ export class MapControllerService {
     } else return true;
   }
 
-  hideCurrentMap(state: string, planIndex: number) {
-    this.mainMap.setLayoutProperty(state.toLowerCase()+'-'+planIndex, 'visibility', 'none');
+  hideCurrentMap(state: string, planName: string) {
+    this.mainMap.setLayoutProperty(state.toLowerCase()+'-'+planName, 'visibility', 'none');
   }
 
-  mapExists(state: string, planIndex: number) {
-    if(this.mainMap.getStyle().layers.filter(element => 
-      {return element.id.includes(state.toLowerCase()+'-'+planIndex)}).length != 0) {
+  mapExists(state: string, planName: string) {
+    if(this.mainMap.getStyle().layers.filter(element =>
+      { return element.id.includes(state.toLowerCase()+'-'+planName)}).length != 0) {
         return true;
     }
     return false;
   }
 
-  showExistingMap(state:string, planIndex: number) {
-    this.mainMap.setLayoutProperty(state.toLowerCase()+'-'+planIndex, 'visibility', 'visible');
+  showExistingMap(state:string, planName: string) {
+    this.mainMap.setLayoutProperty(state.toLowerCase()+'-'+planName, 'visibility', 'visible');
+    return;
   }
 
-  showDistrictMap(state: string, planIndex: number) {
-    if(this.mapExists(state, planIndex)) {
-      this.showExistingMap(state, planIndex);
+  showDistrictMap(state: string, planName: string) {
+    if(this.mapExists(state, planName)) {
+      this.showExistingMap(state, planName);
       return;
     }
     // Clean up
-    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-'+planIndex+'.geojson')
+    if(planName == "Counties") {
+
+    }
+    else if(planName == "Precincts") {
+
+    }
+    else {
+
+    }
+    fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-'+planName+'.geojson')
     .then(result => result.json())
     .then(data => {
-      this.mainMap.addSource(state.toLowerCase()+'-'+planIndex, {
+      this.mainMap.addSource(state.toLowerCase()+'-'+planName, {
         type: "geojson",
         data: data,
         generateId: true
@@ -97,9 +103,9 @@ export class MapControllerService {
       });
       fillArray.push("transparent");
       this.mainMap.addLayer({
-          id: state.toLowerCase()+"-"+planIndex,
+          id: state.toLowerCase()+"-"+planName,
           type: 'fill',
-          source: state.toLowerCase()+'-'+planIndex,
+          source: state.toLowerCase()+'-'+planName,
           paint: {
             'fill-color': fillArray,
             'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false],
@@ -110,28 +116,26 @@ export class MapControllerService {
       });
       this.mainMap.once('sourcedata', () => {
         var hoveredDistrictID = null;
-        this.mainMap.on('mousemove', state.toLowerCase()+'-'+planIndex, (e) => {
-          
+        this.mainMap.on('mousemove', state.toLowerCase()+'-'+planName, (e) => {
           if(hoveredDistrictID !== null) {
             this.mainMap.setFeatureState(
-              { source : state.toLowerCase()+'-'+planIndex, id: hoveredDistrictID },
+              { source : state.toLowerCase()+'-'+planName, id: hoveredDistrictID },
               { hover : false }
             )
           }
           this.mainMap.setFeatureState(
-            { source:  state.toLowerCase()+'-'+planIndex, id: e.features[0].id},
+            { source:  state.toLowerCase()+'-'+planName, id: e.features[0].id},
             { hover: true }
           )
           hoveredDistrictID = e.features[0].id
-        }
-        )
-        this.mainMap.on('mouseleave', state.toLowerCase()+'-'+planIndex, () => {
+        })
+        this.mainMap.on('mouseleave', state.toLowerCase()+'-'+planName, () => {
           this.mainMap.setFeatureState(
-            { source: state.toLowerCase()+'-'+planIndex, id: hoveredDistrictID },
+            { source: state.toLowerCase()+'-'+planName, id: hoveredDistrictID },
             { hover: false }
           )
-        })  
-      })     
+        })
+      })
     })
     .catch(e => console.log(e));
   }
@@ -158,6 +162,7 @@ export class MapControllerService {
       easing: (t) => t,
       essential: true,
     });
+    return;
   }
 
   randomColor() {
@@ -172,70 +177,88 @@ export class MapControllerService {
   // BASIC STATES FUNCTIONS
   resetToInitial(state: string) {
     this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'visible');
+    return;
   }
 
   hideStateMap(state: string) {
     this.mainMap.setLayoutProperty(state.toLowerCase(), 'visibility', 'none');
+    return;
   }
 
   initialMap() {
     this.initialFlorida();
     this.initialGeorgia();
     this.initialMississippi();
+    return;
   }
 
   initialFlorida() {
-    this.mainMap.addSource('florida', {
-      type: 'geojson',
-      data: FloridaState,
-    });
-    this.mainMap.addLayer({
-      id: 'florida',
-      type: 'fill',
-      source: 'florida',
-      layout: {},
-      paint: {
-        'fill-color': '#808080',
-        'fill-opacity': 0.5,
-      },
-    });
-    this.enableHover("florida");
+    fetch('https://hitboxes.github.io/florida-State.geojson')
+    .then(result => result.json())
+    .then(data => {
+      this.mainMap.addSource('florida', {
+        type: 'geojson',
+        data: data,
+      });
+      this.mainMap.addLayer({
+        id: 'florida',
+        type: 'fill',
+        source: 'florida',
+        layout: {},
+        paint: {
+          'fill-color': '#808080',
+          'fill-opacity': 0.5,
+        },
+      });
+      this.enableHover("florida");
+    })
+    return;
   }
 
   initialMississippi() {
-    this.mainMap.addSource('mississippi', {
-      type: 'geojson',
-      data: MississippiState,
-    });
-    this.mainMap.addLayer({
-      id: 'mississippi',
-      type: 'fill',
-      source: 'mississippi',
-      layout: {},
-      paint: {
-        'fill-color': '#808080',
-        'fill-opacity': 0.5,
-      },
-    });
-    this.enableHover("mississippi");
+    fetch('https://hitboxes.github.io/mississippi-State.geojson')
+    .then(result => result.json())
+    .then(data => {
+      this.mainMap.addSource('mississippi', {
+        type: 'geojson',
+        data: data,
+      });
+      this.mainMap.addLayer({
+        id: 'mississippi',
+        type: 'fill',
+        source: 'mississippi',
+        layout: {},
+        paint: {
+          'fill-color': '#808080',
+          'fill-opacity': 0.5,
+        },
+      });
+      this.enableHover("mississippi");
+    })
+    return;
   }
 
   initialGeorgia() {
-    this.mainMap.addSource('georgia', {
-      type: 'geojson',
-      data: GeorgiaState,
-    });
-    this.mainMap.addLayer({
-      id: 'georgia',
-      type: 'fill',
-      source: 'georgia',
-      layout: {},
-      paint: {
-        'fill-color': '#808080',
-        'fill-opacity': 0.5,
-      },
-    });
-    this.enableHover("georgia");
+    fetch('https://hitboxes.github.io/georgia-State.geojson')
+    .then(result => result.json())
+    .then(data => {
+      this.mainMap.addSource('georgia', {
+        type: 'geojson',
+        data: data,
+      });
+      this.mainMap.addLayer({
+        id: 'georgia',
+        type: 'fill',
+        source: 'georgia',
+        layout: {},
+        paint: {
+          'fill-color': '#808080',
+          'fill-opacity': 0.5,
+        },
+      });
+      this.enableHover("georgia");
+    })
+    return;
   }
 
   enableHover(state : string) {
@@ -247,5 +270,6 @@ export class MapControllerService {
       this.mainMap.getCanvas().style.cursor = '';
       this.mainMap.setPaintProperty(state, 'fill-opacity', 0.5)
     })
+    return;
   }
 }

@@ -20,7 +20,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   selectMap(string: string) {
-    console.log(string);
+    this.controller.changeMap(string);
   }
 
   returnTo() {

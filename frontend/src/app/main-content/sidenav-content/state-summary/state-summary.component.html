@@ -20,11 +20,10 @@
 
     <div class="plans-div">Plans :</div>
 
-    <div *ngFor="let planName of this.controller.getPlanList(); index as i">
-      <div *ngIf="planName != 'Summary'">
-        <mat-card class="district-plan-card" (click)="changeToPlan(i)">
+    <div *ngFor="let plan of this.controller.getPlansData(); index as i">
+        <mat-card class="district-plan-card" (click)="this.controller.changeSelectedPlan(i+1)">
           <mat-card-header>
-            <mat-card-title> Plan Name : {{ planName }} </mat-card-title>
+            <mat-card-title> Plan Name : {{ plan.planName }} </mat-card-title>
           </mat-card-header>
           <mat-divider class="divider"></mat-divider>
 
@@ -43,13 +42,13 @@
             <mat-grid-list cols="1" rowHeight="40px">
               <mat-grid-tile>
                 <div *ngIf="this.controller.getPlanData(i).planStatus == 'Approved'">
-                  Date Approved : {{ this.controller.getPlanData(i).date }}
+                  Date Approved : {{ this.controller.getPlanData(i).planDate }}
                 </div>
                 <div *ngIf="this.controller.getPlanData(i).planStatus == 'Rejected'">
-                  Date Rejected : {{ this.controller.getPlanData(i).date }}
+                  Date Rejected : {{ this.controller.getPlanData(i).planDate }}
                 </div>
                 <div *ngIf="this.controller.getPlanData(i).planStatus == 'Proposed'">
-                  Date Proposed : {{ this.controller.getPlanData(i).date }}
+                  Date Proposed : {{ this.controller.getPlanData(i).planDate }}
                 </div>
               </mat-grid-tile>
             </mat-grid-list>
@@ -89,7 +88,7 @@
             <mat-divider></mat-divider>
           </mat-card-content>
         </mat-card>
-      </div>
+
     </div>
   </div>
 </div>
