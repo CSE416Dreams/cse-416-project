@@ -1,0 +1,2044 @@
+                                                  GEOID  votes_dem  ...  index_right  District
+0                                    28015-WEST CARROLL         36  ...            1         2
+5                                            28011-SHAW        850  ...            1         2
+6                                  28089-CAMERON BETHEL         70  ...            1         2
+7                                 28097-DUCK HILL NORTH        100  ...            1         2
+11                                  28011-ROSEDALE WEST        233  ...            1         2
+13         28107-BATESVILLE NORTH B PATTON LN COMM CNTR        869  ...            1         2
+17                                   28055-GRACE VOTING         46  ...            1         2
+24                                 28079-CARTHAGE NORTH        334  ...            1         2
+26                                    28063-CANNONSBURG        195  ...            1         2
+30                                      28149-BRUNSWICK         30  ...            1         2
+31                             28157-WOODVILLE 2ND 2010        387  ...            1         2
+32                           28133-31-INDIANOLA 3 SOUTH        516  ...            1         2
+33                                      28161-ONE SOUTH        150  ...            1         2
+41                                        28119-CROWDER         37  ...            1         2
+42                                         28029-WESSON         93  ...            1         2
+43                                       28063-STAMPLEY        230  ...            1         2
+45                               28161-THREE NORTH WEST        250  ...            1         2
+50                                        28013-BRUCE 3        227  ...            1         2
+51                                       28005-NEW ZION         37  ...            1         2
+55                                      28137-LOOXAHOMA        344  ...            1         2
+60                                          28011-SCOTT         65  ...            1         2
+65                           28051-1 DURANT ST ANDERSON        205  ...            1         2
+68                      28151-SWIFTWATER BAPTIST CHURCH         85  ...            1         2
+70                                  28083-GWD SOUTHEAST       1054  ...            1         2
+78                                      28063-HARRISTON        193  ...            1         2
+81                            28051-BEAT 5 CRUGER (A-Z)        184  ...            1         2
+82                                 28001-1 BY-PASS FIRE        521  ...            1         2
+84                                    28083-MORGAN CITY        101  ...            1         2
+87                                28107-ENON WATER BLDG         33  ...            1         2
+90                                       28079-EDINBURG         20  ...            1         2
+91                        28043-BOX 2 GRENADA CO OFFICE        267  ...            1         2
+95                        28053-PUTNAM SOUTH - 4PS 4030         41  ...            1         2
+96                         28055-MAYERSVILLE COURTHOUSE        151  ...            1         2
+100                                     28005-FORK EAST         77  ...            1         2
+101                                    28021-COUNTY 3-B         16  ...            1         2
+102                              28029-HAZLEHURST NORTH        121  ...            1         2
+104                                    28021-COUNTY 3-A        660  ...            1         2
+106                                   28001-4 NORTHSIDE       1062  ...            1         2
+118                                   28011-MOUND BAYOU        894  ...            1         2
+121                                    28071-HARMONTOWN         43  ...            1         2
+124                                    28149-ELKS LODGE        685  ...            1         2
+125                     28001-3 NPS MULTI PURPOSE BLDG.        236  ...            1         2
+126                                 28001-2 DUNCAN PARK        387  ...            1         2
+131                               28163-4-4 TEEN CENTER        815  ...            1         2
+133                            28107-UNION FIRE STATION        221  ...            1         2
+139                                     28029-DENTVILLE         62  ...            1         2
+140                             28135-CHARLESTON BEAT 3        268  ...            1         2
+141                             28135-CHARLESTON BEAT 2        537  ...            1         2
+145                             28135-CHARLESTON BEAT 1        348  ...            1         2
+147                                      28089-TOUGALOO         94  ...            1         2
+149                                            28049-73        424  ...            1         2
+150                                            28049-72        354  ...            1         2
+151                                            28049-71        475  ...            1         2
+152                                            28049-70        294  ...            1         2
+154                                            28049-77        614  ...            1         2
+156                                            28049-76        322  ...            1         2
+158                                     28015-JEFFERSON         23  ...            1         2
+159                                            28049-74        410  ...            1         2
+161                                   28133-12-MOORHEAD        661  ...            1         2
+162                                        28027-DUBLIN         73  ...            1         2
+165                                            28049-79       1106  ...            1         2
+166                                            28049-78        687  ...            1         2
+168                     28125-ROLLING FORK 1ST DISTRICT        254  ...            1         2
+170                                 28143-WESTEND STORE         39  ...            1         2
+175                                     28037-BAD BAYOU         16  ...            1         2
+181                                     28049-RAYMOND 2        726  ...            1         2
+183                                     28049-RAYMOND 1        647  ...            1         2
+184                                         28005-ARIEL        218  ...            1         2
+185                                       28079-RENFROE         66  ...            1         2
+188                        28053-ISOLA NORTH - 2IN 2010        441  ...            1         2
+190                                            28049-62        816  ...            1         2
+192                                            28049-61        331  ...            1         2
+193                                            28049-60        230  ...            1         2
+194                                         28005-WALLS        169  ...            1         2
+197                                   28001-3 PALESTINE        492  ...            1         2
+198                                            28049-64        269  ...            1         2
+200                                            28049-63        281  ...            1         2
+202                                       28007-CARMACK          8  ...            1         2
+203                                            28049-69        678  ...            1         2
+205                                            28049-68       1219  ...            1         2
+209                        28163-3-1 MOUND ST. BUILDING        304  ...            1         2
+212                                    28015-FIRE TOWER        437  ...            1         2
+213                  28055-VALLEY PARK COMMUNITY CENTER         19  ...            1         2
+215                                          28149-JETT        732  ...            1         2
+216                                    28001-2 KINGSTON         96  ...            1         2
+217                                    28021-COUNTY 1-B        320  ...            1         2
+218            28107-COLD SPRINGS SARDIS LAKE FIRE DEPT        155  ...            1         2
+221                                    28021-COUNTY 1-A        569  ...            1         2
+223                                       28037-HAMBURG        196  ...            1         2
+224                              28097-WINONA SOUTHEAST         85  ...            1         2
+227                                      28011-LONGSHOT         22  ...            1         2
+229                      28107-COURTLAND BAPTIST CHURCH        797  ...            1         2
+231                                            28049-51        955  ...            1         2
+232                                        28079-MADDEN         82  ...            1         2
+234                                            28049-55        447  ...            1         2
+235                                            28049-54        285  ...            1         2
+236                                 28005-LIBERTY SOUTH        193  ...            1         2
+237                                     28029-CARPENTER        123  ...            1         2
+238                                            28049-59        664  ...            1         2
+239                                            28049-58        744  ...            1         2
+241                                            28049-57        416  ...            1         2
+243                                            28049-56        168  ...            1         2
+245                                      28011-MERIGOLD        151  ...            1         2
+247                           28133-22-INDIANOLA 2 EAST       1471  ...            1         2
+253                      28055-TALLULA COMMUNITY CENTER         59  ...            1         2
+254                                      28135-GLENDORA        243  ...            1         2
+256                       28089-FRANKLIN BAPTIST CHURCH         23  ...            1         2
+258                              28163-1-4 CENTER RIDGE         77  ...            1         2
+263                                            28049-40        821  ...            1         2
+266                                28157-WOODVILLE 1010        223  ...            1         2
+267                        28161-SCUNA-VANNS MILL SOUTH          7  ...            1         2
+268                                 28155-BLUFF SPRINGS         49  ...            1         2
+271                                            28049-44        967  ...            1         2
+272                                       28037-ANTIOCH        193  ...            1         2
+273                                            28049-43       1094  ...            1         2
+274                                            28049-42        762  ...            1         2
+276                                            28049-41       1159  ...            1         2
+278                                            28049-47        332  ...            1         2
+279                                28051-BEAT 3 GOODMAN        443  ...            1         2
+280                                      28083-SCHLATER        119  ...            1         2
+281                              28161-THREE SYLVA RENA        103  ...            1         2
+282                                            28049-46       1397  ...            1         2
+284                            28151-GLEN ALLAN LIBRARY        182  ...            1         2
+285                                            28049-45        673  ...            1         2
+286                   28125-STRAIGHT BAYOU 4TH DISTRICT         34  ...            1         2
+289                                            28049-49        392  ...            1         2
+290                                28027-CAGLE CROSSING         22  ...            1         2
+292                        28107-CRENSHAW OLD CITY HALL        240  ...            1         2
+294                                        28079-CONWAY        287  ...            1         2
+298                                        28011-BENOIT        189  ...            1         2
+299                                           28077-OMA        239  ...            1         2
+300                                  28001-5 WASHINGTON        192  ...            1         2
+303                                        28085-VAUGHN         90  ...            1         2
+304                                       28007-MCADAMS        150  ...            1         2
+305                                   28149-MOOSE LODGE        327  ...            1         2
+306                                   28029-CENTERPOINT        315  ...            1         2
+310                                       28151-DARLOVE         24  ...            1         2
+328                                      28143-PRICHARD        277  ...            1         2
+348                     28043-FUTHEYVILLE 1ST PENTECOST        172  ...            1         2
+349                                     28063-CITY HALL        462  ...            1         2
+350                        28161-SCUNA-VANNS MILL NORTH         32  ...            1         2
+351                                     28079-SINGLETON        173  ...            1         2
+353                              28119-MARKS SOUTH WEST        243  ...            1         2
+355                                   28137-SENATOBIA 1        675  ...            1         2
+357                                            28049-91       1363  ...            1         2
+359                                            28049-90       1537  ...            1         2
+363                                            28049-94       1723  ...            1         2
+366                                            28049-93        668  ...            1         2
+367                                  28085-OLD RED STAR         75  ...            1         2
+368                                            28049-92       1288  ...            1         2
+373                                          28137-TYRO        157  ...            1         2
+374                                          28099-HOPE         53  ...            1         2
+375                                            28049-96       1020  ...            1         2
+376                             28157-COLD SPRINGS 4020        101  ...            1         2
+378                                   28029-SHADY GROVE        103  ...            1         2
+379                                 28143-MHOON LANDING         13  ...            1         2
+380                                    28005-HOMOCHITTO          8  ...            1         2
+381               28089-COLONIAL HEIGHTS BAPTIST CHURCH        686  ...            1         2
+385                                      28083-WEST GWD        879  ...            1         2
+390                                     28027-RENA LARA         29  ...            1         2
+391                                            28049-80       1059  ...            1         2
+392                              28011-DUNCAN-ALLIGATOR        148  ...            1         2
+394                                            28049-84        162  ...            1         2
+395                                            28049-83       1747  ...            1         2
+396                                            28049-82        876  ...            1         2
+398                           28133-21-INDIANOLA 2 WEST        501  ...            1         2
+400                                            28049-81       1373  ...            1         2
+401                                            28049-88        842  ...            1         2
+403                                            28049-86        781  ...            1         2
+404                                            28049-85       1480  ...            1         2
+406                               28163-5-3 HOLLY BLUFF         61  ...            1         2
+407                               28123-BEAT 4/CONTRELL        165  ...            1         2
+411                                     28019-PANHANDLE         92  ...            1         2
+412                          28051-BEAT 3 COXBURG (A-Z)         46  ...            1         2
+413                                        28077-SONTAG        102  ...            1         2
+415             28113-(18) JOHNSTON CHAPEL METH. CHURCH        138  ...            1         2
+418                                      28101-PROSPECT         22  ...            1         2
+419                                        28049-TINNIN        284  ...            1         2
+420                                      28083-GWD EAST       1110  ...            1         2
+422                                        28149-BOVINA        496  ...            1         2
+425                               28029-HAZLEHURST WEST        841  ...            1         2
+429                    28089-CEDAR GROVE BAPTIST CHURCH         13  ...            1         2
+432                                   28097-WINONA WEST        127  ...            1         2
+433                      28043-HOLCOMB COMMUNITY CENTER        186  ...            1         2
+434                      28133-13-INDIANOLA 1 SOUTHEAST        464  ...            1         2
+435                                      28011-EASTGATE        511  ...            1         2
+436                                   28049-BROWNSVILLE        208  ...            1         2
+437                       28133-52-SUNFLOWER PLANTATION         18  ...            1         2
+439                                         28037-CAINS         56  ...            1         2
+443                                  28005-LIBERTY EAST         62  ...            1         2
+447                             28163-1-1 MECHANICSBURG         43  ...            1         2
+448                                 28163-3-3 JONESTOWN        313  ...            1         2
+452                                   28037-WHITTINGTON         37  ...            1         2
+455                                    28085-CASEYVILLE         91  ...            1         2
+457                                          28099-HAYS         49  ...            1         2
+463                                    28135-SPRINGHILL         17  ...            1         2
+464                                   28015-VAIDEN EAST        260  ...            1         2
+467                                          28135-ENID        107  ...            1         2
+472                                 28011-ROSEDALE EAST        481  ...            1         2
+473          28107-SPRINGPORT SOUTH MT OLIVET FIRE DEPT        309  ...            1         2
+474                                         28071-PARIS         29  ...            1         2
+477        28107-SPRINGPORT NORTH BLACKJACK COMM CENTER        305  ...            1         2
+478                                        28135-BRAZIL         27  ...            1         2
+481                                    28163-4-2 MIDWAY        232  ...            1         2
+482                                   28001-1 BELLEMONT        519  ...            1         2
+485                      28133-33-INDIANOLA 3 NORTHEAST        205  ...            1         2
+486                                 28143-TWO MILE LAKE        293  ...            1         2
+489                         28029-CRYSTAL SPRINGS NORTH        248  ...            1         2
+492                    28089-TRACE RIDGE BAPTIST CHURCH        843  ...            1         2
+495                  28107-BATESVILLE EAST 5 COURTHOUSE        613  ...            1         2
+496                                 28007-WILLIAMSVILLE        332  ...            1         2
+497                       28053-LOUISE SOUTH - 5LS 5030        301  ...            1         2
+502                      28053-BELZONI NORTH - 1BN 1020        597  ...            1         2
+504                     28125-SPANISH FORT 1ST DISTRICT          3  ...            1         2
+505                             28125-CARY 2ND DISTRICT        222  ...            1         2
+506                   28107-PLEASANT GROVE FIRE STATION         65  ...            1         2
+516                                    28005-TANGIPAHOA         54  ...            1         2
+519                                       28119-LAMBERT        291  ...            1         2
+521                                         28149-KINGS        453  ...            1         2
+523                                   28013-PITTSBORO 1        377  ...            1         2
+524                         28151-COVENANT PRESBYTERIAN        264  ...            1         2
+528                                       28071-BURGESS        133  ...            1         2
+534                                       28121-LIBERTY        559  ...            1         2
+535                             28123-BEAT 5/SEBASTOPOL         20  ...            1         2
+536                                      28155-TOMNOLEN         32  ...            1         2
+537                                   28083-GWD CENTRAL        240  ...            1         2
+542                                     28135-ROSEBLOOM          3  ...            1         2
+544                                 28085-LITTLE BAHALA         73  ...            1         2
+545                         28143-WHITE OAK REC. CENTER        285  ...            1         2
+551                                     28019-WEIR WEST         85  ...            1         2
+552                      28043-GORE SPRINGS COMM CENTER         70  ...            1         2
+557                            28107-EUREKA COMM CENTER        209  ...            1         2
+558                                        28007-SALLIS        534  ...            1         2
+563                                28079-CARTHAGE SOUTH        110  ...            1         2
+569                                     28005-RICEVILLE        152  ...            1         2
+570                          28011-CLEVELAND COURTHOUSE        108  ...            1         2
+576                         28043-BOX 3 CITY AUDITORIUM       1132  ...            1         2
+579              28089-COUPARLE UNITED METHODIST CHURCH         34  ...            1         2
+580                                  28055-ADDIE VOTING         80  ...            1         2
+587                                          28027-LYON        336  ...            1         2
+589                            28163-2-2 WELFARE OFFICE        221  ...            1         2
+592                                     28149-BEECHWOOD        415  ...            1         2
+593                                       28119-DARLING        127  ...            1         2
+594                                28107-POPE CITY HALL        245  ...            1         2
+595                                       28079-OFAHOMA        269  ...            1         2
+599                                      28135-CASCILLA         80  ...            1         2
+601                          28133-32-INDIANOLA 3 NORTH        266  ...            1         2
+603                                         28005-ONEIL          9  ...            1         2
+611                                     28083-GWD SOUTH        301  ...            1         2
+613                                 28149-CHERRY STREET       1028  ...            1         2
+615                                   28099-PEARL RIVER        300  ...            1         2
+616                                    28099-ZEPHYRHILL         74  ...            1         2
+618                     28051-BEAT 4 WALDEN CHAPEL (A-Z        156  ...            1         2
+623                                        28011-BEULAH        145  ...            1         2
+625                              28089-MAGNOLIA HEIGHTS        690  ...            1         2
+631                      28053-BELZONI NORTH - 2BN 2020        108  ...            1         2
+637                                       28049-TERRY 2       1128  ...            1         2
+639                                28001-5 FOSTER MOUND        821  ...            1         2
+640                                       28049-TERRY 1       1123  ...            1         2
+642                   28089-GREATER MT LEVI FULL GOSPEL        464  ...            1         2
+643                              28163-1-6 LITTLE YAZOO         91  ...            1         2
+645                         28089-CANTON ANDERSON LODGE        999  ...            1         2
+647                                       28097-STEWART          6  ...            1         2
+649                      28151-LELAND HEALTH DEPARTMENT        825  ...            1         2
+650                                        28083-GWD NE        625  ...            1         2
+655                                    28007-POSSUMNECK         74  ...            1         2
+658                          28107-SARDIS SOUTH LIBRARY        744  ...            1         2
+660                                          28019-BYWY         57  ...            1         2
+668                                 28157-LONGMIRE 5020        143  ...            1         2
+671                            28157-WOODVILLE 4TH 4010        512  ...            1         2
+673                                  28133-11-INVERNESS        313  ...            1         2
+676                                    28149-AUDITORIUM        693  ...            1         2
+679                                    28137-EVANSVILLE         46  ...            1         2
+680                      28151-LAKE VISTA MASONIC LODGE        757  ...            1         2
+681                                          28083-MVSU        249  ...            1         2
+691                             28163-1-3 BENTONIA WEST        279  ...            1         2
+694                     28125-ROLLING FORK 3RD DISTRICT        315  ...            1         2
+696                                         28011-BOYLE        183  ...            1         2
+700                                     28085-ARLINGTON        132  ...            1         2
+704                                       28079-HARMONY        198  ...            1         2
+705                  28113-(19) PISGAH METHODIST CHURCH        219  ...            1         2
+708                       28151-JAKE'S CHAPEL MB CHURCH        907  ...            1         2
+710                                  28071-WEST UNION 4         87  ...            1         2
+711              28089-CANTON ST. PAUL METHODIST CHURCH        157  ...            1         2
+713                                        28037-LUCIEN         23  ...            1         2
+719                                         28079-SALEM         54  ...            1         2
+721                               28163-2-3 DEASONVILLE        429  ...            1         2
+725                    28151-ST. JAMES EPISCOPAL CHURCH       1320  ...            1         2
+726                                  28027-CLARKSDALE 4       1035  ...            1         2
+727                                   28005-AMITE RIVER        192  ...            1         2
+728                                  28027-CLARKSDALE 3        387  ...            1         2
+729                                  28027-CLARKSDALE 2        685  ...            1         2
+730                                     28049-DRY GROVE        288  ...            1         2
+731                                  28133-44-RULEVILLE        751  ...            1         2
+733                                  28027-CLARKSDALE 5       1068  ...            1         2
+734                                          28027-LULA        126  ...            1         2
+740                                        28049-BOLTON        738  ...            1         2
+741                                    28007-PROVIDENCE         31  ...            1         2
+742                                    28163-1-8 VALLEY         21  ...            1         2
+743                                        28011-SHELBY        836  ...            1         2
+747                                     28001-5 AIRPORT        399  ...            1         2
+755                                     28015-RAYS SHOP         64  ...            1         2
+756                                    28007-NORTH EAST        845  ...            1         2
+757                               28071-ANCHOR-TAYLOR 4         93  ...            1         2
+762                                       28049-UTICA 2        503  ...            1         2
+763                                       28049-UTICA 1        302  ...            1         2
+771                                   28135-WEBB BEAT 5        261  ...            1         2
+772                              28051-BEAT 4 LEXINGTON       1019  ...            1         2
+773                                   28135-WEBB BEAT 4         83  ...            1         2
+776                                       28015-CALVARY          3  ...            1         2
+777                              28051-BEAT 1 LEXINGTON        831  ...            1         2
+778                         28029-CRYSTAL SPRINGS SOUTH        967  ...            1         2
+779                                 28123-BEAT 5/STEELE          2  ...            1         2
+780                                   28149-ST ALOYSIUS        240  ...            1         2
+781                            28089-FAIRVIEW MB CHURCH       1291  ...            1         2
+785               28163-3-4 WASHINGTON ST. FIRE STATION        185  ...            1         2
+786                                       28011-CHOCTAW        140  ...            1         2
+792                                          28079-LENA        200  ...            1         2
+794                                 28083-GWD SOUTHWEST        339  ...            1         2
+795                              28029-HAZLEHURST SOUTH        186  ...            1         2
+797                                       28149-GOODRUM        249  ...            1         2
+801                                         28099-FUSKY          7  ...            1         2
+804                                        28013-BANNER         52  ...            1         2
+809                                        28019-KENEGO          8  ...            1         2
+814                                   28049-SPRINGRIDGE        153  ...            1         2
+817                               28089-MARK APARTMENTS       1565  ...            1         2
+820                                 28133-43-DODDSVILLE        111  ...            1         2
+823                              28161-FIVE COFFEEVILLE        243  ...            1         2
+829                                   28151-TAMPA DRIVE        292  ...            1         2
+833                    28053-LAKE CITY SOUTH - 3LS 3030          9  ...            1         2
+834                             28143-TUNICA AUDITORIUM        333  ...            1         2
+835                                   28149-TINGLEVILLE        457  ...            1         2
+839                                     28037-EDDICETON         31  ...            1         2
+841                             28043-BOX 4 TAYLOR HALL       1333  ...            1         2
+846                                  28085-LINCOLN WEST         53  ...            1         2
+850                 28089-GLUCKSTADT AT ST JOE CATHOLIC       1018  ...            1         2
+851                          28029-CRYSTAL SPRINGS EAST        673  ...            1         2
+855                                       28135-PHILLIP         98  ...            1         2
+857                                  28097-WINONA SOUTH        631  ...            1         2
+860                                     28083-GWD NORTH        770  ...            1         2
+861                                       28137-SHERROD         22  ...            1         2
+869                               28011-CLEVELAND NORTH        407  ...            1         2
+872                                     28027-JONESTOWN        542  ...            1         2
+877                                        28135-PAYNES         19  ...            1         2
+881                                   28127-FORK CHURCH        237  ...            1         2
+882                                 28007-SOUTH CENTRAL        326  ...            1         2
+885                               28157-FORT ADAMS 2020        246  ...            1         2
+886                                        28007-MCCOOL        108  ...            1         2
+890                                  28001-4 MORGANTOWN        352  ...            1         2
+892                                         28007-ETHEL        100  ...            1         2
+893                               28083-ITTA BENA SOUTH        249  ...            1         2
+900                                        28037-MCCALL         57  ...            1         2
+915                                      28077-STRINGER        192  ...            1         2
+917                                  28143-NEW SUB PARK        258  ...            1         2
+920                                       28149-OAKLAND        175  ...            1         2
+933                                  28005-EAST GLOSTER         78  ...            1         2
+934                                       28051-1 ACONA        457  ...            1         2
+936                                       28049-CYNTHIA        360  ...            1         2
+939                 28107-MACEDONIA-CONCORD COMM CENTER        627  ...            1         2
+943                 28089-RIDGEL D 1ST METHODIST CHURCH        751  ...            1         2
+946                     28043-SWEETHOME HOL#2 FIRE STAT         92  ...            1         2
+949                          28089-MT. HOPE M.B. CHURCH         60  ...            1         2
+953                                         28127-PEARL         88  ...            1         2
+955                              28163-3-2 OLD JR. HIGH        467  ...            1         2
+956                                            28049-32        266  ...            1         2
+957                            28151-EXTENSION BUILDING        448  ...            1         2
+958                                            28049-31        572  ...            1         2
+960                                            28049-30        367  ...            1         2
+962                                            28049-37        487  ...            1         2
+964                                            28049-36        621  ...            1         2
+965                                            28049-35        390  ...            1         2
+967                                            28049-34        458  ...            1         2
+971                                            28049-39        644  ...            1         2
+973                                            28049-38        522  ...            1         2
+980                                  28029-MARTINSVILLE        228  ...            1         2
+988                                            28049-22        936  ...            1         2
+989           28089-CANTON SOUTH LIBERTY BAPTIST CHURCH        886  ...            1         2
+990                                            28049-21        668  ...            1         2
+991                                     28079-GOOD HOPE        114  ...            1         2
+992                                            28049-20        350  ...            1         2
+994                                    28005-VANCE PARK         21  ...            1         2
+995                                            28049-26       1018  ...            1         2
+998                                            28049-25        797  ...            1         2
+999                                            28049-23        672  ...            1         2
+1000                                28163-5-1 LAKE CITY         35  ...            1         2
+1001                                           28049-29        435  ...            1         2
+1002                                           28049-28        701  ...            1         2
+1003                                           28049-27        883  ...            1         2
+1006                                           28049-09        542  ...            1         2
+1008          28151-WASHINGTON COUNTY CONVENTION CENTER        639  ...            1         2
+1010                                       28063-LORMAN        184  ...            1         2
+1012                                      28005-TICKFAW        115  ...            1         2
+1015                             28133-41-FAIRVIEW-HALE         20  ...            1         2
+1016                                  28049-CHAPEL HILL        344  ...            1         2
+1018                                           28049-11        300  ...            1         2
+1019                                           28049-10        216  ...            1         2
+1020                              28083-ITTA BENA NORTH        888  ...            1         2
+1022                         28151-HOLLANDALE CITY HALL        824  ...            1         2
+1023                                 28011-WINSTONVILLE        200  ...            1         2
+1024                                      28049-EDWARDS       1154  ...            1         2
+1025                                           28049-14        380  ...            1         2
+1026                                           28049-13        770  ...            1         2
+1028                                      28005-GLOSTER        461  ...            1         2
+1029                                           28049-19        310  ...            1         2
+1030                                           28049-18        316  ...            1         2
+1031                      28063-COMMUNITY GARDEN CENTER        377  ...            1         2
+1032                                           28049-16       1034  ...            1         2
+1034                        28089-CANTON FIRE STATION 4        269  ...            1         2
+1040                                      28079-WIGGINS        264  ...            1         2
+1042                             28029-GEORGETOWN NORTH        161  ...            1         2
+1050                28151-BUSTER BROWN COMMUNITY CENTER       1432  ...            1         2
+1051                                      28019-CHESTER         64  ...            1         2
+1052                                           28049-04        335  ...            1         2
+1056                                    28001-5 OAKLAND        551  ...            1         2
+1057                                           28049-02        150  ...            1         2
+1059                                           28049-01        555  ...            1         2
+1060                                           28049-08        388  ...            1         2
+1061                                           28049-06        371  ...            1         2
+1065                                       28149-CULKIN        694  ...            1         2
+1070                                    28085-NEW SIGHT        301  ...            1         2
+1072                                     28007-THOMPSON          7  ...            1         2
+1074                               28011-CLEVELAND WEST        240  ...            1         2
+1079                                  28015-GRAVEL HILL         44  ...            1         2
+1082                                       28143-TUNICA        238  ...            1         2
+1083             28043-BOX 1 SOUTHSIDE CHURCH OF CHRIST        569  ...            1         2
+1087                                     28071-OXFORD 3       1306  ...            1         2
+1090                                   28021-COUNTY 4-A        340  ...            1         2
+1096                                   28021-COUNTY 4-D         30  ...            1         2
+1097                                  28161-FIVE SCOBEY         58  ...            1         2
+1099                                   28021-COUNTY 4-B        375  ...            1         2
+1101                        28051-BEAT 3 EBENEZER (A-Z)        200  ...            1         2
+1104               28089-HIGHLAND COLONY BAPTIST CHURCH       1260  ...            1         2
+1109                                        28015-SALEM        157  ...            1         2
+1110                     28053-BELZONI NORTH - 4BN 4010        648  ...            1         2
+1114                    28053-MIDNIGHT SOUTH - 5MS 5020         55  ...            1         2
+1116                             28029-STRONGHOPE UNION         30  ...            1         2
+1120                                   28121-PEARL WEST        453  ...            1         2
+1123                                 28063-UNION CHURCH        155  ...            1         2
+1129                      28089-CAMDEN COMMUNITY CENTER        639  ...            1         2
+1132                                         28007-ZAMA         84  ...            1         2
+1134                                       28149-YOKENA        194  ...            1         2
+1142                        28125-ANGUILLA 5TH DISTRICT        167  ...            1         2
+1148                            28163-1-2 BENTONIA EAST        113  ...            1         2
+1150                                     28015-MCCARLEY        158  ...            1         2
+1154                          28089-CANTON BIBLE CHURCH        369  ...            1         2
+1158                                   28037-PINE GROVE          9  ...            1         2
+1160                                       28159-SHILOH         90  ...            1         2
+1173                      28089-CANTON COMMUNITY CENTER       1232  ...            1         2
+1177                                    28155-CADARETTA          8  ...            1         2
+1178                         28157-CENTREVILLE 1ST 1020        389  ...            1         2
+1182                                   28015-430 SCHOOL        173  ...            1         2
+1183                         28149-AMERICAN LEGION POST        902  ...            1         2
+1184                                    28161-ONE NORTH        393  ...            1         2
+1187                                      28049-BYRAM 1       1765  ...            1         2
+1191                                     28135-TUTWILER        439  ...            1         2
+1192                       28149-PLUMBERS & PIPEFITTERS        459  ...            1         2
+1193                                   28015-CARROLLTON         63  ...            1         2
+1195                                      28049-BYRAM 3       1079  ...            1         2
+1197                                      28049-BYRAM 2        952  ...            1         2
+1200                                      28149-REDWOOD         33  ...            1         2
+1206                               28161-FIVE TILLATOBA         34  ...            1         2
+1208                      28089-LAKE CAROLINE CLUBHOUSE        482  ...            1         2
+1212                           28043-BOX 5 EOC BUILDING        384  ...            1         2
+1213                         28011-CLEVELAND NORTH WEST        145  ...            1         2
+1215                                   28021-COUNTY 2-B        209  ...            1         2
+1216                       28051-BEAT 5 LEXINGTON (A-Z)        217  ...            1         2
+1217                                   28021-COUNTY 2-A        372  ...            1         2
+1219                                28135-SUMNER BEAT 2         58  ...            1         2
+1226                                28135-SUMNER BEAT 5         99  ...            1         2
+1227                               28121-RICHLAND NORTH        312  ...            1         2
+1231                 28053-SILVER CITY SOUTH - 3SS 3020        207  ...            1         2
+1233                                   28097-KILMICHAEL        209  ...            1         2
+1236                                    28005-SMITHDALE        131  ...            1         2
+1237                                    28005-ZION HILL         60  ...            1         2
+1244                                  28007-HESTERVILLE         20  ...            1         2
+1245                                     28063-RED LICK        263  ...            1         2
+1246                    28097-MT PISGAH SWEETHOME NORTH         50  ...            1         2
+1248                                   28097-MT. PISGAH         14  ...            1         2
+1250                                28123-BEAT 4/LUDLOW        143  ...            1         2
+1256                                       28005-CROSBY         95  ...            1         2
+1257                               28011-CLEVELAND EAST        886  ...            1         2
+1259                               28143-WIN JOB CENTER        172  ...            1         2
+1262                                 28079-WALNUT GROVE        558  ...            1         2
+1264                                        28037-ROXIE        279  ...            1         2
+1268                      28125-DELTA CITY 5TH DISTRICT        151  ...            1         2
+1270                                 28001-4 PINE RIDGE        362  ...            1         2
+1272                       28011-CLEVELAND WEST CENTRAL        183  ...            1         2
+1273                     28043-MT. NEBO YOUNG'S LANDING         12  ...            1         2
+1277                             28015-CARROLLTON NORTH         68  ...            1         2
+1281                                         28037-BUDE        384  ...            1         2
+1293                                     28011-GUNNISON        170  ...            1         2
+1294                                  28163-2-6 FUGATES        180  ...            1         2
+1295                                         28149-YMCA        210  ...            1         2
+1299                                28135-MURPHREESBORE         18  ...            1         2
+1300                         28113-(25) OSYKA CITY HALL        124  ...            1         2
+1301                                 28119-LAMBERT WEST        238  ...            1         2
+1302                               28143-BANKS/HAMBRICK        194  ...            1         2
+1311                                         28011-PACE         28  ...            1         2
+1312                                        28137-SARAH          8  ...            1         2
+1313                          28063-MULTIPURPOSE CENTER        284  ...            1         2
+1315                  28151-MOUNT BETHEL BAPTIST CHURCH        502  ...            1         2
+1316                                  28019-FRENCH CAMP         53  ...            1         2
+1317                                      28079-SUNRISE         20  ...            1         2
+1322                           28123-BEAT 1/HARPERVILLE        393  ...            1         2
+1323                             28119-DISTRICT 3 NORTH        205  ...            1         2
+1324                                         28007-EAST        188  ...            1         2
+1326                                     28135-TEASDALE         61  ...            1         2
+1328                    28125-ROLLING FORK 2ND DISTRICT         42  ...            1         2
+1329                           28089-CHINA GROVE CHURCH        416  ...            1         2
+1330                                28007-NORTH CENTRAL         31  ...            1         2
+1332                           28151-LELAND ROTARY CLUB        618  ...            1         2
+1337                                 28107-COMO LIBRARY        712  ...            1         2
+1338                               28001-2 LIBERTY PARK        206  ...            1         2
+1339                                   28127-BRIDGEPORT        215  ...            1         2
+1343                                   28085-MONTGOMERY        142  ...            1         2
+1344                                    28049-ST THOMAS        308  ...            1         2
+1346               28143-ROBINSONVILLE COMMUNITY CENTER        315  ...            1         2
+1349                                   28001-2 BEAU PRE        318  ...            1         2
+1351                                   28163-2-1 BENTON        251  ...            1         2
+1355                        28051-BEAT 4 THORNTON (A-Z)        261  ...            1         2
+1358                                  28149-CEDAR GROVE        916  ...            1         2
+1361                                      28097-NATIONS         26  ...            1         2
+1367                             28005-CENTREVILLE EAST        146  ...            1         2
+1369                                        28011-SKENE         11  ...            1         2
+1376                       28011-CLEVELAND EAST CENTRAL        420  ...            1         2
+1377                      28107-SARDIS NORTH COURTHOUSE        607  ...            1         2
+1378                                      28027-FARRELL        126  ...            1         2
+1380                                28051-BEAT 5 TCHULA        942  ...            1         2
+1381                                       28079-FREENY        100  ...            1         2
+1382               28043-GEESLIN FRIENDSHIP BAPT CHURCH        119  ...            1         2
+1383                                 28027-FRIARS POINT        437  ...            1         2
+1385                                     28119-CRENSHAW        110  ...            1         2
+1389                                   28011-STRINGTOWN          3  ...            1         2
+1391                             28119-MARKS NORTH WEST        395  ...            1         2
+1392                 28089-CANTON NATIONAL GUARD ARMORY        150  ...            1         2
+1393                                    28049-OLD BYRAM        888  ...            1         2
+1395                                    28097-DUCK HILL        192  ...            1         2
+1401                  28151-METCALFE MUNICIPAL BUILDING        399  ...            1         2
+1402                              28011-CLEVELAND SOUTH        796  ...            1         2
+1403                                  28051-BEAT 2 WEST        278  ...            1         2
+1410                                    28027-ROUNDAWAY         45  ...            1         2
+1413                           28107-TOCOWA COMM CENTER        113  ...            1         2
+1417                                     28083-SWIFTOWN         18  ...            1         2
+1423                                       28011-RENOVA        259  ...            1         2
+1424                                    28135-LEVERETTE         43  ...            1         2
+1425                                  28083-MINTER CITY         80  ...            1         2
+1427                                        28099-DIXON        174  ...            1         2
+1428                          28163-5-4 N.D. TAYLOR GYM       1207  ...            1         2
+1434       28107-EAST CROWDER WASTEWATER TREATMENT BLDG        158  ...            1         2
+1440   28107-BATESVILLE EAST 4 PANOLA CO EXTENSION BLDG        138  ...            1         2
+1443                        28125-ANGUILLA 4TH DISTRICT        181  ...            1         2
+1446                    28063-MT. ISREAL BAPTIST CHURCH        408  ...            1         2
+1449                   28113-(24) ST. MARY OF THE PINES        331  ...            1         2
+1450                         28029-CRYSTAL SPRINGS WEST        338  ...            1         2
+1453                               28121-RICHLAND SOUTH        523  ...            1         2
+1458                                        28007-BEREA         11  ...            1         2
+1461                28107-BATESVILLE 3 CLIFF FINCH BLDG        112  ...            1         2
+1462                                  28001-4 CARPENTER        276  ...            1         2
+1463                                       28121-FANNIN        360  ...            1         2
+1464                    28125-ROLLING FORK 4TH DISTRICT         96  ...            1         2
+1465                                   28029-BEAUREGARD        145  ...            1         2
+1466                                        28083-MONEY         33  ...            1         2
+1468                                    28159-MARS HILL        250  ...            1         2
+1469                                   28083-RISING SUN        426  ...            1         2
+1471                           28149-NO. 7 FIRE STATION        691  ...            1         2
+1473                              28029-HAZLEHURST EAST        922  ...            1         2
+1477                                    28001-3 CONCORD        522  ...            1         2
+1479                28089-MAD.CO.BAPTIST FAMILY LIFE CT        656  ...            1         2
+1481                    28053-FOURMILE NORTH - 1FN 1010          3  ...            1         2
+1485                                28079-CARTHAGE WEST        643  ...            1         2
+1486                                 28163-1-7 SATARTIA         13  ...            1         2
+1489                     28053-BELZONI SOUTH - 5BS 5010        289  ...            1         2
+1490                                28037-WESLEY CHAPEL         67  ...            1         2
+1491                   28089-PLEASANT GREEN M.B. CHURCH        531  ...            1         2
+1494                                   28015-BLACK HAWK         74  ...            1         2
+1499                             28161-TWO WATER VALLEY        725  ...            1         2
+1501                             28001-3 MARYLAND HGTS.        420  ...            1         2
+1507                                     28163-2-5 ZION         69  ...            1         2
+1508                                      28007-NEWPORT        133  ...            1         2
+1510                     28053-BELZONI SOUTH - 3BS 3010        302  ...            1         2
+1515                                      28133-54-DREW        712  ...            1         2
+1516                             28119-DISTRICT 3 SOUTH        179  ...            1         2
+1518                        28027-CLARKSDALE COURTHOUSE        402  ...            1         2
+1521                                     28163-4-1 EDEN         64  ...            1         2
+1523                             28029-GEORGETOWN SOUTH        141  ...            1         2
+1525                                 28163-4-5 FREE RUN         26  ...            1         2
+1532                                28051-BEAT 2 DURANT        376  ...            1         2
+1534                                         28027-BOBO         83  ...            1         2
+1541                28113-(23) WEST MCCOMB BAPT. CHURCH        267  ...            1         2
+1544                                      28027-COAHOMA        188  ...            1         2
+1550                                 28121-CLEAR BRANCH        149  ...            1         2
+1553                                    28135-BLUE CANE        236  ...            1         2
+1556                             28161-FOUR COFFEEVILLE        375  ...            1         2
+1560                        28107-LONGTOWN FIRE STATION        131  ...            1         2
+1563                                     28149-LEE ROAD        316  ...            1         2
+1564                    28089-TWIN LAKES BAPTIST CHURCH        540  ...            1         2
+1565                                    28037-MEADVILLE         73  ...            1         2
+1567                                    28137-ARKABUTLA        222  ...            1         2
+1568                                   28007-NORTH WEST        263  ...            1         2
+1572                                    28049-CLINTON 3        978  ...            1         2
+1573                                    28049-CLINTON 2        945  ...            1         2
+1574                                    28049-CLINTON 1        544  ...            1         2
+1576                                    28049-CLINTON 7        700  ...            1         2
+1577                                    28049-CLINTON 6        803  ...            1         2
+1579                                      28085-JOHNSON         81  ...            1         2
+1580                                    28049-CLINTON 5        393  ...            1         2
+1582                     28151-ARCOLA TECHNOLOGY CENTER        261  ...            1         2
+1583                                    28049-CLINTON 4        562  ...            1         2
+1584                                  28137-STRAYHORN 1         53  ...            1         2
+1590                               28033-LAKE CORMORANT        157  ...            1         2
+1593                                    28049-PINEHAVEN       1158  ...            1         2
+1595        28089-FEARNS CHAPEL FREEWILL BAPTIST CHURCH        405  ...            1         2
+1600                               28013-CALHOUN CITY 4        243  ...            1         2
+1606                                28133-42-BOYER-LINN        169  ...            1         2
+1611                                       28121-CLEARY        176  ...            1         2
+1612                           28133-51-RULEVILLE NORTH        161  ...            1         2
+1620                                       28033-EUDORA        234  ...            1         2
+1622                                   28151-ELKS LODGE       1791  ...            1         2
+1623                           28027-CLARKSDALE 4 NORTH        102  ...            1         2
+1632                            28051-BEAT 2 SUB DURANT        400  ...            1         2
+1633                 28089-PLEASANT GIFT BAPTIST CHURCH        409  ...            1         2
+1644                      28089-FELLOWSHIP BIBLE CHURCH        586  ...            1         2
+1645                                  28063-CHURCH HILL         65  ...            1         2
+1648                               28133-45-SUNFLOWER 4        370  ...            1         2
+1650                                 28161-FOUR OAKLAND        415  ...            1         2
+1654                                  28097-WINONA EAST        318  ...            1         2
+1660                  28063-LOCUST GROVE BAPTIST CHURCH        511  ...            1         2
+1666                    28043-PLEASANT GROVE COMMUN CEN        304  ...            1         2
+1671                                    28089-FARMHAVEN        643  ...            1         2
+1672                    28143-TUNICA CO. SUPT. OF EDUC.        163  ...            1         2
+1673                               28051-BEAT 3 PICKENS        573  ...            1         2
+1676                                28079-CARTHAGE EAST        180  ...            1         2
+1679                                 28097-POPLAR CREEK          6  ...            1         2
+1685                 28053-GOODEN LAKE NORTH - 2GN 2030         15  ...            1         2
+1688                                  28015-VAIDEN WEST        169  ...            1         2
+1692                           28157-WOODVILLE 5TH 5010        304  ...            1         2
+1693                                      28005-LIBERTY        134  ...            1         2
+1697                                   28007-SOUTH WEST        240  ...            1         2
+1698                      28089-NEW LIFE BAPTIST CHURCH        391  ...            1         2
+1699                         28157-CENTREVILLE 3RD 3010        444  ...            1         2
+1700                                       28119-SLEDGE        325  ...            1         2
+1701                                       28049-CAYUGA        173  ...            1         2
+1705                                        28135-TIPPO         60  ...            1         2
+1706                    28027-SASSE STREET FIRE STATION        445  ...            1         2
+1707                                 28001-1 COURTHOUSE        185  ...            1         2
+1708                28089-CANTON CATHOLIC PARISH CENTER        867  ...            1         2
+1712                                         28097-LODI        139  ...            1         2
+1717                                        28083-SIDON        167  ...            1         2
+1718                               28007-LIBERTY CHAPEL         57  ...            1         2
+1722                                          28155-FAY          3  ...            1         2
+1726                                      28005-BERWICK        208  ...            1         2
+1729                                   28049-POCAHONTAS        313  ...            1         2
+1731                                      28029-GALLMAN        773  ...            1         2
+1732                                       28121-PISGAH        235  ...            1         2
+1734                                   28079-THOMASTOWN        225  ...            1         2
+1739                                    28037-KNOXVILLE         59  ...            1         2
+1745                             28097-KILMICHAEL NORTH         66  ...            1         2
+1746                     28043-ELLIOTT VOL FIRE STATION         94  ...            1         2
+1752                                    28019-WEIR EAST        204  ...            1         2
+1753                                      28133-53-ROME         72  ...            1         2
+1754                                   28021-COUNTY 5-B        394  ...            1         2
+1755                                   28021-COUNTY 5-A        487  ...            1         2
+1757                                    28099-ARLINGTON         14  ...            1         2
+1758                      28151-WARDS RECREATION CENTER        933  ...            1         2
+1759                                      28049-LEARNED        182  ...            1         2
+1762                                 28097-WINONA NORTH        152  ...            1         2
+1                                           28059-LARUE         22  ...            3         4
+2                                      28039-COURTHOUSE         29  ...            3         4
+4                                      28131-COURTHOUSE         94  ...            3         4
+9                                       28045-SOUTH BAY        364  ...            3         4
+12                                      28045-KILN WEST        106  ...            3         4
+19                                  28059-FONTAINEBLEAU        985  ...            3         4
+21                                     28109-CARRIERE 3        146  ...            3         4
+23                                        28073-OKAHOLA        138  ...            3         4
+25                                     28109-CARRIERE 5        193  ...            3         4
+35                                  28039-MIDDLE SCHOOL        213  ...            3         4
+38                                28047-NEW POPPS FERRY        385  ...            3         4
+54                                      28073-OAK GROVE        439  ...            3         4
+56                                   28059-WEST JACKSON       1085  ...            3         4
+59                                        28059-LATIMER        407  ...            3         4
+64                                    28047-BAY CENTRAL        445  ...            3         4
+69                                         28041-VERNAL         45  ...            3         4
+74                                 28047-BILOXI CENTRAL        481  ...            3         4
+79                                  28035-LILLIE BURNEY       1465  ...            3         4
+85                                         28031-OKAHAY        517  ...            3         4
+86                                          28041-JONES          1  ...            3         4
+88                                     28131-PERKINSTON         60  ...            3         4
+89                                           28035-CAMP        337  ...            3         4
+93                         28047-COUNTY FARM/GULF HAVEN        373  ...            3         4
+97                                   28035-HARDY STREET        655  ...            3         4
+99                                  28109-PIC/HAWL/NH 5        393  ...            3         4
+109                                       28073-BRELAND        833  ...            3         4
+110                                         28039-BASIN        177  ...            3         4
+114                                   28035-TRAIN DEPOT        309  ...            3         4
+116                                     28067-SAND HILL         58  ...            3         4
+127                                  28035-COURT STREET        431  ...            3         4
+130                                       28035-SUNRISE        408  ...            3         4
+136                                          28073-YAWN         12  ...            3         4
+142                                        28067-POWERS        216  ...            3         4
+143                                        28067-HEBRON        340  ...            3         4
+155                                28045-NORTH BAY EAST        264  ...            3         4
+157                                    28067-PINE GROVE         47  ...            3         4
+163                                28067-PLEASANT RIDGE         31  ...            3         4
+164                               28067-OAK PARK SCHOOL        622  ...            3         4
+169                       28131-TEN MILE NATIONAL GUARD         32  ...            3         4
+171                              28059-JEFFERSON STREET       1170  ...            3         4
+174                              28045-DIAMONDHEAD WEST        299  ...            3         4
+176                                   28059-CARTERVILLE          7  ...            3         4
+177                                  28073-WESLEY MANOR        606  ...            3         4
+179                                 28041-MUTUAL RIGHTS          9  ...            3         4
+206                                    28153-WINCHESTER        344  ...            3         4
+219                                     28131-BIG LEVEL         91  ...            3         4
+220                                  28153-YELLOW CREEK        163  ...            3         4
+226                                        28041-MCLAIN        164  ...            3         4
+230                            28047-LONG BEACH OUTSIDE         56  ...            3         4
+242                                   28047-EAST BILOXI        801  ...            3         4
+251                               28059-VANCLEAVE SOUTH        196  ...            3         4
+257                                      28045-STANDARD         75  ...            3         4
+269                                   28047-LIZANA WEST         59  ...            3         4
+270                                        28039-BARTON         71  ...            3         4
+275                           28111-INDIAN SPRINGS 1010        133  ...            3         4
+287                                  28059-OS CIVIC CTR        991  ...            3         4
+293                                        28073-PURVIS        329  ...            3         4
+302                                  28073-PURVIS SOUTH        152  ...            3         4
+308                                      28047-WESTSIDE        298  ...            3         4
+317                                  28073-ROCKY BRANCH        130  ...            3         4
+322                                      28131-NEW HOPE        555  ...            3         4
+323                                        28035-CARNES         28  ...            3         4
+326                                 28059-YMBC-DANTZLER        722  ...            3         4
+327                                      28131-MAGNOLIA         24  ...            3         4
+330                                    28109-PROGRESS 3         15  ...            3         4
+333                                 28031-COLLINS SOUTH         44  ...            3         4
+339                          28109-PICAYUNE 1 SOUTHSIDE        978  ...            3         4
+344                                          28059-FAIR       1466  ...            3         4
+346                                      28035-LEEVILLE        161  ...            3         4
+347                                        28067-CURRIE        169  ...            3         4
+358                                   28059-VILLA MARIA        158  ...            3         4
+360                                    28073-GREENVILLE         34  ...            3         4
+361                                      28045-LEE TOWN         83  ...            3         4
+369                           28109-PICAYUNE 1 EASTSIDE        512  ...            3         4
+405                                        28059-HWY 57         24  ...            3         4
+414                                    28109-SYCAMORE 5         96  ...            3         4
+416                               28059-VANCLEAVE NORTH        277  ...            3         4
+421                                        28039-BEXLEY         82  ...            3         4
+423                                  28045-EDWARDSVILLE         63  ...            3         4
+430                                 28045-BAYOU PHILLIP         94  ...            3         4
+431                                          28041-WADE         35  ...            3         4
+451                                       28153-MOZINGO         61  ...            3         4
+453                                   28109-WHITESAND 1        204  ...            3         4
+454                                   28041-LEAKESVILLE         86  ...            3         4
+458                                      28035-WESTSIDE        474  ...            3         4
+466                                   28039-SHADY GROVE         45  ...            3         4
+469                                   28047-POPLAR HEAD         48  ...            3         4
+471                            28111-THOMPSON HILL 5130          3  ...            3         4
+475                                  28109-SPRINGHILL 2         27  ...            3         4
+480                                 28109-AMACKERTOWN 2         22  ...            3         4
+483                                   28045-PEARLINGTON        197  ...            3         4
+488                                       28131-ELARBEE         30  ...            3         4
+493                                     28059-BIG POINT        113  ...            3         4
+499                            28035-DIXIE PINE CENTRAL        731  ...            3         4
+520                                  28059-ORANGE GROVE        131  ...            3         4
+525                                    28153-STATE LINE        242  ...            3         4
+529                                    28039-MULTI MART         27  ...            3         4
+533                             28047-LONG BEACH 1 WEST        656  ...            3         4
+539                                         28067-ERATA        221  ...            3         4
+540                              28059-PASCAGOULA NORTH         76  ...            3         4
+556                                    28061-HEIDELBERG        840  ...            3         4
+564                                 28035-EUREKA SCHOOL        382  ...            3         4
+567                                  28153-STRENGTHFORD          4  ...            3         4
+571                                        28047-LADNER        154  ...            3         4
+572                                    28047-BILOXI BAY        458  ...            3         4
+583                                     28131-TUXECHANA         89  ...            3         4
+590                                      28039-BENNDALE        119  ...            3         4
+597                              28045-DIAMONDHEAD EAST        753  ...            3         4
+600                                   28067-CENTERVILLE         11  ...            3         4
+609                                     28047-BILOXI 08        618  ...            3         4
+614                                     28073-LUMBERTON        551  ...            3         4
+617                                   28131-FLINT CREEK        137  ...            3         4
+621                                 28035-HIGHLAND PARK        617  ...            3         4
+624                                        28045-FENTON         80  ...            3         4
+626                                28047-BEL-AIRE NORTH       1720  ...            3         4
+627                            28067-SPRINGHILL/MAULDIN        198  ...            3         4
+632                                       28067-ANTIOCH         16  ...            3         4
+635                                     28047-BILOXI 11       1138  ...            3         4
+638                                     28047-BILOXI 10        280  ...            3         4
+641                               28131-MCHENRY LIBRARY         35  ...            3         4
+648                             28059-GULF PARK ESTATES        666  ...            3         4
+651                                    28035-WEST HILLS        267  ...            3         4
+652                                         28091-UNION         12  ...            3         4
+653                           28045-WEST SHORELINE PARK         79  ...            3         4
+654                                       28047-SAUCIER        177  ...            3         4
+663                                   28073-ARNOLD LINE        437  ...            3         4
+665                           28047-PASS CHRISTIAN EAST        692  ...            3         4
+666                                         28047-PEACE        205  ...            3         4
+667                                   28045-CRANE CREEK         49  ...            3         4
+675                                     28059-PINECREST        228  ...            3         4
+686                               28131-AMERICAN LEGION        385  ...            3         4
+687                                    28109-PICAYUNE 2        225  ...            3         4
+688                              28111-HINTONVILLE 4090         87  ...            3         4
+693                                    28109-PICAYUNE 4         80  ...            3         4
+712                                 28039-MULTI-PURPOSE         22  ...            3         4
+720                               28067-MAGNOLIA CENTER       1169  ...            3         4
+723                                         28035-DIXIE        147  ...            3         4
+739                                       28067-MOSELLE        199  ...            3         4
+748                                     28059-SUE ELLEN       1624  ...            3         4
+749                                  28109-MILL CREEK 2         64  ...            3         4
+752                          28059-GRACE BAPTIST CHURCH        732  ...            3         4
+760                                28045-NORTH BAY WEST        221  ...            3         4
+768                                      28035-GLENDALE        712  ...            3         4
+769                              28059-OS COMMUNITY CTR         97  ...            3         4
+798                                       28067-SHELTON        169  ...            3         4
+800                                     28023-LANGSDALE         35  ...            3         4
+805                                  28109-CROSSROADS 2         54  ...            3         4
+819                         28131-OLD HEALTH DEPARTMENT         88  ...            3         4
+825                              28041-WASHINGTON NEELY          8  ...            3         4
+827                                28111-ARLINGTON 4100         68  ...            3         4
+831                                      28059-RED HILL         20  ...            3         4
+832                                      28035-MCLAURIN         49  ...            3         4
+836                                     28039-CITY HALL         96  ...            3         4
+837                                        28041-MAPLES         56  ...            3         4
+838                                      28047-NEW HOPE        637  ...            3         4
+853                                      28035-DANTZLER         36  ...            3         4
+862                                    28153-BUCKATUNNA        254  ...            3         4
+863                                      28153-HIWANNEE        203  ...            3         4
+871                                28047-HANDSBORO WEST        396  ...            3         4
+873                                      28035-BROOKLYN         30  ...            3         4
+876                                         28041-PIAVE         11  ...            3         4
+878                 28111-BEAUMONT SENIOR CITIZENS 5120         42  ...            3         4
+887                                  28047-HOWARD CREEK        577  ...            3         4
+896                                    28059-REC CENTER        956  ...            3         4
+898                                       28031-SANFORD         72  ...            3         4
+899                                28047-MISS CITY EAST        727  ...            3         4
+912                                     28045-CITY HALL        462  ...            3         4
+913                                          28067-SOSO        358  ...            3         4
+914                             28047-LONG BEACH 3 EAST        506  ...            3         4
+918                                       28047-ADVANCE        124  ...            3         4
+926                           28047-NORTH GULFPORT EAST        572  ...            3         4
+928                                     28045-LAKESHORE        215  ...            3         4
+929                                    28041-STATE LINE        329  ...            3         4
+930                                    28035-PETAL WEST        212  ...            3         4
+938                                         28153-CLARA         45  ...            3         4
+940                                        28153-DENHAM         77  ...            3         4
+942                                     28059-ESCATAWPA        519  ...            3         4
+944                                     28047-STONEWALL        518  ...            3         4
+959                                  28067-LAUREL NORTH        905  ...            3         4
+961                                        28039-BROOME          3  ...            3         4
+968                                 28035-SIGLER CENTER        712  ...            3         4
+969             28047-GULFPORT 07 WEST MISSISSIPPI CITY        317  ...            3         4
+979                      28131-MCHENRY COMMUNITY CENTER        147  ...            3         4
+996                                 28035-PETAL MASONIC        231  ...            3         4
+997                     28111-RICHTON HOLLY STREET 3060        167  ...            3         4
+1004                                    28067-BLACKWELL         10  ...            3         4
+1011                                      28073-SUMRALL        316  ...            3         4
+1014                             28047-W PASS CHRISTIAN        402  ...            3         4
+1039                                       28067-RAINEY         50  ...            3         4
+1041                                   28039-TWIN CREEK         37  ...            3         4
+1047                                  28045-GARDEN ISLE        118  ...            3         4
+1048                                      28047-VIDALIA         41  ...            3         4
+1054                                      28153-CHICORA         57  ...            3         4
+1064                                        28067-GLADE         45  ...            3         4
+1067                              28047-MARGARET SHERRY        574  ...            3         4
+1069                    28111-MIRACLE TEMPLE COGIC 1040        100  ...            3         4
+1071                                    28023-BEAVERDAM        143  ...            3         4
+1076                              28111-COURTHOUSE 5110         35  ...            3         4
+1078                                28045-WAVELAND EAST        308  ...            3         4
+1080                                  28047-GULFPORT 14        989  ...            3         4
+1081                                  28047-GULFPORT 13        830  ...            3         4
+1092                                  28047-GULFPORT 16        622  ...            3         4
+1102                                  28073-LAKE SERENE        545  ...            3         4
+1111                                  28047-GULFPORT 03        368  ...            3         4
+1112                            28153-WAYNESBORO CITY 2        432  ...            3         4
+1113                            28153-WAYNESBORO CITY 1        500  ...            3         4
+1118                            28153-WAYNESBORO CITY 5        205  ...            3         4
+1119                                  28047-GULFPORT 05        297  ...            3         4
+1121                            28153-WAYNESBORO CITY 4        248  ...            3         4
+1122                                  28047-GULFPORT 04        123  ...            3         4
+1124                                 28109-PINE GROVE 4         84  ...            3         4
+1125                            28153-WAYNESBORO CITY 3        189  ...            3         4
+1127                                      28045-DEDEAUX         48  ...            3         4
+1128                                  28047-GULFPORT 08        604  ...            3         4
+1131                             28111-RUNNELSTOWN 2040         56  ...            3         4
+1136                                28059-HICKORY HILLS        605  ...            3         4
+1140                                        28067-OVETT         42  ...            3         4
+1149                                      28039-MOVELLA         16  ...            3         4
+1155                                28035-HEIGHTS NORTH        778  ...            3         4
+1157            28111-NEW AUGUSTA COMMUNITY CENTER 1020        105  ...            3         4
+1166                            28059-RYAN YOUTH CENTER        479  ...            3         4
+1170                                   28109-F Z GOSS 4        163  ...            3         4
+1175                      28109-GUMPOND/HICKORY GROVE 3         67  ...            3         4
+1185                                    28045-KILN EAST         65  ...            3         4
+1188                      28067-PARKVIEW BAPTIST CHURCH        401  ...            3         4
+1202                                     28031-RICHMOND         51  ...            3         4
+1205                                        28035-MAXIE         39  ...            3         4
+1207                               28153-PLEASANT GROVE        107  ...            3         4
+1209                                     28035-RICHBURG        196  ...            3         4
+1214                            28041-LEAKESVILLE NORTH        169  ...            3         4
+1221                                       28067-GITANO         60  ...            3         4
+1223                                    28059-ST MARTIN        640  ...            3         4
+1232                                      28035-SHEEPLO        259  ...            3         4
+1239                                     28041-JONATHAN         11  ...            3         4
+1240                                         28131-BOND         10  ...            3         4
+1241                                      28109-DERBY 1         81  ...            3         4
+1243                                      28039-CENTRAL         18  ...            3         4
+1247                                        28067-UNION         38  ...            3         4
+1251                                     28031-MITCHELL          7  ...            3         4
+1252                                       28067-MYRICK         45  ...            3         4
+1254                                 28047-WHITE PLAINS        119  ...            3         4
+1255                                   28023-CARMICHAEL         70  ...            3         4
+1258                                        28047-LYMAN       1015  ...            3         4
+1263                                  28109-NICHOLSON 4        107  ...            3         4
+1271                                     28061-STRINGER         83  ...            3         4
+1278                               28047-HANDSBORO EAST        364  ...            3         4
+1284                            28047-ORANGE GROVE WEST       1080  ...            3         4
+1285                                       28091-MORRIS        431  ...            3         4
+1286                                     28153-BIG ROCK         76  ...            3         4
+1287                                28111-PROSPECT 2050         17  ...            3         4
+1290                                     28059-EASTLAWN        197  ...            3         4
+1291                            28153-CHAPPARAL/DIAMOND        249  ...            3         4
+1296                                  28111-JANICE 5140         61  ...            3         4
+1297                                   28129-SUMMERLAND        412  ...            3         4
+1303                                    28073-KINGSMILL        215  ...            3         4
+1307                                28035-RAWLS SPRINGS        447  ...            3         4
+1308                                   28073-MILL CREEK        100  ...            3         4
+1314                                     28045-FLAT TOP         61  ...            3         4
+1319                                28131-PLEASANT HILL         25  ...            3         4
+1327                                     28039-AGRICOLA         51  ...            3         4
+1331                                        28039-SALEM         18  ...            3         4
+1335                        28067-FIRST ASSEMBLY OF GOD        316  ...            3         4
+1345                                    28067-BIG CREEK         23  ...            3         4
+1359                     28111-BEAUMONT DISTRICT 1 1030        371  ...            3         4
+1366                                      28067-JOHNSON         30  ...            3         4
+1370                                   28039-PINE LEVEL         39  ...            3         4
+1373                                    28047-RICEVILLE         11  ...            3         4
+1404                               28047-BEL-AIRE SOUTH        942  ...            3         4
+1405                                     28073-RICHBURG        596  ...            3         4
+1411                                      28047-DELISLE        548  ...            3         4
+1414                                   28073-LAMAR PARK        688  ...            3         4
+1430                             28153-MATHERVILLE/COYT         30  ...            3         4
+1438                                  28039-ROCKY CREEK         74  ...            3         4
+1445                                   28035-EATONVILLE        197  ...            3         4
+1454                            28047-ORANGE GROVE EAST       1036  ...            3         4
+1459                               28047-MAGNOLIA GROVE        574  ...            3         4
+1476                                   28045-COURTHOUSE         60  ...            3         4
+1482                              28073-LAMAR NORTHEAST        617  ...            3         4
+1492                                    28047-NORTH BAY       1466  ...            3         4
+1493                                      28035-BAR MAC        375  ...            3         4
+1502                                      28067-LANDRUM         20  ...            3         4
+1511                                 28047-LONG BEACH 6        257  ...            3         4
+1513                                 28047-LONG BEACH 5        406  ...            3         4
+1519                                    28091-PINE BURR        112  ...            3         4
+1522                               28109-STEEP HOLLOW 3         66  ...            3         4
+1530                                         28073-OLOH         56  ...            3         4
+1538                   28111-RICHTON MULTI PURPOSE 4080        100  ...            3         4
+1543                                     28067-MATTHEWS         37  ...            3         4
+1545                              28111-DEEP CREEK 5150         17  ...            3         4
+1546                                      28059-GAUTIER       1766  ...            3         4
+1562                                    28109-MCNEILL 3         58  ...            3         4
+1569                                    28045-CATAHOULA         10  ...            3         4
+1570                              28067-GEORGE HARRISON        370  ...            3         4
+1575                                  28067-SHADY GROVE        609  ...            3         4
+1578                                        28035-ROWAN        507  ...            3         4
+1585                                   28073-PINE GROVE         27  ...            3         4
+1586                                       28073-MIDWAY        198  ...            3         4
+1587                                 28067-SANDERSVILLE        119  ...            3         4
+1588                                      28039-SHIPMAN         31  ...            3         4
+1592                                      28153-EUCUTTA         53  ...            3         4
+1602                                       28035-THAMES        644  ...            3         4
+1603                          28047-NORTH GULFPORT WEST       1047  ...            3         4
+1607                  28035-HATTIESBURG CULTURAL CENTER        603  ...            3         4
+1608                                       28039-HOWELL         16  ...            3         4
+1617                                    28045-ARLINGTON         98  ...            3         4
+1618                                      28067-CALHOUN        102  ...            3         4
+1626                                      28067-TUCKERS         30  ...            3         4
+1629                                 28059-EAST CENTRAL        369  ...            3         4
+1634                                    28047-PINEVILLE        277  ...            3         4
+1640                                      28023-SHUBUTA        420  ...            3         4
+1643                                 28059-PRESBYTERIAN        244  ...            3         4
+1647                                     28109-CEASAR 3          5  ...            3         4
+1652                                28109-POPLARVILLE 1        198  ...            3         4
+1657                                28109-POPLARVILLE 3        116  ...            3         4
+1658                                        28039-DAVIS         17  ...            3         4
+1659                                28109-POPLARVILLE 2        117  ...            3         4
+1661                                    28035-TIMBERTON        233  ...            3         4
+1663                                      28153-CORINTH          7  ...            3         4
+1667                                 28059-SACRED HEART        403  ...            3         4
+1684                                       28067-SHARON        168  ...            3         4
+1686                       28047-GULFPORT 12 BAYOU VIEW        318  ...            3         4
+1690                                         28039-WARD         17  ...            3         4
+1695                             28067-L T ELLIS CENTER       1249  ...            3         4
+1696                                28045-WAVELAND WEST        332  ...            3         4
+1711                                    28035-PINECREST        787  ...            3         4
+1723                                     28073-WESTOVER        305  ...            3         4
+1724                                28109-HENLEYFIELD 2         77  ...            3         4
+1727                                       28067-RUSTIN         24  ...            3         4
+1728                                         28041-LEAF         42  ...            3         4
+1749                                    28153-BEAT FOUR         78  ...            3         4
+1750                                 28065-GOOD HOPE 33        102  ...            3         4
+1751                                  28073-BAXTERVILLE         16  ...            3         4
+1756                           28035-PETAL CIVIC CENTER        296  ...            3         4
+3                                        28019-FENTRESS         72  ...            0         1
+10                                      28137-PALESTINE         30  ...            0         1
+14                                  28155-BELLEFONTAINE         28  ...            0         1
+18                                     28141-COLES MILL         58  ...            0         1
+20                                          28081-UNITY         35  ...            0         1
+28                                     28159-ZION RIDGE        398  ...            0         1
+33                                      28161-ONE SOUTH        150  ...            0         1
+36                                     28095-3 HAMILTON        270  ...            0         1
+39                                          28139-DUMAS         27  ...            0         1
+40                                   28095-1 SMITHVILLE         93  ...            0         1
+45                               28161-THREE NORTH WEST        250  ...            0         1
+46                                         28003-BETHEL          2  ...            0         1
+48                                        28057-RATLIFF          6  ...            0         1
+50                                        28013-BRUCE 3        227  ...            0         1
+52                                     28095-2 WILLIAMS          9  ...            0         1
+53                                      28071-ABBEVILLE        563  ...            0         1
+55                                      28137-LOOXAHOMA        344  ...            0         1
+61                                  28105-HICKORY GROVE       1029  ...            0         1
+62                                       28117-MARIETTA         60  ...            0         1
+66                                     28057-COURTHOUSE         23  ...            0         1
+67                                  28139-SPOUT SPRINGS         15  ...            0         1
+72                               28017-HOULKA NORTH 005        192  ...            0         1
+73                              28033-OLIVE BRANCH WEST        372  ...            0         1
+76                                      28057-MANTACHIE         46  ...            0         1
+92                          28117-TUSCUMBIA-NEW CANDLER         83  ...            0         1
+103                                   28033-NESBIT WEST        366  ...            0         1
+105                                  28057-MANTACHIE-3D         13  ...            0         1
+117                                 28003-CORINTH NORTH        183  ...            0         1
+121                                    28071-HARMONTOWN         43  ...            0         1
+122                                          28057-RYAN         30  ...            0         1
+123                                     28057-EVERGREEN        124  ...            0         1
+129                         28017-HOUSTON SOUTHEAST 010        250  ...            0         1
+132                                         28105-OKTOC        426  ...            0         1
+133                            28107-UNION FIRE STATION        221  ...            0         1
+134                                     28087-CALEDONIA        444  ...            0         1
+137                                    28057-FRIENDSHIP         17  ...            0         1
+148                        28033-HORN LAKE INTERMEDIATE        847  ...            0         1
+153                              28033-HERNANDO CENTRAL        538  ...            0         1
+160                                       28087-BRANDON        839  ...            0         1
+167                                          28087-HUNT       1278  ...            0         1
+180                                          28071-TULA         41  ...            0         1
+182                               28095-5 CENTRAL GROVE        220  ...            0         1
+199                                   28093-1 RED BANKS        442  ...            0         1
+201                                    28087-UNIVERSITY        334  ...            0         1
+204                                 28093-2 NORTH CAYCE        236  ...            0         1
+210                                     28057-GREENWOOD        131  ...            0         1
+211                                   28095-4 DARRACOTT         31  ...            0         1
+222                                         28115-JUDAH         19  ...            0         1
+228                                      28093-4 WATSON        180  ...            0         1
+233                                 28017-VAN VLEET 013        115  ...            0         1
+240                              28095-3 ABERDEEN THIRD        306  ...            0         1
+250                                        28139-RIPLEY        262  ...            0         1
+255                                 28057-FRIENDSHIP 1D          7  ...            0         1
+259                              28095-4 SOUTH ABERDEEN        795  ...            0         1
+260                                     28155-MATHISTON         90  ...            0         1
+261                              28139-RIPLEY SOUTHWEST        289  ...            0         1
+262                                     28145-MACEDONIA         17  ...            0         1
+265                                 28105-CRAIG SPRINGS         12  ...            0         1
+267                        28161-SCUNA-VANNS MILL SOUTH          7  ...            0         1
+268                                 28155-BLUFF SPRINGS         49  ...            0         1
+283                                  28139-TIPLERSVILLE        108  ...            0         1
+288                                    28017-SPARTA 012         55  ...            0         1
+292                        28107-CRENSHAW OLD CITY HALL        240  ...            0         1
+296                                28095-3 BARTAHATCHIE         17  ...            0         1
+307                                    28081-FELLOWSHIP         78  ...            0         1
+312                              28145-HILLCREST CHURCH        249  ...            0         1
+313                                        28033-ELMORE        860  ...            0         1
+316                                  28081-MOOREVILLE-5        129  ...            0         1
+319                                28095-2 AMORY SECOND        458  ...            0         1
+320                               28057-AMERICAN LEGION        162  ...            0         1
+328                                      28143-PRICHARD        277  ...            0         1
+329                                         28115-HOYLE        291  ...            0         1
+331                                     28141-IUKA EAST        201  ...            0         1
+334                                        28081-BREWER         53  ...            0         1
+337                                    28081-FRIENDSHIP         11  ...            0         1
+338                                       28057-TREMONT         34  ...            0         1
+350                        28161-SCUNA-VANNS MILL NORTH         32  ...            0         1
+352                                        28105-OSBORN        571  ...            0         1
+354                                   28137-SENATOBIA 2        342  ...            0         1
+355                                   28137-SENATOBIA 1        675  ...            0         1
+356                                28033-DESOTO CENTRAL        931  ...            0         1
+362                                   28137-SENATOBIA 4        212  ...            0         1
+364                                   28137-SENATOBIA 3        408  ...            0         1
+365                                   28145-BEACON HILL        135  ...            0         1
+373                                          28137-TYRO        157  ...            0         1
+377                                   28057-JAMES CREEK          7  ...            0         1
+384                              28087-SOUTHSIDE CHURCH       1990  ...            0         1
+386                                        28057-ARMORY         72  ...            0         1
+388                              28081-BIRMINGHAM RIDGE        214  ...            0         1
+397                                      28003-WENASOGA        155  ...            0         1
+399                                    28155-CUMBERLAND         54  ...            0         1
+408                                       28081-BISSELL       1028  ...            0         1
+409                                       28009-FLOYD 4        193  ...            0         1
+411                                     28019-PANHANDLE         92  ...            0         1
+417                                    28033-CUMBERLAND       1001  ...            0         1
+424                                      28013-VARDAMAN        202  ...            0         1
+426                                  28033-INGRAMS MILL        301  ...            0         1
+427                                      28115-BUCHANAN         33  ...            0         1
+428                                      28115-WOODLAND         16  ...            0         1
+444                                  28017-PEARSALL 009         74  ...            0         1
+445                                 28057-FRIENDSHIP-5D          9  ...            0         1
+446                                  28139-RIPLEY NORTH        373  ...            0         1
+449                                28105-DOUBLE SPRINGS         76  ...            0         1
+456                               28033-SOUTHAVEN SOUTH        585  ...            0         1
+459                                 28139-FALKNER NORTH         44  ...            0         1
+460                                      28117-THRASHER        126  ...            0         1
+468                              28033-GREENBROOK SOUTH       1221  ...            0         1
+470                                        28081-HEBRON         32  ...            0         1
+473          28107-SPRINGPORT SOUTH MT OLIVET FIRE DEPT        309  ...            0         1
+474                                         28071-PARIS         29  ...            0         1
+476                                      28009-CANAAN 1        424  ...            0         1
+477        28107-SPRINGPORT NORTH BLACKJACK COMM CENTER        305  ...            0         1
+479                                 28057-FRIENDSHIP-4D          3  ...            0         1
+486                                 28143-TWO MILE LAKE        293  ...            0         1
+490                                      28081-RICHMOND         62  ...            0         1
+491                                  28003-COLLEGE HILL        247  ...            0         1
+498                                28033-HORN LAKE WEST        664  ...            0         1
+501                                    28145-KEOWNVILLE         35  ...            0         1
+507                                       28009-LAMAR 2        595  ...            0         1
+510                                      28139-MITCHELL          9  ...            0         1
+517                                  28139-COTTON PLANT         99  ...            0         1
+518                                   28139-SHADY GROVE         10  ...            0         1
+522                                   28013-PITTSBORO 2        138  ...            0         1
+523                                   28013-PITTSBORO 1        377  ...            0         1
+526                                  28115-CHERRY CREEK         62  ...            0         1
+527                                 28093-2 MT PLEASANT        278  ...            0         1
+528                                       28071-BURGESS        133  ...            0         1
+536                                      28155-TOMNOLEN         32  ...            0         1
+541                              28105-BELL SCHOOLHOUSE        210  ...            0         1
+545                         28143-WHITE OAK REC. CENTER        285  ...            0         1
+547                                     28115-HURRICANE         31  ...            0         1
+548                                       28115-SHERMAN         43  ...            0         1
+549                                        28139-PALMER         54  ...            0         1
+550                               28071-AIRPORT GROCERY        165  ...            0         1
+551                                     28019-WEIR WEST         85  ...            0         1
+552                      28043-GORE SPRINGS COMM CENTER         70  ...            0         1
+553                               28117-BOONEVILLE WEST        266  ...            0         1
+555                                   28093-4 CHULAHOMA        426  ...            0         1
+559                                          28115-ZION        111  ...            0         1
+560                                       28117-WHEELER        119  ...            0         1
+561                                       28093-3 CAYCE        264  ...            0         1
+562                                 28141-BELMONT NORTH         25  ...            0         1
+575                                      28081-SALTILLO        458  ...            0         1
+577                                   28093-4 WALL HILL        391  ...            0         1
+578                              28141-BURNSVILLE NORTH         46  ...            0         1
+581                                 28093-2 HUDSONVILLE        211  ...            0         1
+582                                    28139-BROWNFIELD          9  ...            0         1
+584                                    28057-CARDSVILLE         19  ...            0         1
+586                                 28141-HUBBARD SALEM         14  ...            0         1
+588                                      28087-NEW HOPE        813  ...            0         1
+604                              28057-BANNER-PINEVILLE         42  ...            0         1
+606                             28017-OKOLONA NORTH 006        268  ...            0         1
+610                                      28057-CAROLINA         42  ...            0         1
+612                                         28141-PADEN         31  ...            0         1
+620                                       28087-COLEMAN        245  ...            0         1
+622                                      28139-NEW HOPE         14  ...            0         1
+628                                      28095-2 SIPSEY         12  ...            0         1
+634                              28017-OKOLONA WEST 014        436  ...            0         1
+644                                         28155-GRADY         41  ...            0         1
+647                                       28097-STEWART          6  ...            0         1
+656                                28033-HORN LAKE EAST        711  ...            0         1
+657                                   28093-5 BETHLEHEM         42  ...            0         1
+660                                          28019-BYWY         57  ...            0         1
+661                                       28081-CORRONA        271  ...            0         1
+669                         28017-HOUSTON NORTHWEST 007        673  ...            0         1
+670                                      28081-EGGVILLE         28  ...            0         1
+672                                 28033-HERNANDO WEST        785  ...            0         1
+679                                    28137-EVANSVILLE         46  ...            0         1
+682                            28025-WEST POINT CENTRAL        522  ...            0         1
+683                                    28087-RURAL HILL        569  ...            0         1
+685                                          28057-CLAY         58  ...            0         1
+689                                    28139-CHALYBEATE         39  ...            0         1
+692                                     28093-2 SLAYDEN        226  ...            0         1
+695                                     28033-FAIRHAVEN        837  ...            0         1
+697                                    28093-4 VICTORIA        236  ...            0         1
+699                                      28095-5 WILLIS        524  ...            0         1
+702                                        28057-TILDEN         60  ...            0         1
+703                            28033-OLIVE BRANCH SOUTH        793  ...            0         1
+709                                       28087-ARTESIA        277  ...            0         1
+710                                  28071-WEST UNION 4         87  ...            0         1
+716                                        28081-AUBURN        124  ...            0         1
+717                                    28145-COURTHOUSE        222  ...            0         1
+724                                    28139-PROVIDENCE         31  ...            0         1
+732                                          28003-GLEN         94  ...            0         1
+741                                    28007-PROVIDENCE         31  ...            0         1
+745                                        28019-REFORM         89  ...            0         1
+753                                       28117-BALDWYN        456  ...            0         1
+757                               28071-ANCHOR-TAYLOR 4         93  ...            0         1
+758                                        28115-ALGOMA         63  ...            0         1
+759                                     28081-NETTLETON        120  ...            0         1
+765                                   28137-POAGVILLE 5         89  ...            0         1
+766                                   28137-POAGVILLE 4        137  ...            0         1
+767                                  28003-UNION CENTER         66  ...            0         1
+775                                    28141-BURNSVILLE         54  ...            0         1
+784                                    28115-PONTOTOC 2        105  ...            0         1
+787                                    28115-PONTOTOC 1         78  ...            0         1
+788                                        28141-DENNIS         14  ...            0         1
+789                                    28115-PONTOTOC 5        255  ...            0         1
+790                                    28115-PONTOTOC 4        130  ...            0         1
+793                                    28115-PONTOTOC 3        214  ...            0         1
+796                                 28033-MINERAL WELLS       1110  ...            0         1
+802                                       28145-INGOMAR        129  ...            0         1
+803                       28071-YOCONA COMMUNITY CENTER        123  ...            0         1
+804                                        28013-BANNER         52  ...            0         1
+806                          28003-2ND DISTRICT CENTRAL        170  ...            0         1
+809                                        28019-KENEGO          8  ...            0         1
+810                                   28093-5 WATERFORD        234  ...            0         1
+811                                      28019-SHERWOOD         13  ...            0         1
+812                          28093-1 WEST HOLLY SPRINGS        866  ...            0         1
+818                                     28033-LEWISBURG        916  ...            0         1
+822                                  28071-PHILADELPHIA         99  ...            0         1
+830                             28033-OLIVE BRANCH EAST        775  ...            0         1
+840                                          28033-LOVE        197  ...            0         1
+842                                    28093-4 MARIANNA        287  ...            0         1
+843                                       28013-DERMA 5         97  ...            0         1
+844                                        28057-BOUNDS         12  ...            0         1
+845                                       28013-DERMA 4         63  ...            0         1
+848                                      28095-2 PARHAM         21  ...            0         1
+852                                     28115-TOCCOPOLA         41  ...            0         1
+859                                    28025-UNION STAR        294  ...            0         1
+861                                       28137-SHERROD         22  ...            0         1
+864                                   28103-BROOKSVILLE        757  ...            0         1
+865                                  28137-INDEPENDENCE        422  ...            0         1
+867                                    28087-PLUM GROVE        285  ...            0         1
+874                                      28087-CRAWFORD        648  ...            0         1
+879                                        28145-MYRTLE        152  ...            0         1
+883                                         28155-MABEN        115  ...            0         1
+884                                     28145-GLENFIELD        171  ...            0         1
+886                                        28007-MCCOOL        108  ...            0         1
+888                                      28093-4 WARSAW        297  ...            0         1
+889                                          28141-IUKA        218  ...            0         1
+892                                         28007-ETHEL        100  ...            0         1
+894                         28093-5 SOUTH HOLLY SPRINGS       1071  ...            0         1
+897                                       28115-OAKHILL         31  ...            0         1
+904                           28033-PLEASANT HILL NORTH        954  ...            0         1
+905                                    28139-PINE GROVE          6  ...            0         1
+907                                  28103-CLIFTONVILLE        413  ...            0         1
+908                                        28003-RIENZI        160  ...            0         1
+909                                       28087-TRINITY        604  ...            0         1
+911                                        28081-BELDEN        612  ...            0         1
+925                                      28071-TAYLOR 3        411  ...            0         1
+932                                      28115-LONGVIEW        122  ...            0         1
+935                                        28145-CENTER         29  ...            0         1
+937                               28117-BOONEVILLE EAST        188  ...            0         1
+941                                  28003-CORINTH EAST        371  ...            0         1
+945                         28093-1 NORTH HOLLY SPRINGS        627  ...            0         1
+947                                      28081-PALMETTO        323  ...            0         1
+950                                        28025-TIBBEE        192  ...            0         1
+963                                   28095-5 NETTLETON        347  ...            0         1
+966                             28087-EAST COLUMBUS GYM       1380  ...            0         1
+970                                28033-SOUTHAVEN WEST        959  ...            0         1
+972                                        28081-PRATTS         28  ...            0         1
+974                                   28003-SHADY GROVE        119  ...            0         1
+975                                    28141-SPRINGHILL         81  ...            0         1
+977                                   28093-4 LAWS HILL         89  ...            0         1
+981                              28033-GREENBROOK NORTH       1510  ...            0         1
+983                                         28025-CAIRO        149  ...            0         1
+984                                          28115-ECRU        173  ...            0         1
+985                                28105-LONGVIEW SOUTH         50  ...            0         1
+987                                        28139-WALNUT         86  ...            0         1
+1021                                       28137-WYATTE         56  ...            0         1
+1027                                    28009-ASHLAND 3        353  ...            0         1
+1045                                28033-HERNANDO EAST        767  ...            0         1
+1046                           28019-ACKERMAN SOUTHWEST        249  ...            0         1
+1049                                     28137-THYATIRA         57  ...            0         1
+1051                                      28019-CHESTER         64  ...            0         1
+1063                               28081-TUPELO 4 SOUTH       1147  ...            0         1
+1066                              28033-ALPHABA-COCKRUM        125  ...            0         1
+1068                                       28025-VINTON        290  ...            0         1
+1073                                28081-BEECH SPRINGS        206  ...            0         1
+1075                                       28137-TAYLOR        120  ...            0         1
+1077                                     28071-OXFORD 1       1239  ...            0         1
+1084                                     28071-OXFORD 5        933  ...            0         1
+1085                                     28071-OXFORD 4       1566  ...            0         1
+1087                                     28071-OXFORD 3       1306  ...            0         1
+1089                                     28071-OXFORD 2       2396  ...            0         1
+1091                               28145-PLEASANT RIDGE         18  ...            0         1
+1093                                       28117-INGRAM         19  ...            0         1
+1094                                       28033-MILLER        712  ...            0         1
+1095                                    28139-DRY CREEK         17  ...            0         1
+1098                                       28145-BLYTHE         19  ...            0         1
+1103                                     28145-PINEDALE         19  ...            0         1
+1106                                      28139-FALKNER         79  ...            0         1
+1107              28117-BOONEVILLE NORTH/SUNFLOWER PARK        430  ...            0         1
+1108                                   28025-PINE BLUFF        267  ...            0         1
+1115                                       28081-KEDRON        136  ...            0         1
+1117                                 28017-WOODLAND 015        129  ...            0         1
+1135                             28025-WEST POINT SOUTH        747  ...            0         1
+1137                                 28145-BLUE SPRINGS         46  ...            0         1
+1138                  28145-WATSON GROVE BAPTIST CHURCH        311  ...            0         1
+1139                               28087-FIRST ASSEMBLY        940  ...            0         1
+1141                                    28057-KIRKVILLE         33  ...            0         1
+1152                                   28057-FAWN GROVE         32  ...            0         1
+1153                               28057-SALEM-COPELAND         31  ...            0         1
+1156                                        28033-WALLS        893  ...            0         1
+1159                                      28115-BECKHAM         81  ...            0         1
+1160                                       28159-SHILOH         90  ...            0         1
+1161                              28025-WEST POINT EAST        556  ...            0         1
+1162                                   28159-FAIRGROUND        627  ...            0         1
+1163                       28117-HILLS CHAPEL- NEW HOPE         72  ...            0         1
+1167                          28095-3 GREENWOOD SPRINGS          3  ...            0         1
+1168                                         28115-TROY         68  ...            0         1
+1171                                       28019-HEBRON         31  ...            0         1
+1174                            28117-BOONEVILLE/AG-CTR        147  ...            0         1
+1176                              28115-BETHEL/ENDVILLE         79  ...            0         1
+1177                                    28155-CADARETTA          8  ...            0         1
+1186                                      28145-JERICHO         31  ...            0         1
+1194                                       28087-STEENS         62  ...            0         1
+1210                                   28159-MILL CREEK        396  ...            0         1
+1211                                      28081-SHANNON        319  ...            0         1
+1222                                      28141-BELMONT         57  ...            0         1
+1224                              28033-HORN LAKE NORTH        860  ...            0         1
+1228                                       28025-SILOAM        310  ...            0         1
+1230                                       28057-DORSEY         38  ...            0         1
+1233                                   28097-KILMICHAEL        209  ...            0         1
+1234                              28017-BUENA VISTA 002        386  ...            0         1
+1246                    28097-MT PISGAH SWEETHOME NORTH         50  ...            0         1
+1248                                   28097-MT. PISGAH         14  ...            0         1
+1259                               28143-WIN JOB CENTER        172  ...            0         1
+1260                                     28115-RANDOLPH         36  ...            0         1
+1266                                       28155-MANTEE         34  ...            0         1
+1267                              28025-WEST POINT WEST        921  ...            0         1
+1269                                     28155-CLARKSON         10  ...            0         1
+1273                     28043-MT. NEBO YOUNG'S LANDING         12  ...            0         1
+1274                                     28093-3 BARTON        154  ...            0         1
+1275                             28095-4 NORTH ABERDEEN        725  ...            0         1
+1279                                   28115-FRIENDSHIP         39  ...            0         1
+1280                                  28025-CEDAR BLUFF         17  ...            0         1
+1282                                  28137-COLDWATER 3        756  ...            0         1
+1288                                     28155-WALTHALL         20  ...            0         1
+1289                                     28117-NEW SITE         56  ...            0         1
+1304                                   28081-EUCLATUBBA         23  ...            0         1
+1306                                     28095-1 BIGBEE         14  ...            0         1
+1309                                        28115-ROBBS         16  ...            0         1
+1310                            28033-HORN LAKE CENTRAL        659  ...            0         1
+1312                                        28137-SARAH          8  ...            0         1
+1316                                  28019-FRENCH CAMP         53  ...            0         1
+1318                               28093-5 CORNERSVILLE          6  ...            0         1
+1325                                     28115-TURNPIKE         23  ...            0         1
+1333                                     28095-1 HATLEY        123  ...            0         1
+1336                                        28105-MABEN        119  ...            0         1
+1337                                 28107-COMO LIBRARY        712  ...            0         1
+1340                                    28081-OLD UNION        179  ...            0         1
+1342                             28025-WEST POINT NORTH        788  ...            0         1
+1346               28143-ROBINSONVILLE COMMUNITY CENTER        315  ...            0         1
+1347                                 28105-ADATON SOUTH        160  ...            0         1
+1353                                     28025-CARADINE        556  ...            0         1
+1357                                         28057-ICDC        156  ...            0         1
+1360                                28139-BLUE MOUNTAIN        276  ...            0         1
+1361                                      28097-NATIONS         26  ...            0         1
+1362                                      28003-KOSSUTH         94  ...            0         1
+1364                                     28095-3 ATHENS         76  ...            0         1
+1372                                   28081-PETERSBURG         24  ...            0         1
+1375                                 28003-CORINTH WEST        131  ...            0         1
+1377                      28107-SARDIS NORTH COURTHOUSE        607  ...            0         1
+1384                                    28017-EGYPT 003        225  ...            0         1
+1386                                  28033-NESBIT EAST        746  ...            0         1
+1387                                    28117-BLACKLAND         44  ...            0         1
+1388                                   28141-TISHOMINGO        208  ...            0         1
+1394                         28003-FIVE POINTS 1ST DIST        163  ...            0         1
+1396                               28081-TUPELO 4 NORTH       1369  ...            0         1
+1397                                      28081-GUNTOWN        215  ...            0         1
+1399                                         28155-FAME         12  ...            0         1
+1406                                 28003-BIGGERSVILLE        137  ...            0         1
+1409                                    28003-PINECREST        110  ...            0         1
+1415                                    28093-3 BYHALIA        532  ...            0         1
+1418                                 28093-5 POTTS CAMP        300  ...            0         1
+1419                                       28141-GOLDEN         37  ...            0         1
+1422                                       28095-5 WREN        198  ...            0         1
+1426                        28033-HORN LAKE HIGH SCHOOL        644  ...            0         1
+1429                                      28115-THAXTON         45  ...            0         1
+1431                                       28081-VERONA        626  ...            0         1
+1439                                     28081-TUPELO 3       1150  ...            0         1
+1441                                     28081-TUPELO 2        963  ...            0         1
+1442                                     28081-TUPELO 1        113  ...            0         1
+1444                                    28155-BIG BLACK         16  ...            0         1
+1447                                     28081-TUPELO 5        431  ...            0         1
+1452                                      28095-1 BOYDS         24  ...            0         1
+1458                                        28007-BEREA         11  ...            0         1
+1470                           28033-OLIVE BRANCH NORTH        932  ...            0         1
+1474                                        28025-PHEBA        235  ...            0         1
+1475                               28081-PLEASANT GROVE        498  ...            0         1
+1480                              28033-SOUTHAVEN NORTH        674  ...            0         1
+1498                       28081-OAK HILL VETERANS PARK        428  ...            0         1
+1499                             28161-TWO WATER VALLEY        725  ...            0         1
+1500                                     28115-BANKHEAD        296  ...            0         1
+1506                                28033-BAKERS CHAPEL        153  ...            0         1
+1509                                      28139-CHAPMAN         29  ...            0         1
+1520                                    28095-4 PRAIRIE        453  ...            0         1
+1527                               28009-HICKORY FLAT 5        114  ...            0         1
+1528                                  28057-CENTERVILLE         31  ...            0         1
+1529                                  28033-SUMMERSHILL        865  ...            0         1
+1536                     28145-ELLISTOWN BAPTIST CHURCH        135  ...            0         1
+1552                                28093-2 EARLY GROVE        125  ...            0         1
+1554                                      28087-AIRBASE        484  ...            0         1
+1555                  28033-NORTHWEST COMMUNITY COLLEGE       1099  ...            0         1
+1557                                   28145-UNION WEST         34  ...            0         1
+1558                               28141-COTTON SPRINGS         15  ...            0         1
+1559                                 28087-WEST LOWNDES        279  ...            0         1
+1560                        28107-LONGTOWN FIRE STATION        131  ...            0         1
+1566                        28093-2 NORTH HOLLY SPRINGS        537  ...            0         1
+1567                                    28137-ARKABUTLA        222  ...            0         1
+1581                                  28137-STRAYHORN 2         27  ...            0         1
+1584                                  28137-STRAYHORN 1         53  ...            0         1
+1589                                     28087-IMMANUEL        278  ...            0         1
+1590                               28033-LAKE CORMORANT        157  ...            0         1
+1594                                     28095-4 GIBSON        317  ...            0         1
+1597                     28017-PLEASANT GROVE THORN 008         76  ...            0         1
+1598                                28095-5 AMORY FIFTH        535  ...            0         1
+1599                                   28139-THREEFORKS         17  ...            0         1
+1600                               28013-CALHOUN CITY 4        243  ...            0         1
+1601                                28081-PLANTERSVILLE        400  ...            0         1
+1604                               28013-CALHOUN CITY 1        400  ...            0         1
+1609                          28145-CENTRAL MAINTENANCE         87  ...            0         1
+1610                                28095-1 AMORY FIRST        101  ...            0         1
+1619                                   28033-BRIDGETOWN        416  ...            0         1
+1620                                       28033-EUDORA        234  ...            0         1
+1627                      28087-FIFTEENTH STREET CHURCH        566  ...            0         1
+1630                                      28081-GILVO-5         21  ...            0         1
+1637                               28033-COLONIAL HILLS        275  ...            0         1
+1638                            28013-CALHOUN NORTHEAST        103  ...            0         1
+1641                                 28105-NORTH ADATON        293  ...            0         1
+1655                          28057-FAIRVIEW-PLEASANTON         11  ...            0         1
+1656                                      28105-STURGIS        201  ...            0         1
+1662                                  28117-CROSS ROADS         54  ...            0         1
+1664                                   28145-SPORTSPLEX        266  ...            0         1
+1665               28071-DENMARK-LAF SPRINGS-PINE BLUFF         73  ...            0         1
+1666                    28043-PLEASANT GROVE COMMUN CEN        304  ...            0         1
+1668                                  28115-SPRINGVILLE        113  ...            0         1
+1670                                   28019-DISTRICT 5        168  ...            0         1
+1674                                     28155-EUPORA 2         39  ...            0         1
+1675                                     28155-EUPORA 1        425  ...            0         1
+1678                                      28003-JACINTO         23  ...            0         1
+1681                                     28155-EUPORA 3         67  ...            0         1
+1682                             28033-HACKS CROSS ROAD        757  ...            0         1
+1687                             28017-HOULKA SOUTH 011        121  ...            0         1
+1689                                28003-CORINTH SOUTH        557  ...            0         1
+1691                               28033-LEWISBURG EAST         64  ...            0         1
+1694                                     28095-2 BECKER         92  ...            0         1
+1702                             28017-OKOLONA EAST 004        667  ...            0         1
+1709                                     28095-3 LACKEY        110  ...            0         1
+1710                                   28017-ANCHOR 001        143  ...            0         1
+1712                                         28097-LODI        139  ...            0         1
+1715                               28105-LONGVIEW NORTH        181  ...            0         1
+1716                                      28081-BALDWYN        335  ...            0         1
+1719                                        28117-CAIRO         33  ...            0         1
+1722                                          28155-FAY          3  ...            0         1
+1725                                  28139-CLARYSVILLE          9  ...            0         1
+1730                                      28139-PEOPLES         35  ...            0         1
+1743                                28087-TOWNSEND PARK        772  ...            0         1
+1747                                 28071-COLLEGE HILL        770  ...            0         1
+1752                                    28019-WEIR EAST        204  ...            0         1
+1763                                 28145-KINGS CHAPEL         55  ...            0         1
+8                          28123-BEAT 3/EASTWEST MORTON        366  ...            2         3
+15                                        28121-PUCKETT        107  ...            2         3
+16                                   28103-MASHULAVILLE        152  ...            2         3
+22                                 28121-MCLAURIN NORTH        151  ...            2         3
+27                               28121-STEEN CREEK WEST        348  ...            2         3
+28                                     28159-ZION RIDGE        398  ...            2         3
+29                            28123-BEAT 4/NORTH MORTON        396  ...            2         3
+34                                        28031-COLLINS        711  ...            2         3
+37                               28123-BEAT 1/HILLSBORO        448  ...            2         3
+42                                         28029-WESSON         93  ...            2         3
+44                                    28129-CEDAR GROVE         55  ...            2         3
+47                                  28147-KIRKLIN SOUTH         41  ...            2         3
+49                                      28121-CITY HALL        367  ...            2         3
+57                                28121-CROSSGATES EAST        495  ...            2         3
+58                         28075-560 - SOUTH NELLIEBURG         88  ...            2         3
+61                                  28105-HICKORY GROVE       1029  ...            2         3
+63                                        28147-IMPROVE        104  ...            2         3
+71                          28113-(16) SUMMIT CITY HALL        413  ...            2         3
+75                         28099-PHILADELPHIA NORTHWEST       1067  ...            2         3
+77                                   28069-FORT STEVENS         25  ...            2         3
+80                                    28127-HARRISVILLE         84  ...            2         3
+83                                      28061-PALESTINE         71  ...            2         3
+85                                         28031-OKAHAY        517  ...            2         3
+90                                       28079-EDINBURG         20  ...            2         3
+94                                         28147-MIDWAY         47  ...            2         3
+98                                          28099-HOUSE         36  ...            2         3
+100                                     28005-FORK EAST         77  ...            2         3
+107                            28103-DISTRICT 3 CENTRAL       1033  ...            2         3
+108                            28159-NEW NATIONAL GUARD         89  ...            2         3
+111                                         28129-BURNS         86  ...            2         3
+112                                         28127-BOWIE         91  ...            2         3
+113                                  28129-CENTER RIDGE         27  ...            2         3
+115                                    28069-MOUNT NEBO        206  ...            2         3
+119                                   28103-SUMMERVILLE         33  ...            2         3
+120                                  28069-KELLIS STORE        127  ...            2         3
+128                             28123-BEAT 5/LANGS MILL        137  ...            2         3
+132                                         28105-OKTOC        426  ...            2         3
+135                       28129-CLEAR SPRINGS-PINEVILLE         19  ...            2         3
+138                                 28075-240 - KEWANEE        124  ...            2         3
+142                                        28067-POWERS        216  ...            2         3
+143                                        28067-HEBRON        340  ...            2         3
+144   28113-(12) NAVILLA BAPTIST CHURCH FELLOWSHIP HALL        527  ...            2         3
+146                                       28061-HOLDERS        244  ...            2         3
+147                                      28089-TOUGALOO         94  ...            2         3
+154                                            28049-77        614  ...            2         3
+165                                            28049-79       1106  ...            2         3
+166                                            28049-78        687  ...            2         3
+172                                       28099-NESHOBA         65  ...            2         3
+173                                      28121-LAKELAND        253  ...            2         3
+175                                     28037-BAD BAYOU         16  ...            2         3
+178                          28075-146 - NEW LAUDERDALE        268  ...            2         3
+185                                       28079-RENFROE         66  ...            2         3
+186                         28077-WEST MONTICELLO (A-Z)        269  ...            2         3
+187                                        28099-DEEMER         22  ...            2         3
+189                                       28121-OAKDALE        698  ...            2         3
+191                         28099-TUCKER - DISTRICT ONE         64  ...            2         3
+194                                         28005-WALLS        169  ...            2         3
+195                                     28065-GRANBY 11         76  ...            2         3
+196                                 28121-PEARSON SOUTH        663  ...            2         3
+207                         28129-ZION HILL - NEW HAVEN        149  ...            2         3
+208                                28121-RESERVOIR EAST        295  ...            2         3
+214                            28105-STARKVILLE CENTRAL        752  ...            2         3
+220                                  28153-YELLOW CREEK        163  ...            2         3
+225                                      28127-SARATOGA        130  ...            2         3
+232                                        28079-MADDEN         82  ...            2         3
+244                               28105-STARKVILLE WEST       1546  ...            2         3
+246                                           28127-DLO         40  ...            2         3
+248                                         28147-LEXIE        100  ...            2         3
+249                                   28121-PELAHATCHIE        407  ...            2         3
+252                             28075-238 - EAST MARION        370  ...            2         3
+256                       28089-FRANKLIN BAPTIST CHURCH         23  ...            2         3
+263                                            28049-40        821  ...            2         3
+264                                  28075-412 - TWELVE        642  ...            2         3
+265                                 28105-CRAIG SPRINGS         12  ...            2         3
+271                                            28049-44        967  ...            2         3
+273                                            28049-43       1094  ...            2         3
+274                                            28049-42        762  ...            2         3
+277                                  28023-QUITMAN EAST        128  ...            2         3
+278                                            28049-47        332  ...            2         3
+282                                            28049-46       1397  ...            2         3
+285                                            28049-45        673  ...            2         3
+291                                 28147-KIRKLIN NORTH        221  ...            2         3
+295                                   28075-407 - SEVEN        553  ...            2         3
+297                                        28077-HOOKER        127  ...            2         3
+299                                           28077-OMA        239  ...            2         3
+301                          28075-126 - ANDREWS CHAPEL        294  ...            2         3
+303                                        28085-VAUGHN         90  ...            2         3
+306                                   28029-CENTERPOINT        315  ...            2         3
+309                                    28121-CREST PARK        343  ...            2         3
+311                                        28023-ENERGY          8  ...            2         3
+314                                       28085-BRIGNAL        484  ...            2         3
+315                                       28077-WANILLA         13  ...            2         3
+317                                  28073-ROCKY BRANCH        130  ...            2         3
+318                        28099-PHILADELPHIA NORTHEAST        242  ...            2         3
+321                           28123-BEAT 1/NORTH FOREST        530  ...            2         3
+324                                 28127-MAGEE 4 SOUTH        187  ...            2         3
+325                                    28069-COURTHOUSE        481  ...            2         3
+332                       28121-HIGHLANDS/PATRICK FARMS        772  ...            2         3
+333                                 28031-COLLINS SOUTH         44  ...            2         3
+335                                 28103-PRAIRIE POINT        345  ...            2         3
+336                                28147-TYLERTOWN WEST        217  ...            2         3
+340                                     28031-ROCK HILL         17  ...            2         3
+341                                       28101-HICKORY        330  ...            2         3
+342                                  28085-LINCOLN EAST          7  ...            2         3
+343                              28105-STARKVILLE SOUTH       1586  ...            2         3
+345                                  28085-BOGUE CHITTO        152  ...            2         3
+352                                        28105-OSBORN        571  ...            2         3
+360                                    28073-GREENVILLE         34  ...            2         3
+367                                  28085-OLD RED STAR         75  ...            2         3
+370                                    28075-409 - NINE        637  ...            2         3
+371                                28091-COLUMBIA SOUTH        103  ...            2         3
+372                                   28129-SHADY GROVE         11  ...            2         3
+374                                          28099-HOPE         53  ...            2         3
+381               28089-COLONIAL HEIGHTS BAPTIST CHURCH        686  ...            2         3
+382                            28121-CUNNINGHAM HEIGHTS        226  ...            2         3
+383                                    28099-NORTH BEND         23  ...            2         3
+387                                          28099-FORK         13  ...            2         3
+389                                         28127-MERIT         54  ...            2         3
+391                                            28049-80       1059  ...            2         3
+393                  28113-(01) NEW HOPE BAPTIST CHURCH        604  ...            2         3
+395                                            28049-83       1747  ...            2         3
+400                                            28049-81       1373  ...            2         3
+402                                       28105-SESSUMS        656  ...            2         3
+407                               28123-BEAT 4/CONTRELL        165  ...            2         3
+410                                   28091-COURT HOUSE        153  ...            2         3
+411                                     28019-PANHANDLE         92  ...            2         3
+413                                        28077-SONTAG        102  ...            2         3
+415             28113-(18) JOHNSTON CHAPEL METH. CHURCH        138  ...            2         3
+418                                      28101-PROSPECT         22  ...            2         3
+419                                        28049-TINNIN        284  ...            2         3
+429                    28089-CEDAR GROVE BAPTIST CHURCH         13  ...            2         3
+436                                   28049-BROWNSVILLE        208  ...            2         3
+438                                    28127-WEATHERSBY        564  ...            2         3
+440                                    28023-SOUINLOVIE         27  ...            2         3
+441                               28089-VERTICAL CHURCH        709  ...            2         3
+442                                 28069-BAND BUILDING        257  ...            2         3
+447                             28163-1-1 MECHANICSBURG         43  ...            2         3
+449                                28105-DOUBLE SPRINGS         76  ...            2         3
+450                                 28023-QUITMAN SOUTH        445  ...            2         3
+455                                    28085-CASEYVILLE         91  ...            2         3
+457                                          28099-HAYS         49  ...            2         3
+461                                     28061-CLAIBORNE        291  ...            2         3
+462                                     28085-ALEXANDER        454  ...            2         3
+465                                     28065-CARSON 22         63  ...            2         3
+480                                 28109-AMACKERTOWN 2         22  ...            2         3
+484                        28113-(13) HOLMESVILLE COMM.        271  ...            2         3
+487                     28105-NEEDMORE COMMUNITY CENTER        725  ...            2         3
+492                    28089-TRACE RIDGE BAPTIST CHURCH        843  ...            2         3
+494                                       28077-OAKVALE         15  ...            2         3
+500                                        28101-CHUNKY         38  ...            2         3
+503                                    28069-SCOOBA A-L        249  ...            2         3
+508                                        28099-CENTER         35  ...            2         3
+509                           28075-175 - WEST DALEWOOD         26  ...            2         3
+511                            28099-PHILADELPHIA SOUTH         27  ...            2         3
+512                                28075-262 - TOOMSUBA        178  ...            2         3
+513                                    28023-ENTERPRISE        220  ...            2         3
+514                              28121-STEEN CREEK EAST        409  ...            2         3
+515                                        28077-CENTER          3  ...            2         3
+516                                    28005-TANGIPAHOA         54  ...            2         3
+530                                         28121-JOHNS        129  ...            2         3
+531                                         28085-ZETUS         75  ...            2         3
+532                                       28091-PITTMAN         30  ...            2         3
+534                                       28121-LIBERTY        559  ...            2         3
+535                             28123-BEAT 5/SEBASTOPOL         20  ...            2         3
+538                                  28129-TAYLORSVILLE         87  ...            2         3
+539                                         28067-ERATA        221  ...            2         3
+541                              28105-BELL SCHOOLHOUSE        210  ...            2         3
+543                                     28085-OLD BROOK        163  ...            2         3
+544                                 28085-LITTLE BAHALA         73  ...            2         3
+546                                  28065-GWINVILLE 51        155  ...            2         3
+554                                       28077-NOLA 91         45  ...            2         3
+556                                    28061-HEIDELBERG        840  ...            2         3
+565                                     28023-HARMONY 2        106  ...            2         3
+566                                28147-TYLERTOWN EAST         13  ...            2         3
+568                                     28023-HARMONY 1         47  ...            2         3
+569                                     28005-RICEVILLE        152  ...            2         3
+573                                       28061-ANTIOCH         34  ...            2         3
+574                                        28023-DESOTO        136  ...            2         3
+585                                 28121-BRANDON SOUTH         88  ...            2         3
+588                                      28087-NEW HOPE        813  ...            2         3
+591                        28065-PRENTISS NORTH WEST 53        206  ...            2         3
+595                                       28079-OFAHOMA        269  ...            2         3
+596                               28085-HALBERT HEIGHTS        291  ...            2         3
+598                                       28065-CLEM 41         79  ...            2         3
+602                                 28103-EARL NASH GYM        783  ...            2         3
+605                                 28023-QUITMAN NORTH         77  ...            2         3
+607                                   28091-CEDAR GROVE        122  ...            2         3
+608                                          28147-HOPE        207  ...            2         3
+615                                   28099-PEARL RIVER        300  ...            2         3
+616                                    28099-ZEPHYRHILL         74  ...            2         3
+619               28113-(10) BRASWELL EDUCATION COMPLEX        520  ...            2         3
+625                              28089-MAGNOLIA HEIGHTS        690  ...            2         3
+627                            28067-SPRINGHILL/MAULDIN        198  ...            2         3
+629                               28123-BEAT 2/HOMEWOOD         56  ...            2         3
+630                                 28129-RALEIGH NORTH        251  ...            2         3
+633                                  28031-WILLIAMSBURG         52  ...            2         3
+636                                   28129-WARREN HILL        330  ...            2         3
+640                                       28049-TERRY 1       1123  ...            2         3
+642                   28089-GREATER MT LEVI FULL GOSPEL        464  ...            2         3
+646                                28123-BEAT 3/PULASKI         43  ...            2         3
+652                                         28091-UNION         12  ...            2         3
+659                                  28075-343 - MARTIN         42  ...            2         3
+662                       28099-TUCKER - DISTRICT THREE         50  ...            2         3
+664                                   28031-GILMER/YAWN        494  ...            2         3
+674                                    28069-SCOOBA M-Z        205  ...            2         3
+677                              28121-CASTLEWOODS EAST        741  ...            2         3
+678                              28123-BEAT 2/HIGH HILL        174  ...            2         3
+684                                        28077-TILTON         40  ...            2         3
+690                        28147-TYLERTOWN 3RD DISTRICT        141  ...            2         3
+691                             28163-1-3 BENTONIA WEST        279  ...            2         3
+698                  28113-(02) S MCCOMB BAPTIST CHURCH        223  ...            2         3
+700                                     28085-ARLINGTON        132  ...            2         3
+701                                      28023-HOPEWELL         76  ...            2         3
+704                                       28079-HARMONY        198  ...            2         3
+705                  28113-(19) PISGAH METHODIST CHURCH        219  ...            2         3
+706                               28065-SONS ACADEMY 25        235  ...            2         3
+707                                       28069-PRESTON        224  ...            2         3
+709                                       28087-ARTESIA        277  ...            2         3
+711              28089-CANTON ST. PAUL METHODIST CHURCH        157  ...            2         3
+713                                        28037-LUCIEN         23  ...            2         3
+714                                      28061-VOSSBURG        195  ...            2         3
+715                                      28091-FOXWORTH        283  ...            2         3
+718                                    28099-FORESTDALE         56  ...            2         3
+719                                         28079-SALEM         54  ...            2         3
+722                        28089-VICTORY BAPTIST CHURCH        291  ...            2         3
+735                                         28023-SNELL          3  ...            2         3
+736             28113-(17) SMCC WORK FORCE TRAINING CTR        258  ...            2         3
+737                                     28101-DECATUR 1        208  ...            2         3
+738                                   28023-STONEWALL 1        244  ...            2         3
+741                                    28007-PROVIDENCE         31  ...            2         3
+744                                     28101-DECATUR 2         90  ...            2         3
+746                                   28023-STONEWALL 3         84  ...            2         3
+750                                     28127-OAK GROVE        270  ...            2         3
+751                                      28127-NEW HOPE        111  ...            2         3
+754                                         28147-DINAN        545  ...            2         3
+761                                   28075-303 - THREE        783  ...            2         3
+764                           28123-BEAT 2/SOUTH FOREST        509  ...            2         3
+770                                          28091-GOSS         57  ...            2         3
+774                                    28121-BRIAR HILL        218  ...            2         3
+779                                 28123-BEAT 5/STEELE          2  ...            2         3
+781                            28089-FAIRVIEW MB CHURCH       1291  ...            2         3
+782                                        28147-VARNEL        122  ...            2         3
+783                                   28101-LITTLE ROCK         39  ...            2         3
+791                                      28061-PAULDING        549  ...            2         3
+792                                          28079-LENA        200  ...            2         3
+798                                       28067-SHELTON        169  ...            2         3
+799                                28121-MCLAURIN SOUTH        207  ...            2         3
+800                                     28023-LANGSDALE         35  ...            2         3
+801                                         28099-FUSKY          7  ...            2         3
+807                        28113-(11) LEGGETT COMMUNITY        233  ...            2         3
+808                               28121-CROSSGATES WEST        342  ...            2         3
+813                                 28127-MAGEE 4 NORTH         82  ...            2         3
+815                                    28091-SANDY HOOK        119  ...            2         3
+816                                     28031-DRY CREEK        284  ...            2         3
+817                               28089-MARK APARTMENTS       1565  ...            2         3
+821                                  28099-BOGUE CHITTO         53  ...            2         3
+824                                       28023-PACHUTA        197  ...            2         3
+826                                 28075-254 - RUSSELL        291  ...            2         3
+828                                28129-UNION-NEW HOME        125  ...            2         3
+839                                     28037-EDDICETON         31  ...            2         3
+846                                  28085-LINCOLN WEST         53  ...            2         3
+847                                  28065-BASSFIELD 31        705  ...            2         3
+849                                   28147-NORTH KNOXO        536  ...            2         3
+850                 28089-GLUCKSTADT AT ST JOE CATHOLIC       1018  ...            2         3
+851                          28029-CRYSTAL SPRINGS EAST        673  ...            2         3
+854                                       28127-SUMRALL         89  ...            2         3
+856                                          28121-STAR        146  ...            2         3
+858               28113-(06) LIFEPOINTE NAZARENE CHURCH        277  ...            2         3
+863                                      28153-HIWANNEE        203  ...            2         3
+864                                   28103-BROOKSVILLE        757  ...            2         3
+866                            28065-WILLIAMSON MILL 44        111  ...            2         3
+867                                    28087-PLUM GROVE        285  ...            2         3
+868                                     28127-DRY CREEK         53  ...            2         3
+870              28113-(05) NORTH MCCOMB BAPTIST CHURCH        204  ...            2         3
+874                                      28087-CRAWFORD        648  ...            2         3
+875                                    28077-NEW HEBRON         82  ...            2         3
+880                                  28065-BASSFIELD 26        163  ...            2         3
+881                                   28127-FORK CHURCH        237  ...            2         3
+883                                         28155-MABEN        115  ...            2         3
+891                    28089-PARKWAY PENTECOSTAL CHURCH       1017  ...            2         3
+892                                         28007-ETHEL        100  ...            2         3
+895                   28089-VICTORY CHRISTIAN COMMUNITY        444  ...            2         3
+898                                       28031-SANFORD         72  ...            2         3
+900                                        28037-MCCALL         57  ...            2         3
+901                                        28077-JAYESS         35  ...            2         3
+902                                    28075-567 - ZERO        126  ...            2         3
+903                                  28159-COUNTY AGENT        726  ...            2         3
+906                                      28101-NEWTON 1        696  ...            2         3
+907                                  28103-CLIFTONVILLE        413  ...            2         3
+910                                     28075-202 - TWO         89  ...            2         3
+913                                          28067-SOSO        358  ...            2         3
+915                                      28077-STRINGER        192  ...            2         3
+916                                 28121-BRANDON NORTH        729  ...            2         3
+919                             28101-DECATUR 3/SCANLAN        128  ...            2         3
+921                                    28121-SPRINGHILL        159  ...            2         3
+922                       28123-BEAT 5/NORTHEAST FOREST         74  ...            2         3
+923                             28065-PRENTISS SOUTH 13        268  ...            2         3
+924                             28065-PRENTISS SOUTH 12        247  ...            2         3
+927                                   28085-BIG SPRINGS         42  ...            2         3
+931                                     28101-CONEHATTA        147  ...            2         3
+936                                       28049-CYNTHIA        360  ...            2         3
+943                 28089-RIDGEL D 1ST METHODIST CHURCH        751  ...            2         3
+948                                       28127-SHIVERS        165  ...            2         3
+949                          28089-MT. HOPE M.B. CHURCH         60  ...            2         3
+950                                        28025-TIBBEE        192  ...            2         3
+951                                      28091-POPETOWN        487  ...            2         3
+952                                    28121-NORTHSHORE        471  ...            2         3
+953                                         28127-PEARL         88  ...            2         3
+954                                            28049-33        290  ...            2         3
+956                                            28049-32        266  ...            2         3
+959                                  28067-LAUREL NORTH        905  ...            2         3
+962                                            28049-37        487  ...            2         3
+964                                            28049-36        621  ...            2         3
+965                                            28049-35        390  ...            2         3
+967                                            28049-34        458  ...            2         3
+971                                            28049-39        644  ...            2         3
+976                                   28159-NANIH WAIYA        184  ...            2         3
+978                               28121-FLOWOOD LIBRARY        655  ...            2         3
+980                                  28029-MARTINSVILLE        228  ...            2         3
+982                         28031-SEMINARY/WEST COLLINS        202  ...            2         3
+985                                28105-LONGVIEW SOUTH         50  ...            2         3
+986                                   28069-PORTERVILLE        408  ...            2         3
+991                                     28079-GOOD HOPE        114  ...            2         3
+993                   28089-RIDGELAND RECREATION CENTER        803  ...            2         3
+1004                                    28067-BLACKWELL         10  ...            2         3
+1005                               28121-RESERVOIR WEST        339  ...            2         3
+1006                                           28049-09        542  ...            2         3
+1007                              28113-(04) MLK CENTER        614  ...            2         3
+1009                                       28127-PINOLA         96  ...            2         3
+1011                                      28073-SUMRALL        316  ...            2         3
+1012                                      28005-TICKFAW        115  ...            2         3
+1013                               28123-BEAT 4/CLIFTON         13  ...            2         3
+1017                              28065-GREENS CREEK 23         89  ...            2         3
+1018                                           28049-11        300  ...            2         3
+1019                                           28049-10        216  ...            2         3
+1025                                           28049-14        380  ...            2         3
+1026                                           28049-13        770  ...            2         3
+1030                                           28049-18        316  ...            2         3
+1032                                           28049-16       1034  ...            2         3
+1033                               28075-214 - FOURTEEN        710  ...            2         3
+1034                        28089-CANTON FIRE STATION 4        269  ...            2         3
+1035                                      28023-MANASSA          5  ...            2         3
+1036                                28123-BEAT 4/BRANCH         84  ...            2         3
+1037                                      28127-MAGEE 2        239  ...            2         3
+1038                                      28127-MAGEE 1        450  ...            2         3
+1039                                       28067-RAINEY         50  ...            2         3
+1042                             28029-GEORGETOWN NORTH        161  ...            2         3
+1043                                     28121-LEESBURG         36  ...            2         3
+1044                             28129-LORENA - SPINOLA         60  ...            2         3
+1046                           28019-ACKERMAN SOUTHWEST        249  ...            2         3
+1052                                           28049-04        335  ...            2         3
+1053                                      28101-UNION 3         63  ...            2         3
+1055                                      28101-UNION 2         64  ...            2         3
+1057                                           28049-02        150  ...            2         3
+1058                                      28101-UNION 1        192  ...            2         3
+1059                                           28049-01        555  ...            2         3
+1060                                           28049-08        388  ...            2         3
+1061                                           28049-06        371  ...            2         3
+1062                            28077-MONTICELLO-BEAT 5         91  ...            2         3
+1070                                    28085-NEW SIGHT        301  ...            2         3
+1071                                    28023-BEAVERDAM        143  ...            2         3
+1086                                     28101-NEWTON 5        230  ...            2         3
+1088                                     28101-NEWTON 4        431  ...            2         3
+1100                                 28123-BEAT 5/SALEM        221  ...            2         3
+1104               28089-HIGHLAND COLONY BAPTIST CHURCH       1260  ...            2         3
+1105                                   28091-MORGANTOWN         18  ...            2         3
+1116                             28029-STRONGHOPE UNION         30  ...            2         3
+1120                                   28121-PEARL WEST        453  ...            2         3
+1123                                 28063-UNION CHURCH        155  ...            2         3
+1126                              28075-530 - CLARKDALE         98  ...            2         3
+1130                                       28101-DUFFEE         54  ...            2         3
+1132                                         28007-ZAMA         84  ...            2         3
+1133                                   28085-PEARLHAVEN        365  ...            2         3
+1135                             28025-WEST POINT SOUTH        747  ...            2         3
+1143                                     28031-MT OLIVE        566  ...            2         3
+1144                                     28121-ELDORADO        476  ...            2         3
+1145                                28085-JOHNSON GROVE         93  ...            2         3
+1146                      28089-MADISON CULTURAL CENTER        796  ...            2         3
+1147                                   28129-AG-COMPLEX         63  ...            2         3
+1148                            28163-1-2 BENTONIA EAST        113  ...            2         3
+1151                                     28099-MCDONALD         32  ...            2         3
+1160                                       28159-SHILOH         90  ...            2         3
+1162                                   28159-FAIRGROUND        627  ...            2         3
+1164                            28121-BRANDON CITY HALL       1306  ...            2         3
+1165                                     28085-NORFIELD         53  ...            2         3
+1169                       28065-PRENTISS NORTH EAST 43        422  ...            2         3
+1172                             28091-JEFFERSON SCHOOL        152  ...            2         3
+1179                                 28077-SILVER CREEK        238  ...            2         3
+1180                                 28075-544 - MEEHAN         82  ...            2         3
+1181                                         28147-MESA         10  ...            2         3
+1188                      28067-PARKVIEW BAPTIST CHURCH        401  ...            2         3
+1189                                   28089-SUNNYBROOK        175  ...            2         3
+1190                                    28075-101 - ONE        670  ...            2         3
+1196                                       28147-DARBUN         17  ...            2         3
+1198                                 28065-RED HOUSE 55        250  ...            2         3
+1199                                       28061-MIDWAY        164  ...            2         3
+1201                               28159-LOVORN TRACTOR        182  ...            2         3
+1202                                     28031-RICHMOND         51  ...            2         3
+1203                                          28077-ARM        257  ...            2         3
+1204                                       28077-ARMORY         28  ...            2         3
+1208                      28089-LAKE CAROLINE CLUBHOUSE        482  ...            2         3
+1210                                   28159-MILL CREEK        396  ...            2         3
+1218                               28121-MOUNTAIN CREEK         90  ...            2         3
+1220                               28077-COURTHOUSE A-Z        203  ...            2         3
+1221                                       28067-GITANO         60  ...            2         3
+1225                                     28099-BURNSIDE        239  ...            2         3
+1227                               28121-RICHLAND NORTH        312  ...            2         3
+1228                                       28025-SILOAM        310  ...            2         3
+1229                               28075-564 - VIMVILLE        355  ...            2         3
+1235                             28121-CASTLEWOODS WEST        807  ...            2         3
+1236                                    28005-SMITHDALE        131  ...            2         3
+1238                                    28103-SHUQUALAK        524  ...            2         3
+1242                                    28075-410 - TEN        215  ...            2         3
+1249                 28113-(08) FERNWOOD BAPTIST CHURCH        499  ...            2         3
+1250                                28123-BEAT 4/LUDLOW        143  ...            2         3
+1251                                     28031-MITCHELL          7  ...            2         3
+1253                                     28061-MONTROSE        144  ...            2         3
+1255                                   28023-CARMICHAEL         70  ...            2         3
+1261                                  28091-LITTLE ROCK        199  ...            2         3
+1262                                 28079-WALNUT GROVE        558  ...            2         3
+1265                                       28085-LIPSEY        281  ...            2         3
+1271                                     28061-STRINGER         83  ...            2         3
+1276             28113-(07) ST MARY FREE WILL BAPT. CH.        375  ...            2         3
+1280                                  28025-CEDAR BLUFF         17  ...            2         3
+1283                                    28121-DRY CREEK        524  ...            2         3
+1285                                       28091-MORRIS        431  ...            2         3
+1291                            28153-CHAPPARAL/DIAMOND        249  ...            2         3
+1292                                     28099-FAIRVIEW         62  ...            2         3
+1297                                   28129-SUMMERLAND        412  ...            2         3
+1298                            28121-BRANDON NORTHEAST        550  ...            2         3
+1300                         28113-(25) OSYKA CITY HALL        124  ...            2         3
+1305                                         28147-ENON         37  ...            2         3
+1307                                28035-RAWLS SPRINGS        447  ...            2         3
+1320                          28077-COOPERS CREEK (A-Z)         35  ...            2         3
+1321                      28113-(09) MAGNOLIA COMM CTR.        559  ...            2         3
+1322                           28123-BEAT 1/HARPERVILLE        393  ...            2         3
+1329                           28089-CHINA GROVE CHURCH        416  ...            2         3
+1334                                    28085-CITY HALL        109  ...            2         3
+1336                                        28105-MABEN        119  ...            2         3
+1339                                   28127-BRIDGEPORT        215  ...            2         3
+1341                                 28129-WEST RALEIGH         17  ...            2         3
+1343                                   28085-MONTGOMERY        142  ...            2         3
+1347                                 28105-ADATON SOUTH        160  ...            2         3
+1348  28113-(03) FIRST BAPT. CHURCH SUMMIT CHRISTIAN...        304  ...            2         3
+1350                                       28077-GRANGE         42  ...            2         3
+1352                                      28069-LYNWOOD        102  ...            2         3
+1354                  28113-(14) CALVARY BAPTIST CHURCH        206  ...            2         3
+1356                              28075-517 - SEVENTEEN        206  ...            2         3
+1363                            28075-528 - CAUSEYVILLE         29  ...            2         3
+1365                   28089-FIRST PRESBYTERIAN MADISON        493  ...            2         3
+1368                                   28121-GREENFIELD        919  ...            2         3
+1371                        28075-237 - EAST LAUDERDALE        418  ...            2         3
+1374                   28147-TYLERTOWN 4TH DISTRCT WEST         87  ...            2         3
+1379                                    28075-206 - SIX       1114  ...            2         3
+1390                                        28023-UNION         32  ...            2         3
+1392                 28089-CANTON NATIONAL GUARD ARMORY        150  ...            2         3
+1393                                    28049-OLD BYRAM        888  ...            2         3
+1398                                       28077-TOPEKA         13  ...            2         3
+1400                                     28023-OAKGROVE        236  ...            2         3
+1407                                 28075-127 - BAILEY        351  ...            2         3
+1408                              28121-BRANDON CENTRAL        325  ...            2         3
+1412                                 28061-PHILADELPHIA        253  ...            2         3
+1416                                         28077-NOLA          2  ...            2         3
+1420                                   28061-FELLOWSHIP          9  ...            2         3
+1421                                       28091-DARBUN         45  ...            2         3
+1427                                        28099-DIXON        174  ...            2         3
+1430                             28153-MATHERVILLE/COYT         30  ...            2         3
+1432                         28031-LONE STAR/BLACK JACK         68  ...            2         3
+1433                                 28147-SARTINSVILLE         71  ...            2         3
+1435                              28075-583 - MT GILEAD        189  ...            2         3
+1436               28123-BEAT 3/COOPERVILLE/SPRINGFIELD         45  ...            2         3
+1437                      28123-BEAT 3/NORTHWEST FOREST         23  ...            2         3
+1445                                   28035-EATONVILLE        197  ...            2         3
+1448                                   28121-CROSSROADS         63  ...            2         3
+1449                   28113-(24) ST. MARY OF THE PINES        331  ...            2         3
+1451                                    28129-SYLVARENA         17  ...            2         3
+1453                               28121-RICHLAND SOUTH        523  ...            2         3
+1455                 28069-LITTLE ROCK COMMUNITY CENTER        306  ...            2         3
+1456                               28069-FARMERS MARKET         64  ...            2         3
+1457                                      28031-STRAHAN         31  ...            2         3
+1460                                    28085-FORRESTRY        208  ...            2         3
+1463                                       28121-FANNIN        360  ...            2         3
+1465                                   28029-BEAUREGARD        145  ...            2         3
+1467                 28113-(15) FRIENDSHIP BAPT. CHURCH        158  ...            2         3
+1468                                    28159-MARS HILL        250  ...            2         3
+1472                      28113-(20) PIKE CO. NAT. BANK        324  ...            2         3
+1474                                        28025-PHEBA        235  ...            2         3
+1478                                    28129-POLKVILLE         30  ...            2         3
+1483                                         28085-RUTH         25  ...            2         3
+1484                                 28065-MT CARMEL 42        186  ...            2         3
+1487                                      28023-SPRINGS         75  ...            2         3
+1488                                     28069-LYNVILLE        120  ...            2         3
+1495                                    28085-LOYD STAR        182  ...            2         3
+1496                                  28077-PEYTON TOWN        135  ...            2         3
+1497                                    28061-ROSE HILL        154  ...            2         3
+1503                                        28061-LOUIN        309  ...            2         3
+1504                       28099-PHILADELPHIA SOUTHEAST        251  ...            2         3
+1505                                    28129-WHITE OAK         15  ...            2         3
+1512                              28077-WEST DISTRICT 1         10  ...            2         3
+1514                                   28091-BALLS MILL        127  ...            2         3
+1517                               28091-NATIONAL GUARD        157  ...            2         3
+1519                                    28091-PINE BURR        112  ...            2         3
+1523                             28029-GEORGETOWN SOUTH        141  ...            2         3
+1524                           28075-331 - COLLINSVILLE        298  ...            2         3
+1526                                   28075-549 - ODOM        173  ...            2         3
+1531                              28105-STARKVILLE EAST        223  ...            2         3
+1533                                28091-COLUMBIA EAST        674  ...            2         3
+1535                                 28121-GRANTS FERRY        856  ...            2         3
+1537                         28085-GOVERNMENTAL COMPLEX        440  ...            2         3
+1539                                      28147-ST PAUL        152  ...            2         3
+1540                                      28099-HERBERT         22  ...            2         3
+1541                28113-(23) WEST MCCOMB BAPT. CHURCH        267  ...            2         3
+1542                                   28075-105 - FIVE        586  ...            2         3
+1543                                     28067-MATTHEWS         37  ...            2         3
+1547                                       28121-SHILOH         89  ...            2         3
+1548                                  28123-BEAT 2/LAKE        122  ...            2         3
+1549                                         28121-CATO        214  ...            2         3
+1550                                 28121-CLEAR BRANCH        149  ...            2         3
+1551                               28069-KEMPER SPRINGS        113  ...            2         3
+1559                                 28087-WEST LOWNDES        279  ...            2         3
+1561                                28031-STATION CREEK        297  ...            2         3
+1564                    28089-TWIN LAKES BAPTIST CHURCH        540  ...            2         3
+1571                               28085-HEUCKS RETREAT        109  ...            2         3
+1575                                  28067-SHADY GROVE        609  ...            2         3
+1579                                      28085-JOHNSON         81  ...            2         3
+1586                                       28073-MIDWAY        198  ...            2         3
+1587                                 28067-SANDERSVILLE        119  ...            2         3
+1591                                          28091-HUB        215  ...            2         3
+1592                                      28153-EUCUTTA         53  ...            2         3
+1595        28089-FEARNS CHAPEL FREEWILL BAPTIST CHURCH        405  ...            2         3
+1596                                     28089-NORTHBAY        223  ...            2         3
+1605                                      28127-JUPITER        395  ...            2         3
+1611                                       28121-CLEARY        176  ...            2         3
+1613                              28075-361 - SUQUALENA        350  ...            2         3
+1614                              28159-AMERICAN LEGION        686  ...            2         3
+1615                               28121-ANTIOCH-MAYTON         67  ...            2         3
+1616                                   28085-FAIR RIVER         14  ...            2         3
+1618                                      28067-CALHOUN        102  ...            2         3
+1621                                 28099-NESHOBA EAST        206  ...            2         3
+1624                                 28075-565 - WHYNOT         86  ...            2         3
+1625                                   28077-WANILLA 91         44  ...            2         3
+1628                             28123-BEAT 4/FORKVILLE         13  ...            2         3
+1631                                         28129-MIZE         37  ...            2         3
+1633                 28089-PLEASANT GIFT BAPTIST CHURCH        409  ...            2         3
+1635                                 28127-MENDENHALL 1        172  ...            2         3
+1636                                 28159-WINSTON EAST        156  ...            2         3
+1639                                         28061-MOSS        150  ...            2         3
+1640                                      28023-SHUBUTA        420  ...            2         3
+1641                                 28105-NORTH ADATON        293  ...            2         3
+1642                                 28127-MENDENHALL 3        168  ...            2         3
+1644                      28089-FELLOWSHIP BIBLE CHURCH        586  ...            2         3
+1646                                  28123-BEAT 2/USRY         31  ...            2         3
+1649                            28075-329 - CENTER HILL        171  ...            2         3
+1651                                  28099-COUNTY LINE         24  ...            2         3
+1653                                28023-ROLLING CREEK         24  ...            2         3
+1656                                      28105-STURGIS        201  ...            2         3
+1669                        28113-(22) CHURCH OF CHRIST        502  ...            2         3
+1670                                   28019-DISTRICT 5        168  ...            2         3
+1677                       28147-TYLERTOWN 4TH DISTRICT         27  ...            2         3
+1680                                      28127-BRAXTON         57  ...            2         3
+1683                                  28075-408 - EIGHT        541  ...            2         3
+1684                                       28067-SHARON        168  ...            2         3
+1695                             28067-L T ELLIS CENTER       1249  ...            2         3
+1698                      28089-NEW LIFE BAPTIST CHURCH        391  ...            2         3
+1703                           28061-BAY SPRINGS BEAT 4        395  ...            2         3
+1704                           28061-BAY SPRINGS BEAT 3        456  ...            2         3
+1713                              28075-235 - DALEVILLE        200  ...            2         3
+1714                                       28091-KOKOMO        117  ...            2         3
+1715                               28105-LONGVIEW NORTH        181  ...            2         3
+1720                                    28091-CITY HALL        118  ...            2         3
+1721                                    28159-NOXAPATER        256  ...            2         3
+1727                                       28067-RUSTIN         24  ...            2         3
+1729                                   28049-POCAHONTAS        313  ...            2         3
+1732                                       28121-PISGAH        235  ...            2         3
+1733                                   28065-WHITING 56        242  ...            2         3
+1735     28113-(21) OLD PROGRESS VOLUNTEER FIRE STATION        496  ...            2         3
+1736                                       28091-CARLEY         56  ...            2         3
+1737                           28105-STARKVILLE NORTH 3        903  ...            2         3
+1738                                   28085-ENTERPRISE         75  ...            2         3
+1740                           28105-STARKVILLE NORTH 2        580  ...            2         3
+1741                                       28147-DEXTER        140  ...            2         3
+1742                                  28085-HIGH SCHOOL        380  ...            2         3
+1744                               28075-313 - THIRTEEN        810  ...            2         3
+1748                                     28101-LAWRENCE        343  ...            2         3
+1750                                 28065-GOOD HOPE 33        102  ...            2         3
+1751                                  28073-BAXTERVILLE         16  ...            2         3
+1757                                    28099-ARLINGTON         14  ...            2         3
+1760                                28075-450 - PICKARD        148  ...            2         3
+1761                                 28075-411 - ELEVEN        649  ...            2         3
+
+[2041 rows x 9 columns]
