@@ -41,7 +41,7 @@ mat-grid-tile div {
 
 .district-select {
   font-size: small;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   align-items: center;
   display: inline-flex;
 
@@ -50,7 +50,7 @@ mat-grid-tile div {
 .district-title {
   margin-top: 10px;
 }
-/* 
+/*
 .divider {
   border-top-color: black;
 } */
@@ -60,3 +60,8 @@ mat-grid-tile div {
   font-weight: 550;
   margin-bottom: 5px;
 }
+
+.second-div {
+  margin-top: 5px;
+}
+

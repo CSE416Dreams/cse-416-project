@@ -81,6 +81,7 @@
       </mat-card-title>
       <div class="spacer"></div>
       <div class="district-select-div">Currently Showing : </div>
+
       <button mat-raised-button [matMenuTriggerFor]="menu" yPosition="below" class="district-select">
         District {{ this.controller.getSelectedDistrict() }}
       </button>
@@ -109,14 +110,42 @@
           <mat-grid-list cols="1" rowHeight="40px">
             <mat-grid-tile>
               <div>
-                Incumbent : {{ this.controller.getCurrentDistrictData().incumbent }}
+                District # : {{ this.controller.getCurrentDistrictData().districtNum }}
               </div>
             </mat-grid-tile>
           </mat-grid-list>
-
           <mat-divider></mat-divider>
-
-
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+               Incumbent : {{ this.controller.getCurrentDistrictData().incumbent }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+               Total Population : {{ this.controller.getCurrentDistrictData().population }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+               Democratic Votes : {{ this.controller.getCurrentDistrictData().voteDem }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+               Republican Votes : {{ this.controller.getCurrentDistrictData().voteRep }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
           <mat-divider></mat-divider>
 
 
@@ -125,8 +154,81 @@
 
       <mat-card class="card">
         <mat-card-header>
-          Hello
+          <div class="sub-title" style="font-weight: 550; font-size: large; text-align: left;">
+            Demographics
+          </div>
         </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-tile>
+            <div>
+              is Majority-Minority District : {{ this.controller.getCurrentDistrictData().MMD }}
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                Asian : {{ this.controller.getCurrentDistrictData().demographics.asianPopulation }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                Black : {{ this.controller.getCurrentDistrictData().demographics.blackPopulation }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                Hispanic : {{ this.controller.getCurrentDistrictData().demographics.hispanicPopulation }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                White : {{ this.controller.getCurrentDistrictData().demographics.whitePopulation }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <div class="sub-title" style="font-weight: 550; font-size: large; text-align: left;">
+            Compactness
+          </div>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                Polsby-Popper Value : {{ this.controller.getCurrentDistrictData().polsbyPopperValue.toFixed(4) }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+               Schwartzberg Value : {{ this.controller.getCurrentDistrictData().schwartzbergValue.toFixed(4) }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+        </mat-card-content>
       </mat-card>
 
 

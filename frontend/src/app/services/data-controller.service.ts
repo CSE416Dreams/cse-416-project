@@ -138,11 +138,14 @@ export class DataControllerService {
     if(this.selectedPlan == this.plansData[index-1].planName) {
       return;
     }
+
     this.selectedDistrict = 1;
     this.mapController.hideCurrentMap(this.selectedState, this.currentMap);
     this.selectedPlan = this.plansData[index-1].planName;
     this.currentMap = this.selectedPlan;
     this.mapController.showDistrictMap(this.selectedState, this.currentMap);
+
+    console.log(this.getCurrentPlanData());
     return;
   }
 
