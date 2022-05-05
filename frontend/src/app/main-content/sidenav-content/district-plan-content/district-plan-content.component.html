@@ -237,7 +237,7 @@
     </mat-card-content>
   </mat-card>
 
-  <!-- <mat-card class="card">
+  <mat-card class="card">
     <mat-card-header>
       <mat-card-title>
         Seat Share / Vote Share Plot
@@ -247,22 +247,26 @@
 
     <mat-card-content>
 
-      <ngx-charts-bar-vertical
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="single"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel">
-</ngx-charts-bar-vertical>
+      <ngx-charts-line-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [legend]="legend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [timeline]="timeline"
+      [results]="multi"
+      (select)="onSelect($event)"
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)"
+      >
+    </ngx-charts-line-chart>
 
     </mat-card-content>
-  </mat-card> -->
+  </mat-card>
 
   <br>
   <br>

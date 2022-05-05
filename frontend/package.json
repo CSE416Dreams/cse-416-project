@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "0g": "^0.0.6",
     "@angular/animations": "~13.2.0",
     "@angular/cdk": "^13.3.4",
     "@angular/common": "~13.2.0",
@@ -21,7 +22,6 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@swimlane/ngx-charts": "^20.1.0",
-    "0g": "^0.0.6",
     "mapbox-gl": "^2.8.0",
     "ngx-echarts": "^8.0.1",
     "npm": "^8.6.0",
