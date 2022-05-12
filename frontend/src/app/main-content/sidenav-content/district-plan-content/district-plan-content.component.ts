@@ -88,8 +88,14 @@ export class DistrictPlanContentComponent implements OnInit {
         }
       ],
       chart: {
-        height: 350,
-        type: "candlestick"
+        height: 400,
+        type: "candlestick",
+        toolbar: {
+          show: false
+        },
+        zoom: {
+          enabled: false
+        }
       },
       title: {
         text: "Basic BoxPlot Chart",
