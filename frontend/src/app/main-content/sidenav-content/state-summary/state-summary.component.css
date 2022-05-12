@@ -6,27 +6,26 @@
   right: 50%;
   left: 67%;
 }
-
-
-.district-plan-card-no-hover {
+.expansion {
   margin-left: 10px;
   margin-right: 10px;
-  margin-top: 15px;
+}
+
+.card {
   border: 1px solid rgb(219, 214, 214);
 }
 
-.district-plan-card {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 15px;
-  border: 1px solid rgb(219, 214, 214);
+.spacer {
+  flex: 1 1 auto;
 }
 
-.district-plan-card:hover {
+.detail-button {
+  margin-bottom: 10px;
+  background-color: rgb(172, 172, 172);
+}
+.detail-button:hover {
   box-shadow: 0 3px 8px rgba(0,0,0,0.8);
-  cursor: pointer;
 }
-
 
 
 mat-grid-tile div {

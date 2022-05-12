@@ -117,6 +117,7 @@ export class DataControllerService {
       this.mapController.resetToInitial(oldState);
     }
     await this.getState();
+    console.log(this.plansData);
     this.currentMap = this.plansData[0].planName;
     this.mapController.showDistrictMap(this.selectedState, this.currentMap);
     return;

@@ -19,77 +19,88 @@
     <br/>
 
     <div class="plans-div">Plans :</div>
-
-    <div *ngFor="let plan of this.controller.getPlansData(); index as i">
-        <mat-card class="district-plan-card" (click)="this.controller.changeSelectedPlan(i+1)">
+    <br/>
+    <mat-accordion>
+      <div *ngFor="let plan of this.controller.getPlansData(); index as i" class="expansion">
+        <mat-expansion-panel [expanded]="this.controller.getPlanData(i).planStatus == 'Approved' ? 'true': 'false'">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Plan Name : {{ plan.planName }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ this.controller.getPlanData(i).planStatus }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card class="card">
           <mat-card-header>
-            <mat-card-title> Plan Name : {{ plan.planName }} </mat-card-title>
+            <div class="spacer"></div>
+            <button mat-raised-button class="detail-button" (click)="this.controller.changeSelectedPlan(i+1)">See details</button>
           </mat-card-header>
-          <mat-divider class="divider"></mat-divider>
+          <mat-divider></mat-divider>
+        <mat-card-content>
+          <mat-grid-list cols="2" rowHeight="40px">
+            <mat-grid-tile>
+              <div>Plan Status : {{ this.controller.getPlanData(i).planStatus }}</div>
+              <mat-divider vertical style="height: 45px"></mat-divider>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>Proposed By : {{ this.controller.getPlanData(i).proposedBy }}</div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
 
-          <mat-card-content>
-            <mat-grid-list cols="2" rowHeight="40px">
-              <mat-grid-tile>
-                <div>Plan Status : {{ this.controller.getPlanData(i).planStatus }}</div>
-                <mat-divider vertical style="height: 45px"></mat-divider>
-              </mat-grid-tile>
-              <mat-grid-tile>
-                <div>Proposed By : {{ this.controller.getPlanData(i).proposedBy }}</div>
-              </mat-grid-tile>
-            </mat-grid-list>
-            <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div *ngIf="this.controller.getPlanData(i).planStatus == 'Approved'">
+                Date Approved : {{ this.controller.getPlanData(i).planDate }}
+              </div>
+              <div *ngIf="this.controller.getPlanData(i).planStatus == 'Rejected'">
+                Date Rejected : {{ this.controller.getPlanData(i).planDate }}
+              </div>
+              <div *ngIf="this.controller.getPlanData(i).planStatus == 'Proposed'">
+                Date Proposed : {{ this.controller.getPlanData(i).planDate }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
 
-            <mat-grid-list cols="1" rowHeight="40px">
-              <mat-grid-tile>
-                <div *ngIf="this.controller.getPlanData(i).planStatus == 'Approved'">
-                  Date Approved : {{ this.controller.getPlanData(i).planDate }}
-                </div>
-                <div *ngIf="this.controller.getPlanData(i).planStatus == 'Rejected'">
-                  Date Rejected : {{ this.controller.getPlanData(i).planDate }}
-                </div>
-                <div *ngIf="this.controller.getPlanData(i).planStatus == 'Proposed'">
-                  Date Proposed : {{ this.controller.getPlanData(i).planDate }}
-                </div>
-              </mat-grid-tile>
-            </mat-grid-list>
+          <mat-divider></mat-divider>
 
-            <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>Average Polsby-Popper Value : {{ this.controller.getPlanData(i).avgPolsbyPopperValue.toFixed(4) }}</div>
+            </mat-grid-tile>
+          </mat-grid-list>
 
-            <mat-grid-list cols="1" rowHeight="40px">
-              <mat-grid-tile>
-                <div>Average Polsby-Popper Value : {{ this.controller.getPlanData(i).avgPolsbyPopperValue.toFixed(4) }}</div>
-              </mat-grid-tile>
-            </mat-grid-list>
+          <mat-divider></mat-divider>
 
-            <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>Total # of Majority-Minority districts : {{this.controller.getPlanData(i).numOfMajorityMinorityDistricts }}</div>
+            </mat-grid-tile>
+          </mat-grid-list>
 
-            <mat-grid-list cols="1" rowHeight="40px">
-              <mat-grid-tile>
-                <div>Total # of Majority-Minority districts : {{this.controller.getPlanData(i).numOfMajorityMinorityDistricts }}</div>
-              </mat-grid-tile>
-            </mat-grid-list>
+          <mat-divider></mat-divider>
 
-            <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>Equal Population Measure : {{ this.controller.getPlanData(i).eqPopMeasure.toFixed(4) }}</div>
+            </mat-grid-tile>
+          </mat-grid-list>
 
-            <mat-grid-list cols="1" rowHeight="40px">
-              <mat-grid-tile>
-                <div>Equal Population Measure : {{ this.controller.getPlanData(i).eqPopMeasure.toFixed(4) }}</div>
-              </mat-grid-tile>
-            </mat-grid-list>
+          <mat-divider></mat-divider>
 
-            <mat-divider></mat-divider>
+          <mat-grid-list cols="1" rowHeight="60px">
+            <mat-grid-tile>
+              <div>Republican / Democratic Split :</div>
+            </mat-grid-tile>
+          </mat-grid-list>
 
-            <mat-grid-list cols="1" rowHeight="60px">
-              <mat-grid-tile>
-                <div>Republican / Democratic Split :</div>
-              </mat-grid-tile>
-            </mat-grid-list>
-
-            <mat-divider></mat-divider>
-          </mat-card-content>
+          <mat-divider></mat-divider>
+        </mat-card-content>
         </mat-card>
-
-    </div>
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
   </div>
 </div>
 <br />
