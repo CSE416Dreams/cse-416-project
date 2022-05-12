@@ -273,6 +273,29 @@
         </mat-card-content>
       </mat-card>
     </mat-tab>
+    <mat-tab label="Box and whisker">
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title>
+            Box and Whisker
+          </mat-card-title>
+        </mat-card-header>
+        <mat-divider class="divider"></mat-divider>
+
+        <mat-card-content>
+          <div id="chart">
+            <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [plotOptions]="chartOptions.plotOptions"
+              [title]="chartOptions.title"
+            ></apx-chart>
+          </div>
+
+
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
   </mat-tab-group>
 
 

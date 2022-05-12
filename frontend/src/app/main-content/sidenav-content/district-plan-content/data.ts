@@ -16,7 +16,7 @@ export var multi = [
     //     },
     //   ],
     // },
-  
+
     // {
     //   name: 'USA',
     //   series: [
@@ -34,7 +34,7 @@ export var multi = [
     //     },
     //   ],
     // },
-  
+
     // {
     //   name: 'France',
     //   series: [
@@ -65,7 +65,7 @@ export var multi = [
     //     },
     //   ],
     // },
-    
+
       name: "Republican",
       series: [
        {
@@ -883,4 +883,3 @@ series: [
 ]
 }
   ];
-  

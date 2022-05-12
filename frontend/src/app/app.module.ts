@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgApexchartsModule } from 'ng-apexcharts';
 // Angular material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
@@ -73,7 +74,8 @@ import { CompareDialogComponent } from './main-content/sidenav-content/compare-d
     MatMenuModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
-    NgxChartsModule
+    NgxChartsModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
