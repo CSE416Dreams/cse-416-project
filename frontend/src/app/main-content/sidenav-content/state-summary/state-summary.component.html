@@ -40,26 +40,35 @@
         <mat-card-content>
           <mat-grid-list cols="2" rowHeight="40px">
             <mat-grid-tile>
-              <div>Plan Status : {{ this.controller.getPlanData(i).planStatus }}</div>
+              <div>Plan Status :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px"> {{ this.controller.getPlanData(i).planStatus }}</div>
               <mat-divider vertical style="height: 45px"></mat-divider>
             </mat-grid-tile>
             <mat-grid-tile>
-              <div>Proposed By : {{ this.controller.getPlanData(i).proposedBy }}</div>
+              <div>Proposed By :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getPlanData(i).proposedBy }}</div>
             </mat-grid-tile>
           </mat-grid-list>
           <mat-divider></mat-divider>
 
-          <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-list cols="2" rowHeight="40px">
             <mat-grid-tile>
               <div *ngIf="this.controller.getPlanData(i).planStatus == 'Approved'">
-                Date Approved : {{ this.controller.getPlanData(i).planDate }}
+                Date Approved :
               </div>
               <div *ngIf="this.controller.getPlanData(i).planStatus == 'Rejected'">
-                Date Rejected : {{ this.controller.getPlanData(i).planDate }}
+                Date Rejected :
               </div>
               <div *ngIf="this.controller.getPlanData(i).planStatus == 'Proposed'">
-                Date Proposed : {{ this.controller.getPlanData(i).planDate }}
+                Date Proposed :
               </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getPlanData(i).planDate }}</div>
+              <mat-divider vertical style="height: 45px"></mat-divider>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <div># of Districts :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px"> {{ this.controller.getPlanData(i).districts.length }}</div>
             </mat-grid-tile>
           </mat-grid-list>
 
@@ -67,7 +76,18 @@
 
           <mat-grid-list cols="1" rowHeight="40px">
             <mat-grid-tile>
-              <div>Average Polsby-Popper Value : {{ this.controller.getPlanData(i).avgPolsbyPopperValue.toFixed(4) }}</div>
+              <div>Average Polsby-Popper Value :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getPlanData(i).avgPolsbyPopperValue.toFixed(4) }}</div>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+
+          <mat-divider></mat-divider>
+
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>Total # of Majority-Minority districts :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{this.controller.getPlanData(i).numOfMajorityMinorityDistricts }}</div>
             </mat-grid-tile>
           </mat-grid-list>
 
@@ -75,23 +95,23 @@
 
           <mat-grid-list cols="1" rowHeight="40px">
             <mat-grid-tile>
-              <div>Total # of Majority-Minority districts : {{this.controller.getPlanData(i).numOfMajorityMinorityDistricts }}</div>
+              <div>Equal Population Measure :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getPlanData(i).eqPopMeasure.toFixed(4) }}</div>
             </mat-grid-tile>
           </mat-grid-list>
 
           <mat-divider></mat-divider>
 
           <mat-grid-list cols="1" rowHeight="40px">
-            <mat-grid-tile>
-              <div>Equal Population Measure : {{ this.controller.getPlanData(i).eqPopMeasure.toFixed(4) }}</div>
-            </mat-grid-tile>
-          </mat-grid-list>
-
-          <mat-divider></mat-divider>
-
-          <mat-grid-list cols="1" rowHeight="60px">
             <mat-grid-tile>
               <div>Republican / Democratic Split :</div>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="1" rowHeight="150px">
+            <mat-grid-tile>
+              <div *ngFor="let split of this.controller.getRepDemSplit(plan); index as i" [ngClass]="{'red-box' : split == 'red', 'blue-box' : split == 'blue'}">
+              </div>
             </mat-grid-tile>
           </mat-grid-list>
 

@@ -21,66 +21,191 @@
         <mat-card-content>
           <mat-grid-list cols="2" rowHeight="40px">
             <mat-grid-tile>
-              <div>
-                Plan Name : {{ this.controller.getSelectedPlan() }}
-              </div>
+              <div>Plan Name :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getSelectedPlan() }}</div>
               <mat-divider vertical style="height: 45px"></mat-divider>
             </mat-grid-tile>
             <mat-grid-tile>
-              <div>
-                Plan Status : {{ this.controller.getCurrentPlanData().planStatus }}
-              </div>
+              <div>Plan Status :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getCurrentPlanData().planStatus }}</div>
             </mat-grid-tile>
           </mat-grid-list>
           <mat-divider></mat-divider>
 
-          <mat-grid-list cols="3" rowHeight="40px">
-            <mat-grid-tile [colspan]="2">
-              <div>
-                Proposed By : {{ this.controller.getCurrentPlanData().proposedBy }}
-              </div>
+          <mat-grid-list cols="2" rowHeight="40px">
+            <mat-grid-tile>
+              <div>Proposed By : </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getCurrentPlanData().proposedBy }}</div>
               <mat-divider vertical style="height: 45px"></mat-divider>
             </mat-grid-tile>
 
             <mat-grid-tile>
-              <div>
-                # of Districts : {{ this.controller.getCurrentPlanData().districts.length }}
-              </div>
+              <div># of Districts :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getCurrentPlanData().districts.length }}</div>
             </mat-grid-tile>
           </mat-grid-list>
           <mat-divider></mat-divider>
 
-          <mat-grid-list cols="1" rowHeight="40px">
+          <mat-grid-list cols="2" rowHeight="40px">
             <mat-grid-tile>
               <div *ngIf="this.controller.getCurrentPlanData().planStatus == 'Approved'">
-                Date Approved : {{ this.controller.getCurrentPlanData().planDate }}
+                Date Approved :
               </div>
               <div *ngIf="this.controller.getCurrentPlanData().planStatus == 'Rejected'">
-                Date Rejected : {{ this.controller.getCurrentPlanData().planDate }}
+                Date Rejected :
               </div>
               <div *ngIf="this.controller.getCurrentPlanData().planStatus == 'Proposed'">
-                Date Proposed : {{ this.controller.getCurrentPlanData().planDate }}
+                Date Proposed :
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">
+                {{ this.controller.getCurrentPlanData().planDate }}
+              </div>
+              <mat-divider vertical style="height: 45px"></mat-divider>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <div>
+                # of Majority-Minority Districts :
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">
+                  {{ this.controller.getCurrentPlanData().numOfMajorityMinorityDistricts }}
               </div>
             </mat-grid-tile>
           </mat-grid-list>
 
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="2" rowHeight="40px">
+            <mat-grid-tile>
+              <div>Average Polsby-Popper :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getCurrentPlanData().avgPolsbyPopperValue.toFixed(4) }}</div>
+              <mat-divider vertical style="height: 45px"></mat-divider>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>Efficiency Gap :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getCurrentPlanData().efficiencyGap.toFixed(4) }}</div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+
+          <mat-grid-list cols="2" rowHeight="40px">
+            <mat-grid-tile>
+              <div>Equal Population Measure :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getCurrentPlanData().eqPopMeasure.toFixed(4) }}</div>
+              <mat-divider vertical style="height: 45px"></mat-divider>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>Mean-Median Diff :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getCurrentPlanData().meanMedianDifference.toFixed(4) }}</div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+
+          <mat-grid-list cols="2" rowHeight="40px">
+            <mat-grid-tile>
+              <div># of Split Counties :</div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">{{ this.controller.getCurrentPlanData().numSplitCounties }}</div>
+              <mat-divider vertical style="height: 45px"></mat-divider>
+            </mat-grid-tile>
+
+          </mat-grid-list>
           <mat-divider></mat-divider>
 
           <mat-grid-list cols="1" rowHeight="40px">
             <mat-grid-tile>
-              <div>
-                # of Majority-Minority Districts : {{ this.controller.getCurrentPlanData().numOfMajorityMinorityDistricts }}
+              <div>Republican / Democratic Split :</div>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="1" rowHeight="150px">
+            <mat-grid-tile>
+              <div *ngFor="let split of this.controller.getRepDemSplit(this.controller.getCurrentPlanData()); index as i" [ngClass]="{'red-box' : split == 'red', 'blue-box' : split == 'blue'}">
               </div>
             </mat-grid-tile>
           </mat-grid-list>
-          <mat-divider></mat-divider>
+
         </mat-card-content>
       </mat-card>
     </mat-tab>
 
     <mat-tab label="Demographics">
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title>
+            State Demographics
+          </mat-card-title>
+        </mat-card-header>
+        <mat-divider class="divider"></mat-divider>
 
+        <mat-card-content>
+          <mat-grid-list cols="2" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                White :
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">
+                {{ this.controller.getCurrentPlanData().demographicsTotals[0].toLocaleString("en-US") }}
+              </div>
+              <mat-divider vertical style="height: 45px"></mat-divider>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                African American :
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">
+                {{ this.controller.getCurrentPlanData().demographicsTotals[1].toLocaleString("en-US") }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+          <mat-grid-list cols="2" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                Asian :
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">
+                {{  this.controller.getCurrentPlanData().demographicsTotals[2].toLocaleString("en-US") }}
+              </div>
+              <mat-divider vertical style="height: 45px"></mat-divider>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <div>
+                Hispanic :
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">
+                {{  this.controller.getCurrentPlanData().demographicsTotals[3].toLocaleString("en-US") }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                American Indian & Alaska Native :
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">
+                {{  this.controller.getCurrentPlanData().demographicsTotals[4].toLocaleString("en-US") }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+
+          <mat-grid-list cols="1" rowHeight="40px">
+            <mat-grid-tile>
+              <div>
+                Native Hawaiian and Other Pacific Islander (OPI) :
+              </div>
+              <div style="display: flex; justify-content: flex-end; margin-right: 15px">
+                {{  this.controller.getCurrentPlanData().demographicsTotals[5].toLocaleString("en-US") }}
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+
+      </mat-card>
     </mat-tab>
+
     <mat-tab label="District Information">
       <mat-card class="card">
         <mat-card-header>
@@ -273,7 +398,7 @@
         </mat-card-content>
       </mat-card>
     </mat-tab>
-    <mat-tab label="Box and whisker">
+    <!-- <mat-tab label="Box and whisker">
       <mat-card class="card">
         <mat-card-header>
           <mat-card-title>
@@ -295,7 +420,7 @@
 
         </mat-card-content>
       </mat-card>
-    </mat-tab>
+    </mat-tab> -->
   </mat-tab-group>
 
 

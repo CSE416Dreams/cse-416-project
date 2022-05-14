@@ -303,12 +303,23 @@ export class MapControllerService {
       })
       this.mainMap.once('sourcedata', () => {
         var hoveredDistrictID = null;
+        var popup = new mapboxgl.Popup({
+          closeButton: false,
+          closeOnClick: false
+        })
         this.mainMap.on('mousemove', state.toLowerCase()+'-'+planName, (e) => {
           if(hoveredDistrictID !== null) {
             this.mainMap.setFeatureState(
               { source : state.toLowerCase()+'-'+planName, id: hoveredDistrictID },
               { hover : false }
             )
+
+            ////////////////
+            var description = "District # : "+e.features[0].properties.District;
+            var coordinate = e.lngLat;
+            coordinate.lat = coordinate.lat + 0.15;
+            popup.setLngLat(coordinate).setHTML(description).addTo(this.mainMap);
+            ////////////////
           }
           this.mainMap.setFeatureState(
             { source:  state.toLowerCase()+'-'+planName, id: e.features[0].id},
@@ -321,6 +332,7 @@ export class MapControllerService {
             { source: state.toLowerCase()+'-'+planName, id: hoveredDistrictID },
             { hover: false }
           )
+          popup.remove();
         })
       })
     })

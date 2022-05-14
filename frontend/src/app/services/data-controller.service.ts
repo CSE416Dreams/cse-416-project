@@ -65,6 +65,18 @@ export class DataControllerService {
     return this.plansData;
   }
 
+  getRepDemSplit(plan: any) {
+    let result = [];
+    for(let i = 0; i < plan.repDemSplit[1]; i++) {
+      result.push("blue");
+    }
+    for(let i = 0; i < plan.repDemSplit[0]; i++) {
+      result.push("red");
+    }
+
+    return result;
+  }
+
   clearData() {
     this.stateData = undefined;
     this.plansData = [];
@@ -183,7 +195,7 @@ export class DataControllerService {
     .then(result => {
       let jsonObj = JSON.parse(result);
       for(let i = 0; i < jsonObj.dps.length; i++) {
-        if(jsonObj.dps[i].planStatus == "Approved") {
+        if(jsonObj.dps[i].planStatus == "Approved" || jsonObj.dps[i].planStatus == "In Litigation") {
           this.plansData.splice(0, 0, jsonObj.dps[i])
         }
         else if(jsonObj.dps[i].planStatus == "Rejected") {

@@ -66,3 +66,22 @@ mat-grid-tile div {
   margin-top: 5px;
 }
 
+.blue-box {
+  background-color: rgb(56, 56, 241);
+  border-style: solid;
+  border-color: rgb(56, 56, 241);
+  height: 80px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 5px;
+}
+
+.red-box {
+  background-color: rgb(255, 59, 59);
+  border-style: solid;
+  border-color: rgb(255, 59, 59);
+  height: 80px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 5px;
+}
