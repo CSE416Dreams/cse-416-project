@@ -16,10 +16,10 @@
     >
       Display Seawulf Ensemble Summary
     </button>
-    <br/>
+    <!-- <br/> -->
 
     <div class="plans-div">Plans :</div>
-    <br/>
+    <!-- <br/> -->
     <mat-accordion>
       <div *ngFor="let plan of this.controller.getPlansData(); index as i" class="expansion">
         <mat-expansion-panel [expanded]="this.controller.getPlanData(i).planStatus == 'Approved' ? 'true': 'false'">
@@ -108,7 +108,7 @@
             </mat-grid-tile>
           </mat-grid-list>
 
-          <mat-grid-list cols="1" rowHeight="150px">
+          <mat-grid-list cols="1" rowHeight="80px">
             <mat-grid-tile>
               <div *ngFor="let split of this.controller.getRepDemSplit(plan); index as i" [ngClass]="{'red-box' : split == 'red', 'blue-box' : split == 'blue'}">
               </div>

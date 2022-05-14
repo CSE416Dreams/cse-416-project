@@ -116,7 +116,7 @@
             </mat-grid-tile>
           </mat-grid-list>
 
-          <mat-grid-list cols="1" rowHeight="150px">
+          <mat-grid-list cols="1" rowHeight="80px">
             <mat-grid-tile>
               <div *ngFor="let split of this.controller.getRepDemSplit(this.controller.getCurrentPlanData()); index as i" [ngClass]="{'red-box' : split == 'red', 'blue-box' : split == 'blue'}">
               </div>
@@ -143,7 +143,9 @@
                 White :
               </div>
               <div style="display: flex; justify-content: flex-end; margin-right: 15px">
-                {{ this.controller.getCurrentPlanData().demographicsTotals[0].toLocaleString("en-US") }}
+                {{ this.controller.getCurrentPlanData().demographicsTotals[0] != null ? 
+                  this.controller.getCurrentPlanData().demographicsTotals[0].toLocaleString("en-US") : 
+                  'Not Defined' }}
               </div>
               <mat-divider vertical style="height: 45px"></mat-divider>
             </mat-grid-tile>
@@ -152,7 +154,9 @@
                 African American :
               </div>
               <div style="display: flex; justify-content: flex-end; margin-right: 15px">
-                {{ this.controller.getCurrentPlanData().demographicsTotals[1].toLocaleString("en-US") }}
+                {{ this.controller.getCurrentPlanData().demographicsTotals[1] != null ? 
+                  this.controller.getCurrentPlanData().demographicsTotals[1].toLocaleString("en-US") : 
+                  'Not Defined' }}
               </div>
             </mat-grid-tile>
           </mat-grid-list>
@@ -163,7 +167,9 @@
                 Asian :
               </div>
               <div style="display: flex; justify-content: flex-end; margin-right: 15px">
-                {{  this.controller.getCurrentPlanData().demographicsTotals[2].toLocaleString("en-US") }}
+                {{ this.controller.getCurrentPlanData().demographicsTotals[2] != null ? 
+                  this.controller.getCurrentPlanData().demographicsTotals[2].toLocaleString("en-US") : 
+                  'Not Defined' }}
               </div>
               <mat-divider vertical style="height: 45px"></mat-divider>
             </mat-grid-tile>
@@ -172,7 +178,9 @@
                 Hispanic :
               </div>
               <div style="display: flex; justify-content: flex-end; margin-right: 15px">
-                {{  this.controller.getCurrentPlanData().demographicsTotals[3].toLocaleString("en-US") }}
+                {{ this.controller.getCurrentPlanData().demographicsTotals[3] != null ? 
+                  this.controller.getCurrentPlanData().demographicsTotals[3].toLocaleString("en-US") : 
+                  'Not Defined' }}
               </div>
             </mat-grid-tile>
           </mat-grid-list>
@@ -184,7 +192,9 @@
                 American Indian & Alaska Native :
               </div>
               <div style="display: flex; justify-content: flex-end; margin-right: 15px">
-                {{  this.controller.getCurrentPlanData().demographicsTotals[4].toLocaleString("en-US") }}
+                {{ this.controller.getCurrentPlanData().demographicsTotals[4] != null ? 
+                  this.controller.getCurrentPlanData().demographicsTotals[4].toLocaleString("en-US") : 
+                  'Not Defined' }}
               </div>
             </mat-grid-tile>
           </mat-grid-list>
@@ -196,7 +206,9 @@
                 Native Hawaiian and Other Pacific Islander (OPI) :
               </div>
               <div style="display: flex; justify-content: flex-end; margin-right: 15px">
-                {{  this.controller.getCurrentPlanData().demographicsTotals[5].toLocaleString("en-US") }}
+                {{ this.controller.getCurrentPlanData().demographicsTotals[5] != null ? 
+                  this.controller.getCurrentPlanData().demographicsTotals[5].toLocaleString("en-US") : 
+                  'Not Defined' }}
               </div>
             </mat-grid-tile>
           </mat-grid-list>
