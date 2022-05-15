@@ -73,7 +73,7 @@ mat-grid-tile div {
   height: 80px;
   margin-left: 2px;
   margin-right: 2px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .red-box {
@@ -83,5 +83,5 @@ mat-grid-tile div {
   height: 80px;
   margin-left: 2px;
   margin-right: 2px;
-  border-radius: 5px;
+  border-radius: 10px;
 }

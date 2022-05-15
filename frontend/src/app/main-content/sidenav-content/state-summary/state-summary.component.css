@@ -62,7 +62,7 @@ mat-panel-title {
   height: 80px;
   margin-left: 2px;
   margin-right: 2px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .red-box {
@@ -72,6 +72,6 @@ mat-panel-title {
   height: 80px;
   margin-left: 2px;
   margin-right: 2px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
