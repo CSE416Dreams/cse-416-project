@@ -389,9 +389,7 @@
                     </mat-grid-tile>
 
                     <mat-grid-tile colspan="1">
-                      <div>
-                        Incumbent :
-                      </div>
+                      <div>Incumbent :</div>
                       <div
                         style="
                           display: flex;
@@ -404,46 +402,42 @@
                       <mat-divider vertical style="height: 45px"></mat-divider>
                     </mat-grid-tile>
 
-
-                      <mat-grid-tile colspan="1">
-                        <div>
-                          Winning Party :
-                        </div>
-                        <div
+                    <mat-grid-tile colspan="1">
+                      <div>Winning Party :</div>
+                      <div
                         style="
                           display: flex;
                           justify-content: flex-end;
                           margin-right: 15px;
                         "
                       >
-                      {{ this.controller.getCurrentDistrictData().dominantParty }}
-                        </div>
-                      </mat-grid-tile>
+                        {{
+                          this.controller.getCurrentDistrictData().dominantParty
+                        }}
+                      </div>
+                    </mat-grid-tile>
                   </mat-grid-list>
                   <mat-divider></mat-divider>
                   <mat-grid-list cols="3" rowHeight="40px">
                     <mat-grid-tile>
-                      <div>
-                        Total Pop.:
-                      </div>
+                      <div>Total Pop.:</div>
                       <div
-                      style="
-                        display: flex;
-                        justify-content: flex-end;
-                        margin-right: 15px;
-                      "
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 15px;
+                        "
                       >
-                      {{
-                        this.controller
-                        .getCurrentDistrictData().population.toLocaleString("en-US")
-                      }}
+                        {{
+                          this.controller
+                            .getCurrentDistrictData()
+                            .population.toLocaleString("en-US")
+                        }}
                       </div>
                       <mat-divider vertical style="height: 45px"></mat-divider>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                      <div>
-                        Dem. Votes :
-                      </div>
+                      <div>Dem. Votes :</div>
                       <div
                         style="
                           display: flex;
@@ -461,9 +455,7 @@
                     </mat-grid-tile>
 
                     <mat-grid-tile>
-                      <div>
-                        Rep. Votes :
-                      </div>
+                      <div>Rep. Votes :</div>
                       <div
                         style="
                           display: flex;
@@ -481,83 +473,79 @@
                   </mat-grid-list>
                   <mat-divider></mat-divider>
 
-                  <mat-grid-list  cols="2" rowHeight="40px">
+                  <mat-grid-list cols="2" rowHeight="40px">
                     <mat-grid-tile>
-                      <div>
-                        Is Safe District :
-                      </div>
+                      <div>Is Safe District :</div>
                       <div
-                      style="
-                        display: flex;
-                        justify-content: flex-end;
-                        margin-right: 15px;
-                      "
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 15px;
+                        "
                       >
-                      {{
-                        this.controller
-                        .getCurrentDistrictData().isSafeDistrict == true ? "YES" : "NO"
-                      }}
+                        {{
+                          this.controller.getCurrentDistrictData()
+                            .isSafeDistrict == true
+                            ? "YES"
+                            : "NO"
+                        }}
                       </div>
                       <mat-divider vertical style="height: 45px"></mat-divider>
                     </mat-grid-tile>
 
                     <mat-grid-tile>
-                      <div>
-                        Is Majority-Minority District :
-                      </div>
+                      <div>Is Majority-Minority District :</div>
                       <div
-                      style="
-                        display: flex;
-                        justify-content: flex-end;
-                        margin-right: 15px;
-                      "
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 15px;
+                        "
                       >
-                      {{
-                        this.controller
-                        .getCurrentDistrictData().majorityMinorityDistrict == true ? "YES" : "NO"
-                      }}
+                        {{
+                          this.controller.getCurrentDistrictData()
+                            .majorityMinorityDistrict == true
+                            ? "YES"
+                            : "NO"
+                        }}
                       </div>
-
                     </mat-grid-tile>
-
                   </mat-grid-list>
                   <mat-divider></mat-divider>
 
                   <mat-grid-list cols="2" rowHeight="40px">
                     <mat-grid-tile>
-                      <div>
-                        Polsby-Popper Value :
-                      </div>
+                      <div>Polsby-Popper Value :</div>
                       <div
-                      style="
-                        display: flex;
-                        justify-content: flex-end;
-                        margin-right: 15px;
-                      "
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 15px;
+                        "
                       >
-                      {{
-                        this.controller
-                        .getCurrentDistrictData().polsbyPopperValue.toFixed(4)
-                      }}
+                        {{
+                          this.controller
+                            .getCurrentDistrictData()
+                            .polsbyPopperValue.toFixed(4)
+                        }}
                       </div>
                       <mat-divider vertical style="height: 45px"></mat-divider>
                     </mat-grid-tile>
 
                     <mat-grid-tile>
-                      <div>
-                        Schwartzberg Value :
-                      </div>
+                      <div>Schwartzberg Value :</div>
                       <div
-                      style="
-                        display: flex;
-                        justify-content: flex-end;
-                        margin-right: 15px;
-                      "
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 15px;
+                        "
                       >
-                      {{
-                        this.controller
-                        .getCurrentDistrictData().schwartzbergValue.toFixed(4)
-                      }}
+                        {{
+                          this.controller
+                            .getCurrentDistrictData()
+                            .schwartzbergValue.toFixed(4)
+                        }}
                       </div>
                     </mat-grid-tile>
                   </mat-grid-list>
@@ -571,9 +559,9 @@
               <mat-card class="card">
                 <mat-divider></mat-divider>
                 <mat-card-content>
-                  <mat-grid-list cols="3" rowHeight="40px">
+                  <mat-grid-list cols="2" rowHeight="40px">
                     <mat-grid-tile>
-                      <div> :</div>
+                      <div>White :</div>
                       <div
                         style="
                           display: flex;
@@ -582,20 +570,128 @@
                         "
                       >
                         {{
-                          this.controller.getCurrentDistrictData().districtNum
+                          this.controller.getCurrentDistrictData().demographics
+                            .whitePopulation != undefined
+                            ? this.controller.getCurrentDistrictData()
+                                .demographics.whitePopulation.toLocaleString("en-US")
+                            : "N/A"
                         }}
                       </div>
                       <mat-divider vertical style="height: 45px"></mat-divider>
                     </mat-grid-tile>
 
+                    <mat-grid-tile>
+                      <div>African American :</div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 7px;
+                        "
+                      >
+                        {{
+                          this.controller.getCurrentDistrictData().demographics
+                            .blackPopulation != undefined
+                            ? this.controller.getCurrentDistrictData()
+                                .demographics.blackPopulation.toLocaleString("en-US")
+                            : "N/A"
+                        }}
+                      </div>
+                    </mat-grid-tile>
                   </mat-grid-list>
+                  <mat-divider></mat-divider>
+
+                  <mat-grid-list cols="2" rowHeight="40px">
+                    <mat-grid-tile>
+                      <div>Asian :</div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 7px;
+                        "
+                      >
+                        {{
+                          this.controller.getCurrentDistrictData().demographics
+                            .asianPopulation != undefined
+                            ? this.controller.getCurrentDistrictData()
+                                .demographics.asianPopulation.toLocaleString("en-US")
+                            : "N/A"
+                        }}
+                      </div>
+                      <mat-divider vertical style="height: 45px"></mat-divider>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                      <div>Hispanic :</div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 7px;
+                        "
+                      >
+                        {{
+                          this.controller.getCurrentDistrictData().demographics
+                            .hispanicPopulation != undefined
+                            ? this.controller.getCurrentDistrictData()
+                                .demographics.hispanicPopulation.toLocaleString("en-US")
+                            : "N/A"
+                        }}
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+                  <mat-divider></mat-divider>
+                  <mat-grid-list cols="1" rowHeight="40px">
+                    <mat-grid-tile>
+                      <div>American Indian and Alaska Native :</div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 7px;
+                        "
+                      >
+                        {{
+                          this.controller.getCurrentDistrictData().demographics
+                            .amInd_and_AlaNatPopulation !=undefined
+                            ? this.controller.getCurrentDistrictData()
+                                .demographics.amInd_and_AlaNatPopulation.toLocaleString("en-US")
+                            : "N/A"
+                        }}
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+
+                  <mat-divider></mat-divider>
+
+                  <mat-grid-list cols="1" rowHeight="40px">
+                    <mat-grid-tile>
+                      <div>Native Hawaiian and Other Pacific Islander (OPI) :</div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: flex-end;
+                          margin-right: 7px;
+                        "
+                      >
+                        {{
+                          this.controller.getCurrentDistrictData().demographics
+                            .natHaw_and_OPIPopulation != undefined
+                            ? this.controller.getCurrentDistrictData().demographics
+                                .natHaw_and_OPIPopulation.toLocaleString("en-US")
+                            : "N/A"
+                        }}
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+
+
 
                   <mat-divider></mat-divider>
                 </mat-card-content>
               </mat-card>
             </mat-tab>
-
-            <mat-tab label="Compactness"> </mat-tab>
           </mat-tab-group>
         </mat-card-content>
       </mat-card>
