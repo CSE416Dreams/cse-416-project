@@ -700,11 +700,37 @@
       <mat-card class="card">
         <mat-card-header>
           <mat-card-title> Seat Share / Vote Share Plot </mat-card-title>
+          <div class="spacer"></div>
+          <button
+            mat-raised-button
+            [matMenuTriggerFor]="curveMenu"
+            yPosition="below"
+            style="margin-bottom: 10px; width: 150px;"
+          >
+            {{ selectedCurve }}
+          </button>
+          <mat-menu #curveMenu="matMenu">
+            <button
+              mat-menu-item
+              *ngFor="
+                let option of seatVoteCurveOptions; index as i
+              "
+              (click)="changeSeatVoteCurve(option)"
+            >
+              {{ option }}
+            </button>
+          </mat-menu>
         </mat-card-header>
         <mat-divider class="divider"></mat-divider>
 
-        <mat-card-content>
-          <ngx-charts-line-chart
+        <mat-card-content class="curve-content">
+
+
+          <div class="chart-div">
+            {{ selectedCurve }} for {{ this.controller.getSelectedState() }}, Plan {{ this.controller.getSelectedPlan() }}
+          </div>
+
+          <!-- <ngx-charts-line-chart
             [view]="view"
             [scheme]="colorScheme"
             [legend]="legend"
@@ -720,7 +746,11 @@
             (activate)="onActivate($event)"
             (deactivate)="onDeactivate($event)"
           >
-          </ngx-charts-line-chart>
+          </ngx-charts-line-chart> -->
+
+
+
+
         </mat-card-content>
       </mat-card>
     </mat-tab>
