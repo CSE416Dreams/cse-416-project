@@ -124,6 +124,7 @@ export class MapControllerService {
     fetch('https://hitboxes.github.io/'+state.toLowerCase()+'-Counties.geojson')
     .then(result => result.json())
     .then(data => {
+
       this.mainMap.addSource(state.toLowerCase()+'-Counties', {
         type: "geojson",
         data: data,
@@ -288,7 +289,7 @@ export class MapControllerService {
             'fill-color': fillArray,
             'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false],
               0.95,
-              0.2
+              0.4
               ]
           }
       });
@@ -315,7 +316,7 @@ export class MapControllerService {
             )
 
             ////////////////
-            var description = "District # : "+e.features[0].properties.District;
+            var description = "<h3>District # : "+e.features[0].properties.District+"</h3><div>Polsby-Popper Value : "+e.features[0].properties.PolsbyPopperValue+"</div>";
             var coordinate = e.lngLat;
             coordinate.lat = coordinate.lat + 0.15;
             popup.setLngLat(coordinate).setHTML(description).addTo(this.mainMap);
@@ -337,6 +338,24 @@ export class MapControllerService {
       })
     })
     .catch(e => console.log(e));
+  }
+
+  isShowingAD(state, currentMap) {
+    if(this.mainMap.getFilter(state.toLowerCase()+'-'+currentMap) == undefined) {
+      return false;
+    }
+    return true;
+  }
+
+  showAnomalousDistricts(state: string, currentMap: string) {
+    if(currentMap == "Counties" || currentMap == "Precincts") {
+      return;
+    }
+    this.mainMap.setFilter(state.toLowerCase()+'-'+currentMap, ['<=', ['get', 'PolsbyPopperValue'], 0.2]);
+  }
+
+  removeFilter(state: string, currentMap: string) {
+    this.mainMap.setFilter(state.toLowerCase()+'-'+currentMap, null);
   }
 
   randomColor() {

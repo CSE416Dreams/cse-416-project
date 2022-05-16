@@ -29,19 +29,6 @@ export class DistrictPlanContentComponent implements OnInit {
   seatVoteCurveOptions = ["Symmetry", "Bias At 50%", "Responsiveness"]
 
   multi: any[];
-  view: [number,number] = [700, 300];
-
-  // options
-  legend: boolean = true;
-  showLabels: boolean = true;
-  animations: boolean = true;
-  xAxis: boolean = true;
-  yAxis: boolean = true;
-  showYAxisLabel: boolean = true;
-  showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Percentage of Vote';
-  yAxisLabel: string = 'Percentage of Seats';
-  timeline: boolean = true;
   colorScheme: Color = {
     name: 'myScheme',
     selectable: true,
@@ -125,13 +112,7 @@ export class DistrictPlanContentComponent implements OnInit {
   }
 
   changeSeatVoteCurve(option : string) {
-    //selecting a specific seat vote curve option: Bias at 50%, Symmetry, Responsiveness
-    //data will be in json format
-    //
-    this.controller.getSVCurve();
-
-
-
+    this.controller.getCurrentSVCurve(this.selectedCurve);
   }
 
 

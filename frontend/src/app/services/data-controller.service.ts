@@ -16,9 +16,9 @@ export class DataControllerService {
   stateData = undefined;
   plansData = [];
   seawulfEnsembleData = undefined;
-  
+
   currentSeatCurveData = undefined;
-  seatVoteDatas = undefined; 
+  seatVoteDatas = [];
 
   constructor(
     public mapController: MapControllerService,
@@ -80,9 +80,16 @@ export class DataControllerService {
     return result;
   }
 
+  getCurrentSVCurve(option: string) {
+    console.log(option);
+    // return this.seatVoteDatas[this.selectedPlan][option];
+  }
+
+
   clearData() {
     this.stateData = undefined;
     this.plansData = [];
+    this.seatVoteDatas = [];
     this.selectedDistrict = 1;
     this.seawulfEnsembleData = false;
     this.selectedPlan = "Summary"
@@ -116,6 +123,7 @@ export class DataControllerService {
     if(string == "None" && oldState != "None") {
       this.clearData();
       this.mapController.hideCurrentMap(oldState, this.currentMap);
+      this.mapController.removeFilter(oldState, this.currentMap);
       this.currentMap = "None";
       this.mapController.resetToInitial(oldState);
       this.componentController.closeSidenav();
@@ -128,10 +136,12 @@ export class DataControllerService {
     this.mapController.hideStateMap(this.selectedState);
     if(oldState != "None") {
       this.mapController.hideCurrentMap(oldState, this.currentMap);
+      this.mapController.removeFilter(oldState, this.currentMap);
       this.currentMap = "None";
       this.mapController.resetToInitial(oldState);
     }
     await this.getState();
+    await this.getSVCurve();
     console.log(this.plansData);
     this.currentMap = this.plansData[0].planName;
     this.mapController.showDistrictMap(this.selectedState, this.currentMap);
@@ -194,9 +204,18 @@ export class DataControllerService {
   }
 
   async getSVCurve(){
-    await fetchSeatVoteData()
-    return;
+    for(let i = 0; i < this.plansData.length; i++) {
+      // console.log(this.plansData[i].planName);
+      await fetchSeatVoteData(this.selectedState, this.plansData[i].planName).then(result => {
+        // console.log(result);
+        this.seatVoteDatas[this.plansData[i].planName] = result;
+      }
 
+      );
+    }
+    // console.log(this.seatVoteDatas)
+    // await fetchSeatVoteData(this.selectedState, plan);
+    return;
   }
 
   async getState() {
@@ -242,17 +261,10 @@ async function fetchState(selectedState: string) {
   return await response.text();
 }
 
-async function fetchSeatVoteData(){
-
-  let plan = this.selectedPlan;
-
-  // let response = fetch('https://hitboxes.github.io/seatVotesCurve/'+this.selectedState+'/'+plan)
-  // .then(result => result.json());
-  let response = fetch('https://hitboxes.github.io/seatVotesCurve/florida/vs-H000C8019.json')
-  .then(result => result.json());
-  
-  //at this point response holds the json formatted data
-  console.log(response);
-  return await response;
-
+async function fetchSeatVoteData(selectedState: string, selectedPlan: string){
+  let response = await fetch('https://hitboxes.github.io/seatVotesCurve/'+selectedState.toLowerCase()+'/vs-' + selectedPlan +'.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
 }

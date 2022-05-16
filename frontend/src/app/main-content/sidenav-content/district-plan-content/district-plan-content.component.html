@@ -726,27 +726,25 @@
         <mat-card-content class="curve-content">
 
 
-          <div class="chart-div">
+          <!-- <div class="chart-div">
             {{ selectedCurve }} for {{ this.controller.getSelectedState() }}, Plan {{ this.controller.getSelectedPlan() }}
-          </div>
-
-          <ngx-charts-line-chart
-            [view]="view"
+          </div> -->
+          <div class="chart-div">
+            <ngx-charts-line-chart
+            [view]="[800, 500]"
             [scheme]="colorScheme"
-            [legend]="legend"
-            [showXAxisLabel]="showXAxisLabel"
-            [showYAxisLabel]="showYAxisLabel"
-            [xAxis]="xAxis"
-            [yAxis]="yAxis"
-            [xAxisLabel]="xAxisLabel"
-            [yAxisLabel]="yAxisLabel"
-            [timeline]="timeline"
+            [legend]="true"
+            [showXAxisLabel]="true"
+            [showYAxisLabel]="true"
+            [xAxis]="true"
+            [yAxis]="true"
+            [xAxisLabel]="'Percentage of Votes'"
+            [yAxisLabel]="'Percentage of Seats'"
+            [timeline]="true"
             [results]="multi"
-            (select)="onSelect($event)"
-            (activate)="onActivate($event)"
-            (deactivate)="onDeactivate($event)"
           >
-          </ngx-charts-line-chart> 
+          </ngx-charts-line-chart>
+          </div>
 
 
 

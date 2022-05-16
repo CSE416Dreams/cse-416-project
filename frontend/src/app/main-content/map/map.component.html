@@ -26,5 +26,14 @@
       Precincts
     </button>
   </mat-menu>
+  <button
+  mat-raised-button
+  (click)="this.mapService.isShowingAD(this.controller.getSelectedState(), this.controller.getCurrentMap()) == true
+  ? this.mapService.removeFilter(this.controller.getSelectedState(), this.controller.getCurrentMap())
+  : this.mapService.showAnomalousDistricts(this.controller.getSelectedState(), this.controller.getCurrentMap())"
+  class="return-button"
+  *ngIf="this.controller.getSelectedState() != 'None' && this.controller.getCurrentMap() != 'Counties' && this.controller.getCurrentMap() != 'Precincts'">
+    {{ this.mapService.isShowingAD(this.controller.getSelectedState(), this.controller.getCurrentMap()) == true ? 'Disable' : 'Enable'}} Anomalous Districts
+  </button>
   <button mat-raised-button *ngIf="!onCenter" (click)="returnTo()" class="return-button">Return</button>
 </div>
