@@ -125,7 +125,12 @@ export class DistrictPlanContentComponent implements OnInit {
   }
 
   changeSeatVoteCurve(option : string) {
-    this.selectedCurve = option;
+    //selecting a specific seat vote curve option: Bias at 50%, Symmetry, Responsiveness
+    //data will be in json format
+    //
+    this.controller.getSVCurve();
+
+
 
   }
 

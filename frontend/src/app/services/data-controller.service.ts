@@ -16,6 +16,9 @@ export class DataControllerService {
   stateData = undefined;
   plansData = [];
   seawulfEnsembleData = undefined;
+  
+  currentSeatCurveData = undefined;
+  seatVoteDatas = undefined; 
 
   constructor(
     public mapController: MapControllerService,
@@ -190,6 +193,12 @@ export class DataControllerService {
     return;
   }
 
+  async getSVCurve(){
+    await fetchSeatVoteData()
+    return;
+
+  }
+
   async getState() {
     await fetchState(this.selectedState)
     .then(result => {
@@ -231,4 +240,19 @@ async function fetchState(selectedState: string) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   return await response.text();
+}
+
+async function fetchSeatVoteData(){
+
+  let plan = this.selectedPlan;
+
+  // let response = fetch('https://hitboxes.github.io/seatVotesCurve/'+this.selectedState+'/'+plan)
+  // .then(result => result.json());
+  let response = fetch('https://hitboxes.github.io/seatVotesCurve/florida/vs-H000C8019.json')
+  .then(result => result.json());
+  
+  //at this point response holds the json formatted data
+  console.log(response);
+  return await response;
+
 }
