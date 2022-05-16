@@ -36,6 +36,7 @@ import { DistrictPlanContentComponent } from './main-content/sidenav-content/dis
 import { StateSummaryComponent } from './main-content/sidenav-content/state-summary/state-summary.component';
 import { SeawulfEnsembleSummaryComponent } from './main-content/sidenav-content/seawulf-ensemble-summary/seawulf-ensemble-summary.component';
 import { CompareDialogComponent } from './main-content/sidenav-content/compare-dialog/compare-dialog.component';
+import { DataSourceComponent } from './main-content/sidenav-content/data-source/data-source.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { CompareDialogComponent } from './main-content/sidenav-content/compare-d
     DistrictPlanContentComponent,
     StateSummaryComponent,
     SeawulfEnsembleSummaryComponent,
-    CompareDialogComponent
+    CompareDialogComponent,
+    DataSourceComponent
   ],
   imports: [
     BrowserModule,

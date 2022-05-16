@@ -11,7 +11,6 @@ export class DataControllerService {
   selectedPlan: string = "Summary";
   selectedDistrict: number = 1;
   currentMap: string = "None"; // format = {state(lowercase)}-{planName}
-  showSeawulfEnsemble: boolean = false;
 
   stateData = undefined;
   plansData = [];
@@ -60,10 +59,6 @@ export class DataControllerService {
     return this.getCurrentPlanData().districts[this.selectedDistrict-1];
   }
 
-  getShowSeawulfEnsemble() {
-    return this.showSeawulfEnsemble;
-  }
-
   getPlansData() {
     return this.plansData;
   }
@@ -96,13 +91,9 @@ export class DataControllerService {
     return;
   }
 
-  toggleSeawulfEnsemble() {
-    this.showSeawulfEnsemble = !this.showSeawulfEnsemble;
-    return;
-  }
+
 
   resetShows() {
-    this.showSeawulfEnsemble = false;
     return;
   }
 
