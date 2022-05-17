@@ -18,7 +18,7 @@ export class DataControllerService {
 
   seawulfSVData = undefined; // this is the data we are going to use
   seatVoteDatas = [];
-
+  boxAndWhiskerData = [];
   seawulfHistData = [];
 
   constructor(
@@ -73,6 +73,10 @@ export class DataControllerService {
     return this.seawulfHistData;
   }
 
+  getBoxAndWhiskerData() {
+    return this.boxAndWhiskerData;
+  }
+
   getPlanDataByName(name : string) {
     for(let i = 0; i < this.plansData.length; i++) {
       if(this.plansData[i].planName == name) {
@@ -117,7 +121,7 @@ export class DataControllerService {
 
   clearData() {
     this.stateData = undefined;
-  
+    this.boxAndWhiskerData = [];
     this.plansData = [];
     this.seatVoteDatas = [];
     this.seawulfHistData = [];
@@ -169,10 +173,11 @@ export class DataControllerService {
     }
     await this.getState();
     await this.getSVCurve();
+    await this.getBoxAndWhiskers(this.selectedState);
     await this.getHistograms(this.selectedState);
     await this.getSeawulfSVCurve(this.selectedState);
 
-    console.log(this.seawulfHistData);
+    console.log(this.boxAndWhiskerData);
     // console.log(this.seawulfSVData);
     this.currentMap = this.plansData[0].planName;
     this.mapController.showDistrictMap(this.selectedState, this.currentMap);
@@ -280,6 +285,40 @@ export class DataControllerService {
 
   }
 
+  async getBoxAndWhiskers(state: string) {
+    
+    await fetchSeawulfBoxAndWhiskerData1(state).then(result => {
+      result = JSON.parse(result);
+      this.boxAndWhiskerData.push(result);
+    })
+    .catch(e => console.log(e));
+    await fetchSeawulfBoxAndWhiskerData2(state).then(result => {
+      result = JSON.parse(result);
+      this.boxAndWhiskerData.push(result);
+    })
+    .catch(e => console.log(e));
+    await fetchSeawulfBoxAndWhiskerData3(state).then(result => {
+      result = JSON.parse(result);
+      this.boxAndWhiskerData.push(result);
+    })
+    .catch(e => console.log(e));
+    await fetchSeawulfBoxAndWhiskerData4(state).then(result => {
+      result = JSON.parse(result);
+      this.boxAndWhiskerData.push(result);
+    })
+    .catch(e => console.log(e));
+    await fetchSeawulfBoxAndWhiskerData5(state).then(result => {
+      result = JSON.parse(result);
+      this.boxAndWhiskerData.push(result);
+    })
+    .catch(e => console.log(e));
+    await fetchSeawulfBoxAndWhiskerData6(state).then(result => {
+      result = JSON.parse(result);
+      this.boxAndWhiskerData.push(result);
+    })
+    .catch(e => console.log(e));
+  }
+
   
 
   async getState() {
@@ -359,6 +398,60 @@ async function fetchSeawulfHistRepData(selectedState: string){
 
 async function fetchSeawulfHistDemData(selectedState: string){
   let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-dem-hist.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfBoxAndWhiskerData1(selectedState: string){
+  // https://hitboxes.github.io/SeaWulf/sea-georgia-black-bwp.json
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-white-bwp.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfBoxAndWhiskerData2(selectedState: string){
+  // https://hitboxes.github.io/SeaWulf/sea-georgia-black-bwp.json
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-black-bwp.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfBoxAndWhiskerData3(selectedState: string){
+  // https://hitboxes.github.io/SeaWulf/sea-georgia-black-bwp.json
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-asian-bwp.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfBoxAndWhiskerData4(selectedState: string){
+  // https://hitboxes.github.io/SeaWulf/sea-georgia-black-bwp.json
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-hispanic-bwp.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfBoxAndWhiskerData5(selectedState: string){
+  // https://hitboxes.github.io/SeaWulf/sea-georgia-black-bwp.json
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-rep-bwp.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfBoxAndWhiskerData6(selectedState: string){
+  // https://hitboxes.github.io/SeaWulf/sea-georgia-black-bwp.json
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-dem-bwp.json');
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`)
   }
