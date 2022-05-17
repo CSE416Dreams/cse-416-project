@@ -1,27 +1,152 @@
+<div class="wrap">
+  <div class="maps">
 
-<div id="compare-map"></div>
+    <div id="map1" style="display: flex; margin-right: 30px;">
+      <button mat-raised-button class="map-menu" [matMenuTriggerFor]="menu1">
+        {{ map1selected }}
+      </button>
+      <mat-menu #menu1>
+        <button
+        mat-menu-item
+        *ngFor="let plan of this.controller.getPlansData(); index as i"
+        (click)="selectMap1(plan.planName)"
+         >
+        {{ plan.planName }}
+      </button>
+      </mat-menu>
 
-<div *ngIf="!compareStatus">
-  <h1 mat-dialog-title>Select plans to compare</h1>
-  <div mat-dialog-content class="dialog-content">
-      This is where checkboxes go in
+    </div>
+    <div id="map2" style="display: flex; margin-left: 10px;">
+      <button mat-raised-button class="map-menu" [matMenuTriggerFor]="menu2">
+        {{ map2selected }}
+      </button>
+      <mat-menu #menu2>
+        <button
+        mat-menu-item
+        *ngFor="let plan of this.controller.getPlansData(); index as i"
+        (click)="selectMap2(plan.planName)"
+         >
+        {{ plan.planName }}
+      </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="dialog-content">
+
+    <mat-tab-group>
+      <mat-tab label="Written Comparison">
+        <div>
+          <mat-grid-list cols="2" rowHeight="400px">
+            <mat-grid-tile style="overflow-y: auto; overflow-x: hidden;">
+              <div class="container-divs">
+                <div class="divs">
+                  Plan Name : &nbsp;{{ map1data.planName }}
+                </div>
+                <div class="divs">
+                  Plan Status : &nbsp;{{ map1data.planStatus }}
+                </div>
+                <div class="divs">
+                  Proposed By : &nbsp;{{ map1data.proposedBy }}
+                </div>
+                <div class="divs">
+                  Efficiency Gap : &nbsp;{{ map1data.efficiencyGap.toFixed(4) }}
+                </div>
+                <div class="divs">
+                  Equal Population Measure : &nbsp;{{ map1data.eqPopMeasure.toFixed(4) }}
+                </div>
+                <div class="divs">
+                  Mean-Median Difference : &nbsp;{{ map1data.meanMedianDifference.toFixed(4) }}
+                </div>
+                <div class="divs">
+                  # of Majority-Minority Districts : &nbsp;{{ map1data.numOfMajorityMinorityDistricts }}
+                </div>
+                <div class="divs">
+                  # of Split Counties : &nbsp;{{ map1data.numSplitCounties }}
+                </div>
+                <div class="divs">
+                  Republican / Democratic Splits :
+                  <br/>
+                  <div class="split-container">
+                    <div *ngFor="let split of this.controller.getRepDemSplit(map2data); index as i" [ngClass]="{'red-box' : split == 'red', 'blue-box' : split == 'blue'}">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <mat-divider></mat-divider>
+              <mat-divider vertical style="height: 100%"></mat-divider>
+            </mat-grid-tile>
+            <mat-grid-tile style="overflow-y: auto; overflow-x: hidden;">
+              <div class="container-divs">
+                <div class="divs">
+                  Plan Name : &nbsp;{{ map2data.planName }}
+                </div>
+                <div class="divs">
+                  Plan Status : &nbsp;{{ map2data.planStatus }}
+                </div>
+                <div class="divs">
+                  Proposed By : &nbsp;{{ map2data.proposedBy }}
+                </div>
+                <div class="divs">
+                  Efficiency Gap : &nbsp;{{ map2data.efficiencyGap.toFixed(4) }}
+                </div>
+                <div class="divs">
+                  Equal Population Measure : &nbsp;{{ map2data.eqPopMeasure.toFixed(4) }}
+                </div>
+                <div class="divs">
+                  Mean-Median Difference : &nbsp;{{ map2data.meanMedianDifference.toFixed(4) }}
+                </div>
+                <div class="divs">
+                  # of Majority-Minority Districts : &nbsp;{{ map2data.numOfMajorityMinorityDistricts }}
+                </div>
+                <div class="divs">
+                  # of Split Counties : &nbsp;{{ map2data.numSplitCounties }}
+                </div>
+                <div class="divs">
+                  Republican / Democratic Splits :
+                  <br/>
+                  <div class="split-container">
+                    <div *ngFor="let split of this.controller.getRepDemSplit(map2data); index as i" [ngClass]="{'red-box' : split == 'red', 'blue-box' : split == 'blue'}">
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <mat-divider></mat-divider>
+              <mat-divider vertical style="height: 100%"></mat-divider>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+        </div>
+        <mat-divider></mat-divider>
+      </mat-tab>
+
+      <mat-tab label="Radar Plot (Could Not Finish)" [disabled]="true">
+        <div>
+          <mat-grid-list cols="1" rowHeight="400px">
+            <mat-grid-tile>
+              <div>
+                <ngx-charts-polar-chart
+                  [view]="[500, 300]"
+
+
+                ></ngx-charts-polar-chart>
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-tab>
+    </mat-tab-group>
   </div>
 
 
-
-  <div mat-dialog-actions align="end">
-      <button mat-button class="compare-button" (click)="compare()">Compare</button>
-      <button mat-button mat-dialog-close color="warn" (click)="close()">Close</button>
+  <div>
+    <div class="spacer"></div>
+    <button mat-raised-button mat-dialog-close color="warn" style="margin-top: 5px; display: flex; justify-content: flex-end; margin-right: 15px">
+    Close
+  </button>
   </div>
 </div>
 
-
-<div *ngIf="compareStatus">
-
-
-  <div mat-dialog-actions align="end">
-      <button mat-button class="back-button" (click)="goBack()">Back</button>
-      <button mat-button mat-dialog-close color="warn" (click)="close()">Close</button>
-  </div>
-
-</div>

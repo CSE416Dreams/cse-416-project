@@ -29,7 +29,7 @@ export class DistrictPlanContentComponent implements OnInit {
   colorScheme: Color = {
     name: 'myScheme',
     selectable: true,
-    group: ScaleType.Ordinal,
+    group: ScaleType.Linear,
     domain: ['#f00', '#00f', '#f0f'],
   };
 

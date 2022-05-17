@@ -51,6 +51,15 @@ export class DataControllerService {
     return this.plansData[index];
   }
 
+  getPlanDataByName(name : string) {
+    for(let i = 0; i < this.plansData.length; i++) {
+      if(this.plansData[i].planName == name) {
+        return this.plansData[i];
+      }
+    }
+    return undefined;
+  }
+
   getCurrentPlanData() {
     return this.plansData.find(plan => plan.planName == this.selectedPlan);
   }

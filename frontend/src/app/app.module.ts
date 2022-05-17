@@ -26,6 +26,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 import { HeaderComponent } from './header/header.component';
@@ -76,6 +77,7 @@ import { DataSourceComponent } from './main-content/sidenav-content/data-source/
     MatMenuModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
+    MatCheckboxModule,
     NgxChartsModule,
     NgApexchartsModule
   ],
