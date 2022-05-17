@@ -14,12 +14,12 @@ export class DataControllerService {
 
   stateData = undefined;
   plansData = [];
-  seawulfEnsembleData = undefined;
 
 
-  seawulfSVData = undefined;
-  currentSeatCurveData = undefined;
+  seawulfSVData = undefined; // this is the data we are going to use
   seatVoteDatas = [];
+
+  seawulfHistData = [];
 
   constructor(
     public mapController: MapControllerService,
@@ -69,6 +69,10 @@ export class DataControllerService {
     return this.plansData[index];
   }
 
+  getHistogramData() {
+    return this.seawulfHistData;
+  }
+
   getPlanDataByName(name : string) {
     for(let i = 0; i < this.plansData.length; i++) {
       if(this.plansData[i].planName == name) {
@@ -116,8 +120,8 @@ export class DataControllerService {
   
     this.plansData = [];
     this.seatVoteDatas = [];
+    this.seawulfHistData = [];
     this.selectedDistrict = 1;
-    this.seawulfEnsembleData = false;
     this.seawulfSVData = undefined;
     this.selectedPlan = "Summary"
     return;
@@ -165,8 +169,11 @@ export class DataControllerService {
     }
     await this.getState();
     await this.getSVCurve();
+    await this.getHistograms(this.selectedState);
     await this.getSeawulfSVCurve(this.selectedState);
-    console.log(this.seawulfSVData);
+
+    console.log(this.seawulfHistData);
+    // console.log(this.seawulfSVData);
     this.currentMap = this.plansData[0].planName;
     this.mapController.showDistrictMap(this.selectedState, this.currentMap);
     return;
@@ -227,6 +234,7 @@ export class DataControllerService {
     return;
   }
 
+
   async getSVCurve(){
     for(let i = 0; i < this.plansData.length; i++) {
       // console.log(this.plansData[i].planName);
@@ -251,6 +259,28 @@ export class DataControllerService {
     })
     .catch(e => console.log(e));
   }
+
+  async getHistograms(state: string) {
+    await fetchSeawulfHistMMDData(state).then(result => {
+      result = JSON.parse(result);
+      this.seawulfHistData.push(result);
+    })
+    .catch(e => console.log(e));
+    await fetchSeawulfHistRepData(state).then(result => {
+      result = JSON.parse(result);
+      this.seawulfHistData.push(result);
+    })
+    .catch(e => console.log(e));
+
+    await fetchSeawulfHistDemData(state).then(result => {
+      result = JSON.parse(result);
+      this.seawulfHistData.push(result);
+    })
+    .catch(e => console.log(e));
+
+  }
+
+  
 
   async getState() {
     await fetchState(this.selectedState)
@@ -305,6 +335,30 @@ async function fetchSeatVoteData(selectedState: string, selectedPlan: string){
 
 async function fetchSeawulfSeatVoteData(selectedState: string){
   let response = await fetch('https://hitboxes.github.io/seatVotesCurve/'+selectedState.toLowerCase()+'/seawulf.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfHistMMDData(selectedState: string){
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-mm-hist.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfHistRepData(selectedState: string){
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-rep-hist.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfHistDemData(selectedState: string){
+  let response = await fetch('https://hitboxes.github.io/SeaWulf/sea-'+selectedState.toLowerCase()+'-dem-hist.json');
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`)
   }

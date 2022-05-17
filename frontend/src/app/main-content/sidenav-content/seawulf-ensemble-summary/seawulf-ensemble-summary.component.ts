@@ -8,13 +8,21 @@ import { DataControllerService } from 'src/app/services/data-controller.service'
   styleUrls: ['./seawulf-ensemble-summary.component.css']
 })
 export class SeawulfEnsembleSummaryComponent implements OnInit {
+
+  selectedHistogram = 0;
+  options = ["Range of Majority Minority District", 'Range of Repulican Seat Splits', 'Range of Democratic Seat Splits']
   colorScheme: Color = {
     name: 'myScheme',
     selectable: true,
     group: ScaleType.Linear,
-    domain: ['#f00', '#00f', '#f0f'],
+    domain: ['#5AA454', '#A10A28', '#C7B42C']
   };
-
+  colorSchemeSeat: Color = {
+    name: 'myScheme2',
+    selectable: true,
+    group: ScaleType.Linear,
+    domain: ['#f00', '#00f', '#f0f'],
+  }
   SVData = [
     {
       "Florida" : [40.812, 10.296, 10.296]
@@ -29,10 +37,12 @@ export class SeawulfEnsembleSummaryComponent implements OnInit {
 
   
   constructor(public controller: DataControllerService) { }
-
   ngOnInit(): void {
-    
 
+  }
+
+  changeHist(i : number) {
+    this.selectedHistogram = i;
   }
 
 }

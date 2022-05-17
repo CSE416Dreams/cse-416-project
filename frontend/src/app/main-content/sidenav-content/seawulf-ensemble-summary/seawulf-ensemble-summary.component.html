@@ -5,7 +5,46 @@
   <mat-card-content>
     <mat-tab-group>
       <mat-tab label="Basic Comparison">
-        histograms here
+        <mat-card>
+          <mat-card-header>
+            <h2> {{ this.options[this.selectedHistogram] }}</h2>
+            <div class="spacer"></div>
+            <button mat-raised-button [matMenuTriggerFor]="histogram">
+              {{ this.options[this.selectedHistogram] }}
+            </button>
+            <mat-menu #histogram>
+              <button mat-menu-item
+              (click)="changeHist(i)"
+              *ngFor="let option of options; index as i;">
+                {{ option }}
+              </button>
+              
+            </mat-menu>
+          </mat-card-header>
+          <br/>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <div class="chart-div">
+              <ngx-charts-bar-vertical
+                [view]="[725, 330]"
+                [scheme]="colorScheme"
+                [legend]="true"
+                [showXAxisLabel]="true"
+                [showYAxisLabel]="true"
+                [xAxis]="true"
+                [yAxis]="true"
+                [xAxisLabel]="'Range of Values'"
+                [yAxisLabel]="'Generated Counts'"
+                [barPadding]="50"
+                [results]="this.controller.getHistogramData()[this.selectedHistogram]"
+              >
+              </ngx-charts-bar-vertical>
+            </div>
+          </mat-card-content>
+          <mat-card-content>
+
+          </mat-card-content>
+        </mat-card>
       </mat-tab>
       <mat-tab label="Box And Whisker">
         box and whisker plots here
@@ -13,8 +52,8 @@
       <mat-tab label="Seat / Vote Share">
         <div class="chart-div">
           <ngx-charts-line-chart
-            [view]="[600, 330]"
-            [scheme]="colorScheme"
+            [view]="[725, 330]"
+            [scheme]="colorSchemeSeat"
             [legend]="true"
             [showXAxisLabel]="true"
             [showYAxisLabel]="true"
