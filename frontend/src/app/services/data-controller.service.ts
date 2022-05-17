@@ -16,6 +16,8 @@ export class DataControllerService {
   plansData = [];
   seawulfEnsembleData = undefined;
 
+
+  seawulfSVData = undefined;
   currentSeatCurveData = undefined;
   seatVoteDatas = [];
 
@@ -50,6 +52,13 @@ export class DataControllerService {
 
   getSelectedDistrict() {
     return this.selectedDistrict;
+  }
+
+  getIndexOfState() {
+    if(this.selectedState == "Florida") return 0;
+    else if(this.selectedState == "Georgia") return 2;
+    else if(this.selectedState == "Mississippi") return 1;
+    else return -1;
   }
 
   getCurrentMap() {
@@ -97,13 +106,19 @@ export class DataControllerService {
     return this.seatVoteDatas[this.selectedPlan];
   }
 
+  getCurrentSeawulfSVCurve() {
+    return this.seawulfSVData;
+  }
+
 
   clearData() {
     this.stateData = undefined;
+  
     this.plansData = [];
     this.seatVoteDatas = [];
     this.selectedDistrict = 1;
     this.seawulfEnsembleData = false;
+    this.seawulfSVData = undefined;
     this.selectedPlan = "Summary"
     return;
   }
@@ -150,7 +165,8 @@ export class DataControllerService {
     }
     await this.getState();
     await this.getSVCurve();
-    console.log(this.plansData);
+    await this.getSeawulfSVCurve(this.selectedState);
+    console.log(this.seawulfSVData);
     this.currentMap = this.plansData[0].planName;
     this.mapController.showDistrictMap(this.selectedState, this.currentMap);
     return;
@@ -224,9 +240,16 @@ export class DataControllerService {
 
       );
     }
-    console.log(this.seatVoteDatas)
     // await fetchSeatVoteData(this.selectedState, plan);
     return;
+  }
+
+  async getSeawulfSVCurve(state: string) {
+    await fetchSeawulfSeatVoteData(state).then(result => {
+      result = JSON.parse(result);
+      this.seawulfSVData = result;
+    })
+    .catch(e => console.log(e));
   }
 
   async getState() {
@@ -274,6 +297,14 @@ async function fetchState(selectedState: string) {
 
 async function fetchSeatVoteData(selectedState: string, selectedPlan: string){
   let response = await fetch('https://hitboxes.github.io/seatVotesCurve/'+selectedState.toLowerCase()+'/vs-' + selectedPlan +'.json');
+  if(!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  return await response.text();
+}
+
+async function fetchSeawulfSeatVoteData(selectedState: string){
+  let response = await fetch('https://hitboxes.github.io/seatVotesCurve/'+selectedState.toLowerCase()+'/seawulf.json');
   if(!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`)
   }
