@@ -7,7 +7,79 @@
   </mat-card-header>
   <mat-divider></mat-divider>
 
-  <mat-card-content>
+  <mat-card-content *ngIf="this.controller.getSelectedState() == 'Mississippi'">
+    <div style="margin-top: 15px; margin-left: 10px;" class="links">
+      -&nbsp;
+      <a href="https://www.maris.state.ms.us/HTML/Redistricting/RedistrictingProposed.html#gsc.tab=0">
+        Mississippi State Website (Official)
+      </a>
+    </div>
 
+    <div style="margin-top: 15px; margin-left: 10px;">
+      -&nbsp;
+      <a href="https://www.census.gov/library/stories/state-by-state/mississippi-population-change-between-census-decade.html">
+        Census Data (www.census.gov)
+      </a>
+    </div>
+
+    <div style="margin-top: 15px; margin-left: 10px;">
+      -&nbsp;
+      <a href="https://github.com/TheUpshot/presidential-precinct-map-2020">
+        2020 Precinct Data (Github)
+      </a>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content *ngIf="this.controller.getSelectedState() == 'Florida'">
+    <div style="margin-top: 15px; margin-left: 10px;" class="links">
+      -&nbsp;
+      <a href="https://redistrictingplans.flsenate.gov/">
+        Florida Redistricting Website (Official)
+      </a>
+    </div>
+
+    <div style="margin-top: 15px; margin-left: 10px;">
+      -&nbsp;
+      <a href="https://www.census.gov/library/stories/state-by-state/florida-population-change-between-census-decade.html">
+        Census Data (www.census.gov)
+      </a>
+    </div>
+
+    <div style="margin-top: 15px; margin-left: 10px;">
+      -&nbsp;
+      <a href="https://github.com/TheUpshot/presidential-precinct-map-2020">
+        2020 Precinct Data (Github)
+      </a>
+    </div>
+  </mat-card-content>
+
+  <mat-card-content *ngIf="this.controller.getSelectedState() == 'Georgia'">
+    <div style="margin-top: 15px; margin-left: 10px;" class="links">
+      -&nbsp;
+      <a href="https://www.legis.ga.gov/joint-office/reapportionment">
+        Georgia State Website (Official)
+      </a>
+    </div>
+
+    <div style="margin-top: 15px; margin-left: 10px;" class="links">
+      -&nbsp;
+      <a href="https://www.georgiademocrat.org/georgia-democrats-release-proposed-congressional-map/">
+        Georgia Democrat
+      </a>
+    </div>
+
+    <div style="margin-top: 15px; margin-left: 10px;">
+      -&nbsp;
+      <a href="https://www.census.gov/library/stories/state-by-state/georgia-population-change-between-census-decade.html">
+        Census Data (www.census.gov)
+      </a>
+    </div>
+
+    <div style="margin-top: 15px; margin-left: 10px;">
+      -&nbsp;
+      <a href="https://github.com/TheUpshot/presidential-precinct-map-2020">
+        2020 Precinct Data (Github)
+      </a>
+    </div>
   </mat-card-content>
 </mat-card>
