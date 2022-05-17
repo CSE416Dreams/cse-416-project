@@ -1,8 +1,13 @@
+
+<div id="compare-map"></div>
+
 <div *ngIf="!compareStatus">
   <h1 mat-dialog-title>Select plans to compare</h1>
   <div mat-dialog-content class="dialog-content">
       This is where checkboxes go in
   </div>
+
+
 
   <div mat-dialog-actions align="end">
       <button mat-button class="compare-button" (click)="compare()">Compare</button>
@@ -13,7 +18,6 @@
 
 <div *ngIf="compareStatus">
 
-  <!-- Two map component -->
 
   <div mat-dialog-actions align="end">
       <button mat-button class="back-button" (click)="goBack()">Back</button>

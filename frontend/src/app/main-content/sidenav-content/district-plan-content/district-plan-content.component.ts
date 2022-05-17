@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataControllerService } from 'src/app/services/data-controller.service';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
-import { multi } from './data'; // temp data
 // import {
 //   ChartComponent,
 //   ApexChart,
@@ -23,10 +22,8 @@ import { multi } from './data'; // temp data
   styleUrls: ['./district-plan-content.component.css']
 })
 export class DistrictPlanContentComponent implements OnInit {
-  // @ViewChild("chart") chart: ChartComponent;
-  // public chartOptions: Partial<ChartOptions>;
-  selectedCurve = "Symmetry";
-  seatVoteCurveOptions = ["Symmetry", "Bias At 50%", "Responsiveness"]
+
+
 
   multi: any[];
   colorScheme: Color = {
@@ -38,7 +35,7 @@ export class DistrictPlanContentComponent implements OnInit {
 
 
   constructor(public controller: DataControllerService) {
-    Object.assign(this, { multi });
+
     // box and whisker
     // this.chartOptions = {
     //   series: [
@@ -111,9 +108,6 @@ export class DistrictPlanContentComponent implements OnInit {
     this.controller.changeSelectedPlan(0);
   }
 
-  changeSeatVoteCurve(option : string) {
-    this.controller.getCurrentSVCurve(this.selectedCurve);
-  }
 
 
 

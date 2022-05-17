@@ -75,9 +75,8 @@ export class DataControllerService {
     return result;
   }
 
-  getCurrentSVCurve(option: string) {
-    console.log(option);
-    // return this.seatVoteDatas[this.selectedPlan][option];
+  getCurrentSVCurve() {
+    return this.seatVoteDatas[this.selectedPlan];
   }
 
 
@@ -198,13 +197,16 @@ export class DataControllerService {
     for(let i = 0; i < this.plansData.length; i++) {
       // console.log(this.plansData[i].planName);
       await fetchSeatVoteData(this.selectedState, this.plansData[i].planName).then(result => {
-        // console.log(result);
+        result = JSON.parse(result);
+        // console.log(result)
+        // result[0]['series'] = result[0]['series'].splice(10, 80);
+        // result[1]['series'] = result[1]['series'].splice(10, 80);
         this.seatVoteDatas[this.plansData[i].planName] = result;
       }
 
       );
     }
-    // console.log(this.seatVoteDatas)
+    console.log(this.seatVoteDatas)
     // await fetchSeatVoteData(this.selectedState, plan);
     return;
   }
