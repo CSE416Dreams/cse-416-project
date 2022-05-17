@@ -8,7 +8,9 @@
 
   <span class="spacer"></span>
   <button mat-raised-button [matMenuTriggerFor]="menu" class="menu-button" style="overflow: hidden">
-    {{ controller.getSelectedPlan() == "Summary" ? "Choose a plan" : controller.getSelectedPlan() }}
+    {{ controller.getSelectedPlan() == "Summary" ? "Choose a plan"
+    : (controller.getSelectedPlan().length > 16
+    ? this.controller.getSelectedPlan().slice(0, 16)+'...' : controller.getSelectedPlan() ) }}
   </button>
   <mat-menu #menu="matMenu">
     <button
