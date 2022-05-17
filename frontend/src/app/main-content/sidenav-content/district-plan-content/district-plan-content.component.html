@@ -755,8 +755,9 @@
                   margin-right: 10px;
                 "
               >
-              35.43 %
+              {{ this.SVdata[this.controller.getSelectedState()][this.controller.getIndexOfPlan(this.controller.getSelectedPlan())][this.controller.getSelectedPlan()][0] }} &nbsp;%
               </div>
+
               <mat-divider vertical style="height: 50px"></mat-divider>
             </mat-grid-tile>
 
@@ -769,7 +770,7 @@
                   margin-right: 10px;
                 "
               >
-              20.35 %
+              {{ this.SVdata[this.controller.getSelectedState()][this.controller.getIndexOfPlan(this.controller.getSelectedPlan())][this.controller.getSelectedPlan()][1] }} &nbsp;%
               </div>
               <mat-divider vertical style="height: 50px"></mat-divider>
             </mat-grid-tile>
@@ -783,7 +784,7 @@
                   margin-right: 7px;
                 "
               >
-              1.85 %
+              {{ this.SVdata[this.controller.getSelectedState()][this.controller.getIndexOfPlan(this.controller.getSelectedPlan())][this.controller.getSelectedPlan()][2] }} &nbsp;%
               </div>
             </mat-grid-tile>
           </mat-grid-list>

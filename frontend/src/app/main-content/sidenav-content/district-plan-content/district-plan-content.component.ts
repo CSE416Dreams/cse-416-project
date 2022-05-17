@@ -22,10 +22,38 @@ import { Color, ScaleType } from '@swimlane/ngx-charts';
   styleUrls: ['./district-plan-content.component.css']
 })
 export class DistrictPlanContentComponent implements OnInit {
+  SVdata =
+    {
+      "Florida":  [
+        {
+          "P000C0109" : [13.86, 16.64, 2.664]
+        },
+        {
+          "S019C8052" : [7.57, 6.86, 2.1895]
+        },
+        {
+          "H000C8019" : [9.57, 9.88, 2.59]
+        }
 
+      ],
+      "Mississippi": [
+        {
+          "MississippiRepublicanPlan" : [20.3, 34.6125, 2.62]
+        }
+      ],
+      "Georgia": [
+        {
+          "GeorgiaRepublicanPlan" : [18.14, 34.68, 0.857]
+        },
+        {
+          "GeorgiaDemocraticPlan" : [5.09, 7.24, 1.423]
+        }
+      ]
+    }
+    // "Biasat50%" : 18.14,
+    // "PartisanSymmetry" : 34.68,
+    // "Responsiveness" : 0.857
 
-
-  multi: any[];
   colorScheme: Color = {
     name: 'myScheme',
     selectable: true,
@@ -106,6 +134,10 @@ export class DistrictPlanContentComponent implements OnInit {
   backToSummary() {
     this.controller.resetShows();
     this.controller.changeSelectedPlan(0);
+  }
+
+  thisprint() {
+    console.log(this.SVdata[this.controller.getSelectedState()][this.controller.getIndexOfPlan(this.controller.getSelectedPlan())][this.controller.getSelectedPlan()])
   }
 
 

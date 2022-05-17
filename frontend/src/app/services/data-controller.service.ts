@@ -35,6 +35,15 @@ export class DataControllerService {
     return this.selectedState;
   }
 
+  getIndexOfPlan(planName) {
+    for(let i = 0; i < this.plansData.length; i++) {
+      if(this.plansData[i].planName == planName) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   getSelectedPlan() {
     return this.selectedPlan;
   }
