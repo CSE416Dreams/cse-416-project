@@ -35,8 +35,8 @@
 
     <mat-tab-group>
       <mat-tab label="Written Comparison">
-        <div>
-          <mat-grid-list cols="2" rowHeight="400px">
+        <div style="height: 100%;">
+          <mat-grid-list cols="2" rowHeight="330px">
             <mat-grid-tile style="overflow-y: auto; overflow-x: hidden;">
               <div class="container-divs">
                 <div class="divs">
@@ -117,9 +117,9 @@
               <mat-divider vertical style="height: 100%"></mat-divider>
             </mat-grid-tile>
           </mat-grid-list>
-
+          <mat-divider></mat-divider>
         </div>
-        <mat-divider></mat-divider>
+
       </mat-tab>
 
       <mat-tab label="Radar Plot (Could Not Finish)" [disabled]="true">
@@ -142,11 +142,8 @@
   </div>
 
 
-  <div>
-    <div class="spacer"></div>
-    <button mat-raised-button mat-dialog-close color="warn" style="margin-top: 5px; display: flex; justify-content: flex-end; margin-right: 15px">
-    Close
-  </button>
-  </div>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close style="margin-top: 30px; background-color: red;">Cancel</button>
+  </mat-dialog-actions>
 </div>
 

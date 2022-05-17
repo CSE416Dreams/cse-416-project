@@ -16,7 +16,7 @@
   display: flex;
 }
 .dialog-content {
-  height: 55%;
+  height: 50%;
 }
 
 .spacer {
@@ -26,7 +26,7 @@
 .map-menu {
   z-index: 100;
   margin-left: 10px;
-  margin-top: 53%;
+  margin-top: 42%;
   height: 40px;
 }
 button:hover {
@@ -47,7 +47,12 @@ mat-grid-tile div {
 }
 
 .container-divs {
-  margin-bottom: 10%;
+  margin-bottom: 20%;
+  margin-top: 20%;
+}
+
+:host ::ng-deep mat-tab {
+  height: 30px !important;
 }
 
 .blue-box {
@@ -76,6 +81,4 @@ mat-grid-tile div {
   border-radius: 10px;
 }
 
-.split-container {
-  width: 90% !important;
-}
+

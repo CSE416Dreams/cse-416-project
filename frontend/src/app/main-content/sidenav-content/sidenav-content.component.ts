@@ -22,7 +22,7 @@ export class SidenavContentComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(CompareDialogComponent, {
       width: "100%",
-      height: "90%",
+      height: "100%",
       disableClose: true
     });
 

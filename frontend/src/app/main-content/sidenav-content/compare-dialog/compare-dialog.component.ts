@@ -32,7 +32,7 @@ export class CompareDialogComponent implements OnInit, OnDestroy {
       container: 'map1',
       style: 'mapbox://styles/mapbox/light-v10',
       center: this.centers[this.controller.getSelectedState()],
-      zoom: 5.0,
+      zoom: 4.5,
       interactive: false,
     });
 
@@ -40,7 +40,7 @@ export class CompareDialogComponent implements OnInit, OnDestroy {
       container: 'map2',
       style: 'mapbox://styles/mapbox/light-v10',
       center: this.centers[this.controller.getSelectedState()],
-      zoom: 5.0,
+      zoom: 4.5,
       interactive: false,
     });
     this.map1data = this.controller.getPlansData()[0];
