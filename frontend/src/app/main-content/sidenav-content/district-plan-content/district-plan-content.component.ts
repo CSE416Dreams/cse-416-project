@@ -30,7 +30,7 @@ export class DistrictPlanContentComponent implements OnInit {
     name: 'myScheme',
     selectable: true,
     group: ScaleType.Ordinal,
-    domain: ['#f00', '#0f0', '#0ff'],
+    domain: ['#f00', '#00f', '#f0f'],
   };
 
 
